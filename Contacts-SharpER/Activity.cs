@@ -12,6 +12,7 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
     class Activity
     {
+        // DATA MEMBER DECLARATIONS
         private int activityID; // Primary key
         private DateTime activityDate;
         private string activityDescription;
@@ -20,11 +21,13 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private int activityContactID; // Foreign key to the Contact class
         private string activityNotes;
 
+        // CONSTRUCTORS
         public Activity()
         {
-            throw new System.NotImplementedException();
+            // no body. Default constructor
         }
 
+        // PROPERTIES
         public int ActivityContactID
         {
             get
