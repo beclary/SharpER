@@ -13,6 +13,9 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
     public class Contact
     {
         // DATA MEMBER DECLARATIONS
+        /// <summary>
+        /// Primary Key
+        /// </summary>
         private int contactID;
         private string contactFirstName;
         private string contactLastName;
