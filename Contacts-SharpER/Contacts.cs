@@ -8,7 +8,7 @@ using System.Text;
 using System.Data.SqlClient;
 
 
-namespace SharpERDAL
+namespace SharpERDAL    // This is the namespace for all the DAL classes
 {
     public class Contacts
     {
