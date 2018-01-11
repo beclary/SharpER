@@ -8,9 +8,9 @@ using System.Text;
 using System.Data.SqlClient;
 
 
-namespace SharpERDAL    // This is the namespace for all the DAL classes
+namespace SharpERBLL    // This is the namespace for all the BLL classes
 {
-    public class Contacts
+    public class Contact
     {
         // DATA MEMBER DECLARATIONS
         private int contactID;
@@ -30,7 +30,7 @@ namespace SharpERDAL    // This is the namespace for all the DAL classes
         private string contactNotes;
 
         // CONSTRUCTORS
-        public Contacts()
+        public Contact()
         {
             // no body. Default constructor
         }
@@ -229,24 +229,6 @@ namespace SharpERDAL    // This is the namespace for all the DAL classes
             {
                 contactNotes = value;
             }
-        }
-
-        // METHODS
-        /// <summary>
-        /// see p. 237
-        /// </summary>
-        public int AddContact()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        /// <summary>
-        /// Make it if it updates the row, it is TRUE
-        /// see pp. 239-241
-        /// </summary>
-        public bool UpdateContact()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

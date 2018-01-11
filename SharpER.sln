@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SharpER", "SharpER\SharpER.sqlproj", "{218ACBF8-B690-472F-997D-EC24F9761449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts-SharpER", "Contacts-SharpER\Contacts-SharpER.csproj", "{FB56D4EB-A678-4A11-9A26-637B4842E73E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpERBLL", "Contacts-SharpER\SharpERBLL.csproj", "{FB56D4EB-A678-4A11-9A26-637B4842E73E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
