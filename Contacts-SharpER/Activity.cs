@@ -28,15 +28,16 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         }
 
         // PROPERTIES
-        public int ActivityContactID
+        public int ActivityID
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityID;
             }
 
             set
             {
+                activityID = value;
             }
         }
 
@@ -44,11 +45,12 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityDate;
             }
 
             set
             {
+                activityDate = value;
             }
         }
 
@@ -56,11 +58,12 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityDescription;
             }
 
             set
             {
+                activityDescription = value;
             }
         }
 
@@ -68,11 +71,12 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityTravel;
             }
 
             set
             {
+                activityTravel = value;
             }
         }
 
@@ -80,23 +84,24 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityJobID;
             }
 
             set
             {
+                activityJobID = value;
             }
         }
-
-        public int ActivityID
+        public int ActivityContactID
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityContactID;
             }
 
             set
             {
+                activityContactID = value;
             }
         }
 
@@ -104,11 +109,12 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return activityNotes;
             }
 
             set
             {
+                activityNotes = value;
             }
         }
     }
