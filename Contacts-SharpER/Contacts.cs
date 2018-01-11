@@ -12,6 +12,7 @@ namespace SharpERDAL
 {
     public class Contacts
     {
+        // DATA MEMBER DECLARATIONS
         private int contactID;
         private string contactFirstName;
         private string contactLastName;
@@ -28,15 +29,23 @@ namespace SharpERDAL
         private string contactContactedVia;
         private string contactNotes;
 
+        // CONSTRUCTORS
+        public Contacts()
+        {
+            // no body. Default constructor
+        }
+
+        // PROPERTIES
         public int ContactID
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactID;
             }
 
             set
             {
+                contactID = value;
             }
         }
 
@@ -44,11 +53,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactFirstName;
             }
 
             set
             {
+                contactFirstName = value;
             }
         }
 
@@ -56,11 +66,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactLastName;
             }
 
             set
             {
+                contactLastName = value;
             }
         }
 
@@ -68,11 +79,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactTitle;
             }
 
             set
             {
+                contactTitle = value;
             }
         }
 
@@ -80,11 +92,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactDepartment;
             }
 
             set
             {
+                contactDepartment = value;
             }
         }
 
@@ -92,11 +105,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactAddress;
             }
 
             set
             {
+                contactAddress = value;
             }
         }
 
@@ -104,11 +118,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactCity;
             }
 
             set
             {
+                contactCity = value;
             }
         }
 
@@ -116,11 +131,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactState;
             }
 
             set
             {
+                contactState = value;
             }
         }
 
@@ -128,11 +144,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactZipCode;
             }
 
             set
             {
+                contactZipCode = value;
             }
         }
 
@@ -140,11 +157,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactPhone;
             }
 
             set
             {
+                contactPhone = value;
             }
         }
 
@@ -152,11 +170,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactMobile;
             }
 
             set
             {
+                contactMobile = value;
             }
         }
 
@@ -164,11 +183,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactFax;
             }
 
             set
             {
+                contactFax = value;
             }
         }
 
@@ -176,11 +196,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactEmail;
             }
 
             set
             {
+                contactEmail = value;
             }
         }
 
@@ -188,11 +209,12 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactContactedVia;
             }
 
             set
             {
+                contactContactedVia = value;
             }
         }
 
@@ -200,16 +222,18 @@ namespace SharpERDAL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return contactNotes;
             }
 
             set
             {
+                contactNotes = value;
             }
         }
 
+        // METHODS
         /// <summary>
-        /// Make it a static class as well (see p. 237)
+        /// see p. 237
         /// </summary>
         public int AddContact()
         {
@@ -217,7 +241,8 @@ namespace SharpERDAL
         }
 
         /// <summary>
-        /// Make it if it updates the row, it is TRUE (see pp. 239-241)
+        /// Make it if it updates the row, it is TRUE
+        /// see pp. 239-241
         /// </summary>
         public bool UpdateContact()
         {
