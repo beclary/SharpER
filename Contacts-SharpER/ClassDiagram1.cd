@@ -6,7 +6,7 @@
   <Comment CommentText="I included two (2) methods for the following CRUD operations:&#xD;&#xA;&#xD;&#xA;1) AddContact&#xD;&#xA;2) UpdateContact">
     <Position X="2.885" Y="1.719" Height="1.26" Width="1.71" />
   </Comment>
-  <Class Name="Contacts_SharpER.Contacts">
+  <Class Name="SharpERDAL.Contacts">
     <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AhAEAQAQBDgAQAAYiEAAAIgAQQAABEGEAAQChAIAAgE=</HashCode>

@@ -1,9 +1,14 @@
-﻿using System;
+﻿// CONTACTS Business Logic Layer (BLL) for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 
-namespace Contacts_SharpER
+
+namespace SharpERDAL
 {
     public class Contacts
     {
