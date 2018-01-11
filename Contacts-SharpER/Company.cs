@@ -13,10 +13,7 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
     class Company
     {
         // DATA MEMBER DECLARATIONS
-        /// <summary>
-        /// Primary Key
-        /// </summary>
-        private int companyID;
+        private int companyID; // Primary key
         private string companyName;
         private string companyAddress;
         private string companyCity;

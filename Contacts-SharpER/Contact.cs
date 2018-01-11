@@ -1,4 +1,4 @@
-﻿// CONTACTS Business Logic Layer (BLL) for SharpER
+﻿// CONTACT Business Logic Layer (BLL) for SharpER
 // Bruce Clary
 
 using System;
@@ -10,13 +10,10 @@ using System.Data.SqlClient;
 
 namespace SharpERBLL    // This is the namespace for all the BLL classes
 {
-    public class Contact
+    class Contact
     {
         // DATA MEMBER DECLARATIONS
-        /// <summary>
-        /// Primary Key
-        /// </summary>
-        private int contactID;
+        private int contactID; // Primary key
         private string contactFirstName;
         private string contactLastName;
         private string contactTitle;

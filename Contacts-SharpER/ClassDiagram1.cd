@@ -14,7 +14,7 @@
       <FileName>Company.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Contacts_SharpER.Activity">
+  <Class Name="SharpERBLL.Activity">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACQAAEAkBAAAAAAAAAAAAABABAAAYAQAACAAA=</HashCode>

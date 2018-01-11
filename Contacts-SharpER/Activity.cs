@@ -1,28 +1,23 @@
-﻿using System;
+﻿// ACTIVITY Business Logic Layer (BLL) for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
-namespace Contacts_SharpER
+namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
     class Activity
     {
-        /// <summary>
-        /// Primary Key
-        /// </summary>
-        private int activityID;
+        private int activityID; // Primary key
         private DateTime activityDate;
         private string activityDescription;
         private string activityTravel;
-        /// <summary>
-        /// Foreign Key
-        /// </summary>
-        private int activityJobID;
-        /// <summary>
-        /// Foreign Key
-        /// </summary>
-        private int activityContactID;
+        private int activityJobID; // Foreign key to the Job class
+        private int activityContactID; // Foreign key to the Contact class
         private string activityNotes;
 
         public Activity()
