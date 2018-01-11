@@ -1,13 +1,18 @@
-﻿using System;
+﻿// COMPANY Business Logic Layer (BLL) for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
-namespace SharpERBLL
+namespace SharpERBLL    // This is the namespace for all the BLL classes
 {
     class Company
     {
+        // DATA MEMBER DECLARATIONS
         private int companyID;
         private string companyName;
         private string companyAddress;
@@ -19,15 +24,23 @@ namespace SharpERBLL
         private string companyWebsite;
         private string companyNotes;
 
+        // CONSTRUCTORS
+        public Company()
+        {
+            // no body. Default constructor
+        }
+
+        // PROPERTIES
         public int CompanyID
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyID;
             }
 
             set
             {
+                companyID = value;
             }
         }
 
@@ -35,11 +48,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyName;
             }
 
             set
             {
+                companyName = value;
             }
         }
 
@@ -47,11 +61,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyAddress;
             }
 
             set
             {
+                companyAddress = value;
             }
         }
 
@@ -59,11 +74,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyCity;
             }
 
             set
             {
+                companyCity = value;
             }
         }
 
@@ -71,11 +87,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyState;
             }
 
             set
             {
+                companyState = value;
             }
         }
 
@@ -83,11 +100,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyZipCode;
             }
 
             set
             {
+                companyZipCode = value;
             }
         }
 
@@ -95,11 +113,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyPhone;
             }
 
             set
             {
+                companyPhone = value;
             }
         }
 
@@ -107,11 +126,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyFax;
             }
 
             set
             {
+                companyFax = value;
             }
         }
 
@@ -119,11 +139,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyWebsite;
             }
 
             set
             {
+                companyWebsite = value;
             }
         }
 
@@ -131,11 +152,12 @@ namespace SharpERBLL
         {
             get
             {
-                throw new System.NotImplementedException();
+                return companyNotes;
             }
 
             set
             {
+                companyNotes = value;
             }
         }
     }
