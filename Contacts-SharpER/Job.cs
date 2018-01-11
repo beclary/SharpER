@@ -12,14 +12,22 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
 {
     class Job
     {
-        private int jobID;
+        // DATA MEMBER DECLARATIONS
+        private int jobID; // Primary key
         private string jobPosition;
         private DateTime jobApplied;
         private decimal jobPay;
-        private int jobContactID;
-        private int jobCompanyID;
+        private int jobContactID; // Foreign key
+        private int jobCompanyID; // Foreign key
         private string jobNotes;
 
+        // CONSTRUCTORS
+        public Job()
+        {
+            // no body. Default constructor
+        }
+
+        // PROPERTIES
         public int JobID
         {
             get
