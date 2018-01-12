@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace SharpERBLL    // This is the namespace for all the BLL classes
+namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
     class Job
     {
@@ -17,8 +17,8 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         private string jobPosition;
         private DateTime jobApplied;
         private decimal jobPay;
-        private int jobContactID; // Foreign key
-        private int jobCompanyID; // Foreign key
+        private int jobContactID; // Foreign key to the Contact class
+        private int jobCompanyID; // Foreign key to the Company class
         private string jobNotes;
 
         // CONSTRUCTORS
@@ -32,11 +32,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobID;
             }
 
             set
             {
+                jobID = value;
             }
         }
 
@@ -44,11 +45,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobPosition;
             }
 
             set
             {
+                jobPosition = value;
             }
         }
 
@@ -56,11 +58,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobApplied;
             }
 
             set
             {
+                jobApplied = value;
             }
         }
 
@@ -68,11 +71,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobPay;
             }
 
             set
             {
+                jobPay = value;
             }
         }
 
@@ -80,11 +84,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobContactID;
             }
 
             set
             {
+                jobContactID = value;
             }
         }
 
@@ -92,11 +97,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobCompanyID;
             }
 
             set
             {
+                jobCompanyID = value;
             }
         }
 
@@ -104,11 +110,12 @@ namespace SharpERBLL    // This is the namespace for all the BLL classes
         {
             get
             {
-                throw new System.NotImplementedException();
+                return jobNotes;
             }
 
             set
             {
+                jobNotes = value;
             }
         }
     }
