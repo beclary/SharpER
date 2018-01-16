@@ -230,5 +230,10 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
                 contactNotes = value;
             }
         }
+
+        public void efef()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

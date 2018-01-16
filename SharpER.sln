@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SharpER", "SharpER\SharpER.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpERBLL", "Contacts-SharpER\SharpERBLL.csproj", "{FB56D4EB-A678-4A11-9A26-637B4842E73E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpERDAL", "SharpERDAL\SharpERDAL.csproj", "{1E5C880D-E4C1-4787-919D-C1DADEA19532}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{FB56D4EB-A678-4A11-9A26-637B4842E73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB56D4EB-A678-4A11-9A26-637B4842E73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB56D4EB-A678-4A11-9A26-637B4842E73E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E5C880D-E4C1-4787-919D-C1DADEA19532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E5C880D-E4C1-4787-919D-C1DADEA19532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E5C880D-E4C1-4787-919D-C1DADEA19532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E5C880D-E4C1-4787-919D-C1DADEA19532}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
