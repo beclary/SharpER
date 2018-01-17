@@ -12,7 +12,15 @@ namespace SharpERDAL
         /// This will provide a listing of all the customers in the database
         /// </summary>
         /// <returns>a listing of all the customers using a list tee</returns>
-        public List<Contact> GetAllContacts()
+        public static List<Contact> GetAllContacts(int ContactID)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// This will provide the Contact information given a specific contactID
+        /// </summary>
+        public static Contact GetSpecificContactInfo(int contactID)
         {
             throw new System.NotImplementedException();
         }

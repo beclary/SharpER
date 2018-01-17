@@ -21,7 +21,7 @@ namespace SharpERDAL
         /// Then it will create a connection object that can be used to open, close, or dispose of the connection
         /// </remarks>
         /// <returns>A SqlConnection object</returns>
-        public SqlConnection GetConnection()
+        public static SqlConnection GetConnection()
         {
             throw new System.NotImplementedException();
         }

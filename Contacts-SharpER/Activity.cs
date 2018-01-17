@@ -22,6 +22,9 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private string activityNotes;
 
         // CONSTRUCTORS
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Activity()
         {
             // no body. Default constructor

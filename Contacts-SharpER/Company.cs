@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+
 namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
     class Company
@@ -25,6 +26,9 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private string companyNotes;
 
         // CONSTRUCTORS
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Company()
         {
             // no body. Default constructor

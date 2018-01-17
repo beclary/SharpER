@@ -22,6 +22,9 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private string jobNotes;
 
         // CONSTRUCTORS
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Job()
         {
             // no body. Default constructor

@@ -30,6 +30,9 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private string contactNotes;
 
         // CONSTRUCTORS
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Contact()
         {
             // no body. Default constructor
@@ -229,11 +232,6 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             {
                 contactNotes = value;
             }
-        }
-
-        public void efef()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
