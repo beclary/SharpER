@@ -15,53 +15,37 @@ namespace SharpERDAL
         /// </summary>
         public static List<Job> GetAllJobs()
         {
-            List<Job> contactList = new List<Job>();
+            List<Job> jobList = new List<Job>();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT * " +
-                "FROM Contact " +
-                "ORDER BY ContactID";
+                "FROM Job " +
+                "ORDER BY JobID";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int conContactIDOrd = readur.GetOrdinal("ContactID");
-                int conContactFirstNameOrd = readur.GetOrdinal("ContactFirstName");
-                int conContactLastNameOrd = readur.GetOrdinal("CoontactLastName");
-                int conContactTitleOrd = readur.GetOrdinal("ContactTitle");
-                int conContactDepartmentOrd = readur.GetOrdinal("ContactDepartment");
-                int conContactAddressOrd = readur.GetOrdinal("ContactAddress");
-                int conContactCityOrd = readur.GetOrdinal("ContactCity");
-                int conContactStateOrd = readur.GetOrdinal("ContactState");
-                int conContactZipCodeOrd = readur.GetOrdinal("ContactZipCode");
-                int conContactPhoneOrd = readur.GetOrdinal("ContactPhone");
-                int conContactMobileOrd = readur.GetOrdinal("ContactMobile");
-                int conContactFaxOrd = readur.GetOrdinal("ContactFax");
-                int conContactEmailOrd = readur.GetOrdinal("ContactEmail");
-                int conContactContactedViaOrd = readur.GetOrdinal("ContactContactedVia");
-                int conContactNotesOrd = readur.GetOrdinal("ContactNotes");
+                int jobJobIDOrd = readur.GetOrdinal("JobID");
+                int jobJobPositionOrd = readur.GetOrdinal("JobPosition");
+                int jobJobAppliedOrd = readur.GetOrdinal("JobApplied");
+                int jobJobPayOrd = readur.GetOrdinal("JobPay");
+                int jobJobContactIDOrd = readur.GetOrdinal("JobContactID");
+                int jobJobCompanyIDOrd = readur.GetOrdinal("JobCompanyID");
+                int jobJobNotesOrd = readur.GetOrdinal("JobNotes");
 
                 while (readur.Read())
                 {
-                    Contact actRowInfo = new Contact();
-                    actRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
-                    actRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
-                    actRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
-                    actRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
-                    actRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
-                    actRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
-                    actRowInfo.ContactCity = readur.GetString(conContactCityOrd);
-                    actRowInfo.ContactState = readur.GetString(conContactStateOrd);
-                    actRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
-                    actRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
-                    actRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
-                    actRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
-                    actRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
-                    comRowInfo.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
-                    comRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
-                    contactList.Add(actRowInfo);
+                    Job jobRowInfo = new Job();
+                    jobRowInfo.JobID = readur.GetInt32(jobJobIDOrd);
+                    jobRowInfo.JobPosition = readur.GetString(jobJobPositionOrd);
+                    jobRowInfo.JobApplied = readur.GetDateTime(jobJobAppliedOrd);
+                    jobRowInfo.JobPay = readur.GetDecimal(jobJobPayOrd);
+                    jobRowInfo.JobContactID = readur.GetInt32(jobJobContactIDOrd);
+                    jobRowInfo.JobCompanyID = readur.GetInt32(jobJobCompanyIDOrd);
+                    jobRowInfo.JobNotes = readur.GetString(jobJobNotesOrd);
+                    jobList.Add(jobRowInfo);
                 }
                 readur.Close();
             }
@@ -73,7 +57,7 @@ namespace SharpERDAL
             {
                 conn.Close();
             }
-            return contactList;
+            return jobList;
         }
 
         /// <summary>
