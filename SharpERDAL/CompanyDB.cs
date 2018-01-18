@@ -8,7 +8,7 @@ using SharpERDAL;
 
 namespace SharpERDAL
 {
-    public class CompanyDB
+    public static class CompanyDB
     {
         /// <summary>
         /// This will provide a listing of all companies in the database

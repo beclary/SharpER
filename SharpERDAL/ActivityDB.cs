@@ -8,7 +8,7 @@ using SharpERDAL;
 
 namespace SharpERDAL
 {
-    public class ActivityDB
+    public static class ActivityDB
     {
         /// <summary>
         /// This will provide a listing of all the activities in the database

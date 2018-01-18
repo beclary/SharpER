@@ -8,7 +8,7 @@ using SharpERDAL;
 
 namespace SharpERDAL
 {
-    public class JobDB
+    public static class JobDB
     {
         /// <summary>
         /// This will provide a listing of all Jobs that are available in the database

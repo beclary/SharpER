@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SharpERBLL;
 using System.Data.SqlClient;
 using SharpERBLL;
 
@@ -24,7 +23,12 @@ namespace SharpERDAL
         /// <returns>A SqlConnection object</returns>
         public static SqlConnection GetConnection()
         {
-            throw new System.NotImplementedException();
+            SqlConnectionStringBuilder bldr = new SqlConnectionStringBuilder();
+            bldr.DataSource = "localhost\\SQLExpress2014";
+            bldr.InitialCatalog = "SharpER";
+            bldr.IntegratedSecurity = true;
+            SqlConnection conn = new SqlConnection(bldr.ConnectionString);
+            return conn;
         }
     }
 }
