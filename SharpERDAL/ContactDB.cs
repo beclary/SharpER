@@ -14,7 +14,7 @@ namespace SharpERDAL
         /// <summary>
         /// This will provide a listing of all the customers in the database
         /// </summary>
-        /// <returns>a listing of all the customers using a list tee</returns>
+        /// <returns>a listing of all the customers using a list T</returns>
         public static List<Contact> GetAllContacts()
         {
             List<Contact> contactList = new List<Contact>();
@@ -31,7 +31,7 @@ namespace SharpERDAL
                 SqlDataReader readur = selectCmd.ExecuteReader();
                 int conContactIDOrd = readur.GetOrdinal("ContactID");
                 int conContactFirstNameOrd = readur.GetOrdinal("ContactFirstName");
-                int conContactLastNameOrd = readur.GetOrdinal("CoontactLastName");
+                int conContactLastNameOrd = readur.GetOrdinal("ContactLastName");
                 int conContactTitleOrd = readur.GetOrdinal("ContactTitle");
                 int conContactDepartmentOrd = readur.GetOrdinal("ContactDepartment");
                 int conContactAddressOrd = readur.GetOrdinal("ContactAddress");
