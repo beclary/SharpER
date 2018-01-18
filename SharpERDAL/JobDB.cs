@@ -15,7 +15,7 @@ namespace SharpERDAL
         /// </summary>
         public static List<Job> GetAllJobs()
         {
-            List<Contact> contactList = new List<Contact>();
+            List<Job> contactList = new List<Job>();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT * " +
@@ -45,23 +45,23 @@ namespace SharpERDAL
 
                 while (readur.Read())
                 {
-                    Contact comRowInfo = new Contact();
-                    comRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
-                    comRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
-                    comRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
-                    comRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
-                    comRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
-                    comRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
-                    comRowInfo.ContactCity = readur.GetString(conContactCityOrd);
-                    comRowInfo.ContactState = readur.GetString(conContactStateOrd);
-                    comRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
-                    comRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
-                    comRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
-                    comRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
-                    comRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
+                    Contact actRowInfo = new Contact();
+                    actRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
+                    actRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
+                    actRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
+                    actRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
+                    actRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
+                    actRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
+                    actRowInfo.ContactCity = readur.GetString(conContactCityOrd);
+                    actRowInfo.ContactState = readur.GetString(conContactStateOrd);
+                    actRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
+                    actRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
+                    actRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
+                    actRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
+                    actRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
                     comRowInfo.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
                     comRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
-                    contactList.Add(comRowInfo);
+                    contactList.Add(actRowInfo);
                 }
                 readur.Close();
             }
