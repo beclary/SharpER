@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
-    class Company
+    public class Company
     {
         // DATA MEMBER DECLARATIONS
         private int companyID; // Primary key

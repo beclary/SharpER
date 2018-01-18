@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
-    class Activity
+    public class Activity
     {
         // DATA MEMBER DECLARATIONS
         private int activityID; // Primary key

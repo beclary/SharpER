@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace SharpERBLL    // This is the namespace for all of the BLL classes
 {
-    class Contact
+    public class Contact
     {
         // DATA MEMBER DECLARATIONS
         private int contactID; // Primary key
