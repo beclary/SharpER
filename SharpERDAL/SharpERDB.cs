@@ -10,7 +10,7 @@ using SharpERBLL;
 
 namespace SharpERDAL
 {
-    public class SharpERDB
+    public static class SharpERDB
     {
         /// <summary>
         /// This is the method that opens the connection
