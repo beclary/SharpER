@@ -547,6 +547,12 @@
             // 
             this.cmbContactedVia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbContactedVia.FormattingEnabled = true;
+            this.cmbContactedVia.Items.AddRange(new object[] {
+            "Phone",
+            "Text",
+            "Email",
+            "Person",
+            "Letter"});
             this.cmbContactedVia.Location = new System.Drawing.Point(124, 398);
             this.cmbContactedVia.Name = "cmbContactedVia";
             this.cmbContactedVia.Size = new System.Drawing.Size(128, 26);
