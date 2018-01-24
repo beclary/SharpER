@@ -38,7 +38,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tslblCustomerID = new System.Windows.Forms.ToolStripLabel();
+            this.tslblContactID = new System.Windows.Forms.ToolStripLabel();
             this.tstbCustomerIDField = new System.Windows.Forms.ToolStripTextBox();
             this.lblContactID = new System.Windows.Forms.Label();
             this.lblContactFax = new System.Windows.Forms.Label();
@@ -157,7 +157,7 @@
             this.toolStrip1.BackColor = System.Drawing.Color.LightGray;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslblCustomerID,
+            this.tslblContactID,
             this.tstbCustomerIDField,
             this.tsbtnSearchCustomerID});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
@@ -166,15 +166,15 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tslblCustomerID
+            // tslblContactID
             // 
-            this.tslblCustomerID.BackColor = System.Drawing.Color.LightBlue;
-            this.tslblCustomerID.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tslblCustomerID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tslblCustomerID.ForeColor = System.Drawing.Color.DarkRed;
-            this.tslblCustomerID.Name = "tslblCustomerID";
-            this.tslblCustomerID.Size = new System.Drawing.Size(87, 22);
-            this.tslblCustomerID.Text = "Customer ID:";
+            this.tslblContactID.BackColor = System.Drawing.Color.LightBlue;
+            this.tslblContactID.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tslblContactID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tslblContactID.ForeColor = System.Drawing.Color.DarkRed;
+            this.tslblContactID.Name = "tslblContactID";
+            this.tslblContactID.Size = new System.Drawing.Size(75, 22);
+            this.tslblContactID.Text = "Contact ID:";
             // 
             // tstbCustomerIDField
             // 
@@ -613,7 +613,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkKhaki;
+            this.BackColor = System.Drawing.Color.LightPink;
             this.ClientSize = new System.Drawing.Size(732, 535);
             this.Controls.Add(this.cmbContactContactedVia);
             this.Controls.Add(this.cmbContactState);
@@ -649,7 +649,7 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmContact";
-            this.Text = "Contacts";
+            this.Text = "Contact";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -678,7 +678,7 @@
         private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel tslblCustomerID;
+        private System.Windows.Forms.ToolStripLabel tslblContactID;
         private System.Windows.Forms.ToolStripButton tsbtnContactExit;
         private System.Windows.Forms.ToolStripTextBox tstbCustomerIDField;
         private System.Windows.Forms.ToolStripButton tsbtnSearchCustomerID;

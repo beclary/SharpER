@@ -104,7 +104,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(751, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(732, 27);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -229,7 +229,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(751, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(732, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -322,7 +322,7 @@
             // 
             this.lblCompanyInfoTitle.AutoSize = true;
             this.lblCompanyInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.Green;
             this.lblCompanyInfoTitle.Location = new System.Drawing.Point(9, 57);
             this.lblCompanyInfoTitle.Name = "lblCompanyInfoTitle";
             this.lblCompanyInfoTitle.Size = new System.Drawing.Size(291, 43);
@@ -521,8 +521,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(751, 531);
+            this.BackColor = System.Drawing.Color.PaleGreen;
+            this.ClientSize = new System.Drawing.Size(732, 535);
             this.Controls.Add(this.cmbCompanyState);
             this.Controls.Add(this.lblCompanyInfoTitle);
             this.Controls.Add(this.txtCompanyZipCode);
@@ -549,7 +549,7 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCompany";
-            this.Text = "frmCompany";
+            this.Text = "Company";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
