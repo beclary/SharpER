@@ -46,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +94,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\27-8955738_uploadsmember908120yourshot-908120-8955738jpg_2zlrdv36hw2jm653u6ulsrfgo3p3eflutfvvbpyjwjhzlmh4iziq_9144x5715.adapt.1190.1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\09-9226610_uploadsmember665562yourshot-665562-9226610jpg_igdjhxksrjifxjzu4rgbsw37bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000.adapt.1190.1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baby brucey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grand-staircase__large.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %2810%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screen-shot-2013-09-06-at-11.06.52-am_850_563__large.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1ec9f497c00f37d5eb5d67e58f246e4c_Camping-Near-The-Lake-Background-Wallpaper-940-464-c.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

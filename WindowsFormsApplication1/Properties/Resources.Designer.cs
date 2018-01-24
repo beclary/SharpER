@@ -63,6 +63,28 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _09_9226610_uploadsmember665562yourshot_665562_9226610jpg_igdjhxksrjifxjzu4rgbsw37bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000_adapt_1190_1 {
+            get {
+                object obj = ResourceManager.GetObject("09-9226610_uploadsmember665562yourshot-665562-9226610jpg_igdjhxksrjifxjzu4rgbsw37" +
+                        "bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000.adapt.1190.1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1ec9f497c00f37d5eb5d67e58f246e4c_Camping_Near_The_Lake_Background_Wallpaper_940_464_c {
+            get {
+                object obj = ResourceManager.GetObject("1ec9f497c00f37d5eb5d67e58f246e4c_Camping-Near-The-Lake-Background-Wallpaper-940-4" +
+                        "64-c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _27_8955738_uploadsmember908120yourshot_908120_8955738jpg_2zlrdv36hw2jm653u6ulsrfgo3p3eflutfvvbpyjwjhzlmh4iziq_9144x5715_adapt_1190_1 {
             get {
                 object obj = ResourceManager.GetObject("27-8955738_uploadsmember908120yourshot-908120-8955738jpg_2zlrdv36hw2jm653u6ulsrfg" +
@@ -74,9 +96,49 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baby_brucey {
+            get {
+                object obj = ResourceManager.GetObject("baby brucey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Biltmore_Estate {
             get {
                 object obj = ResourceManager.GetObject("Biltmore_Estate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grand_staircase__large {
+            get {
+                object obj = ResourceManager.GetObject("grand-staircase__large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images__10_ {
+            get {
+                object obj = ResourceManager.GetObject("images (10)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap screen_shot_2013_09_06_at_11_06_52_am_850_563__large {
+            get {
+                object obj = ResourceManager.GetObject("screen-shot-2013-09-06-at-11.06.52-am_850_563__large", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
