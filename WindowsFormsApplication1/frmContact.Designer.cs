@@ -68,17 +68,17 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
-            this.txtContactedVia = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtState = new System.Windows.Forms.TextBox();
             this.txtZipCode = new System.Windows.Forms.TextBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbState = new System.Windows.Forms.ComboBox();
+            this.cmbContactedVia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -438,8 +438,10 @@
             // 
             // txtContactID
             // 
+            this.txtContactID.BackColor = System.Drawing.Color.LightGray;
             this.txtContactID.Location = new System.Drawing.Point(478, 110);
             this.txtContactID.Name = "txtContactID";
+            this.txtContactID.ReadOnly = true;
             this.txtContactID.Size = new System.Drawing.Size(100, 26);
             this.txtContactID.TabIndex = 17;
             // 
@@ -463,13 +465,6 @@
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(128, 26);
             this.txtMobile.TabIndex = 24;
-            // 
-            // txtContactedVia
-            // 
-            this.txtContactedVia.Location = new System.Drawing.Point(124, 398);
-            this.txtContactedVia.Name = "txtContactedVia";
-            this.txtContactedVia.Size = new System.Drawing.Size(261, 26);
-            this.txtContactedVia.TabIndex = 27;
             // 
             // txtEmail
             // 
@@ -513,13 +508,6 @@
             this.txtName.Size = new System.Drawing.Size(261, 26);
             this.txtName.TabIndex = 28;
             // 
-            // txtState
-            // 
-            this.txtState.Location = new System.Drawing.Point(341, 238);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(46, 26);
-            this.txtState.TabIndex = 35;
-            // 
             // txtZipCode
             // 
             this.txtZipCode.Location = new System.Drawing.Point(466, 238);
@@ -540,11 +528,29 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(12, 52);
+            this.label1.Location = new System.Drawing.Point(12, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 43);
             this.label1.TabIndex = 36;
             this.label1.Text = "Contact Information";
+            // 
+            // cmbState
+            // 
+            this.cmbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(342, 237);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(45, 26);
+            this.cmbState.TabIndex = 37;
+            // 
+            // cmbContactedVia
+            // 
+            this.cmbContactedVia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbContactedVia.FormattingEnabled = true;
+            this.cmbContactedVia.Location = new System.Drawing.Point(124, 398);
+            this.cmbContactedVia.Name = "cmbContactedVia";
+            this.cmbContactedVia.Size = new System.Drawing.Size(128, 26);
+            this.cmbContactedVia.TabIndex = 38;
             // 
             // frmContact
             // 
@@ -552,8 +558,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.ClientSize = new System.Drawing.Size(732, 535);
+            this.Controls.Add(this.cmbContactedVia);
+            this.Controls.Add(this.cmbState);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtZipCode);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.txtCity);
@@ -561,7 +568,6 @@
             this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtContactedVia);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtFax);
             this.Controls.Add(this.txtMobile);
@@ -637,16 +643,16 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.TextBox txtMobile;
-        private System.Windows.Forms.TextBox txtContactedVia;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtDepartment;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtState;
         private System.Windows.Forms.TextBox txtZipCode;
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbState;
+        private System.Windows.Forms.ComboBox cmbContactedVia;
     }
 }
