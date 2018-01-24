@@ -78,7 +78,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnContactExit = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -104,7 +104,7 @@
             this.saveToolStripButton,
             this.printToolStripButton,
             this.toolStripSeparator,
-            this.toolStripButton1});
+            this.tsbtnContactExit});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -439,6 +439,57 @@
             // 
             this.cmbContactState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbContactState.FormattingEnabled = true;
+            this.cmbContactState.Items.AddRange(new object[] {
+            "Alabama",
+            "Alaska",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "Florida",
+            "Georgia",
+            "Hawaii",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Maine",
+            "Maryland",
+            "Massachusetts",
+            "Michigan",
+            "Minnesota",
+            "Mississippi",
+            "Missouri",
+            "Montana",
+            "Nebraska",
+            "Nevada",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "New York",
+            "North Carolina",
+            "North Dakota",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Pennsylvania",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Vermont",
+            "Virginia",
+            "Washington",
+            "West Virginia",
+            "Wisconsin",
+            "Wyoming"});
             this.cmbContactState.Location = new System.Drawing.Point(342, 237);
             this.cmbContactState.Name = "cmbContactState";
             this.cmbContactState.Size = new System.Drawing.Size(45, 26);
@@ -546,17 +597,17 @@
             this.printToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.printToolStripButton.Text = "&Print";
             // 
-            // toolStripButton1
+            // tsbtnContactExit
             // 
-            this.toolStripButton1.BackColor = System.Drawing.Color.Cyan;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.ForeColor = System.Drawing.Color.Red;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(39, 24);
-            this.toolStripButton1.Text = "Exit";
+            this.tsbtnContactExit.BackColor = System.Drawing.Color.Cyan;
+            this.tsbtnContactExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnContactExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbtnContactExit.ForeColor = System.Drawing.Color.Red;
+            this.tsbtnContactExit.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnContactExit.Image")));
+            this.tsbtnContactExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnContactExit.Name = "tsbtnContactExit";
+            this.tsbtnContactExit.Size = new System.Drawing.Size(39, 24);
+            this.tsbtnContactExit.Text = "Exit";
             // 
             // frmContact
             // 
@@ -628,7 +679,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel tslblCustomerID;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsbtnContactExit;
         private System.Windows.Forms.ToolStripTextBox tstbCustomerIDField;
         private System.Windows.Forms.ToolStripButton tsbtnSearchCustomerID;
         private System.Windows.Forms.Label lblContactID;

@@ -49,27 +49,28 @@
             this.tslblCompanyIDField = new System.Windows.Forms.ToolStripLabel();
             this.tstbCompanyID = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.cmbState = new System.Windows.Forms.ComboBox();
+            this.cmbCompanyState = new System.Windows.Forms.ComboBox();
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
-            this.txtZipCode = new System.Windows.Forms.TextBox();
-            this.txtNotes = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtCompanyZipCode = new System.Windows.Forms.TextBox();
+            this.txtCompanyNotes = new System.Windows.Forms.TextBox();
+            this.txtCompanyCity = new System.Windows.Forms.TextBox();
             this.txtCompanyAddress = new System.Windows.Forms.TextBox();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtFax = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtCompanyWebsite = new System.Windows.Forms.TextBox();
+            this.txtCompanyFax = new System.Windows.Forms.TextBox();
+            this.txtCompanyPhone = new System.Windows.Forms.TextBox();
             this.txtCompanyID = new System.Windows.Forms.TextBox();
-            this.lblNotes = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblMobile = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblZipCode = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
+            this.lblCompanyNotes = new System.Windows.Forms.Label();
+            this.lblCompanyWebsite = new System.Windows.Forms.Label();
+            this.lblCompanyPhone = new System.Windows.Forms.Label();
+            this.lblCompanyZipCode = new System.Windows.Forms.Label();
+            this.lblCompanyState = new System.Windows.Forms.Label();
             this.lblCompanyCity = new System.Windows.Forms.Label();
+            this.lblCompanyAddress = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
+            this.lblCompanyFax = new System.Windows.Forms.Label();
             this.lblCompanyID = new System.Windows.Forms.Label();
+            this.tsbtnExit = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -94,7 +95,8 @@
             this.bindingNavigatorDeleteItem,
             this.saveToolStripButton,
             this.printToolStripButton,
-            this.toolStripSeparator});
+            this.toolStripSeparator,
+            this.tsbtnExit});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -102,14 +104,14 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(751, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(751, 27);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -123,19 +125,19 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -144,7 +146,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorDeleteItem
@@ -154,7 +156,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -163,7 +165,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -172,7 +174,7 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorMoveNextItem
@@ -181,7 +183,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -190,7 +192,7 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // saveToolStripButton
@@ -200,7 +202,7 @@
             this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.saveToolStripButton.Text = "&Save";
             // 
             // printToolStripButton
@@ -209,13 +211,13 @@
             this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.printToolStripButton.Size = new System.Drawing.Size(23, 24);
             this.printToolStripButton.Text = "&Print";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStrip1
             // 
@@ -225,7 +227,7 @@
             this.tslblCompanyIDField,
             this.tstbCompanyID,
             this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(751, 25);
             this.toolStrip1.TabIndex = 1;
@@ -256,47 +258,98 @@
             this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton1.Text = "Search";
             // 
-            // cmbState
+            // cmbCompanyState
             // 
-            this.cmbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(339, 173);
-            this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(45, 26);
-            this.cmbState.TabIndex = 66;
+            this.cmbCompanyState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCompanyState.FormattingEnabled = true;
+            this.cmbCompanyState.Items.AddRange(new object[] {
+            "Alabama",
+            "Alaska",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "Florida",
+            "Georgia",
+            "Hawaii",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Maine",
+            "Maryland",
+            "Massachusetts",
+            "Michigan",
+            "Minnesota",
+            "Mississippi",
+            "Missouri",
+            "Montana",
+            "Nebraska",
+            "Nevada",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "New York",
+            "North Carolina",
+            "North Dakota",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Pennsylvania",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Vermont",
+            "Virginia",
+            "Washington",
+            "West Virginia",
+            "Wisconsin",
+            "Wyoming"});
+            this.cmbCompanyState.Location = new System.Drawing.Point(339, 173);
+            this.cmbCompanyState.Name = "cmbCompanyState";
+            this.cmbCompanyState.Size = new System.Drawing.Size(45, 26);
+            this.cmbCompanyState.TabIndex = 66;
             // 
             // lblCompanyInfoTitle
             // 
             this.lblCompanyInfoTitle.AutoSize = true;
             this.lblCompanyInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.Crimson;
+            this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblCompanyInfoTitle.Location = new System.Drawing.Point(9, 57);
             this.lblCompanyInfoTitle.Name = "lblCompanyInfoTitle";
-            this.lblCompanyInfoTitle.Size = new System.Drawing.Size(274, 43);
+            this.lblCompanyInfoTitle.Size = new System.Drawing.Size(291, 43);
             this.lblCompanyInfoTitle.TabIndex = 65;
-            this.lblCompanyInfoTitle.Text = "Contact Information";
+            this.lblCompanyInfoTitle.Text = "Company Information";
             // 
-            // txtZipCode
+            // txtCompanyZipCode
             // 
-            this.txtZipCode.Location = new System.Drawing.Point(463, 174);
-            this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(112, 26);
-            this.txtZipCode.TabIndex = 64;
+            this.txtCompanyZipCode.Location = new System.Drawing.Point(463, 174);
+            this.txtCompanyZipCode.Name = "txtCompanyZipCode";
+            this.txtCompanyZipCode.Size = new System.Drawing.Size(112, 26);
+            this.txtCompanyZipCode.TabIndex = 64;
             // 
-            // txtNotes
+            // txtCompanyNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(121, 302);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(454, 78);
-            this.txtNotes.TabIndex = 63;
+            this.txtCompanyNotes.Location = new System.Drawing.Point(121, 302);
+            this.txtCompanyNotes.Multiline = true;
+            this.txtCompanyNotes.Name = "txtCompanyNotes";
+            this.txtCompanyNotes.Size = new System.Drawing.Size(454, 78);
+            this.txtCompanyNotes.TabIndex = 63;
             // 
-            // txtCity
+            // txtCompanyCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(121, 174);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(161, 26);
-            this.txtCity.TabIndex = 62;
+            this.txtCompanyCity.Location = new System.Drawing.Point(121, 174);
+            this.txtCompanyCity.Name = "txtCompanyCity";
+            this.txtCompanyCity.Size = new System.Drawing.Size(161, 26);
+            this.txtCompanyCity.TabIndex = 62;
             // 
             // txtCompanyAddress
             // 
@@ -312,26 +365,26 @@
             this.txtCompanyName.Size = new System.Drawing.Size(261, 26);
             this.txtCompanyName.TabIndex = 58;
             // 
-            // txtEmail
+            // txtCompanyWebsite
             // 
-            this.txtEmail.Location = new System.Drawing.Point(121, 270);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(261, 26);
-            this.txtEmail.TabIndex = 57;
+            this.txtCompanyWebsite.Location = new System.Drawing.Point(121, 270);
+            this.txtCompanyWebsite.Name = "txtCompanyWebsite";
+            this.txtCompanyWebsite.Size = new System.Drawing.Size(261, 26);
+            this.txtCompanyWebsite.TabIndex = 57;
             // 
-            // txtFax
+            // txtCompanyFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(121, 238);
-            this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(128, 26);
-            this.txtFax.TabIndex = 56;
+            this.txtCompanyFax.Location = new System.Drawing.Point(121, 238);
+            this.txtCompanyFax.Name = "txtCompanyFax";
+            this.txtCompanyFax.Size = new System.Drawing.Size(128, 26);
+            this.txtCompanyFax.TabIndex = 56;
             // 
-            // txtPhone
+            // txtCompanyPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(121, 206);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(128, 26);
-            this.txtPhone.TabIndex = 54;
+            this.txtCompanyPhone.Location = new System.Drawing.Point(121, 206);
+            this.txtCompanyPhone.Name = "txtCompanyPhone";
+            this.txtCompanyPhone.Size = new System.Drawing.Size(128, 26);
+            this.txtCompanyPhone.TabIndex = 54;
             // 
             // txtCompanyID
             // 
@@ -342,82 +395,82 @@
             this.txtCompanyID.Size = new System.Drawing.Size(100, 26);
             this.txtCompanyID.TabIndex = 53;
             // 
-            // lblNotes
+            // lblCompanyNotes
             // 
-            this.lblNotes.AutoSize = true;
-            this.lblNotes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblNotes.Location = new System.Drawing.Point(64, 304);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(52, 19);
-            this.lblNotes.TabIndex = 52;
-            this.lblNotes.Text = "Notes:";
+            this.lblCompanyNotes.AutoSize = true;
+            this.lblCompanyNotes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyNotes.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyNotes.Location = new System.Drawing.Point(64, 304);
+            this.lblCompanyNotes.Name = "lblCompanyNotes";
+            this.lblCompanyNotes.Size = new System.Drawing.Size(52, 19);
+            this.lblCompanyNotes.TabIndex = 52;
+            this.lblCompanyNotes.Text = "Notes:";
             // 
-            // lblEmail
+            // lblCompanyWebsite
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblEmail.Location = new System.Drawing.Point(49, 272);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(67, 19);
-            this.lblEmail.TabIndex = 50;
-            this.lblEmail.Text = "Website:";
+            this.lblCompanyWebsite.AutoSize = true;
+            this.lblCompanyWebsite.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyWebsite.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyWebsite.Location = new System.Drawing.Point(49, 272);
+            this.lblCompanyWebsite.Name = "lblCompanyWebsite";
+            this.lblCompanyWebsite.Size = new System.Drawing.Size(67, 19);
+            this.lblCompanyWebsite.TabIndex = 50;
+            this.lblCompanyWebsite.Text = "Website:";
             // 
-            // lblMobile
+            // lblCompanyPhone
             // 
-            this.lblMobile.AutoSize = true;
-            this.lblMobile.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMobile.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblMobile.Location = new System.Drawing.Point(65, 208);
-            this.lblMobile.Name = "lblMobile";
-            this.lblMobile.Size = new System.Drawing.Size(51, 19);
-            this.lblMobile.TabIndex = 48;
-            this.lblMobile.Text = "Phone:";
+            this.lblCompanyPhone.AutoSize = true;
+            this.lblCompanyPhone.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyPhone.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyPhone.Location = new System.Drawing.Point(65, 208);
+            this.lblCompanyPhone.Name = "lblCompanyPhone";
+            this.lblCompanyPhone.Size = new System.Drawing.Size(51, 19);
+            this.lblCompanyPhone.TabIndex = 48;
+            this.lblCompanyPhone.Text = "Phone:";
             // 
-            // lblPhone
+            // lblCompanyZipCode
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblPhone.Location = new System.Drawing.Point(390, 176);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(71, 19);
-            this.lblPhone.TabIndex = 47;
-            this.lblPhone.Text = "Zip Code:";
+            this.lblCompanyZipCode.AutoSize = true;
+            this.lblCompanyZipCode.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyZipCode.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyZipCode.Location = new System.Drawing.Point(390, 176);
+            this.lblCompanyZipCode.Name = "lblCompanyZipCode";
+            this.lblCompanyZipCode.Size = new System.Drawing.Size(71, 19);
+            this.lblCompanyZipCode.TabIndex = 47;
+            this.lblCompanyZipCode.Text = "Zip Code:";
             // 
-            // lblZipCode
+            // lblCompanyState
             // 
-            this.lblZipCode.AutoSize = true;
-            this.lblZipCode.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZipCode.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblZipCode.Location = new System.Drawing.Point(288, 176);
-            this.lblZipCode.Name = "lblZipCode";
-            this.lblZipCode.Size = new System.Drawing.Size(50, 19);
-            this.lblZipCode.TabIndex = 46;
-            this.lblZipCode.Text = "State:";
-            // 
-            // lblState
-            // 
-            this.lblState.AutoSize = true;
-            this.lblState.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblState.Location = new System.Drawing.Point(76, 176);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(40, 19);
-            this.lblState.TabIndex = 45;
-            this.lblState.Text = "City:";
+            this.lblCompanyState.AutoSize = true;
+            this.lblCompanyState.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyState.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyState.Location = new System.Drawing.Point(288, 176);
+            this.lblCompanyState.Name = "lblCompanyState";
+            this.lblCompanyState.Size = new System.Drawing.Size(50, 19);
+            this.lblCompanyState.TabIndex = 46;
+            this.lblCompanyState.Text = "State:";
             // 
             // lblCompanyCity
             // 
             this.lblCompanyCity.AutoSize = true;
             this.lblCompanyCity.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompanyCity.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblCompanyCity.Location = new System.Drawing.Point(50, 144);
+            this.lblCompanyCity.Location = new System.Drawing.Point(76, 176);
             this.lblCompanyCity.Name = "lblCompanyCity";
-            this.lblCompanyCity.Size = new System.Drawing.Size(66, 19);
-            this.lblCompanyCity.TabIndex = 44;
-            this.lblCompanyCity.Text = "Address:";
+            this.lblCompanyCity.Size = new System.Drawing.Size(40, 19);
+            this.lblCompanyCity.TabIndex = 45;
+            this.lblCompanyCity.Text = "City:";
+            // 
+            // lblCompanyAddress
+            // 
+            this.lblCompanyAddress.AutoSize = true;
+            this.lblCompanyAddress.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyAddress.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyAddress.Location = new System.Drawing.Point(50, 144);
+            this.lblCompanyAddress.Name = "lblCompanyAddress";
+            this.lblCompanyAddress.Size = new System.Drawing.Size(66, 19);
+            this.lblCompanyAddress.TabIndex = 44;
+            this.lblCompanyAddress.Text = "Address:";
             // 
             // lblCompanyName
             // 
@@ -430,16 +483,16 @@
             this.lblCompanyName.TabIndex = 41;
             this.lblCompanyName.Text = "Name:";
             // 
-            // lblName
+            // lblCompanyFax
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblName.Location = new System.Drawing.Point(78, 240);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(38, 19);
-            this.lblName.TabIndex = 40;
-            this.lblName.Text = "Fax:";
+            this.lblCompanyFax.AutoSize = true;
+            this.lblCompanyFax.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyFax.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblCompanyFax.Location = new System.Drawing.Point(78, 240);
+            this.lblCompanyFax.Name = "lblCompanyFax";
+            this.lblCompanyFax.Size = new System.Drawing.Size(38, 19);
+            this.lblCompanyFax.TabIndex = 40;
+            this.lblCompanyFax.Text = "Fax:";
             // 
             // lblCompanyID
             // 
@@ -448,36 +501,48 @@
             this.lblCompanyID.ForeColor = System.Drawing.Color.DarkBlue;
             this.lblCompanyID.Location = new System.Drawing.Point(388, 113);
             this.lblCompanyID.Name = "lblCompanyID";
-            this.lblCompanyID.Size = new System.Drawing.Size(85, 19);
+            this.lblCompanyID.Size = new System.Drawing.Size(90, 19);
             this.lblCompanyID.TabIndex = 39;
-            this.lblCompanyID.Text = "Contact ID:";
+            this.lblCompanyID.Text = "Company ID:";
+            // 
+            // tsbtnExit
+            // 
+            this.tsbtnExit.BackColor = System.Drawing.Color.Cyan;
+            this.tsbtnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbtnExit.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsbtnExit.ForeColor = System.Drawing.Color.Red;
+            this.tsbtnExit.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnExit.Image")));
+            this.tsbtnExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnExit.Name = "tsbtnExit";
+            this.tsbtnExit.Size = new System.Drawing.Size(39, 24);
+            this.tsbtnExit.Text = "Exit";
             // 
             // frmCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkKhaki;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(751, 531);
-            this.Controls.Add(this.cmbState);
+            this.Controls.Add(this.cmbCompanyState);
             this.Controls.Add(this.lblCompanyInfoTitle);
-            this.Controls.Add(this.txtZipCode);
-            this.Controls.Add(this.txtNotes);
-            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtCompanyZipCode);
+            this.Controls.Add(this.txtCompanyNotes);
+            this.Controls.Add(this.txtCompanyCity);
             this.Controls.Add(this.txtCompanyAddress);
             this.Controls.Add(this.txtCompanyName);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtFax);
-            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtCompanyWebsite);
+            this.Controls.Add(this.txtCompanyFax);
+            this.Controls.Add(this.txtCompanyPhone);
             this.Controls.Add(this.txtCompanyID);
-            this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblMobile);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.lblZipCode);
-            this.Controls.Add(this.lblState);
+            this.Controls.Add(this.lblCompanyNotes);
+            this.Controls.Add(this.lblCompanyWebsite);
+            this.Controls.Add(this.lblCompanyPhone);
+            this.Controls.Add(this.lblCompanyZipCode);
+            this.Controls.Add(this.lblCompanyState);
             this.Controls.Add(this.lblCompanyCity);
+            this.Controls.Add(this.lblCompanyAddress);
             this.Controls.Add(this.lblCompanyName);
-            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblCompanyFax);
             this.Controls.Add(this.lblCompanyID);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.bindingNavigator1);
@@ -516,26 +581,27 @@
         private System.Windows.Forms.ToolStripLabel tslblCompanyIDField;
         private System.Windows.Forms.ToolStripTextBox tstbCompanyID;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ComboBox cmbState;
+        private System.Windows.Forms.ComboBox cmbCompanyState;
         private System.Windows.Forms.Label lblCompanyInfoTitle;
-        private System.Windows.Forms.TextBox txtZipCode;
-        private System.Windows.Forms.TextBox txtNotes;
-        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtCompanyZipCode;
+        private System.Windows.Forms.TextBox txtCompanyNotes;
+        private System.Windows.Forms.TextBox txtCompanyCity;
         private System.Windows.Forms.TextBox txtCompanyAddress;
         private System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtFax;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtCompanyWebsite;
+        private System.Windows.Forms.TextBox txtCompanyFax;
+        private System.Windows.Forms.TextBox txtCompanyPhone;
         private System.Windows.Forms.TextBox txtCompanyID;
-        private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblMobile;
-        private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Label lblZipCode;
-        private System.Windows.Forms.Label lblState;
+        private System.Windows.Forms.Label lblCompanyNotes;
+        private System.Windows.Forms.Label lblCompanyWebsite;
+        private System.Windows.Forms.Label lblCompanyPhone;
+        private System.Windows.Forms.Label lblCompanyZipCode;
+        private System.Windows.Forms.Label lblCompanyState;
         private System.Windows.Forms.Label lblCompanyCity;
+        private System.Windows.Forms.Label lblCompanyAddress;
         private System.Windows.Forms.Label lblCompanyName;
-        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblCompanyFax;
         private System.Windows.Forms.Label lblCompanyID;
+        private System.Windows.Forms.ToolStripButton tsbtnExit;
     }
 }
