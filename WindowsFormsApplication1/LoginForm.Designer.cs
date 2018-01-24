@@ -101,7 +101,6 @@
             this.lblUsername.Size = new System.Drawing.Size(135, 13);
             this.lblUsername.TabIndex = 2;
             this.lblUsername.Text = "Username ( your email ):";
-            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // picLoginScreenImage
             // 
