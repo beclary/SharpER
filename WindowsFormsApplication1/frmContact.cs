@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmLoginScreen : Form
+    public partial class frmContact : Form
     {
-        public frmLoginScreen()
+        public frmContact()
         {
             InitializeComponent();
         }

@@ -385,7 +385,7 @@
             this.btnJob.Text = "Jobs";
             this.btnJob.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -401,7 +401,7 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "SharpER User Interface - MAIN PAGE";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
