@@ -64,6 +64,21 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblContactedVia = new System.Windows.Forms.Label();
             this.lblNotes = new System.Windows.Forms.Label();
+            this.txtContactID = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
+            this.txtMobile = new System.Windows.Forms.TextBox();
+            this.txtContactedVia = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtZipCode = new System.Windows.Forms.TextBox();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -97,7 +112,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(604, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(732, 27);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -234,7 +249,7 @@
             this.tsbtnSearchCustomerID});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(604, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(732, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -271,7 +286,7 @@
             this.lblContactID.AutoSize = true;
             this.lblContactID.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactID.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactID.Location = new System.Drawing.Point(387, 105);
+            this.lblContactID.Location = new System.Drawing.Point(391, 113);
             this.lblContactID.Name = "lblContactID";
             this.lblContactID.Size = new System.Drawing.Size(85, 19);
             this.lblContactID.TabIndex = 3;
@@ -282,7 +297,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblName.Location = new System.Drawing.Point(14, 273);
+            this.lblName.Location = new System.Drawing.Point(81, 336);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(38, 19);
             this.lblName.TabIndex = 4;
@@ -293,7 +308,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblTitle.Location = new System.Drawing.Point(14, 105);
+            this.lblTitle.Location = new System.Drawing.Point(69, 112);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(50, 19);
             this.lblTitle.TabIndex = 5;
@@ -304,7 +319,7 @@
             this.lblDepartment.AutoSize = true;
             this.lblDepartment.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartment.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblDepartment.Location = new System.Drawing.Point(14, 129);
+            this.lblDepartment.Location = new System.Drawing.Point(74, 144);
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(45, 19);
             this.lblDepartment.TabIndex = 6;
@@ -315,18 +330,18 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblAddress.Location = new System.Drawing.Point(14, 153);
+            this.lblAddress.Location = new System.Drawing.Point(32, 176);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(81, 19);
+            this.lblAddress.Size = new System.Drawing.Size(87, 19);
             this.lblAddress.TabIndex = 7;
-            this.lblAddress.Text = "Department";
+            this.lblAddress.Text = "Department:";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCity.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblCity.Location = new System.Drawing.Point(14, 177);
+            this.lblCity.Location = new System.Drawing.Point(53, 208);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(66, 19);
             this.lblCity.TabIndex = 8;
@@ -337,7 +352,7 @@
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblState.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblState.Location = new System.Drawing.Point(14, 201);
+            this.lblState.Location = new System.Drawing.Point(79, 240);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(40, 19);
             this.lblState.TabIndex = 9;
@@ -348,7 +363,7 @@
             this.lblZipCode.AutoSize = true;
             this.lblZipCode.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZipCode.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblZipCode.Location = new System.Drawing.Point(214, 201);
+            this.lblZipCode.Location = new System.Drawing.Point(291, 240);
             this.lblZipCode.Name = "lblZipCode";
             this.lblZipCode.Size = new System.Drawing.Size(50, 19);
             this.lblZipCode.TabIndex = 10;
@@ -359,7 +374,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblPhone.Location = new System.Drawing.Point(310, 201);
+            this.lblPhone.Location = new System.Drawing.Point(393, 240);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(71, 19);
             this.lblPhone.TabIndex = 11;
@@ -370,7 +385,7 @@
             this.lblMobile.AutoSize = true;
             this.lblMobile.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobile.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblMobile.Location = new System.Drawing.Point(14, 225);
+            this.lblMobile.Location = new System.Drawing.Point(68, 272);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(51, 19);
             this.lblMobile.TabIndex = 12;
@@ -382,7 +397,7 @@
             this.lblFax.AutoSize = true;
             this.lblFax.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFax.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblFax.Location = new System.Drawing.Point(14, 249);
+            this.lblFax.Location = new System.Drawing.Point(63, 304);
             this.lblFax.Name = "lblFax";
             this.lblFax.Size = new System.Drawing.Size(56, 19);
             this.lblFax.TabIndex = 13;
@@ -393,7 +408,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblEmail.Location = new System.Drawing.Point(14, 297);
+            this.lblEmail.Location = new System.Drawing.Point(71, 368);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(48, 19);
             this.lblEmail.TabIndex = 14;
@@ -404,7 +419,7 @@
             this.lblContactedVia.AutoSize = true;
             this.lblContactedVia.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactedVia.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactedVia.Location = new System.Drawing.Point(14, 321);
+            this.lblContactedVia.Location = new System.Drawing.Point(15, 400);
             this.lblContactedVia.Name = "lblContactedVia";
             this.lblContactedVia.Size = new System.Drawing.Size(104, 19);
             this.lblContactedVia.TabIndex = 15;
@@ -415,18 +430,143 @@
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotes.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblNotes.Location = new System.Drawing.Point(14, 345);
+            this.lblNotes.Location = new System.Drawing.Point(67, 432);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(52, 19);
             this.lblNotes.TabIndex = 16;
             this.lblNotes.Text = "Notes:";
+            // 
+            // txtContactID
+            // 
+            this.txtContactID.Location = new System.Drawing.Point(478, 110);
+            this.txtContactID.Name = "txtContactID";
+            this.txtContactID.Size = new System.Drawing.Size(100, 26);
+            this.txtContactID.TabIndex = 17;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(124, 270);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(128, 26);
+            this.txtPhone.TabIndex = 23;
+            // 
+            // txtFax
+            // 
+            this.txtFax.Location = new System.Drawing.Point(124, 334);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(128, 26);
+            this.txtFax.TabIndex = 25;
+            // 
+            // txtMobile
+            // 
+            this.txtMobile.Location = new System.Drawing.Point(124, 302);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(128, 26);
+            this.txtMobile.TabIndex = 24;
+            // 
+            // txtContactedVia
+            // 
+            this.txtContactedVia.Location = new System.Drawing.Point(124, 398);
+            this.txtContactedVia.Name = "txtContactedVia";
+            this.txtContactedVia.Size = new System.Drawing.Size(261, 26);
+            this.txtContactedVia.TabIndex = 27;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(124, 366);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(261, 26);
+            this.txtEmail.TabIndex = 26;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Location = new System.Drawing.Point(124, 238);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(161, 26);
+            this.txtCity.TabIndex = 32;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(124, 206);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(263, 26);
+            this.txtAddress.TabIndex = 31;
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(124, 174);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.Size = new System.Drawing.Size(261, 26);
+            this.txtDepartment.TabIndex = 30;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(124, 142);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(261, 26);
+            this.txtTitle.TabIndex = 29;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(124, 110);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(261, 26);
+            this.txtName.TabIndex = 28;
+            // 
+            // txtState
+            // 
+            this.txtState.Location = new System.Drawing.Point(341, 238);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(46, 26);
+            this.txtState.TabIndex = 35;
+            // 
+            // txtZipCode
+            // 
+            this.txtZipCode.Location = new System.Drawing.Point(466, 238);
+            this.txtZipCode.Name = "txtZipCode";
+            this.txtZipCode.Size = new System.Drawing.Size(112, 26);
+            this.txtZipCode.TabIndex = 34;
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Location = new System.Drawing.Point(124, 430);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(454, 78);
+            this.txtNotes.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Crimson;
+            this.label1.Location = new System.Drawing.Point(12, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(274, 43);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Contact Information";
             // 
             // frmContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
-            this.ClientSize = new System.Drawing.Size(604, 433);
+            this.ClientSize = new System.Drawing.Size(732, 535);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtState);
+            this.Controls.Add(this.txtZipCode);
+            this.Controls.Add(this.txtNotes);
+            this.Controls.Add(this.txtCity);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtDepartment);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtContactedVia);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtFax);
+            this.Controls.Add(this.txtMobile);
+            this.Controls.Add(this.txtPhone);
+            this.Controls.Add(this.txtContactID);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.lblContactedVia);
             this.Controls.Add(this.lblEmail);
@@ -493,5 +633,20 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblContactedVia;
         private System.Windows.Forms.Label lblNotes;
+        private System.Windows.Forms.TextBox txtContactID;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtFax;
+        private System.Windows.Forms.TextBox txtMobile;
+        private System.Windows.Forms.TextBox txtContactedVia;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.TextBox txtZipCode;
+        private System.Windows.Forms.TextBox txtNotes;
+        private System.Windows.Forms.Label label1;
     }
 }
