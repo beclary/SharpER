@@ -236,7 +236,7 @@
             this.lblCompanyInfoTitle.AutoSize = true;
             this.lblCompanyInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.Green;
-            this.lblCompanyInfoTitle.Location = new System.Drawing.Point(9, 57);
+            this.lblCompanyInfoTitle.Location = new System.Drawing.Point(1, 52);
             this.lblCompanyInfoTitle.Name = "lblCompanyInfoTitle";
             this.lblCompanyInfoTitle.Size = new System.Drawing.Size(291, 43);
             this.lblCompanyInfoTitle.TabIndex = 65;
@@ -302,6 +302,7 @@
             // txtCompanyID
             // 
             this.txtCompanyID.BackColor = System.Drawing.Color.LightGray;
+            this.txtCompanyID.Cursor = System.Windows.Forms.Cursors.No;
             this.txtCompanyID.Location = new System.Drawing.Point(475, 110);
             this.txtCompanyID.Name = "txtCompanyID";
             this.txtCompanyID.ReadOnly = true;

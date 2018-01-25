@@ -340,6 +340,7 @@
             // txtContactID
             // 
             this.txtContactID.BackColor = System.Drawing.Color.LightGray;
+            this.txtContactID.Cursor = System.Windows.Forms.Cursors.No;
             this.txtContactID.Location = new System.Drawing.Point(478, 110);
             this.txtContactID.Name = "txtContactID";
             this.txtContactID.ReadOnly = true;
@@ -429,7 +430,7 @@
             this.lblContactInfoTitle.AutoSize = true;
             this.lblContactInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactInfoTitle.ForeColor = System.Drawing.Color.Crimson;
-            this.lblContactInfoTitle.Location = new System.Drawing.Point(12, 57);
+            this.lblContactInfoTitle.Location = new System.Drawing.Point(2, 52);
             this.lblContactInfoTitle.Name = "lblContactInfoTitle";
             this.lblContactInfoTitle.Size = new System.Drawing.Size(274, 43);
             this.lblContactInfoTitle.TabIndex = 36;
