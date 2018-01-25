@@ -38,8 +38,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tslblContactID = new System.Windows.Forms.ToolStripLabel();
-            this.tstxtCustomerIDField = new System.Windows.Forms.ToolStripTextBox();
+            this.tslblContactIDField = new System.Windows.Forms.ToolStripLabel();
+            this.tstxtContactIDField = new System.Windows.Forms.ToolStripTextBox();
             this.lblContactID = new System.Windows.Forms.Label();
             this.lblContactFax = new System.Windows.Forms.Label();
             this.lblContactName = new System.Windows.Forms.Label();
@@ -157,8 +157,8 @@
             this.toolStrip1.BackColor = System.Drawing.Color.LightGray;
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslblContactID,
-            this.tstxtCustomerIDField,
+            this.tslblContactIDField,
+            this.tstxtContactIDField,
             this.tsbtnSearchCustomerIDButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
@@ -166,21 +166,21 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tslblContactID
+            // tslblContactIDField
             // 
-            this.tslblContactID.BackColor = System.Drawing.Color.LightBlue;
-            this.tslblContactID.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tslblContactID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tslblContactID.ForeColor = System.Drawing.Color.DarkRed;
-            this.tslblContactID.Name = "tslblContactID";
-            this.tslblContactID.Size = new System.Drawing.Size(75, 22);
-            this.tslblContactID.Text = "Contact ID:";
+            this.tslblContactIDField.BackColor = System.Drawing.Color.LightBlue;
+            this.tslblContactIDField.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tslblContactIDField.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tslblContactIDField.ForeColor = System.Drawing.Color.DarkRed;
+            this.tslblContactIDField.Name = "tslblContactIDField";
+            this.tslblContactIDField.Size = new System.Drawing.Size(75, 22);
+            this.tslblContactIDField.Text = "Contact ID:";
             // 
-            // tstxtCustomerIDField
+            // tstxtContactIDField
             // 
-            this.tstxtCustomerIDField.BackColor = System.Drawing.Color.LemonChiffon;
-            this.tstxtCustomerIDField.Name = "tstxtCustomerIDField";
-            this.tstxtCustomerIDField.Size = new System.Drawing.Size(100, 25);
+            this.tstxtContactIDField.BackColor = System.Drawing.Color.LemonChiffon;
+            this.tstxtContactIDField.Name = "tstxtContactIDField";
+            this.tstxtContactIDField.Size = new System.Drawing.Size(100, 25);
             // 
             // lblContactID
             // 
@@ -198,7 +198,7 @@
             this.lblContactFax.AutoSize = true;
             this.lblContactFax.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactFax.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactFax.Location = new System.Drawing.Point(81, 336);
+            this.lblContactFax.Location = new System.Drawing.Point(78, 336);
             this.lblContactFax.Name = "lblContactFax";
             this.lblContactFax.Size = new System.Drawing.Size(38, 19);
             this.lblContactFax.TabIndex = 4;
@@ -209,7 +209,7 @@
             this.lblContactName.AutoSize = true;
             this.lblContactName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactName.Location = new System.Drawing.Point(69, 112);
+            this.lblContactName.Location = new System.Drawing.Point(66, 112);
             this.lblContactName.Name = "lblContactName";
             this.lblContactName.Size = new System.Drawing.Size(50, 19);
             this.lblContactName.TabIndex = 5;
@@ -220,7 +220,7 @@
             this.lblContactTitle.AutoSize = true;
             this.lblContactTitle.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactTitle.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactTitle.Location = new System.Drawing.Point(74, 144);
+            this.lblContactTitle.Location = new System.Drawing.Point(71, 144);
             this.lblContactTitle.Name = "lblContactTitle";
             this.lblContactTitle.Size = new System.Drawing.Size(45, 19);
             this.lblContactTitle.TabIndex = 6;
@@ -231,7 +231,7 @@
             this.lblContactDepartment.AutoSize = true;
             this.lblContactDepartment.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactDepartment.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactDepartment.Location = new System.Drawing.Point(32, 176);
+            this.lblContactDepartment.Location = new System.Drawing.Point(29, 176);
             this.lblContactDepartment.Name = "lblContactDepartment";
             this.lblContactDepartment.Size = new System.Drawing.Size(87, 19);
             this.lblContactDepartment.TabIndex = 7;
@@ -242,7 +242,7 @@
             this.lblContactAddress.AutoSize = true;
             this.lblContactAddress.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactAddress.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactAddress.Location = new System.Drawing.Point(53, 208);
+            this.lblContactAddress.Location = new System.Drawing.Point(50, 208);
             this.lblContactAddress.Name = "lblContactAddress";
             this.lblContactAddress.Size = new System.Drawing.Size(66, 19);
             this.lblContactAddress.TabIndex = 8;
@@ -253,7 +253,7 @@
             this.lblContactCity.AutoSize = true;
             this.lblContactCity.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactCity.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactCity.Location = new System.Drawing.Point(79, 240);
+            this.lblContactCity.Location = new System.Drawing.Point(76, 240);
             this.lblContactCity.Name = "lblContactCity";
             this.lblContactCity.Size = new System.Drawing.Size(40, 19);
             this.lblContactCity.TabIndex = 9;
@@ -286,7 +286,7 @@
             this.lblContactPhone.AutoSize = true;
             this.lblContactPhone.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactPhone.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactPhone.Location = new System.Drawing.Point(68, 272);
+            this.lblContactPhone.Location = new System.Drawing.Point(65, 272);
             this.lblContactPhone.Name = "lblContactPhone";
             this.lblContactPhone.Size = new System.Drawing.Size(51, 19);
             this.lblContactPhone.TabIndex = 12;
@@ -298,7 +298,7 @@
             this.lblContactMobile.AutoSize = true;
             this.lblContactMobile.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactMobile.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactMobile.Location = new System.Drawing.Point(63, 304);
+            this.lblContactMobile.Location = new System.Drawing.Point(60, 304);
             this.lblContactMobile.Name = "lblContactMobile";
             this.lblContactMobile.Size = new System.Drawing.Size(56, 19);
             this.lblContactMobile.TabIndex = 13;
@@ -309,7 +309,7 @@
             this.lblContactEmail.AutoSize = true;
             this.lblContactEmail.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactEmail.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactEmail.Location = new System.Drawing.Point(71, 368);
+            this.lblContactEmail.Location = new System.Drawing.Point(68, 368);
             this.lblContactEmail.Name = "lblContactEmail";
             this.lblContactEmail.Size = new System.Drawing.Size(48, 19);
             this.lblContactEmail.TabIndex = 14;
@@ -320,7 +320,7 @@
             this.lblContactContactedVia.AutoSize = true;
             this.lblContactContactedVia.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactContactedVia.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactContactedVia.Location = new System.Drawing.Point(15, 400);
+            this.lblContactContactedVia.Location = new System.Drawing.Point(12, 400);
             this.lblContactContactedVia.Name = "lblContactContactedVia";
             this.lblContactContactedVia.Size = new System.Drawing.Size(104, 19);
             this.lblContactContactedVia.TabIndex = 15;
@@ -331,7 +331,7 @@
             this.lblContactNotes.AutoSize = true;
             this.lblContactNotes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactNotes.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblContactNotes.Location = new System.Drawing.Point(67, 432);
+            this.lblContactNotes.Location = new System.Drawing.Point(64, 432);
             this.lblContactNotes.Name = "lblContactNotes";
             this.lblContactNotes.Size = new System.Drawing.Size(52, 19);
             this.lblContactNotes.TabIndex = 16;
@@ -679,9 +679,9 @@
         private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel tslblContactID;
+        private System.Windows.Forms.ToolStripLabel tslblContactIDField;
         private System.Windows.Forms.ToolStripButton tsbtnContactExit;
-        private System.Windows.Forms.ToolStripTextBox tstxtCustomerIDField;
+        private System.Windows.Forms.ToolStripTextBox tstxtContactIDField;
         private System.Windows.Forms.ToolStripButton tsbtnSearchCustomerIDButton;
         private System.Windows.Forms.Label lblContactID;
         private System.Windows.Forms.Label lblContactFax;

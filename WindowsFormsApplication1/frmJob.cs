@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmActivity : Form
+    public partial class frmJob : Form
     {
-        public frmActivity()
+        public frmJob()
         {
             InitializeComponent();
-        }
-
-        private void tstxtActivityDateField_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
