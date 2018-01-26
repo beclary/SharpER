@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJob));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.lblJobInfoTitle = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tslblJobPositionField = new System.Windows.Forms.ToolStripLabel();
             this.tstxtJobPositionField = new System.Windows.Forms.ToolStripTextBox();
             this.tsbtnSearchJobPositionButton = new System.Windows.Forms.ToolStripButton();
+            this.lblJobInfoTitle = new System.Windows.Forms.Label();
             this.lblJobPosition = new System.Windows.Forms.Label();
             this.txtJobPosition = new System.Windows.Forms.TextBox();
             this.lblJobID = new System.Windows.Forms.Label();
@@ -59,6 +59,12 @@
             this.lblJobPay1 = new System.Windows.Forms.Label();
             this.lblJobPay2 = new System.Windows.Forms.Label();
             this.txtJobPay = new System.Windows.Forms.TextBox();
+            this.lblJobContactIDForeignKey = new System.Windows.Forms.Label();
+            this.lblJobCompanyIDForeignKey = new System.Windows.Forms.Label();
+            this.lblJobNotes = new System.Windows.Forms.Label();
+            this.txtJobContactIDForeignKey = new System.Windows.Forms.TextBox();
+            this.txtJobCompanyIDForeignKey = new System.Windows.Forms.TextBox();
+            this.txtJobNotes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -95,6 +101,33 @@
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Enabled = false;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Enabled = false;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -127,16 +160,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -159,41 +185,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Enabled = false;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Enabled = false;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightGray;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslblJobPositionField,
-            this.tstxtJobPositionField,
-            this.tsbtnSearchJobPositionButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(732, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // saveToolStripButton
             // 
@@ -219,16 +212,18 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // lblJobInfoTitle
+            // toolStrip1
             // 
-            this.lblJobInfoTitle.AutoSize = true;
-            this.lblJobInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobInfoTitle.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lblJobInfoTitle.Location = new System.Drawing.Point(1, 50);
-            this.lblJobInfoTitle.Name = "lblJobInfoTitle";
-            this.lblJobInfoTitle.Size = new System.Drawing.Size(220, 43);
-            this.lblJobInfoTitle.TabIndex = 38;
-            this.lblJobInfoTitle.Text = "Job Information";
+            this.toolStrip1.BackColor = System.Drawing.Color.LightGray;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tslblJobPositionField,
+            this.tstxtJobPositionField,
+            this.tsbtnSearchJobPositionButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(732, 25);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // tslblJobPositionField
             // 
@@ -256,6 +251,17 @@
             this.tsbtnSearchJobPositionButton.Size = new System.Drawing.Size(52, 22);
             this.tsbtnSearchJobPositionButton.Text = "Search";
             // 
+            // lblJobInfoTitle
+            // 
+            this.lblJobInfoTitle.AutoSize = true;
+            this.lblJobInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobInfoTitle.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblJobInfoTitle.Location = new System.Drawing.Point(1, 50);
+            this.lblJobInfoTitle.Name = "lblJobInfoTitle";
+            this.lblJobInfoTitle.Size = new System.Drawing.Size(220, 43);
+            this.lblJobInfoTitle.TabIndex = 38;
+            this.lblJobInfoTitle.Text = "Job Information";
+            // 
             // lblJobPosition
             // 
             this.lblJobPosition.AutoSize = true;
@@ -269,9 +275,9 @@
             // 
             // txtJobPosition
             // 
-            this.txtJobPosition.Location = new System.Drawing.Point(135, 110);
+            this.txtJobPosition.Location = new System.Drawing.Point(135, 108);
             this.txtJobPosition.Name = "txtJobPosition";
-            this.txtJobPosition.Size = new System.Drawing.Size(261, 26);
+            this.txtJobPosition.Size = new System.Drawing.Size(283, 26);
             this.txtJobPosition.TabIndex = 44;
             // 
             // lblJobID
@@ -279,7 +285,7 @@
             this.lblJobID.AutoSize = true;
             this.lblJobID.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobID.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblJobID.Location = new System.Drawing.Point(402, 112);
+            this.lblJobID.Location = new System.Drawing.Point(424, 110);
             this.lblJobID.Name = "lblJobID";
             this.lblJobID.Size = new System.Drawing.Size(61, 19);
             this.lblJobID.TabIndex = 45;
@@ -288,7 +294,7 @@
             // txtJobID
             // 
             this.txtJobID.BackColor = System.Drawing.Color.LightGray;
-            this.txtJobID.Location = new System.Drawing.Point(470, 109);
+            this.txtJobID.Location = new System.Drawing.Point(490, 108);
             this.txtJobID.Name = "txtJobID";
             this.txtJobID.ReadOnly = true;
             this.txtJobID.Size = new System.Drawing.Size(100, 26);
@@ -299,7 +305,7 @@
             this.lblJobApplied.AutoSize = true;
             this.lblJobApplied.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobApplied.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblJobApplied.Location = new System.Drawing.Point(47, 149);
+            this.lblJobApplied.Location = new System.Drawing.Point(47, 148);
             this.lblJobApplied.Name = "lblJobApplied";
             this.lblJobApplied.Size = new System.Drawing.Size(82, 19);
             this.lblJobApplied.TabIndex = 47;
@@ -308,7 +314,7 @@
             // dtpJobApplied
             // 
             this.dtpJobApplied.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpJobApplied.Location = new System.Drawing.Point(135, 146);
+            this.dtpJobApplied.Location = new System.Drawing.Point(135, 144);
             this.dtpJobApplied.Name = "dtpJobApplied";
             this.dtpJobApplied.Size = new System.Drawing.Size(116, 26);
             this.dtpJobApplied.TabIndex = 48;
@@ -318,7 +324,7 @@
             this.lblJobPay1.AutoSize = true;
             this.lblJobPay1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobPay1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblJobPay1.Location = new System.Drawing.Point(38, 202);
+            this.lblJobPay1.Location = new System.Drawing.Point(38, 200);
             this.lblJobPay1.Name = "lblJobPay1";
             this.lblJobPay1.Size = new System.Drawing.Size(91, 19);
             this.lblJobPay1.TabIndex = 49;
@@ -329,7 +335,7 @@
             this.lblJobPay2.AutoSize = true;
             this.lblJobPay2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobPay2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblJobPay2.Location = new System.Drawing.Point(28, 220);
+            this.lblJobPay2.Location = new System.Drawing.Point(22, 218);
             this.lblJobPay2.Name = "lblJobPay2";
             this.lblJobPay2.Size = new System.Drawing.Size(107, 16);
             this.lblJobPay2.TabIndex = 50;
@@ -342,12 +348,77 @@
             this.txtJobPay.Size = new System.Drawing.Size(115, 26);
             this.txtJobPay.TabIndex = 51;
             // 
+            // lblJobContactIDForeignKey
+            // 
+            this.lblJobContactIDForeignKey.AutoSize = true;
+            this.lblJobContactIDForeignKey.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobContactIDForeignKey.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblJobContactIDForeignKey.Location = new System.Drawing.Point(44, 267);
+            this.lblJobContactIDForeignKey.Name = "lblJobContactIDForeignKey";
+            this.lblJobContactIDForeignKey.Size = new System.Drawing.Size(85, 19);
+            this.lblJobContactIDForeignKey.TabIndex = 52;
+            this.lblJobContactIDForeignKey.Text = "Contact ID:";
+            // 
+            // lblJobCompanyIDForeignKey
+            // 
+            this.lblJobCompanyIDForeignKey.AutoSize = true;
+            this.lblJobCompanyIDForeignKey.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobCompanyIDForeignKey.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblJobCompanyIDForeignKey.Location = new System.Drawing.Point(39, 299);
+            this.lblJobCompanyIDForeignKey.Name = "lblJobCompanyIDForeignKey";
+            this.lblJobCompanyIDForeignKey.Size = new System.Drawing.Size(90, 19);
+            this.lblJobCompanyIDForeignKey.TabIndex = 53;
+            this.lblJobCompanyIDForeignKey.Text = "Company ID:";
+            // 
+            // lblJobNotes
+            // 
+            this.lblJobNotes.AutoSize = true;
+            this.lblJobNotes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobNotes.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblJobNotes.Location = new System.Drawing.Point(77, 350);
+            this.lblJobNotes.Name = "lblJobNotes";
+            this.lblJobNotes.Size = new System.Drawing.Size(52, 19);
+            this.lblJobNotes.TabIndex = 54;
+            this.lblJobNotes.Text = "Notes:";
+            // 
+            // txtJobContactIDForeignKey
+            // 
+            this.txtJobContactIDForeignKey.BackColor = System.Drawing.Color.LightGray;
+            this.txtJobContactIDForeignKey.Location = new System.Drawing.Point(135, 263);
+            this.txtJobContactIDForeignKey.Name = "txtJobContactIDForeignKey";
+            this.txtJobContactIDForeignKey.ReadOnly = true;
+            this.txtJobContactIDForeignKey.Size = new System.Drawing.Size(100, 26);
+            this.txtJobContactIDForeignKey.TabIndex = 55;
+            // 
+            // txtJobCompanyIDForeignKey
+            // 
+            this.txtJobCompanyIDForeignKey.BackColor = System.Drawing.Color.LightGray;
+            this.txtJobCompanyIDForeignKey.Location = new System.Drawing.Point(135, 296);
+            this.txtJobCompanyIDForeignKey.Name = "txtJobCompanyIDForeignKey";
+            this.txtJobCompanyIDForeignKey.ReadOnly = true;
+            this.txtJobCompanyIDForeignKey.Size = new System.Drawing.Size(100, 26);
+            this.txtJobCompanyIDForeignKey.TabIndex = 56;
+            // 
+            // txtJobNotes
+            // 
+            this.txtJobNotes.Location = new System.Drawing.Point(136, 348);
+            this.txtJobNotes.Multiline = true;
+            this.txtJobNotes.Name = "txtJobNotes";
+            this.txtJobNotes.Size = new System.Drawing.Size(454, 78);
+            this.txtJobNotes.TabIndex = 57;
+            // 
             // frmJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(732, 535);
+            this.Controls.Add(this.txtJobNotes);
+            this.Controls.Add(this.txtJobCompanyIDForeignKey);
+            this.Controls.Add(this.txtJobContactIDForeignKey);
+            this.Controls.Add(this.lblJobNotes);
+            this.Controls.Add(this.lblJobCompanyIDForeignKey);
+            this.Controls.Add(this.lblJobContactIDForeignKey);
             this.Controls.Add(this.txtJobPay);
             this.Controls.Add(this.lblJobPay2);
             this.Controls.Add(this.lblJobPay1);
@@ -361,7 +432,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.bindingNavigator1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmJob";
             this.Text = "Job";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -405,5 +476,11 @@
         private System.Windows.Forms.Label lblJobPay1;
         private System.Windows.Forms.Label lblJobPay2;
         private System.Windows.Forms.TextBox txtJobPay;
+        private System.Windows.Forms.Label lblJobContactIDForeignKey;
+        private System.Windows.Forms.Label lblJobCompanyIDForeignKey;
+        private System.Windows.Forms.Label lblJobNotes;
+        private System.Windows.Forms.TextBox txtJobContactIDForeignKey;
+        private System.Windows.Forms.TextBox txtJobCompanyIDForeignKey;
+        private System.Windows.Forms.TextBox txtJobNotes;
     }
 }

@@ -49,33 +49,33 @@
             this.grpLoginContainer.Controls.Add(this.lblPassword);
             this.grpLoginContainer.Controls.Add(this.lblUsername);
             this.grpLoginContainer.Controls.Add(this.picLoginScreenImage);
-            this.grpLoginContainer.Location = new System.Drawing.Point(493, 49);
+            this.grpLoginContainer.Location = new System.Drawing.Point(486, 49);
             this.grpLoginContainer.Name = "grpLoginContainer";
-            this.grpLoginContainer.Size = new System.Drawing.Size(284, 377);
+            this.grpLoginContainer.Size = new System.Drawing.Size(291, 377);
             this.grpLoginContainer.TabIndex = 0;
             this.grpLoginContainer.TabStop = false;
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.LightGray;
-            this.txtPassword.Location = new System.Drawing.Point(42, 272);
+            this.txtPassword.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtPassword.Location = new System.Drawing.Point(24, 272);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(196, 25);
+            this.txtPassword.Size = new System.Drawing.Size(242, 25);
             this.txtPassword.TabIndex = 2;
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.LightGray;
-            this.txtUsername.Location = new System.Drawing.Point(42, 219);
+            this.txtUsername.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtUsername.Location = new System.Drawing.Point(24, 219);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(196, 25);
+            this.txtUsername.Size = new System.Drawing.Size(242, 25);
             this.txtUsername.TabIndex = 1;
             // 
             // btnLoginButton
             // 
-            this.btnLoginButton.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnLoginButton.BackColor = System.Drawing.Color.SandyBrown;
             this.btnLoginButton.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoginButton.Location = new System.Drawing.Point(60, 315);
+            this.btnLoginButton.Location = new System.Drawing.Point(64, 315);
             this.btnLoginButton.Name = "btnLoginButton";
             this.btnLoginButton.Size = new System.Drawing.Size(165, 38);
             this.btnLoginButton.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(108, 256);
+            this.lblPassword.Location = new System.Drawing.Point(112, 256);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(60, 13);
             this.lblPassword.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(74, 203);
+            this.lblUsername.Location = new System.Drawing.Point(78, 203);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(135, 13);
             this.lblUsername.TabIndex = 2;
@@ -106,7 +106,7 @@
             // 
             this.picLoginScreenImage.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.screen_shot_2013_09_06_at_11_06_52_am_850_563__large;
             this.picLoginScreenImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLoginScreenImage.Location = new System.Drawing.Point(0, 43);
+            this.picLoginScreenImage.Location = new System.Drawing.Point(4, 43);
             this.picLoginScreenImage.Name = "picLoginScreenImage";
             this.picLoginScreenImage.Size = new System.Drawing.Size(284, 145);
             this.picLoginScreenImage.TabIndex = 1;
