@@ -51,6 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BLLClassDiagram.cd" />
+    <None Include="Properties\DataSources\SharpERBLL.Activity.datasource" />
+    <None Include="Properties\DataSources\SharpERBLL.Company.datasource" />
+    <None Include="Properties\DataSources\SharpERBLL.Contact.datasource" />
+    <None Include="Properties\DataSources\SharpERBLL.Job.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

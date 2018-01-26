@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DALClassDiagram.cd" />
+    <None Include="Properties\DataSources\ActivityDB.datasource" />
+    <None Include="Properties\DataSources\CompanyDB.datasource" />
+    <None Include="Properties\DataSources\ContactDB.datasource" />
+    <None Include="Properties\DataSources\JobDB.datasource" />
+    <None Include="Properties\DataSources\SharpERDB.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contacts-SharpER\SharpERBLL.csproj">
