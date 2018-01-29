@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmJob : Form
+    public partial class JobForm : Form
     {
-        public frmJob()
+        public JobForm()
         {
             InitializeComponent();
+        }
+
+        private void lblJobInfoTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

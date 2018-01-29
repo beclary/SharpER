@@ -64,11 +64,11 @@
     <Compile Include="frmContact.Designer.cs">
       <DependentUpon>frmContact.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmJob.cs">
+    <Compile Include="JobForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmJob.Designer.cs">
-      <DependentUpon>frmJob.cs</DependentUpon>
+    <Compile Include="JobForm.Designer.cs">
+      <DependentUpon>JobForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="frmContact.resx">
       <DependentUpon>frmContact.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmJob.resx">
-      <DependentUpon>frmJob.cs</DependentUpon>
+    <EmbeddedResource Include="JobForm.resx">
+      <DependentUpon>JobForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -112,6 +112,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\SharpERBLL.Job.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApplication1.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApplication1.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
@@ -153,6 +154,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download %2811%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contacts-SharpER\SharpERBLL.csproj">
+      <Project>{fb56d4eb-a678-4a11-9a26-637b4842e73e}</Project>
+      <Name>SharpERBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpERDAL\SharpERDAL.csproj">
+      <Project>{1e5c880d-e4c1-4787-919d-c1dadea19532}</Project>
+      <Name>SharpERDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpER\SharpER.sqlproj">
+      <Project>{218acbf8-b690-472f-997d-ec24f9761449}</Project>
+      <Name>SharpER</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
