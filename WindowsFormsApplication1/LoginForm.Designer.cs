@@ -104,11 +104,15 @@
             // 
             // picLoginScreenImage
             // 
-            this.picLoginScreenImage.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.screen_shot_2013_09_06_at_11_06_52_am_850_563__large;
             this.picLoginScreenImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLoginScreenImage.ErrorImage = null;
+            this.picLoginScreenImage.Image = global::WindowsFormsApplication1.Properties.Resources.screen_shot_2013_09_06_at_11_061;
+            this.picLoginScreenImage.ImageLocation = "";
+            this.picLoginScreenImage.InitialImage = null;
             this.picLoginScreenImage.Location = new System.Drawing.Point(4, 43);
             this.picLoginScreenImage.Name = "picLoginScreenImage";
             this.picLoginScreenImage.Size = new System.Drawing.Size(284, 145);
+            this.picLoginScreenImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLoginScreenImage.TabIndex = 1;
             this.picLoginScreenImage.TabStop = false;
             // 

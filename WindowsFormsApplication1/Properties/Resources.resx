@@ -133,6 +133,9 @@
   <data name="09-9226610_uploadsmember665562yourshot-665562-9226610jpg_igdjhxksrjifxjzu4rgbsw37bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000.adapt.1190.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\09-9226610_uploadsmember665562yourshot-665562-9226610jpg_igdjhxksrjifxjzu4rgbsw37bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000.adapt.1190.1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="download (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download (11).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="grand-staircase__large" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grand-staircase__large.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +145,7 @@
   <data name="images (10)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (10).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download (11).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="screen-shot-2013-09-06-at-11.061" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\screen-shot-2013-09-06-at-11.06.52-am_850_563__large1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

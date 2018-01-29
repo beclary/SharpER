@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmContact : Form
+    public partial class ContactForm : Form
     {
-        public frmContact()
+        public ContactForm()
         {
             InitializeComponent();
         }
 
-        private void lblMobile_Click(object sender, EventArgs e)
+        private void ContactForm_Load(object sender, EventArgs e)
         {
 
         }

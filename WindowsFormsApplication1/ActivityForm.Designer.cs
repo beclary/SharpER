@@ -56,13 +56,10 @@
             this.toolStripTextBoxActivityDateTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonActivityDateButton = new System.Windows.Forms.ToolStripButton();
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.activityBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             activityContactIDLabel = new System.Windows.Forms.Label();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
@@ -78,10 +75,10 @@
             // 
             // activityBindingNavigator
             // 
-            this.activityBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.activityBindingNavigator.AddNewItem = null;
             this.activityBindingNavigator.BindingSource = this.activityBindingSource;
             this.activityBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.activityBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.activityBindingNavigator.DeleteItem = null;
             this.activityBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -91,10 +88,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.activityBindingNavigatorSaveItem});
+            this.bindingNavigatorSeparator2});
             this.activityBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.activityBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.activityBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -353,24 +347,6 @@
             // 
             this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -406,15 +382,6 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // activityBindingNavigatorSaveItem
-            // 
-            this.activityBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.activityBindingNavigatorSaveItem.Enabled = false;
-            this.activityBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("activityBindingNavigatorSaveItem.Image")));
-            this.activityBindingNavigatorSaveItem.Name = "activityBindingNavigatorSaveItem";
-            this.activityBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.activityBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // ActivityForm
             // 
@@ -458,9 +425,7 @@
 
         private System.Windows.Forms.BindingSource activityBindingSource;
         private System.Windows.Forms.BindingNavigator activityBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -469,7 +434,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton activityBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox activityContactIDTextBox;
         private System.Windows.Forms.DateTimePicker activityDateDateTimePicker;
         private System.Windows.Forms.TextBox activityDescriptionTextBox;
