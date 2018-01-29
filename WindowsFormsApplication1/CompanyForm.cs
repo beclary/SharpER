@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmCompany : Form
+    public partial class CompanyForm : Form
     {
-        public frmCompany()
+        public CompanyForm()
         {
             InitializeComponent();
+        }
+
+        private void lblCompanyInfoTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
