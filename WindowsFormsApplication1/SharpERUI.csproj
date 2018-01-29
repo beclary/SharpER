@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivityForm.Designer.cs">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmActivity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ActivityForm.resx">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmActivity.resx">
       <DependentUpon>frmActivity.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +121,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\SharpERBLL.Activity.datasource" />
+    <None Include="Properties\DataSources\SharpERBLL.Company.datasource" />
+    <None Include="Properties\DataSources\SharpERBLL.Contact.datasource" />
     <None Include="Properties\DataSources\SharpERBLL.Job.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApplication1.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApplication1.Properties.Settings.datasource" />

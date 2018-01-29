@@ -257,7 +257,7 @@
             this.lblActivityInfoTitle.AutoSize = true;
             this.lblActivityInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivityInfoTitle.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblActivityInfoTitle.Location = new System.Drawing.Point(3, 50);
+            this.lblActivityInfoTitle.Location = new System.Drawing.Point(1, 50);
             this.lblActivityInfoTitle.Name = "lblActivityInfoTitle";
             this.lblActivityInfoTitle.Size = new System.Drawing.Size(278, 43);
             this.lblActivityInfoTitle.TabIndex = 37;
