@@ -96,7 +96,7 @@
             this.activityBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.activityBindingNavigator.Name = "activityBindingNavigator";
             this.activityBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.activityBindingNavigator.Size = new System.Drawing.Size(976, 25);
+            this.activityBindingNavigator.Size = new System.Drawing.Size(732, 25);
             this.activityBindingNavigator.TabIndex = 0;
             this.activityBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -314,7 +314,7 @@
             this.toolStripButtonActivityDateButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(976, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(732, 25);
             this.toolStrip1.TabIndex = 39;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -388,7 +388,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(976, 741);
+            this.ClientSize = new System.Drawing.Size(732, 535);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblActivityInfoTitle);
             this.Controls.Add(activityContactIDLabel);

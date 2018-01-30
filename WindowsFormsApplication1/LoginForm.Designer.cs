@@ -141,6 +141,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLoginScreen";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLoginScreen_Load);
             this.grpLoginContainer.ResumeLayout(false);
             this.grpLoginContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoginScreenImage)).EndInit();

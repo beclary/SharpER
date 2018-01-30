@@ -105,31 +105,31 @@
             this.activityToolStripMenuItem3,
             this.jobToolStripMenuItem3});
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "Add";
             // 
             // contactToolStripMenuItem3
             // 
             this.contactToolStripMenuItem3.Name = "contactToolStripMenuItem3";
-            this.contactToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.contactToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.contactToolStripMenuItem3.Text = "Contact";
             // 
             // companyToolStripMenuItem3
             // 
             this.companyToolStripMenuItem3.Name = "companyToolStripMenuItem3";
-            this.companyToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.companyToolStripMenuItem3.Text = "Company";
             // 
             // activityToolStripMenuItem3
             // 
             this.activityToolStripMenuItem3.Name = "activityToolStripMenuItem3";
-            this.activityToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.activityToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.activityToolStripMenuItem3.Text = "Activity";
             // 
             // jobToolStripMenuItem3
             // 
             this.jobToolStripMenuItem3.Name = "jobToolStripMenuItem3";
-            this.jobToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.jobToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.jobToolStripMenuItem3.Text = "Job";
             // 
             // openToolStripMenuItem
@@ -140,7 +140,7 @@
             this.activityToolStripMenuItem,
             this.jobsToolStripMenuItem1});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // contactToolStripMenuItem
@@ -170,19 +170,19 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -343,7 +343,7 @@
             this.btnContact.Name = "btnContact";
             this.btnContact.Size = new System.Drawing.Size(184, 46);
             this.btnContact.TabIndex = 1;
-            this.btnContact.Text = "Contacts";
+            this.btnContact.Text = "Contact";
             this.btnContact.UseVisualStyleBackColor = false;
             // 
             // btnCompany
@@ -356,7 +356,7 @@
             this.btnCompany.Name = "btnCompany";
             this.btnCompany.Size = new System.Drawing.Size(184, 46);
             this.btnCompany.TabIndex = 2;
-            this.btnCompany.Text = "Companies";
+            this.btnCompany.Text = "Company";
             this.btnCompany.UseVisualStyleBackColor = false;
             // 
             // btnActivity
@@ -369,7 +369,7 @@
             this.btnActivity.Name = "btnActivity";
             this.btnActivity.Size = new System.Drawing.Size(184, 46);
             this.btnActivity.TabIndex = 3;
-            this.btnActivity.Text = "Activities";
+            this.btnActivity.Text = "Activity";
             this.btnActivity.UseVisualStyleBackColor = false;
             // 
             // btnJob
@@ -382,7 +382,7 @@
             this.btnJob.Name = "btnJob";
             this.btnJob.Size = new System.Drawing.Size(184, 46);
             this.btnJob.TabIndex = 4;
-            this.btnJob.Text = "Jobs";
+            this.btnJob.Text = "Job";
             this.btnJob.UseVisualStyleBackColor = false;
             // 
             // MainForm
