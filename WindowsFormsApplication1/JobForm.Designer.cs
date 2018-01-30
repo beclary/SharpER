@@ -61,6 +61,8 @@
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             jobAppliedLabel = new System.Windows.Forms.Label();
             jobCompanyIDLabel = new System.Windows.Forms.Label();
             jobContactIDLabel = new System.Windows.Forms.Label();
@@ -178,7 +180,9 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
+            this.bindingNavigatorSeparator2,
+            this.printToolStripButton,
+            this.toolStripSeparator1});
             this.jobBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.jobBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.jobBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -375,6 +379,20 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
+            // printToolStripButton
+            // 
+            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
+            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripButton.Name = "printToolStripButton";
+            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.printToolStripButton.Text = "&Print";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // JobForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -440,5 +458,7 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxJobPositionTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonJobSearchButton;
         private System.Windows.Forms.Label lblSalaryPerYear;
+        private System.Windows.Forms.ToolStripButton printToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
