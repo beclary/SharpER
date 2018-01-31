@@ -41,12 +41,6 @@
             System.Windows.Forms.Label companyZipCodeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
-            this.companyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
             this.companyCityTextBox = new System.Windows.Forms.TextBox();
             this.companyFaxTextBox = new System.Windows.Forms.TextBox();
@@ -60,12 +54,23 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelCompanyIDLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxCompanyIDTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.companyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCompanySearchButton = new System.Windows.Forms.ToolStripButton();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             companyAddressLabel = new System.Windows.Forms.Label();
@@ -78,9 +83,9 @@
             companyStateLabel = new System.Windows.Forms.Label();
             companyWebsiteLabel = new System.Windows.Forms.Label();
             companyZipCodeLabel = new System.Windows.Forms.Label();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).BeginInit();
             this.companyBindingNavigator.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,66 +100,6 @@
             this.lblCompanyInfoTitle.TabIndex = 66;
             this.lblCompanyInfoTitle.Text = "Company Information";
             this.lblCompanyInfoTitle.Click += new System.EventHandler(this.lblCompanyInfoTitle_Click);
-            // 
-            // companyBindingNavigator
-            // 
-            this.companyBindingNavigator.AddNewItem = null;
-            this.companyBindingNavigator.BindingSource = this.companyBindingSource;
-            this.companyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.companyBindingNavigator.DeleteItem = null;
-            this.companyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.printToolStripButton,
-            this.toolStripSeparator});
-            this.companyBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.companyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.companyBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.companyBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.companyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.companyBindingNavigator.Name = "companyBindingNavigator";
-            this.companyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.companyBindingNavigator.Size = new System.Drawing.Size(732, 25);
-            this.companyBindingNavigator.TabIndex = 67;
-            this.companyBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // companyAddressLabel
             // 
@@ -428,6 +373,76 @@
             this.toolStripTextBoxCompanyIDTextBox.Name = "toolStripTextBoxCompanyIDTextBox";
             this.toolStripTextBoxCompanyIDTextBox.Size = new System.Drawing.Size(100, 25);
             // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // companyBindingNavigator
+            // 
+            this.companyBindingNavigator.AddNewItem = null;
+            this.companyBindingNavigator.BindingSource = this.companyBindingSource;
+            this.companyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.companyBindingNavigator.DeleteItem = null;
+            this.companyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.cutToolStripButton,
+            this.toolStripSeparator2,
+            this.printToolStripButton,
+            this.toolStripSeparator});
+            this.companyBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.companyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.companyBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.companyBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.companyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.companyBindingNavigator.Name = "companyBindingNavigator";
+            this.companyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.companyBindingNavigator.Size = new System.Drawing.Size(732, 25);
+            this.companyBindingNavigator.TabIndex = 67;
+            this.companyBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButtonCompanySearchButton
             // 
             this.toolStripButtonCompanySearchButton.BackColor = System.Drawing.Color.SandyBrown;
@@ -480,6 +495,42 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
+            // newToolStripButton
+            // 
+            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripButton.Name = "newToolStripButton";
+            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.newToolStripButton.Text = "&New";
+            // 
+            // openToolStripButton
+            // 
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.openToolStripButton.Text = "&Open";
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "&Save";
+            // 
+            // cutToolStripButton
+            // 
+            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cutToolStripButton.Image = global::WindowsFormsApplication1.Properties.Resources.deletered1;
+            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripButton.Name = "cutToolStripButton";
+            this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.cutToolStripButton.Text = "C&ut";
+            // 
             // printToolStripButton
             // 
             this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -527,11 +578,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CompanyForm";
             this.Text = "Company";
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).EndInit();
             this.companyBindingNavigator.ResumeLayout(false);
             this.companyBindingNavigator.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -542,16 +593,6 @@
 
         private System.Windows.Forms.Label lblCompanyInfoTitle;
         private System.Windows.Forms.BindingSource companyBindingSource;
-        private System.Windows.Forms.BindingNavigator companyBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.TextBox companyAddressTextBox;
         private System.Windows.Forms.TextBox companyCityTextBox;
         private System.Windows.Forms.TextBox companyFaxTextBox;
@@ -566,6 +607,21 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabelCompanyIDLabel;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxCompanyIDTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonCompanySearchButton;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.BindingNavigator companyBindingNavigator;
+        private System.Windows.Forms.ToolStripButton newToolStripButton;
+        private System.Windows.Forms.ToolStripButton openToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton cutToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     }

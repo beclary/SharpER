@@ -55,14 +55,19 @@
             this.toolStripLabelJobPositionLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxJobPositionTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.lblSalaryPerYear = new System.Windows.Forms.Label();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonJobSearchButton = new System.Windows.Forms.ToolStripButton();
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.printToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             jobAppliedLabel = new System.Windows.Forms.Label();
             jobCompanyIDLabel = new System.Windows.Forms.Label();
             jobContactIDLabel = new System.Windows.Forms.Label();
@@ -181,8 +186,13 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.printToolStripButton,
-            this.toolStripSeparator1});
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.cutToolStripButton,
+            this.toolStripSeparator1,
+            this.printToolStripButton1,
+            this.toolStripSeparator2});
             this.jobBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.jobBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.jobBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -327,6 +337,16 @@
             this.lblSalaryPerYear.TabIndex = 55;
             this.lblSalaryPerYear.Text = "( salary per year )";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // toolStripButtonJobSearchButton
             // 
             this.toolStripButtonJobSearchButton.BackColor = System.Drawing.Color.SandyBrown;
@@ -379,19 +399,50 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
-            // printToolStripButton
+            // newToolStripButton
             // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
+            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripButton.Name = "newToolStripButton";
+            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.newToolStripButton.Text = "&New";
             // 
-            // toolStripSeparator1
+            // openToolStripButton
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.openToolStripButton.Text = "&Open";
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "&Save";
+            // 
+            // cutToolStripButton
+            // 
+            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cutToolStripButton.Image = global::WindowsFormsApplication1.Properties.Resources.deletered3;
+            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripButton.Name = "cutToolStripButton";
+            this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.cutToolStripButton.Text = "C&ut";
+            // 
+            // printToolStripButton1
+            // 
+            this.printToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton1.Image")));
+            this.printToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripButton1.Name = "printToolStripButton1";
+            this.printToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.printToolStripButton1.Text = "&Print";
             // 
             // JobForm
             // 
@@ -458,7 +509,12 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxJobPositionTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonJobSearchButton;
         private System.Windows.Forms.Label lblSalaryPerYear;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
+        private System.Windows.Forms.ToolStripButton newToolStripButton;
+        private System.Windows.Forms.ToolStripButton openToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton cutToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton printToolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
