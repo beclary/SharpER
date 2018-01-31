@@ -42,6 +42,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyCityTextBox = new System.Windows.Forms.TextBox();
             this.companyFaxTextBox = new System.Windows.Forms.TextBox();
             this.companyIDTextBox = new System.Windows.Forms.TextBox();
@@ -54,15 +55,13 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelCompanyIDLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxCompanyIDTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonCompanySearchButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.companyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonCompanySearchButton = new System.Windows.Forms.ToolStripButton();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
@@ -71,6 +70,7 @@
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             companyAddressLabel = new System.Windows.Forms.Label();
@@ -83,11 +83,121 @@
             companyStateLabel = new System.Windows.Forms.Label();
             companyWebsiteLabel = new System.Windows.Forms.Label();
             companyZipCodeLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).BeginInit();
             this.companyBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // companyAddressLabel
+            // 
+            companyAddressLabel.AutoSize = true;
+            companyAddressLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyAddressLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyAddressLabel.Location = new System.Drawing.Point(49, 144);
+            companyAddressLabel.Name = "companyAddressLabel";
+            companyAddressLabel.Size = new System.Drawing.Size(66, 19);
+            companyAddressLabel.TabIndex = 67;
+            companyAddressLabel.Text = "Address:";
+            // 
+            // companyCityLabel
+            // 
+            companyCityLabel.AutoSize = true;
+            companyCityLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyCityLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyCityLabel.Location = new System.Drawing.Point(75, 176);
+            companyCityLabel.Name = "companyCityLabel";
+            companyCityLabel.Size = new System.Drawing.Size(40, 19);
+            companyCityLabel.TabIndex = 69;
+            companyCityLabel.Text = "City:";
+            // 
+            // companyFaxLabel
+            // 
+            companyFaxLabel.AutoSize = true;
+            companyFaxLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyFaxLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyFaxLabel.Location = new System.Drawing.Point(76, 240);
+            companyFaxLabel.Name = "companyFaxLabel";
+            companyFaxLabel.Size = new System.Drawing.Size(38, 19);
+            companyFaxLabel.TabIndex = 71;
+            companyFaxLabel.Text = "Fax:";
+            // 
+            // companyIDLabel
+            // 
+            companyIDLabel.AutoSize = true;
+            companyIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyIDLabel.Location = new System.Drawing.Point(433, 113);
+            companyIDLabel.Name = "companyIDLabel";
+            companyIDLabel.Size = new System.Drawing.Size(90, 19);
+            companyIDLabel.TabIndex = 73;
+            companyIDLabel.Text = "Company ID:";
+            // 
+            // companyNameLabel
+            // 
+            companyNameLabel.AutoSize = true;
+            companyNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyNameLabel.Location = new System.Drawing.Point(66, 112);
+            companyNameLabel.Name = "companyNameLabel";
+            companyNameLabel.Size = new System.Drawing.Size(50, 19);
+            companyNameLabel.TabIndex = 75;
+            companyNameLabel.Text = "Name:";
+            // 
+            // companyNotesLabel
+            // 
+            companyNotesLabel.AutoSize = true;
+            companyNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyNotesLabel.Location = new System.Drawing.Point(64, 304);
+            companyNotesLabel.Name = "companyNotesLabel";
+            companyNotesLabel.Size = new System.Drawing.Size(52, 19);
+            companyNotesLabel.TabIndex = 77;
+            companyNotesLabel.Text = "Notes:";
+            // 
+            // companyPhoneLabel
+            // 
+            companyPhoneLabel.AutoSize = true;
+            companyPhoneLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyPhoneLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyPhoneLabel.Location = new System.Drawing.Point(64, 208);
+            companyPhoneLabel.Name = "companyPhoneLabel";
+            companyPhoneLabel.Size = new System.Drawing.Size(51, 19);
+            companyPhoneLabel.TabIndex = 79;
+            companyPhoneLabel.Text = "Phone:";
+            // 
+            // companyStateLabel
+            // 
+            companyStateLabel.AutoSize = true;
+            companyStateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyStateLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyStateLabel.Location = new System.Drawing.Point(310, 177);
+            companyStateLabel.Name = "companyStateLabel";
+            companyStateLabel.Size = new System.Drawing.Size(50, 19);
+            companyStateLabel.TabIndex = 81;
+            companyStateLabel.Text = "State:";
+            // 
+            // companyWebsiteLabel
+            // 
+            companyWebsiteLabel.AutoSize = true;
+            companyWebsiteLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyWebsiteLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyWebsiteLabel.Location = new System.Drawing.Point(49, 272);
+            companyWebsiteLabel.Name = "companyWebsiteLabel";
+            companyWebsiteLabel.Size = new System.Drawing.Size(67, 19);
+            companyWebsiteLabel.TabIndex = 83;
+            companyWebsiteLabel.Text = "Website:";
+            // 
+            // companyZipCodeLabel
+            // 
+            companyZipCodeLabel.AutoSize = true;
+            companyZipCodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            companyZipCodeLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            companyZipCodeLabel.Location = new System.Drawing.Point(447, 176);
+            companyZipCodeLabel.Name = "companyZipCodeLabel";
+            companyZipCodeLabel.Size = new System.Drawing.Size(71, 19);
+            companyZipCodeLabel.TabIndex = 85;
+            companyZipCodeLabel.Text = "Zip Code:";
             // 
             // lblCompanyInfoTitle
             // 
@@ -101,17 +211,6 @@
             this.lblCompanyInfoTitle.Text = "Company Information";
             this.lblCompanyInfoTitle.Click += new System.EventHandler(this.lblCompanyInfoTitle_Click);
             // 
-            // companyAddressLabel
-            // 
-            companyAddressLabel.AutoSize = true;
-            companyAddressLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyAddressLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyAddressLabel.Location = new System.Drawing.Point(49, 144);
-            companyAddressLabel.Name = "companyAddressLabel";
-            companyAddressLabel.Size = new System.Drawing.Size(66, 19);
-            companyAddressLabel.TabIndex = 67;
-            companyAddressLabel.Text = "Address:";
-            // 
             // companyAddressTextBox
             // 
             this.companyAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyAddress", true));
@@ -120,16 +219,9 @@
             this.companyAddressTextBox.Size = new System.Drawing.Size(299, 26);
             this.companyAddressTextBox.TabIndex = 68;
             // 
-            // companyCityLabel
+            // companyBindingSource
             // 
-            companyCityLabel.AutoSize = true;
-            companyCityLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyCityLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyCityLabel.Location = new System.Drawing.Point(75, 176);
-            companyCityLabel.Name = "companyCityLabel";
-            companyCityLabel.Size = new System.Drawing.Size(40, 19);
-            companyCityLabel.TabIndex = 69;
-            companyCityLabel.Text = "City:";
+            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
             // companyCityTextBox
             // 
@@ -139,17 +231,6 @@
             this.companyCityTextBox.Size = new System.Drawing.Size(175, 26);
             this.companyCityTextBox.TabIndex = 70;
             // 
-            // companyFaxLabel
-            // 
-            companyFaxLabel.AutoSize = true;
-            companyFaxLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyFaxLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyFaxLabel.Location = new System.Drawing.Point(76, 240);
-            companyFaxLabel.Name = "companyFaxLabel";
-            companyFaxLabel.Size = new System.Drawing.Size(38, 19);
-            companyFaxLabel.TabIndex = 71;
-            companyFaxLabel.Text = "Fax:";
-            // 
             // companyFaxTextBox
             // 
             this.companyFaxTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyFax", true));
@@ -157,17 +238,6 @@
             this.companyFaxTextBox.Name = "companyFaxTextBox";
             this.companyFaxTextBox.Size = new System.Drawing.Size(145, 26);
             this.companyFaxTextBox.TabIndex = 72;
-            // 
-            // companyIDLabel
-            // 
-            companyIDLabel.AutoSize = true;
-            companyIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyIDLabel.Location = new System.Drawing.Point(433, 113);
-            companyIDLabel.Name = "companyIDLabel";
-            companyIDLabel.Size = new System.Drawing.Size(90, 19);
-            companyIDLabel.TabIndex = 73;
-            companyIDLabel.Text = "Company ID:";
             // 
             // companyIDTextBox
             // 
@@ -179,17 +249,6 @@
             this.companyIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.companyIDTextBox.TabIndex = 74;
             // 
-            // companyNameLabel
-            // 
-            companyNameLabel.AutoSize = true;
-            companyNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyNameLabel.Location = new System.Drawing.Point(66, 112);
-            companyNameLabel.Name = "companyNameLabel";
-            companyNameLabel.Size = new System.Drawing.Size(50, 19);
-            companyNameLabel.TabIndex = 75;
-            companyNameLabel.Text = "Name:";
-            // 
             // companyNameTextBox
             // 
             this.companyNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyName", true));
@@ -197,17 +256,6 @@
             this.companyNameTextBox.Name = "companyNameTextBox";
             this.companyNameTextBox.Size = new System.Drawing.Size(299, 26);
             this.companyNameTextBox.TabIndex = 76;
-            // 
-            // companyNotesLabel
-            // 
-            companyNotesLabel.AutoSize = true;
-            companyNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyNotesLabel.Location = new System.Drawing.Point(64, 304);
-            companyNotesLabel.Name = "companyNotesLabel";
-            companyNotesLabel.Size = new System.Drawing.Size(52, 19);
-            companyNotesLabel.TabIndex = 77;
-            companyNotesLabel.Text = "Notes:";
             // 
             // companyNotesTextBox
             // 
@@ -218,17 +266,6 @@
             this.companyNotesTextBox.Size = new System.Drawing.Size(454, 78);
             this.companyNotesTextBox.TabIndex = 78;
             // 
-            // companyPhoneLabel
-            // 
-            companyPhoneLabel.AutoSize = true;
-            companyPhoneLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyPhoneLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyPhoneLabel.Location = new System.Drawing.Point(64, 208);
-            companyPhoneLabel.Name = "companyPhoneLabel";
-            companyPhoneLabel.Size = new System.Drawing.Size(51, 19);
-            companyPhoneLabel.TabIndex = 79;
-            companyPhoneLabel.Text = "Phone:";
-            // 
             // companyPhoneTextBox
             // 
             this.companyPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyPhone", true));
@@ -236,17 +273,6 @@
             this.companyPhoneTextBox.Name = "companyPhoneTextBox";
             this.companyPhoneTextBox.Size = new System.Drawing.Size(145, 26);
             this.companyPhoneTextBox.TabIndex = 80;
-            // 
-            // companyStateLabel
-            // 
-            companyStateLabel.AutoSize = true;
-            companyStateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyStateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyStateLabel.Location = new System.Drawing.Point(310, 177);
-            companyStateLabel.Name = "companyStateLabel";
-            companyStateLabel.Size = new System.Drawing.Size(50, 19);
-            companyStateLabel.TabIndex = 81;
-            companyStateLabel.Text = "State:";
             // 
             // companyStateComboBox
             // 
@@ -307,18 +333,8 @@
             this.companyStateComboBox.Location = new System.Drawing.Point(361, 174);
             this.companyStateComboBox.Name = "companyStateComboBox";
             this.companyStateComboBox.Size = new System.Drawing.Size(55, 26);
+            this.companyStateComboBox.Sorted = true;
             this.companyStateComboBox.TabIndex = 82;
-            // 
-            // companyWebsiteLabel
-            // 
-            companyWebsiteLabel.AutoSize = true;
-            companyWebsiteLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyWebsiteLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyWebsiteLabel.Location = new System.Drawing.Point(49, 272);
-            companyWebsiteLabel.Name = "companyWebsiteLabel";
-            companyWebsiteLabel.Size = new System.Drawing.Size(67, 19);
-            companyWebsiteLabel.TabIndex = 83;
-            companyWebsiteLabel.Text = "Website:";
             // 
             // companyWebsiteTextBox
             // 
@@ -327,17 +343,6 @@
             this.companyWebsiteTextBox.Name = "companyWebsiteTextBox";
             this.companyWebsiteTextBox.Size = new System.Drawing.Size(401, 26);
             this.companyWebsiteTextBox.TabIndex = 84;
-            // 
-            // companyZipCodeLabel
-            // 
-            companyZipCodeLabel.AutoSize = true;
-            companyZipCodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            companyZipCodeLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyZipCodeLabel.Location = new System.Drawing.Point(447, 176);
-            companyZipCodeLabel.Name = "companyZipCodeLabel";
-            companyZipCodeLabel.Size = new System.Drawing.Size(71, 19);
-            companyZipCodeLabel.TabIndex = 85;
-            companyZipCodeLabel.Text = "Zip Code:";
             // 
             // companyZipCodeTextBox
             // 
@@ -372,6 +377,18 @@
             // 
             this.toolStripTextBoxCompanyIDTextBox.Name = "toolStripTextBoxCompanyIDTextBox";
             this.toolStripTextBoxCompanyIDTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // toolStripButtonCompanySearchButton
+            // 
+            this.toolStripButtonCompanySearchButton.BackColor = System.Drawing.Color.SandyBrown;
+            this.toolStripButtonCompanySearchButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCompanySearchButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonCompanySearchButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.toolStripButtonCompanySearchButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanySearchButton.Image")));
+            this.toolStripButtonCompanySearchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCompanySearchButton.Name = "toolStripButtonCompanySearchButton";
+            this.toolStripButtonCompanySearchButton.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonCompanySearchButton.Text = "Search";
             // 
             // bindingNavigatorSeparator
             // 
@@ -437,27 +454,6 @@
             this.companyBindingNavigator.Size = new System.Drawing.Size(732, 25);
             this.companyBindingNavigator.TabIndex = 67;
             this.companyBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButtonCompanySearchButton
-            // 
-            this.toolStripButtonCompanySearchButton.BackColor = System.Drawing.Color.SandyBrown;
-            this.toolStripButtonCompanySearchButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonCompanySearchButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonCompanySearchButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.toolStripButtonCompanySearchButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanySearchButton.Image")));
-            this.toolStripButtonCompanySearchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCompanySearchButton.Name = "toolStripButtonCompanySearchButton";
-            this.toolStripButtonCompanySearchButton.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButtonCompanySearchButton.Text = "Search";
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -531,6 +527,11 @@
             this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.cutToolStripButton.Text = "C&ut";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // printToolStripButton
             // 
             this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -575,15 +576,15 @@
             this.Controls.Add(this.companyBindingNavigator);
             this.Controls.Add(this.lblCompanyInfoTitle);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CompanyForm";
             this.Text = "Company";
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).EndInit();
             this.companyBindingNavigator.ResumeLayout(false);
             this.companyBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
