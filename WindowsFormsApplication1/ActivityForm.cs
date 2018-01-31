@@ -16,5 +16,11 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void toolStripButtonActivityExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.activityMainForm = null;
+        }
     }
 }

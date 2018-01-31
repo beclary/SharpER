@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.activityToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.jobToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jobsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateModifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,18 +65,6 @@
             this.btnCompany = new System.Windows.Forms.Button();
             this.btnActivity = new System.Windows.Forms.Button();
             this.btnJob = new System.Windows.Forms.Button();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contactToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.companyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.activityToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.jobToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jobsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,94 @@
             this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contactToolStripMenuItem3,
+            this.companyToolStripMenuItem3,
+            this.activityToolStripMenuItem3,
+            this.jobToolStripMenuItem3});
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "Add";
+            // 
+            // contactToolStripMenuItem3
+            // 
+            this.contactToolStripMenuItem3.Name = "contactToolStripMenuItem3";
+            this.contactToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.contactToolStripMenuItem3.Text = "Contact";
+            this.contactToolStripMenuItem3.Click += new System.EventHandler(this.contactToolStripMenuItem3_Click);
+            // 
+            // companyToolStripMenuItem3
+            // 
+            this.companyToolStripMenuItem3.Name = "companyToolStripMenuItem3";
+            this.companyToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem3.Text = "Company";
+            // 
+            // activityToolStripMenuItem3
+            // 
+            this.activityToolStripMenuItem3.Name = "activityToolStripMenuItem3";
+            this.activityToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.activityToolStripMenuItem3.Text = "Activity";
+            // 
+            // jobToolStripMenuItem3
+            // 
+            this.jobToolStripMenuItem3.Name = "jobToolStripMenuItem3";
+            this.jobToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.jobToolStripMenuItem3.Text = "Job";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contactToolStripMenuItem,
+            this.companyToolStripMenuItem,
+            this.activityToolStripMenuItem,
+            this.jobsToolStripMenuItem1});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
+            // contactToolStripMenuItem
+            // 
+            this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
+            this.contactToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.contactToolStripMenuItem.Text = "Contact";
+            // 
+            // companyToolStripMenuItem
+            // 
+            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem.Text = "Company";
+            // 
+            // activityToolStripMenuItem
+            // 
+            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.activityToolStripMenuItem.Text = "Activity";
+            // 
+            // jobsToolStripMenuItem1
+            // 
+            this.jobsToolStripMenuItem1.Name = "jobsToolStripMenuItem1";
+            this.jobsToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.jobsToolStripMenuItem1.Text = "Job";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -235,6 +323,7 @@
             this.btnContact.TabIndex = 1;
             this.btnContact.Text = "Contact";
             this.btnContact.UseVisualStyleBackColor = false;
+            this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
             // 
             // btnCompany
             // 
@@ -248,6 +337,7 @@
             this.btnCompany.TabIndex = 2;
             this.btnCompany.Text = "Company";
             this.btnCompany.UseVisualStyleBackColor = false;
+            this.btnCompany.Click += new System.EventHandler(this.btnCompany_Click);
             // 
             // btnActivity
             // 
@@ -261,6 +351,7 @@
             this.btnActivity.TabIndex = 3;
             this.btnActivity.Text = "Activity";
             this.btnActivity.UseVisualStyleBackColor = false;
+            this.btnActivity.Click += new System.EventHandler(this.btnActivity_Click);
             // 
             // btnJob
             // 
@@ -274,92 +365,7 @@
             this.btnJob.TabIndex = 4;
             this.btnJob.Text = "Job";
             this.btnJob.UseVisualStyleBackColor = false;
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contactToolStripMenuItem3,
-            this.companyToolStripMenuItem3,
-            this.activityToolStripMenuItem3,
-            this.jobToolStripMenuItem3});
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem.Text = "Add";
-            // 
-            // contactToolStripMenuItem3
-            // 
-            this.contactToolStripMenuItem3.Name = "contactToolStripMenuItem3";
-            this.contactToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
-            this.contactToolStripMenuItem3.Text = "Contact";
-            // 
-            // companyToolStripMenuItem3
-            // 
-            this.companyToolStripMenuItem3.Name = "companyToolStripMenuItem3";
-            this.companyToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
-            this.companyToolStripMenuItem3.Text = "Company";
-            // 
-            // activityToolStripMenuItem3
-            // 
-            this.activityToolStripMenuItem3.Name = "activityToolStripMenuItem3";
-            this.activityToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
-            this.activityToolStripMenuItem3.Text = "Activity";
-            // 
-            // jobToolStripMenuItem3
-            // 
-            this.jobToolStripMenuItem3.Name = "jobToolStripMenuItem3";
-            this.jobToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
-            this.jobToolStripMenuItem3.Text = "Job";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.contactToolStripMenuItem,
-            this.companyToolStripMenuItem,
-            this.activityToolStripMenuItem,
-            this.jobsToolStripMenuItem1});
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // contactToolStripMenuItem
-            // 
-            this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
-            this.contactToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.contactToolStripMenuItem.Text = "Contact";
-            // 
-            // companyToolStripMenuItem
-            // 
-            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.companyToolStripMenuItem.Text = "Company";
-            // 
-            // activityToolStripMenuItem
-            // 
-            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
-            this.activityToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.activityToolStripMenuItem.Text = "Activity";
-            // 
-            // jobsToolStripMenuItem1
-            // 
-            this.jobsToolStripMenuItem1.Name = "jobsToolStripMenuItem1";
-            this.jobsToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
-            this.jobsToolStripMenuItem1.Text = "Job";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.btnJob.Click += new System.EventHandler(this.btnJob_Click);
             // 
             // MainForm
             // 
@@ -379,6 +385,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

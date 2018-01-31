@@ -38,6 +38,7 @@
             System.Windows.Forms.Label activityTravelLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActivityForm));
             this.activityContactIDTextBox = new System.Windows.Forms.TextBox();
+            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activityDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.activityDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.activityIDTextBox = new System.Windows.Forms.TextBox();
@@ -48,16 +49,13 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelActivityDateLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxActivityDateTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonActivityDateButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.activityBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonActivityDateButton = new System.Windows.Forms.ToolStripButton();
-            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
@@ -66,7 +64,11 @@
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonActivityExitButton = new System.Windows.Forms.ToolStripButton();
             activityContactIDLabel = new System.Windows.Forms.Label();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
@@ -74,10 +76,10 @@
             activityJobIDLabel = new System.Windows.Forms.Label();
             activityNotesLabel = new System.Windows.Forms.Label();
             activityTravelLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingNavigator)).BeginInit();
             this.activityBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activityContactIDLabel
@@ -92,17 +94,6 @@
             activityContactIDLabel.TabIndex = 1;
             activityContactIDLabel.Text = "Contact ID:";
             // 
-            // activityContactIDTextBox
-            // 
-            this.activityContactIDTextBox.BackColor = System.Drawing.Color.LightGray;
-            this.activityContactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
-            this.activityContactIDTextBox.Location = new System.Drawing.Point(127, 293);
-            this.activityContactIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.activityContactIDTextBox.Name = "activityContactIDTextBox";
-            this.activityContactIDTextBox.ReadOnly = true;
-            this.activityContactIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityContactIDTextBox.TabIndex = 2;
-            // 
             // activityDateLabel
             // 
             activityDateLabel.AutoSize = true;
@@ -114,16 +105,6 @@
             activityDateLabel.Size = new System.Drawing.Size(44, 19);
             activityDateLabel.TabIndex = 3;
             activityDateLabel.Text = "Date:";
-            // 
-            // activityDateDateTimePicker
-            // 
-            this.activityDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.activityBindingSource, "ActivityDate", true));
-            this.activityDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.activityDateDateTimePicker.Location = new System.Drawing.Point(127, 109);
-            this.activityDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.activityDateDateTimePicker.Name = "activityDateDateTimePicker";
-            this.activityDateDateTimePicker.Size = new System.Drawing.Size(130, 26);
-            this.activityDateDateTimePicker.TabIndex = 4;
             // 
             // activityDescriptionLabel
             // 
@@ -137,16 +118,6 @@
             activityDescriptionLabel.TabIndex = 5;
             activityDescriptionLabel.Text = "Description:";
             // 
-            // activityDescriptionTextBox
-            // 
-            this.activityDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityDescription", true));
-            this.activityDescriptionTextBox.Location = new System.Drawing.Point(127, 143);
-            this.activityDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.activityDescriptionTextBox.Multiline = true;
-            this.activityDescriptionTextBox.Name = "activityDescriptionTextBox";
-            this.activityDescriptionTextBox.Size = new System.Drawing.Size(454, 78);
-            this.activityDescriptionTextBox.TabIndex = 6;
-            // 
             // activityIDLabel
             // 
             activityIDLabel.AutoSize = true;
@@ -158,17 +129,6 @@
             activityIDLabel.Size = new System.Drawing.Size(87, 19);
             activityIDLabel.TabIndex = 7;
             activityIDLabel.Text = "Activity ID:";
-            // 
-            // activityIDTextBox
-            // 
-            this.activityIDTextBox.BackColor = System.Drawing.Color.LightGray;
-            this.activityIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityID", true));
-            this.activityIDTextBox.Location = new System.Drawing.Point(464, 109);
-            this.activityIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.activityIDTextBox.Name = "activityIDTextBox";
-            this.activityIDTextBox.ReadOnly = true;
-            this.activityIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityIDTextBox.TabIndex = 8;
             // 
             // activityJobIDLabel
             // 
@@ -182,17 +142,6 @@
             activityJobIDLabel.TabIndex = 9;
             activityJobIDLabel.Text = "Job ID:";
             // 
-            // activityJobIDTextBox
-            // 
-            this.activityJobIDTextBox.BackColor = System.Drawing.Color.LightGray;
-            this.activityJobIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityJobID", true));
-            this.activityJobIDTextBox.Location = new System.Drawing.Point(127, 329);
-            this.activityJobIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.activityJobIDTextBox.Name = "activityJobIDTextBox";
-            this.activityJobIDTextBox.ReadOnly = true;
-            this.activityJobIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityJobIDTextBox.TabIndex = 10;
-            // 
             // activityNotesLabel
             // 
             activityNotesLabel.AutoSize = true;
@@ -204,16 +153,6 @@
             activityNotesLabel.Size = new System.Drawing.Size(52, 19);
             activityNotesLabel.TabIndex = 11;
             activityNotesLabel.Text = "Notes:";
-            // 
-            // activityNotesTextBox
-            // 
-            this.activityNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityNotes", true));
-            this.activityNotesTextBox.Location = new System.Drawing.Point(127, 363);
-            this.activityNotesTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.activityNotesTextBox.Multiline = true;
-            this.activityNotesTextBox.Name = "activityNotesTextBox";
-            this.activityNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.activityNotesTextBox.TabIndex = 12;
             // 
             // activityTravelLabel
             // 
@@ -227,6 +166,73 @@
             activityTravelLabel.TabIndex = 13;
             activityTravelLabel.Text = "Travel:";
             // 
+            // activityContactIDTextBox
+            // 
+            this.activityContactIDTextBox.BackColor = System.Drawing.Color.LightGray;
+            this.activityContactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
+            this.activityContactIDTextBox.Location = new System.Drawing.Point(127, 293);
+            this.activityContactIDTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.activityContactIDTextBox.Name = "activityContactIDTextBox";
+            this.activityContactIDTextBox.ReadOnly = true;
+            this.activityContactIDTextBox.Size = new System.Drawing.Size(117, 26);
+            this.activityContactIDTextBox.TabIndex = 2;
+            // 
+            // activityBindingSource
+            // 
+            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
+            // 
+            // activityDateDateTimePicker
+            // 
+            this.activityDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.activityBindingSource, "ActivityDate", true));
+            this.activityDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.activityDateDateTimePicker.Location = new System.Drawing.Point(127, 109);
+            this.activityDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.activityDateDateTimePicker.Name = "activityDateDateTimePicker";
+            this.activityDateDateTimePicker.Size = new System.Drawing.Size(130, 26);
+            this.activityDateDateTimePicker.TabIndex = 4;
+            // 
+            // activityDescriptionTextBox
+            // 
+            this.activityDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityDescription", true));
+            this.activityDescriptionTextBox.Location = new System.Drawing.Point(127, 143);
+            this.activityDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.activityDescriptionTextBox.Multiline = true;
+            this.activityDescriptionTextBox.Name = "activityDescriptionTextBox";
+            this.activityDescriptionTextBox.Size = new System.Drawing.Size(454, 78);
+            this.activityDescriptionTextBox.TabIndex = 6;
+            // 
+            // activityIDTextBox
+            // 
+            this.activityIDTextBox.BackColor = System.Drawing.Color.LightGray;
+            this.activityIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityID", true));
+            this.activityIDTextBox.Location = new System.Drawing.Point(464, 109);
+            this.activityIDTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.activityIDTextBox.Name = "activityIDTextBox";
+            this.activityIDTextBox.ReadOnly = true;
+            this.activityIDTextBox.Size = new System.Drawing.Size(117, 26);
+            this.activityIDTextBox.TabIndex = 8;
+            // 
+            // activityJobIDTextBox
+            // 
+            this.activityJobIDTextBox.BackColor = System.Drawing.Color.LightGray;
+            this.activityJobIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityJobID", true));
+            this.activityJobIDTextBox.Location = new System.Drawing.Point(127, 329);
+            this.activityJobIDTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.activityJobIDTextBox.Name = "activityJobIDTextBox";
+            this.activityJobIDTextBox.ReadOnly = true;
+            this.activityJobIDTextBox.Size = new System.Drawing.Size(117, 26);
+            this.activityJobIDTextBox.TabIndex = 10;
+            // 
+            // activityNotesTextBox
+            // 
+            this.activityNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityNotes", true));
+            this.activityNotesTextBox.Location = new System.Drawing.Point(127, 363);
+            this.activityNotesTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.activityNotesTextBox.Multiline = true;
+            this.activityNotesTextBox.Name = "activityNotesTextBox";
+            this.activityNotesTextBox.Size = new System.Drawing.Size(454, 78);
+            this.activityNotesTextBox.TabIndex = 12;
+            // 
             // activityTravelComboBox
             // 
             this.activityTravelComboBox.BackColor = System.Drawing.Color.LightGray;
@@ -237,7 +243,7 @@
             "Yes",
             "No"});
             this.activityTravelComboBox.Location = new System.Drawing.Point(127, 229);
-            this.activityTravelComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.activityTravelComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityTravelComboBox.Name = "activityTravelComboBox";
             this.activityTravelComboBox.Size = new System.Drawing.Size(72, 26);
             this.activityTravelComboBox.TabIndex = 14;
@@ -260,7 +266,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabelActivityDateLabel,
             this.toolStripTextBoxActivityDateTextBox,
-            this.toolStripButtonActivityDateButton});
+            this.toolStripButtonActivityDateButton,
+            this.toolStripSeparator2,
+            this.toolStripButtonActivityExitButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(732, 25);
@@ -279,6 +287,18 @@
             // 
             this.toolStripTextBoxActivityDateTextBox.Name = "toolStripTextBoxActivityDateTextBox";
             this.toolStripTextBoxActivityDateTextBox.Size = new System.Drawing.Size(132, 25);
+            // 
+            // toolStripButtonActivityDateButton
+            // 
+            this.toolStripButtonActivityDateButton.BackColor = System.Drawing.Color.SandyBrown;
+            this.toolStripButtonActivityDateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonActivityDateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonActivityDateButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.toolStripButtonActivityDateButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonActivityDateButton.Image")));
+            this.toolStripButtonActivityDateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonActivityDateButton.Name = "toolStripButtonActivityDateButton";
+            this.toolStripButtonActivityDateButton.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButtonActivityDateButton.Text = "Search";
             // 
             // bindingNavigatorSeparator
             // 
@@ -344,32 +364,6 @@
             this.activityBindingNavigator.Size = new System.Drawing.Size(732, 25);
             this.activityBindingNavigator.TabIndex = 0;
             this.activityBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButtonActivityDateButton
-            // 
-            this.toolStripButtonActivityDateButton.BackColor = System.Drawing.Color.SandyBrown;
-            this.toolStripButtonActivityDateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonActivityDateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonActivityDateButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.toolStripButtonActivityDateButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonActivityDateButton.Image")));
-            this.toolStripButtonActivityDateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonActivityDateButton.Name = "toolStripButtonActivityDateButton";
-            this.toolStripButtonActivityDateButton.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButtonActivityDateButton.Text = "Search";
-            // 
-            // activityBindingSource
-            // 
-            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -443,6 +437,11 @@
             this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.cutToolStripButton.Text = "C&ut";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // printToolStripButton
             // 
             this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -451,6 +450,29 @@
             this.printToolStripButton.Name = "printToolStripButton";
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonActivityExitButton
+            // 
+            this.toolStripButtonActivityExitButton.BackColor = System.Drawing.Color.Gold;
+            this.toolStripButtonActivityExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonActivityExitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonActivityExitButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.toolStripButtonActivityExitButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonActivityExitButton.Image")));
+            this.toolStripButtonActivityExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonActivityExitButton.Name = "toolStripButtonActivityExitButton";
+            this.toolStripButtonActivityExitButton.Size = new System.Drawing.Size(35, 22);
+            this.toolStripButtonActivityExitButton.Text = "Exit";
+            this.toolStripButtonActivityExitButton.Click += new System.EventHandler(this.toolStripButtonActivityExitButton_Click);
             // 
             // ActivityForm
             // 
@@ -476,15 +498,15 @@
             this.Controls.Add(this.activityTravelComboBox);
             this.Controls.Add(this.activityBindingNavigator);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActivityForm";
             this.Text = "Activity";
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingNavigator)).EndInit();
             this.activityBindingNavigator.ResumeLayout(false);
             this.activityBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,5 +544,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonActivityExitButton;
     }
 }

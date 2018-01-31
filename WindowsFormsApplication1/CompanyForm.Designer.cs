@@ -73,6 +73,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonCompanyExitButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -171,7 +173,7 @@
             companyStateLabel.AutoSize = true;
             companyStateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             companyStateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyStateLabel.Location = new System.Drawing.Point(310, 177);
+            companyStateLabel.Location = new System.Drawing.Point(277, 176);
             companyStateLabel.Name = "companyStateLabel";
             companyStateLabel.Size = new System.Drawing.Size(50, 19);
             companyStateLabel.TabIndex = 81;
@@ -193,7 +195,7 @@
             companyZipCodeLabel.AutoSize = true;
             companyZipCodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             companyZipCodeLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyZipCodeLabel.Location = new System.Drawing.Point(447, 176);
+            companyZipCodeLabel.Location = new System.Drawing.Point(465, 176);
             companyZipCodeLabel.Name = "companyZipCodeLabel";
             companyZipCodeLabel.Size = new System.Drawing.Size(71, 19);
             companyZipCodeLabel.TabIndex = 85;
@@ -228,7 +230,7 @@
             this.companyCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyCity", true));
             this.companyCityTextBox.Location = new System.Drawing.Point(117, 173);
             this.companyCityTextBox.Name = "companyCityTextBox";
-            this.companyCityTextBox.Size = new System.Drawing.Size(175, 26);
+            this.companyCityTextBox.Size = new System.Drawing.Size(145, 26);
             this.companyCityTextBox.TabIndex = 70;
             // 
             // companyFaxTextBox
@@ -330,9 +332,9 @@
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
-            this.companyStateComboBox.Location = new System.Drawing.Point(361, 174);
+            this.companyStateComboBox.Location = new System.Drawing.Point(333, 174);
             this.companyStateComboBox.Name = "companyStateComboBox";
-            this.companyStateComboBox.Size = new System.Drawing.Size(55, 26);
+            this.companyStateComboBox.Size = new System.Drawing.Size(126, 26);
             this.companyStateComboBox.Sorted = true;
             this.companyStateComboBox.TabIndex = 82;
             // 
@@ -347,9 +349,9 @@
             // companyZipCodeTextBox
             // 
             this.companyZipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyZipCode", true));
-            this.companyZipCodeTextBox.Location = new System.Drawing.Point(519, 173);
+            this.companyZipCodeTextBox.Location = new System.Drawing.Point(542, 173);
             this.companyZipCodeTextBox.Name = "companyZipCodeTextBox";
-            this.companyZipCodeTextBox.Size = new System.Drawing.Size(121, 26);
+            this.companyZipCodeTextBox.Size = new System.Drawing.Size(98, 26);
             this.companyZipCodeTextBox.TabIndex = 86;
             // 
             // toolStrip1
@@ -358,7 +360,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabelCompanyIDLabel,
             this.toolStripTextBoxCompanyIDTextBox,
-            this.toolStripButtonCompanySearchButton});
+            this.toolStripButtonCompanySearchButton,
+            this.toolStripSeparator1,
+            this.toolStripButtonCompanyExitButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(732, 25);
@@ -546,6 +550,24 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonCompanyExitButton
+            // 
+            this.toolStripButtonCompanyExitButton.BackColor = System.Drawing.Color.Gold;
+            this.toolStripButtonCompanyExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCompanyExitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonCompanyExitButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.toolStripButtonCompanyExitButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanyExitButton.Image")));
+            this.toolStripButtonCompanyExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCompanyExitButton.Name = "toolStripButtonCompanyExitButton";
+            this.toolStripButtonCompanyExitButton.Size = new System.Drawing.Size(35, 22);
+            this.toolStripButtonCompanyExitButton.Text = "Exit";
+            this.toolStripButtonCompanyExitButton.Click += new System.EventHandler(this.toolStripButtonCompanyExitButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -579,6 +601,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CompanyForm";
             this.Text = "Company";
+            this.Load += new System.EventHandler(this.CompanyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -625,5 +648,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCompanyExitButton;
     }
 }

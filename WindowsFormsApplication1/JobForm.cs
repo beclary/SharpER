@@ -21,5 +21,11 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void toolStripButtonJobExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm.jobMainForm = null;
+        }
     }
 }

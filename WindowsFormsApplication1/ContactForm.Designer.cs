@@ -82,6 +82,8 @@
             this.toolStripLabelContactIDLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxContactIDTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonContactExitButton = new System.Windows.Forms.ToolStripButton();
             this.lblContactInfoTitle = new System.Windows.Forms.Label();
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
@@ -241,7 +243,7 @@
             contactStateLabel.AutoSize = true;
             contactStateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactStateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactStateLabel.Location = new System.Drawing.Point(348, 272);
+            contactStateLabel.Location = new System.Drawing.Point(311, 272);
             contactStateLabel.Name = "contactStateLabel";
             contactStateLabel.Size = new System.Drawing.Size(50, 19);
             contactStateLabel.TabIndex = 25;
@@ -263,7 +265,7 @@
             contactZipCodeLabel.AutoSize = true;
             contactZipCodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactZipCodeLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactZipCodeLabel.Location = new System.Drawing.Point(474, 272);
+            contactZipCodeLabel.Location = new System.Drawing.Point(495, 272);
             contactZipCodeLabel.Name = "contactZipCodeLabel";
             contactZipCodeLabel.Size = new System.Drawing.Size(71, 19);
             contactZipCodeLabel.TabIndex = 29;
@@ -322,7 +324,6 @@
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -332,7 +333,6 @@
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
             // 
             // bindingNavigatorSeparator
             // 
@@ -361,7 +361,6 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -371,7 +370,6 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
-            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -395,6 +393,7 @@
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
             // 
             // saveToolStripButton
             // 
@@ -439,15 +438,15 @@
             this.contactAddressTextBox.Location = new System.Drawing.Point(158, 238);
             this.contactAddressTextBox.Name = "contactAddressTextBox";
             this.contactAddressTextBox.Size = new System.Drawing.Size(301, 26);
-            this.contactAddressTextBox.TabIndex = 2;
+            this.contactAddressTextBox.TabIndex = 5;
             // 
             // contactCityTextBox
             // 
             this.contactCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactCity", true));
             this.contactCityTextBox.Location = new System.Drawing.Point(158, 270);
             this.contactCityTextBox.Name = "contactCityTextBox";
-            this.contactCityTextBox.Size = new System.Drawing.Size(175, 26);
-            this.contactCityTextBox.TabIndex = 4;
+            this.contactCityTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactCityTextBox.TabIndex = 6;
             // 
             // contactContactedViaComboBox
             // 
@@ -462,9 +461,9 @@
             "Text"});
             this.contactContactedViaComboBox.Location = new System.Drawing.Point(158, 302);
             this.contactContactedViaComboBox.Name = "contactContactedViaComboBox";
-            this.contactContactedViaComboBox.Size = new System.Drawing.Size(139, 26);
+            this.contactContactedViaComboBox.Size = new System.Drawing.Size(145, 26);
             this.contactContactedViaComboBox.Sorted = true;
-            this.contactContactedViaComboBox.TabIndex = 6;
+            this.contactContactedViaComboBox.TabIndex = 9;
             // 
             // contactDepartmentTextBox
             // 
@@ -472,7 +471,7 @@
             this.contactDepartmentTextBox.Location = new System.Drawing.Point(158, 206);
             this.contactDepartmentTextBox.Name = "contactDepartmentTextBox";
             this.contactDepartmentTextBox.Size = new System.Drawing.Size(301, 26);
-            this.contactDepartmentTextBox.TabIndex = 8;
+            this.contactDepartmentTextBox.TabIndex = 4;
             // 
             // contactEmailTextBox
             // 
@@ -480,7 +479,7 @@
             this.contactEmailTextBox.Location = new System.Drawing.Point(158, 398);
             this.contactEmailTextBox.Name = "contactEmailTextBox";
             this.contactEmailTextBox.Size = new System.Drawing.Size(401, 26);
-            this.contactEmailTextBox.TabIndex = 10;
+            this.contactEmailTextBox.TabIndex = 13;
             // 
             // contactFaxTextBox
             // 
@@ -496,7 +495,7 @@
             this.contactFirstNameTextBox.Location = new System.Drawing.Point(158, 110);
             this.contactFirstNameTextBox.Name = "contactFirstNameTextBox";
             this.contactFirstNameTextBox.Size = new System.Drawing.Size(301, 26);
-            this.contactFirstNameTextBox.TabIndex = 14;
+            this.contactFirstNameTextBox.TabIndex = 1;
             // 
             // contactIDTextBox
             // 
@@ -513,7 +512,7 @@
             this.contactLastNameTextBox.Location = new System.Drawing.Point(158, 142);
             this.contactLastNameTextBox.Name = "contactLastNameTextBox";
             this.contactLastNameTextBox.Size = new System.Drawing.Size(301, 26);
-            this.contactLastNameTextBox.TabIndex = 18;
+            this.contactLastNameTextBox.TabIndex = 2;
             // 
             // contactMobileTextBox
             // 
@@ -521,7 +520,7 @@
             this.contactMobileTextBox.Location = new System.Drawing.Point(373, 336);
             this.contactMobileTextBox.Name = "contactMobileTextBox";
             this.contactMobileTextBox.Size = new System.Drawing.Size(145, 26);
-            this.contactMobileTextBox.TabIndex = 20;
+            this.contactMobileTextBox.TabIndex = 11;
             // 
             // contactNotesTextBox
             // 
@@ -530,7 +529,7 @@
             this.contactNotesTextBox.Multiline = true;
             this.contactNotesTextBox.Name = "contactNotesTextBox";
             this.contactNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.contactNotesTextBox.TabIndex = 22;
+            this.contactNotesTextBox.TabIndex = 14;
             // 
             // contactPhoneTextBox
             // 
@@ -538,7 +537,7 @@
             this.contactPhoneTextBox.Location = new System.Drawing.Point(158, 334);
             this.contactPhoneTextBox.Name = "contactPhoneTextBox";
             this.contactPhoneTextBox.Size = new System.Drawing.Size(145, 26);
-            this.contactPhoneTextBox.TabIndex = 24;
+            this.contactPhoneTextBox.TabIndex = 10;
             // 
             // contactStateComboBox
             // 
@@ -597,11 +596,11 @@
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
-            this.contactStateComboBox.Location = new System.Drawing.Point(404, 270);
+            this.contactStateComboBox.Location = new System.Drawing.Point(367, 270);
             this.contactStateComboBox.Name = "contactStateComboBox";
-            this.contactStateComboBox.Size = new System.Drawing.Size(55, 26);
+            this.contactStateComboBox.Size = new System.Drawing.Size(122, 26);
             this.contactStateComboBox.Sorted = true;
-            this.contactStateComboBox.TabIndex = 26;
+            this.contactStateComboBox.TabIndex = 7;
             // 
             // contactTitleTextBox
             // 
@@ -609,15 +608,15 @@
             this.contactTitleTextBox.Location = new System.Drawing.Point(158, 174);
             this.contactTitleTextBox.Name = "contactTitleTextBox";
             this.contactTitleTextBox.Size = new System.Drawing.Size(301, 26);
-            this.contactTitleTextBox.TabIndex = 28;
+            this.contactTitleTextBox.TabIndex = 3;
             // 
             // contactZipCodeTextBox
             // 
             this.contactZipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactZipCode", true));
-            this.contactZipCodeTextBox.Location = new System.Drawing.Point(551, 270);
+            this.contactZipCodeTextBox.Location = new System.Drawing.Point(572, 270);
             this.contactZipCodeTextBox.Name = "contactZipCodeTextBox";
-            this.contactZipCodeTextBox.Size = new System.Drawing.Size(121, 26);
-            this.contactZipCodeTextBox.TabIndex = 30;
+            this.contactZipCodeTextBox.Size = new System.Drawing.Size(100, 26);
+            this.contactZipCodeTextBox.TabIndex = 8;
             // 
             // toolStrip1
             // 
@@ -625,7 +624,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabelContactIDLabel,
             this.toolStripTextBoxContactIDTextBox,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripSeparator2,
+            this.toolStripButtonContactExitButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(732, 25);
@@ -656,6 +657,24 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton1.Text = "Search";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonContactExitButton
+            // 
+            this.toolStripButtonContactExitButton.BackColor = System.Drawing.Color.Gold;
+            this.toolStripButtonContactExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonContactExitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonContactExitButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.toolStripButtonContactExitButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonContactExitButton.Image")));
+            this.toolStripButtonContactExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonContactExitButton.Name = "toolStripButtonContactExitButton";
+            this.toolStripButtonContactExitButton.Size = new System.Drawing.Size(35, 22);
+            this.toolStripButtonContactExitButton.Text = "Exit";
+            this.toolStripButtonContactExitButton.Click += new System.EventHandler(this.toolStripButtonContactExitButton_Click);
             // 
             // lblContactInfoTitle
             // 
@@ -763,5 +782,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonContactExitButton;
     }
 }
