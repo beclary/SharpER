@@ -22,5 +22,10 @@ namespace WindowsFormsApplication1
             this.Close();
             MainForm.activityMainForm = null;
         }
+
+        private void activityJobIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

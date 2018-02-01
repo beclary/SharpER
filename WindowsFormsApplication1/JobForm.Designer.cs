@@ -67,9 +67,9 @@
             this.toolStripLabelJobPositionLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxJobPositionTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonJobSearchButton = new System.Windows.Forms.ToolStripButton();
-            this.lblSalaryPerYear = new System.Windows.Forms.Label();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonJobExitButton = new System.Windows.Forms.ToolStripButton();
+            this.lblSalaryPerYear = new System.Windows.Forms.Label();
             jobAppliedLabel = new System.Windows.Forms.Label();
             jobCompanyIDLabel = new System.Windows.Forms.Label();
             jobContactIDLabel = new System.Windows.Forms.Label();
@@ -339,7 +339,7 @@
             this.jobAppliedDateTimePicker.Location = new System.Drawing.Point(135, 142);
             this.jobAppliedDateTimePicker.Name = "jobAppliedDateTimePicker";
             this.jobAppliedDateTimePicker.Size = new System.Drawing.Size(130, 26);
-            this.jobAppliedDateTimePicker.TabIndex = 41;
+            this.jobAppliedDateTimePicker.TabIndex = 1;
             // 
             // jobCompanyIDTextBox
             // 
@@ -349,7 +349,7 @@
             this.jobCompanyIDTextBox.Name = "jobCompanyIDTextBox";
             this.jobCompanyIDTextBox.ReadOnly = true;
             this.jobCompanyIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.jobCompanyIDTextBox.TabIndex = 43;
+            this.jobCompanyIDTextBox.TabIndex = 3;
             // 
             // jobContactIDTextBox
             // 
@@ -359,7 +359,7 @@
             this.jobContactIDTextBox.Name = "jobContactIDTextBox";
             this.jobContactIDTextBox.ReadOnly = true;
             this.jobContactIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.jobContactIDTextBox.TabIndex = 45;
+            this.jobContactIDTextBox.TabIndex = 4;
             // 
             // jobIDTextBox
             // 
@@ -378,7 +378,7 @@
             this.jobNotesTextBox.Multiline = true;
             this.jobNotesTextBox.Name = "jobNotesTextBox";
             this.jobNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.jobNotesTextBox.TabIndex = 49;
+            this.jobNotesTextBox.TabIndex = 5;
             // 
             // jobPayTextBox
             // 
@@ -386,7 +386,7 @@
             this.jobPayTextBox.Location = new System.Drawing.Point(135, 202);
             this.jobPayTextBox.Name = "jobPayTextBox";
             this.jobPayTextBox.Size = new System.Drawing.Size(130, 26);
-            this.jobPayTextBox.TabIndex = 51;
+            this.jobPayTextBox.TabIndex = 2;
             // 
             // jobPositionTextBox
             // 
@@ -394,7 +394,7 @@
             this.jobPositionTextBox.Location = new System.Drawing.Point(135, 110);
             this.jobPositionTextBox.Name = "jobPositionTextBox";
             this.jobPositionTextBox.Size = new System.Drawing.Size(283, 26);
-            this.jobPositionTextBox.TabIndex = 53;
+            this.jobPositionTextBox.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -437,17 +437,6 @@
             this.toolStripButtonJobSearchButton.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonJobSearchButton.Text = "Search";
             // 
-            // lblSalaryPerYear
-            // 
-            this.lblSalaryPerYear.AutoSize = true;
-            this.lblSalaryPerYear.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalaryPerYear.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblSalaryPerYear.Location = new System.Drawing.Point(28, 223);
-            this.lblSalaryPerYear.Name = "lblSalaryPerYear";
-            this.lblSalaryPerYear.Size = new System.Drawing.Size(107, 16);
-            this.lblSalaryPerYear.TabIndex = 55;
-            this.lblSalaryPerYear.Text = "( salary per year )";
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -465,6 +454,17 @@
             this.toolStripButtonJobExitButton.Size = new System.Drawing.Size(35, 22);
             this.toolStripButtonJobExitButton.Text = "Exit";
             this.toolStripButtonJobExitButton.Click += new System.EventHandler(this.toolStripButtonJobExitButton_Click);
+            // 
+            // lblSalaryPerYear
+            // 
+            this.lblSalaryPerYear.AutoSize = true;
+            this.lblSalaryPerYear.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalaryPerYear.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblSalaryPerYear.Location = new System.Drawing.Point(28, 223);
+            this.lblSalaryPerYear.Name = "lblSalaryPerYear";
+            this.lblSalaryPerYear.Size = new System.Drawing.Size(107, 16);
+            this.lblSalaryPerYear.TabIndex = 55;
+            this.lblSalaryPerYear.Text = "( salary per year )";
             // 
             // JobForm
             // 

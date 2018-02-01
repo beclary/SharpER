@@ -56,6 +56,8 @@
             this.toolStripLabelCompanyIDLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxCompanyIDTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonCompanySearchButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonCompanyExitButton = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -73,8 +75,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonCompanyExitButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -219,7 +219,7 @@
             this.companyAddressTextBox.Location = new System.Drawing.Point(117, 141);
             this.companyAddressTextBox.Name = "companyAddressTextBox";
             this.companyAddressTextBox.Size = new System.Drawing.Size(299, 26);
-            this.companyAddressTextBox.TabIndex = 68;
+            this.companyAddressTextBox.TabIndex = 1;
             // 
             // companyBindingSource
             // 
@@ -231,7 +231,7 @@
             this.companyCityTextBox.Location = new System.Drawing.Point(117, 173);
             this.companyCityTextBox.Name = "companyCityTextBox";
             this.companyCityTextBox.Size = new System.Drawing.Size(145, 26);
-            this.companyCityTextBox.TabIndex = 70;
+            this.companyCityTextBox.TabIndex = 2;
             // 
             // companyFaxTextBox
             // 
@@ -239,7 +239,7 @@
             this.companyFaxTextBox.Location = new System.Drawing.Point(117, 237);
             this.companyFaxTextBox.Name = "companyFaxTextBox";
             this.companyFaxTextBox.Size = new System.Drawing.Size(145, 26);
-            this.companyFaxTextBox.TabIndex = 72;
+            this.companyFaxTextBox.TabIndex = 6;
             // 
             // companyIDTextBox
             // 
@@ -257,7 +257,7 @@
             this.companyNameTextBox.Location = new System.Drawing.Point(117, 109);
             this.companyNameTextBox.Name = "companyNameTextBox";
             this.companyNameTextBox.Size = new System.Drawing.Size(299, 26);
-            this.companyNameTextBox.TabIndex = 76;
+            this.companyNameTextBox.TabIndex = 0;
             // 
             // companyNotesTextBox
             // 
@@ -266,7 +266,7 @@
             this.companyNotesTextBox.Multiline = true;
             this.companyNotesTextBox.Name = "companyNotesTextBox";
             this.companyNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.companyNotesTextBox.TabIndex = 78;
+            this.companyNotesTextBox.TabIndex = 8;
             // 
             // companyPhoneTextBox
             // 
@@ -274,11 +274,12 @@
             this.companyPhoneTextBox.Location = new System.Drawing.Point(117, 205);
             this.companyPhoneTextBox.Name = "companyPhoneTextBox";
             this.companyPhoneTextBox.Size = new System.Drawing.Size(145, 26);
-            this.companyPhoneTextBox.TabIndex = 80;
+            this.companyPhoneTextBox.TabIndex = 5;
             // 
             // companyStateComboBox
             // 
             this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyState", true));
+            this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.companyBindingSource, "CompanyState", true));
             this.companyStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.companyStateComboBox.FormattingEnabled = true;
             this.companyStateComboBox.Items.AddRange(new object[] {
@@ -336,7 +337,7 @@
             this.companyStateComboBox.Name = "companyStateComboBox";
             this.companyStateComboBox.Size = new System.Drawing.Size(126, 26);
             this.companyStateComboBox.Sorted = true;
-            this.companyStateComboBox.TabIndex = 82;
+            this.companyStateComboBox.TabIndex = 3;
             // 
             // companyWebsiteTextBox
             // 
@@ -344,7 +345,7 @@
             this.companyWebsiteTextBox.Location = new System.Drawing.Point(117, 269);
             this.companyWebsiteTextBox.Name = "companyWebsiteTextBox";
             this.companyWebsiteTextBox.Size = new System.Drawing.Size(401, 26);
-            this.companyWebsiteTextBox.TabIndex = 84;
+            this.companyWebsiteTextBox.TabIndex = 7;
             // 
             // companyZipCodeTextBox
             // 
@@ -352,7 +353,7 @@
             this.companyZipCodeTextBox.Location = new System.Drawing.Point(542, 173);
             this.companyZipCodeTextBox.Name = "companyZipCodeTextBox";
             this.companyZipCodeTextBox.Size = new System.Drawing.Size(98, 26);
-            this.companyZipCodeTextBox.TabIndex = 86;
+            this.companyZipCodeTextBox.TabIndex = 4;
             // 
             // toolStrip1
             // 
@@ -393,6 +394,24 @@
             this.toolStripButtonCompanySearchButton.Name = "toolStripButtonCompanySearchButton";
             this.toolStripButtonCompanySearchButton.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonCompanySearchButton.Text = "Search";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonCompanyExitButton
+            // 
+            this.toolStripButtonCompanyExitButton.BackColor = System.Drawing.Color.Gold;
+            this.toolStripButtonCompanyExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCompanyExitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonCompanyExitButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.toolStripButtonCompanyExitButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanyExitButton.Image")));
+            this.toolStripButtonCompanyExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCompanyExitButton.Name = "toolStripButtonCompanyExitButton";
+            this.toolStripButtonCompanyExitButton.Size = new System.Drawing.Size(35, 22);
+            this.toolStripButtonCompanyExitButton.Text = "Exit";
+            this.toolStripButtonCompanyExitButton.Click += new System.EventHandler(this.toolStripButtonCompanyExitButton_Click);
             // 
             // bindingNavigatorSeparator
             // 
@@ -549,24 +568,6 @@
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButtonCompanyExitButton
-            // 
-            this.toolStripButtonCompanyExitButton.BackColor = System.Drawing.Color.Gold;
-            this.toolStripButtonCompanyExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonCompanyExitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonCompanyExitButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.toolStripButtonCompanyExitButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanyExitButton.Image")));
-            this.toolStripButtonCompanyExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCompanyExitButton.Name = "toolStripButtonCompanyExitButton";
-            this.toolStripButtonCompanyExitButton.Size = new System.Drawing.Size(35, 22);
-            this.toolStripButtonCompanyExitButton.Text = "Exit";
-            this.toolStripButtonCompanyExitButton.Click += new System.EventHandler(this.toolStripButtonCompanyExitButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // CompanyForm
             // 
