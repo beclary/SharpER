@@ -533,7 +533,7 @@
             // 
             // contactPhoneTextBox
             // 
-            this.contactPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactPhone", true));
+            this.contactPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactPhone", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "(000) 000-0000"));
             this.contactPhoneTextBox.Location = new System.Drawing.Point(158, 334);
             this.contactPhoneTextBox.Name = "contactPhoneTextBox";
             this.contactPhoneTextBox.Size = new System.Drawing.Size(145, 26);
@@ -612,7 +612,7 @@
             // 
             // contactZipCodeTextBox
             // 
-            this.contactZipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactZipCode", true));
+            this.contactZipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactZipCode", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "00000-0000"));
             this.contactZipCodeTextBox.Location = new System.Drawing.Point(572, 270);
             this.contactZipCodeTextBox.Name = "contactZipCodeTextBox";
             this.contactZipCodeTextBox.Size = new System.Drawing.Size(100, 26);

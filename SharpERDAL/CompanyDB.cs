@@ -63,6 +63,10 @@ namespace SharpERDAL
             {
                 throw xsept;
             }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
             finally
             {
                 conn.Close();

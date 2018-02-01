@@ -147,7 +147,7 @@ namespace WindowsFormsApplication1
 
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
-            openToolStripButton.Enabled = false;
+            openToolStripButton.Visible = false;
         }
 
     }

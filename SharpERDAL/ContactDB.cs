@@ -74,6 +74,10 @@ namespace SharpERDAL
             {
                 throw xsept;
             }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
             finally
             {
                 conn.Close();
@@ -86,7 +90,69 @@ namespace SharpERDAL
         /// </summary>
         public static Contact GetSpecificContactInfo(int contactID)
         {
-            throw new System.NotImplementedException();
+            Contact specificContact = new Contact();
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "SELECT ContactID, ContactFirstName, ContactLastName, ContactTitle, ContactDepartment, ContactAddress, ContactCity, ContactState, ContactZipCode, ContactContactedVia, ContactPhone, ContactMobile, ContactFax, ContactEmail, ContactNotes " +
+                "FROM Contact " +
+                "WHERE ContactID = @ContactID";
+            SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            selectCmd.Parameters.AddWithValue("@ContactID", contactID);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader readur = selectCmd.ExecuteReader();
+                int conContactIDOrd = readur.GetOrdinal("ContactID");
+                int conContactFirstNameOrd = readur.GetOrdinal("ContactFirstName");
+                int conContactLastNameOrd = readur.GetOrdinal("ContactLastName");
+                int conContactTitleOrd = readur.GetOrdinal("ContactTitle");
+                int conContactDepartmentOrd = readur.GetOrdinal("ContactDepartment");
+                int conContactAddressOrd = readur.GetOrdinal("ContactAddress");
+                int conContactCityOrd = readur.GetOrdinal("ContactCity");
+                int conContactStateOrd = readur.GetOrdinal("ContactState");
+                int conContactZipCodeOrd = readur.GetOrdinal("ContactZipCode");
+                int conContactContactedViaOrd = readur.GetOrdinal("ContactContactedVia");
+                int conContactPhoneOrd = readur.GetOrdinal("ContactPhone");
+                int conContactMobileOrd = readur.GetOrdinal("ContactMobile");
+                int conContactFaxOrd = readur.GetOrdinal("ContactFax");
+                int conContactEmailOrd = readur.GetOrdinal("ContactEmail");
+                int conContactNotesOrd = readur.GetOrdinal("ContactNotes");
+
+                while (readur.Read())
+                {
+                    Contact specificContactRowInfo = new Contact();
+                    specificContactRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
+                    specificContactRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
+                    specificContactRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
+                    specificContactRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
+                    specificContactRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
+                    specificContactRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
+                    specificContactRowInfo.ContactCity = readur.GetString(conContactCityOrd);
+                    specificContactRowInfo.ContactState = readur.GetString(conContactStateOrd);
+                    specificContactRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
+                    specificContactRowInfo.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
+                    specificContactRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
+                    specificContactRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
+                    specificContactRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
+                    specificContactRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
+                    specificContactRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
+                }
+                readur.Close();
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return specificContact;
         }
     }
 }

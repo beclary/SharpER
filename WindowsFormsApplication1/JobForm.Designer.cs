@@ -382,7 +382,7 @@
             // 
             // jobPayTextBox
             // 
-            this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true));
+            this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.jobPayTextBox.Location = new System.Drawing.Point(135, 202);
             this.jobPayTextBox.Name = "jobPayTextBox";
             this.jobPayTextBox.Size = new System.Drawing.Size(130, 26);
