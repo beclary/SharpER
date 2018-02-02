@@ -80,7 +80,20 @@ namespace SharpERDAL
         /// </summary>
         public static Activity GetSpecificActivityInfo(string activityID)
         {
-            throw new System.NotImplementedException();
+            Activity specificActivity = new Activity();
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "SELECT ActivityID, ActivityDate, ActivityDescription, ActivityTravel, " +
+                "ActivityContactID, ActivityJobID, ActivityNotes " +
+                "FROM Activity " +
+                "WHERE ActivityID = @ActivityID";
+            SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            selectCmd.Parameters.AddWithValue("@ActivityID", activityID);
+
+            try
+            {
+                conn.Open();
+            }
         }
     }
 }
