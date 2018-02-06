@@ -78,5 +78,15 @@ namespace WindowsFormsApplication1
                 contactMainForm.Show();
             }
         }
+
+        private void companyToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -422,6 +422,7 @@
             // 
             // toolStripTextBoxJobPositionTextBox
             // 
+            this.toolStripTextBoxJobPositionTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.toolStripTextBoxJobPositionTextBox.Name = "toolStripTextBoxJobPositionTextBox";
             this.toolStripTextBoxJobPositionTextBox.Size = new System.Drawing.Size(100, 25);
             // 

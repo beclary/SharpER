@@ -112,19 +112,20 @@
             // companyToolStripMenuItem3
             // 
             this.companyToolStripMenuItem3.Name = "companyToolStripMenuItem3";
-            this.companyToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.companyToolStripMenuItem3.Text = "Company";
+            this.companyToolStripMenuItem3.Click += new System.EventHandler(this.companyToolStripMenuItem3_Click);
             // 
             // activityToolStripMenuItem3
             // 
             this.activityToolStripMenuItem3.Name = "activityToolStripMenuItem3";
-            this.activityToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.activityToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.activityToolStripMenuItem3.Text = "Activity";
             // 
             // jobToolStripMenuItem3
             // 
             this.jobToolStripMenuItem3.Name = "jobToolStripMenuItem3";
-            this.jobToolStripMenuItem3.Size = new System.Drawing.Size(126, 22);
+            this.jobToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.jobToolStripMenuItem3.Text = "Job";
             // 
             // openToolStripMenuItem
@@ -141,8 +142,9 @@
             // contactToolStripMenuItem
             // 
             this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
-            this.contactToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.contactToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.contactToolStripMenuItem.Text = "Contact";
+            this.contactToolStripMenuItem.Click += new System.EventHandler(this.contactToolStripMenuItem_Click);
             // 
             // companyToolStripMenuItem
             // 
