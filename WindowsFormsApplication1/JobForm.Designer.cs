@@ -437,6 +437,7 @@
             this.toolStripButtonJobSearchButton.Name = "toolStripButtonJobSearchButton";
             this.toolStripButtonJobSearchButton.Size = new System.Drawing.Size(52, 22);
             this.toolStripButtonJobSearchButton.Text = "Search";
+            this.toolStripButtonJobSearchButton.Click += new System.EventHandler(this.toolStripButtonJobSearchButton_Click);
             // 
             // toolStripSeparator3
             // 

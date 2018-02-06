@@ -27,5 +27,10 @@ namespace WindowsFormsApplication1
             this.Close();
             MainForm.jobMainForm = null;
         }
+
+        private void toolStripButtonJobSearchButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,20 +30,14 @@ namespace WindowsFormsApplication1
 
         private void btnContact_Click(object sender, EventArgs e)
         {
-            if (contactMainForm == null)
-            {
                 contactMainForm = new ContactForm();
-                contactMainForm.Show();
-            }
+                contactMainForm.ShowDialog();
         }
 
         private void btnCompany_Click(object sender, EventArgs e)
         {
-            if (companyMainForm == null)
-            {
                 companyMainForm = new CompanyForm();
-                companyMainForm.Show();
-            }
+                companyMainForm.ShowDialog();
         }
 
         private void btnActivity_Click(object sender, EventArgs e)
@@ -74,8 +68,8 @@ namespace WindowsFormsApplication1
             if (contactMainForm == null)
             {
                 contactMainForm = new ContactForm();
-                
-                contactMainForm.Show();
+
+                contactMainForm.ShowDialog();
             }
         }
 
@@ -85,6 +79,26 @@ namespace WindowsFormsApplication1
         }
 
         private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contactToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+     //       toolstrip1
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contactsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

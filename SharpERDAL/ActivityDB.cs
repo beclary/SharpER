@@ -93,6 +93,17 @@ namespace SharpERDAL
             try
             {
                 conn.Open();
+                return specificActivity;
+
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+
             }
         }
     }
