@@ -53,10 +53,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void btnCancel_Click(object sender, FormClosingEventArgs e)
-        {
-            CloseProgram();
-        }
 
         private bool CloseProgram()
         {
@@ -71,7 +67,7 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            CloseProgram();
         }
     }
 }

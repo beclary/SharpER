@@ -30,7 +30,29 @@ namespace WindowsFormsApplication1
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            activityDateDateTimePicker.CustomFormat = null;
+            activityDateDateTimePicker.Format = DateTimePickerFormat.Custom;
+            activityDateDateTimePicker.Value = DateTime.Now;
+            activityDescriptionTextBox.Clear();
+            activityTravelComboBox.SelectedIndex = -1;
+            activityJobIDTextBox.Clear();
+            activityContactIDTextBox.Clear();
+            activityNotesTextBox.Clear();
+        }
+
+        private bool CloseProgram()
+        {
+            if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CloseProgram();
         }
     }
 }

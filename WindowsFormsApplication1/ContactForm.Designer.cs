@@ -269,6 +269,7 @@
             // 
             // contactContactedViaComboBox
             // 
+            this.contactContactedViaComboBox.BackColor = System.Drawing.Color.LightGray;
             this.contactContactedViaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactContactedVia", true));
             this.contactContactedViaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactContactedViaComboBox.FormattingEnabled = true;
@@ -471,6 +472,7 @@
             this.btnCancel.TabIndex = 39;
             this.btnCancel.Text = "Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClear
             // 
@@ -483,6 +485,7 @@
             this.btnClear.TabIndex = 40;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // ContactForm
             // 

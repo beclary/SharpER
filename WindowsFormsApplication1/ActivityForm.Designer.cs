@@ -149,7 +149,6 @@
             this.activityContactIDTextBox.Location = new System.Drawing.Point(127, 293);
             this.activityContactIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityContactIDTextBox.Name = "activityContactIDTextBox";
-            this.activityContactIDTextBox.ReadOnly = true;
             this.activityContactIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.activityContactIDTextBox.TabIndex = 3;
             // 
@@ -195,7 +194,6 @@
             this.activityJobIDTextBox.Location = new System.Drawing.Point(127, 329);
             this.activityJobIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityJobIDTextBox.Name = "activityJobIDTextBox";
-            this.activityJobIDTextBox.ReadOnly = true;
             this.activityJobIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.activityJobIDTextBox.TabIndex = 4;
             this.activityJobIDTextBox.TextChanged += new System.EventHandler(this.activityJobIDTextBox_TextChanged);
@@ -273,6 +271,7 @@
             this.btnCancel.TabIndex = 59;
             this.btnCancel.Text = "Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // ActivityForm
             // 

@@ -147,7 +147,43 @@ namespace WindowsFormsApplication1
 
         private void openToolStripButton_Click(object sender, EventArgs e)
         {
+
         }
 
+        private bool CloseProgram()
+        {
+            if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                return true;
+            }
+            else
+                return false;
+        }
+
+
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CloseProgram();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            contactFirstNameTextBox.Clear();
+            contactLastNameTextBox.Clear();
+            contactTitleTextBox.Clear();
+            contactDepartmentTextBox.Clear();
+            contactAddressTextBox.Clear();
+            contactCityTextBox.Clear();
+            contactStateComboBox.SelectedIndex = -1;
+            contactZipCodeTextBox.Clear();
+            contactContactedViaComboBox.SelectedIndex = -1;
+            contactPhoneTextBox.Clear();
+            contactMobileTextBox.Clear();
+            contactFaxTextBox.Clear();
+            contactEmailTextBox.Clear();
+            contactNotesTextBox.Clear();
+        }
     }
 }

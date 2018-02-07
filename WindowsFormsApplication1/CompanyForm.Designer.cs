@@ -254,6 +254,7 @@
             // 
             // companyStateComboBox
             // 
+            this.companyStateComboBox.BackColor = System.Drawing.Color.LightGray;
             this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyState", true));
             this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.companyBindingSource, "CompanyState", true));
             this.companyStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -366,6 +367,7 @@
             this.btnCancel.TabIndex = 86;
             this.btnCancel.Text = "Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // CompanyForm
             // 
