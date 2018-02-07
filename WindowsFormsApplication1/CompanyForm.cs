@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
             a.Format += FormatZipCode;
             a.Parse += UnformatZipCode;
 
-            Binding b = companyPhoneTextBox.DataBindings["Text"];
+            Binding b = companyPhoneMaskedTextBox.DataBindings["Text"];
             b.Format += FormatPhoneNumber;
             b.Parse += UnformatPhoneNumber;
         }
@@ -138,7 +138,7 @@ namespace WindowsFormsApplication1
                     IsPresent(companyCityTextBox, "City") &&
                     IsPresent(companyStateComboBox, "State") &&
                     IsPresent(companyZipCodeTextBox, "Zip Code") &&
-                    IsPresent(companyPhoneTextBox, "Phone number");
+                    IsPresent(companyPhoneMaskedTextBox, "Phone number");
             }
             else
                 return true;
@@ -159,6 +159,20 @@ namespace WindowsFormsApplication1
         private void btnCancel_Click(object sender, EventArgs e)
         {
             CloseProgram();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            companyNameTextBox.Clear();
+            companyAddressTextBox.Clear();
+            companyCityTextBox.Clear();
+            companyStateComboBox.SelectedIndex = -1;
+            companyZipCodeTextBox.Clear();
+            companyPhoneMaskedTextBox.Clear();
+            companyFaxMaskedTextBox.Clear();
+            companyWebsiteTextBox.Clear();
+            companyNotesTextBox.Clear();
+            companyPhoneMaskedTextBox.Clear();
         }
     }
 }

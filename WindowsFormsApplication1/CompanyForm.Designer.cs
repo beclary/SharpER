@@ -43,17 +43,17 @@
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyCityTextBox = new System.Windows.Forms.TextBox();
-            this.companyFaxTextBox = new System.Windows.Forms.TextBox();
             this.companyIDTextBox = new System.Windows.Forms.TextBox();
             this.companyNameTextBox = new System.Windows.Forms.TextBox();
             this.companyNotesTextBox = new System.Windows.Forms.TextBox();
-            this.companyPhoneTextBox = new System.Windows.Forms.TextBox();
             this.companyStateComboBox = new System.Windows.Forms.ComboBox();
             this.companyWebsiteTextBox = new System.Windows.Forms.TextBox();
             this.companyZipCodeTextBox = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.companyPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.companyFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -209,14 +209,6 @@
             this.companyCityTextBox.Size = new System.Drawing.Size(145, 26);
             this.companyCityTextBox.TabIndex = 2;
             // 
-            // companyFaxTextBox
-            // 
-            this.companyFaxTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyFax", true));
-            this.companyFaxTextBox.Location = new System.Drawing.Point(117, 237);
-            this.companyFaxTextBox.Name = "companyFaxTextBox";
-            this.companyFaxTextBox.Size = new System.Drawing.Size(145, 26);
-            this.companyFaxTextBox.TabIndex = 6;
-            // 
             // companyIDTextBox
             // 
             this.companyIDTextBox.BackColor = System.Drawing.Color.LightGray;
@@ -243,14 +235,6 @@
             this.companyNotesTextBox.Name = "companyNotesTextBox";
             this.companyNotesTextBox.Size = new System.Drawing.Size(454, 78);
             this.companyNotesTextBox.TabIndex = 8;
-            // 
-            // companyPhoneTextBox
-            // 
-            this.companyPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyPhone", true));
-            this.companyPhoneTextBox.Location = new System.Drawing.Point(117, 205);
-            this.companyPhoneTextBox.Name = "companyPhoneTextBox";
-            this.companyPhoneTextBox.Size = new System.Drawing.Size(145, 26);
-            this.companyPhoneTextBox.TabIndex = 5;
             // 
             // companyStateComboBox
             // 
@@ -355,6 +339,7 @@
             this.btnClear.TabIndex = 87;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCancel
             // 
@@ -369,12 +354,30 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // companyPhoneMaskedTextBox
+            // 
+            this.companyPhoneMaskedTextBox.Location = new System.Drawing.Point(117, 206);
+            this.companyPhoneMaskedTextBox.Mask = "(999) 000-0000";
+            this.companyPhoneMaskedTextBox.Name = "companyPhoneMaskedTextBox";
+            this.companyPhoneMaskedTextBox.Size = new System.Drawing.Size(143, 26);
+            this.companyPhoneMaskedTextBox.TabIndex = 89;
+            // 
+            // companyFaxMaskedTextBox
+            // 
+            this.companyFaxMaskedTextBox.Location = new System.Drawing.Point(117, 238);
+            this.companyFaxMaskedTextBox.Mask = "(999) 000-0000";
+            this.companyFaxMaskedTextBox.Name = "companyFaxMaskedTextBox";
+            this.companyFaxMaskedTextBox.Size = new System.Drawing.Size(143, 26);
+            this.companyFaxMaskedTextBox.TabIndex = 90;
+            // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(732, 535);
+            this.Controls.Add(this.companyFaxMaskedTextBox);
+            this.Controls.Add(this.companyPhoneMaskedTextBox);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
@@ -383,7 +386,6 @@
             this.Controls.Add(companyCityLabel);
             this.Controls.Add(this.companyCityTextBox);
             this.Controls.Add(companyFaxLabel);
-            this.Controls.Add(this.companyFaxTextBox);
             this.Controls.Add(companyIDLabel);
             this.Controls.Add(this.companyIDTextBox);
             this.Controls.Add(companyNameLabel);
@@ -391,7 +393,6 @@
             this.Controls.Add(companyNotesLabel);
             this.Controls.Add(this.companyNotesTextBox);
             this.Controls.Add(companyPhoneLabel);
-            this.Controls.Add(this.companyPhoneTextBox);
             this.Controls.Add(companyStateLabel);
             this.Controls.Add(this.companyStateComboBox);
             this.Controls.Add(companyWebsiteLabel);
@@ -416,16 +417,16 @@
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.TextBox companyAddressTextBox;
         private System.Windows.Forms.TextBox companyCityTextBox;
-        private System.Windows.Forms.TextBox companyFaxTextBox;
         private System.Windows.Forms.TextBox companyIDTextBox;
         private System.Windows.Forms.TextBox companyNameTextBox;
         private System.Windows.Forms.TextBox companyNotesTextBox;
-        private System.Windows.Forms.TextBox companyPhoneTextBox;
         private System.Windows.Forms.ComboBox companyStateComboBox;
         private System.Windows.Forms.TextBox companyWebsiteTextBox;
         private System.Windows.Forms.TextBox companyZipCodeTextBox;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.MaskedTextBox companyPhoneMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox companyFaxMaskedTextBox;
     }
 }
