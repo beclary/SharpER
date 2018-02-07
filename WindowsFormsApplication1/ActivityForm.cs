@@ -27,5 +27,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            activityDateDateTimePicker.CustomFormat = null;
+        }
     }
 }

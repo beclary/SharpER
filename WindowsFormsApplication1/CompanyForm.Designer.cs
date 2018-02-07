@@ -39,7 +39,6 @@
             System.Windows.Forms.Label companyStateLabel;
             System.Windows.Forms.Label companyWebsiteLabel;
             System.Windows.Forms.Label companyZipCodeLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,29 +51,9 @@
             this.companyStateComboBox = new System.Windows.Forms.ComboBox();
             this.companyWebsiteTextBox = new System.Windows.Forms.TextBox();
             this.companyZipCodeTextBox = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabelCompanyIDLabel = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBoxCompanyIDTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButtonCompanySearchButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonCompanyExitButton = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.companyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -86,9 +65,6 @@
             companyWebsiteLabel = new System.Windows.Forms.Label();
             companyZipCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).BeginInit();
-            this.companyBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // companyAddressLabel
@@ -355,219 +331,41 @@
             this.companyZipCodeTextBox.Size = new System.Drawing.Size(98, 26);
             this.companyZipCodeTextBox.TabIndex = 4;
             // 
-            // toolStrip1
+            // btnSave
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightGray;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabelCompanyIDLabel,
-            this.toolStripTextBoxCompanyIDTextBox,
-            this.toolStripButtonCompanySearchButton,
-            this.toolStripSeparator1,
-            this.toolStripButtonCompanyExitButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(732, 25);
-            this.toolStrip1.TabIndex = 87;
-            this.toolStrip1.Text = "toolStrip1";
+            this.btnSave.BackColor = System.Drawing.Color.HotPink;
+            this.btnSave.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSave.Location = new System.Drawing.Point(379, 12);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(97, 43);
+            this.btnSave.TabIndex = 88;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // toolStripLabelCompanyIDLabel
+            // btnClear
             // 
-            this.toolStripLabelCompanyIDLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabelCompanyIDLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.toolStripLabelCompanyIDLabel.Name = "toolStripLabelCompanyIDLabel";
-            this.toolStripLabelCompanyIDLabel.Size = new System.Drawing.Size(86, 22);
-            this.toolStripLabelCompanyIDLabel.Text = "Company ID:";
+            this.btnClear.BackColor = System.Drawing.Color.HotPink;
+            this.btnClear.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnClear.Location = new System.Drawing.Point(500, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(97, 43);
+            this.btnClear.TabIndex = 87;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // toolStripTextBoxCompanyIDTextBox
+            // btnCancel
             // 
-            this.toolStripTextBoxCompanyIDTextBox.Name = "toolStripTextBoxCompanyIDTextBox";
-            this.toolStripTextBoxCompanyIDTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // toolStripButtonCompanySearchButton
-            // 
-            this.toolStripButtonCompanySearchButton.BackColor = System.Drawing.Color.SandyBrown;
-            this.toolStripButtonCompanySearchButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonCompanySearchButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonCompanySearchButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.toolStripButtonCompanySearchButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanySearchButton.Image")));
-            this.toolStripButtonCompanySearchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCompanySearchButton.Name = "toolStripButtonCompanySearchButton";
-            this.toolStripButtonCompanySearchButton.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButtonCompanySearchButton.Text = "Search";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButtonCompanyExitButton
-            // 
-            this.toolStripButtonCompanyExitButton.BackColor = System.Drawing.Color.Gold;
-            this.toolStripButtonCompanyExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonCompanyExitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonCompanyExitButton.ForeColor = System.Drawing.Color.DarkRed;
-            this.toolStripButtonCompanyExitButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCompanyExitButton.Image")));
-            this.toolStripButtonCompanyExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCompanyExitButton.Name = "toolStripButtonCompanyExitButton";
-            this.toolStripButtonCompanyExitButton.Size = new System.Drawing.Size(35, 22);
-            this.toolStripButtonCompanyExitButton.Text = "Exit";
-            this.toolStripButtonCompanyExitButton.Click += new System.EventHandler(this.toolStripButtonCompanyExitButton_Click);
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // companyBindingNavigator
-            // 
-            this.companyBindingNavigator.AddNewItem = null;
-            this.companyBindingNavigator.BindingSource = this.companyBindingSource;
-            this.companyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.companyBindingNavigator.DeleteItem = null;
-            this.companyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.cutToolStripButton,
-            this.toolStripSeparator2,
-            this.printToolStripButton,
-            this.toolStripSeparator});
-            this.companyBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.companyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.companyBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.companyBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.companyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.companyBindingNavigator.Name = "companyBindingNavigator";
-            this.companyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.companyBindingNavigator.Size = new System.Drawing.Size(732, 25);
-            this.companyBindingNavigator.TabIndex = 67;
-            this.companyBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // newToolStripButton
-            // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.newToolStripButton.Text = "&New";
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.openToolStripButton.Text = "&Open";
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "&Save";
-            // 
-            // cutToolStripButton
-            // 
-            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cutToolStripButton.Image = global::WindowsFormsApplication1.Properties.Resources.deletered1;
-            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.cutToolStripButton.Text = "C&ut";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // printToolStripButton
-            // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.btnCancel.BackColor = System.Drawing.Color.HotPink;
+            this.btnCancel.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnCancel.Location = new System.Drawing.Point(620, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(97, 43);
+            this.btnCancel.TabIndex = 86;
+            this.btnCancel.Text = "Exit";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // CompanyForm
             // 
@@ -575,7 +373,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(732, 535);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(companyAddressLabel);
             this.Controls.Add(this.companyAddressTextBox);
             this.Controls.Add(companyCityLabel);
@@ -596,7 +396,6 @@
             this.Controls.Add(this.companyWebsiteTextBox);
             this.Controls.Add(companyZipCodeLabel);
             this.Controls.Add(this.companyZipCodeTextBox);
-            this.Controls.Add(this.companyBindingNavigator);
             this.Controls.Add(this.lblCompanyInfoTitle);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -604,11 +403,6 @@
             this.Text = "Company";
             this.Load += new System.EventHandler(this.CompanyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).EndInit();
-            this.companyBindingNavigator.ResumeLayout(false);
-            this.companyBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,28 +422,8 @@
         private System.Windows.Forms.ComboBox companyStateComboBox;
         private System.Windows.Forms.TextBox companyWebsiteTextBox;
         private System.Windows.Forms.TextBox companyZipCodeTextBox;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelCompanyIDLabel;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxCompanyIDTextBox;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCompanySearchButton;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.BindingNavigator companyBindingNavigator;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton cutToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCompanyExitButton;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

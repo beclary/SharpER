@@ -32,5 +32,46 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void JobForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            jobPositionTextBox.Clear();
+            jobAppliedDateTimePicker.Format = DateTimePickerFormat.Custom;
+            jobAppliedDateTimePicker.Value = DateTime.Now;
+            // jobAppliedDateTimePicker.CustomFormat = "";
+            jobPayTextBox.Clear();
+            jobNotesTextBox.Clear();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, FormClosingEventArgs e)
+        {
+            CloseProgram();
+        }
+
+        private bool CloseProgram()
+        {
+            if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

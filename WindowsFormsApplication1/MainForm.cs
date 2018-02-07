@@ -28,79 +28,41 @@ namespace WindowsFormsApplication1
             
         }
 
-        private void btnContact_Click(object sender, EventArgs e)
-        {
-                contactMainForm = new ContactForm();
-                contactMainForm.ShowDialog();
-        }
-
-        private void btnCompany_Click(object sender, EventArgs e)
-        {
-                companyMainForm = new CompanyForm();
-                companyMainForm.ShowDialog();
-        }
-
-        private void btnActivity_Click(object sender, EventArgs e)
-        {
-            if (activityMainForm == null)
-            {
-                activityMainForm = new ActivityForm();
-                activityMainForm.Show();
-            }
-        }
-
-        private void btnJob_Click(object sender, EventArgs e)
-        {
-            if (jobMainForm == null)
-            {
-                jobMainForm = new JobForm();
-                jobMainForm.Show();
-            }
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void contactToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            if (contactMainForm == null)
-            {
-                contactMainForm = new ContactForm();
-
-                contactMainForm.ShowDialog();
-            }
-        }
-
-        private void companyToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contactToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-     //       toolstrip1
-        }
-
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            contactMainForm = new ContactForm();
+            contactMainForm.ShowDialog();
         }
 
-        private void contactsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void activityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            activityMainForm = new ActivityForm();
+            activityMainForm.ShowDialog();
+        }
+
+        private void jobToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            jobMainForm = new JobForm();
+            jobMainForm.ShowDialog();
+            this.Close();
+        }
+
+        private void companyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            companyMainForm = new CompanyForm();
+            companyMainForm.ShowDialog();
         }
     }
 }
