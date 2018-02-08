@@ -17,16 +17,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void ContactForm_Load(object sender, EventArgs e)
-        {
-            Binding a = contactZipCodeTextBox.DataBindings["Text"];
-            a.Format += FormatZipCode;
-            a.Parse += UnformatZipCode;
-
-            Binding b = contactPhoneTextBox.DataBindings["Text"];
-            b.Format += FormatPhoneNumber;
-            b.Parse += UnformatPhoneNumber;
-        }
         private bool IsInt64(string s)
         {
             try
@@ -40,58 +30,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void FormatZipCode(object sender, ConvertEventArgs e)
-        {
-            if (e.Value.GetType().ToString() == "System.String")
-            {
-                string s = e.Value.ToString();
-                if (IsInt64(s))
-                {
-                    if (s.Length == 9)
-                    {
-                        e.Value = s.Substring(0, 5) + "-" + s.Substring(5, 4);
-                    }
-                }
-            }
-        }
-
-        private void FormatPhoneNumber(object sender, ConvertEventArgs e)
-        {
-            if (e.Value.GetType().ToString() == "System.String")
-            {
-                string s = e.Value.ToString();
-
-                if (s.Length == 10)
-                {
-                    s = s.Replace("(", "");
-                    s = s.Replace(") ", "");
-                    s = s.Replace("-", "");
-
-                    e.Value =
-                        s.Substring(0, 3) + "-" +
-                        s.Substring(3, 3) + "-" +
-                        s.Substring(6, 4);
-                }
-            }
-        }
-
-        private void UnformatZipCode(object sender, ConvertEventArgs e)
-        {
-            if (e.Value.GetType().ToString() == "System.String")
-            {
-                string s = e.Value.ToString();
-                e.Value = s.Replace("-", "");
-            }
-        }
-
-        private void UnformatPhoneNumber(object sender, ConvertEventArgs e)
-        {
-            if (e.Value.GetType().ToString() == "System.String")
-            {
-                string s = e.Value.ToString();
-                e.Value = s.Replace(".", "");
-            }
-        }
         private bool IsPresent(Control control, string name)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
@@ -129,10 +67,10 @@ namespace WindowsFormsApplication1
                     IsPresent(contactAddressTextBox, "Address") &&
                     IsPresent(contactCityTextBox, "City") &&
                     IsPresent(contactStateComboBox, "State") &&
-                    IsPresent(contactZipCodeTextBox, "Zip Code") &&
+                    IsPresent(contactZipCodeMaskedTextBox, "Zip Code") &&
                     IsPresent(contactContactedViaComboBox, "Contacted via") &&
-                    IsPresent(contactPhoneTextBox, "Phone number") &&
-                    IsPresent(contactMobileTextBox, "Mobile number") &&
+                    IsPresent(contactPhoneMaskedTextBox, "Phone number") &&
+                    IsPresent(contactMobileMaskedTextBox, "Mobile number") &&
                     IsPresent(contactEmailTextBox, "Email");
             }
             else
@@ -177,11 +115,11 @@ namespace WindowsFormsApplication1
             contactAddressTextBox.Clear();
             contactCityTextBox.Clear();
             contactStateComboBox.SelectedIndex = -1;
-            contactZipCodeTextBox.Clear();
+            contactZipCodeMaskedTextBox.Clear();
             contactContactedViaComboBox.SelectedIndex = -1;
-            contactPhoneTextBox.Clear();
-            contactMobileTextBox.Clear();
-            contactFaxTextBox.Clear();
+            contactPhoneMaskedTextBox.Clear();
+            contactMobileMaskedTextBox.Clear();
+            contactFaxMaskedTextBox.Clear();
             contactEmailTextBox.Clear();
             contactNotesTextBox.Clear();
         }

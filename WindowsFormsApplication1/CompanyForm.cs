@@ -167,7 +167,7 @@ namespace WindowsFormsApplication1
             companyAddressTextBox.Clear();
             companyCityTextBox.Clear();
             companyStateComboBox.SelectedIndex = -1;
-            companyZipCodeTextBox.Clear();
+            companyZipCodeMaskedTextBox.Clear();
             companyPhoneMaskedTextBox.Clear();
             companyFaxMaskedTextBox.Clear();
             companyWebsiteTextBox.Clear();
