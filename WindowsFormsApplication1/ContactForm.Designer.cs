@@ -50,20 +50,20 @@
             this.contactContactedViaComboBox = new System.Windows.Forms.ComboBox();
             this.contactDepartmentTextBox = new System.Windows.Forms.TextBox();
             this.contactEmailTextBox = new System.Windows.Forms.TextBox();
-            this.contactFaxTextBox = new System.Windows.Forms.TextBox();
             this.contactFirstNameTextBox = new System.Windows.Forms.TextBox();
             this.contactIDTextBox = new System.Windows.Forms.TextBox();
             this.contactLastNameTextBox = new System.Windows.Forms.TextBox();
-            this.contactMobileTextBox = new System.Windows.Forms.TextBox();
             this.contactNotesTextBox = new System.Windows.Forms.TextBox();
-            this.contactPhoneTextBox = new System.Windows.Forms.TextBox();
             this.contactStateComboBox = new System.Windows.Forms.ComboBox();
             this.contactTitleTextBox = new System.Windows.Forms.TextBox();
-            this.contactZipCodeTextBox = new System.Windows.Forms.TextBox();
             this.lblContactInfoTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.contactPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.contactMobileMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.contactFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.contactZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
             contactContactedViaLabel = new System.Windows.Forms.Label();
@@ -301,14 +301,6 @@
             this.contactEmailTextBox.Size = new System.Drawing.Size(401, 26);
             this.contactEmailTextBox.TabIndex = 13;
             // 
-            // contactFaxTextBox
-            // 
-            this.contactFaxTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFax", true));
-            this.contactFaxTextBox.Location = new System.Drawing.Point(161, 361);
-            this.contactFaxTextBox.Name = "contactFaxTextBox";
-            this.contactFaxTextBox.Size = new System.Drawing.Size(145, 26);
-            this.contactFaxTextBox.TabIndex = 12;
-            // 
             // contactFirstNameTextBox
             // 
             this.contactFirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true));
@@ -334,14 +326,6 @@
             this.contactLastNameTextBox.Size = new System.Drawing.Size(301, 26);
             this.contactLastNameTextBox.TabIndex = 2;
             // 
-            // contactMobileTextBox
-            // 
-            this.contactMobileTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactMobile", true));
-            this.contactMobileTextBox.Location = new System.Drawing.Point(376, 331);
-            this.contactMobileTextBox.Name = "contactMobileTextBox";
-            this.contactMobileTextBox.Size = new System.Drawing.Size(145, 26);
-            this.contactMobileTextBox.TabIndex = 11;
-            // 
             // contactNotesTextBox
             // 
             this.contactNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactNotes", true));
@@ -350,14 +334,6 @@
             this.contactNotesTextBox.Name = "contactNotesTextBox";
             this.contactNotesTextBox.Size = new System.Drawing.Size(454, 78);
             this.contactNotesTextBox.TabIndex = 14;
-            // 
-            // contactPhoneTextBox
-            // 
-            this.contactPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactPhone", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "(000) 000-0000"));
-            this.contactPhoneTextBox.Location = new System.Drawing.Point(161, 329);
-            this.contactPhoneTextBox.Name = "contactPhoneTextBox";
-            this.contactPhoneTextBox.Size = new System.Drawing.Size(145, 26);
-            this.contactPhoneTextBox.TabIndex = 10;
             // 
             // contactStateComboBox
             // 
@@ -430,14 +406,6 @@
             this.contactTitleTextBox.Size = new System.Drawing.Size(301, 26);
             this.contactTitleTextBox.TabIndex = 3;
             // 
-            // contactZipCodeTextBox
-            // 
-            this.contactZipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactZipCode", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "00000-0000"));
-            this.contactZipCodeTextBox.Location = new System.Drawing.Point(575, 265);
-            this.contactZipCodeTextBox.Name = "contactZipCodeTextBox";
-            this.contactZipCodeTextBox.Size = new System.Drawing.Size(100, 26);
-            this.contactZipCodeTextBox.TabIndex = 8;
-            // 
             // lblContactInfoTitle
             // 
             this.lblContactInfoTitle.AutoSize = true;
@@ -487,6 +455,38 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // contactPhoneMaskedTextBox
+            // 
+            this.contactPhoneMaskedTextBox.Location = new System.Drawing.Point(161, 329);
+            this.contactPhoneMaskedTextBox.Mask = "(999) 000-0000";
+            this.contactPhoneMaskedTextBox.Name = "contactPhoneMaskedTextBox";
+            this.contactPhoneMaskedTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactPhoneMaskedTextBox.TabIndex = 41;
+            // 
+            // contactMobileMaskedTextBox
+            // 
+            this.contactMobileMaskedTextBox.Location = new System.Drawing.Point(370, 331);
+            this.contactMobileMaskedTextBox.Mask = "(999) 000-0000";
+            this.contactMobileMaskedTextBox.Name = "contactMobileMaskedTextBox";
+            this.contactMobileMaskedTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactMobileMaskedTextBox.TabIndex = 42;
+            // 
+            // contactFaxMaskedTextBox
+            // 
+            this.contactFaxMaskedTextBox.Location = new System.Drawing.Point(161, 361);
+            this.contactFaxMaskedTextBox.Mask = "(999) 000-0000";
+            this.contactFaxMaskedTextBox.Name = "contactFaxMaskedTextBox";
+            this.contactFaxMaskedTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactFaxMaskedTextBox.TabIndex = 43;
+            // 
+            // contactZipCodeMaskedTextBox
+            // 
+            this.contactZipCodeMaskedTextBox.Location = new System.Drawing.Point(575, 265);
+            this.contactZipCodeMaskedTextBox.Mask = "00000-9999";
+            this.contactZipCodeMaskedTextBox.Name = "contactZipCodeMaskedTextBox";
+            this.contactZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.contactZipCodeMaskedTextBox.TabIndex = 44;
+            // 
             // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -494,6 +494,10 @@
             this.BackColor = System.Drawing.Color.LightPink;
             this.ClientSize = new System.Drawing.Size(732, 535);
             this.ControlBox = false;
+            this.Controls.Add(this.contactZipCodeMaskedTextBox);
+            this.Controls.Add(this.contactFaxMaskedTextBox);
+            this.Controls.Add(this.contactMobileMaskedTextBox);
+            this.Controls.Add(this.contactPhoneMaskedTextBox);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -509,7 +513,6 @@
             this.Controls.Add(contactEmailLabel);
             this.Controls.Add(this.contactEmailTextBox);
             this.Controls.Add(contactFaxLabel);
-            this.Controls.Add(this.contactFaxTextBox);
             this.Controls.Add(contactFirstNameLabel);
             this.Controls.Add(this.contactFirstNameTextBox);
             this.Controls.Add(contactIDLabel);
@@ -517,17 +520,14 @@
             this.Controls.Add(contactLastNameLabel);
             this.Controls.Add(this.contactLastNameTextBox);
             this.Controls.Add(contactMobileLabel);
-            this.Controls.Add(this.contactMobileTextBox);
             this.Controls.Add(contactNotesLabel);
             this.Controls.Add(this.contactNotesTextBox);
             this.Controls.Add(contactPhoneLabel);
-            this.Controls.Add(this.contactPhoneTextBox);
             this.Controls.Add(contactStateLabel);
             this.Controls.Add(this.contactStateComboBox);
             this.Controls.Add(contactTitleLabel);
             this.Controls.Add(this.contactTitleTextBox);
             this.Controls.Add(contactZipCodeLabel);
-            this.Controls.Add(this.contactZipCodeTextBox);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ContactForm";
@@ -547,19 +547,19 @@
         private System.Windows.Forms.ComboBox contactContactedViaComboBox;
         private System.Windows.Forms.TextBox contactDepartmentTextBox;
         private System.Windows.Forms.TextBox contactEmailTextBox;
-        private System.Windows.Forms.TextBox contactFaxTextBox;
         private System.Windows.Forms.TextBox contactFirstNameTextBox;
         private System.Windows.Forms.TextBox contactIDTextBox;
         private System.Windows.Forms.TextBox contactLastNameTextBox;
-        private System.Windows.Forms.TextBox contactMobileTextBox;
         private System.Windows.Forms.TextBox contactNotesTextBox;
-        private System.Windows.Forms.TextBox contactPhoneTextBox;
         private System.Windows.Forms.ComboBox contactStateComboBox;
         private System.Windows.Forms.TextBox contactTitleTextBox;
-        private System.Windows.Forms.TextBox contactZipCodeTextBox;
         private System.Windows.Forms.Label lblContactInfoTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.MaskedTextBox contactPhoneMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox contactMobileMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox contactFaxMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox contactZipCodeMaskedTextBox;
     }
 }

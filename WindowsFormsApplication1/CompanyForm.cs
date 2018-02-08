@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
         private void CompanyForm_Load(object sender, EventArgs e)
         {
-            Binding a = companyZipCodeTextBox.DataBindings["Text"];
+ /*           Binding a = companyZipCodeTextBox.DataBindings["Text"];
             a.Format += FormatZipCode;
             a.Parse += UnformatZipCode;
 
@@ -142,11 +142,11 @@ namespace WindowsFormsApplication1
             }
             else
                 return true;
-        }
+ */       }
 
         private bool CloseProgram()
         {
-            if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to quit?", "LEAVING SO SOON ???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 this.Close();
                 return true;
@@ -173,6 +173,11 @@ namespace WindowsFormsApplication1
             companyWebsiteTextBox.Clear();
             companyNotesTextBox.Clear();
             companyPhoneMaskedTextBox.Clear();
+        }
+
+        private void companyIDTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

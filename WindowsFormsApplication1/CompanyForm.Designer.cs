@@ -48,12 +48,12 @@
             this.companyNotesTextBox = new System.Windows.Forms.TextBox();
             this.companyStateComboBox = new System.Windows.Forms.ComboBox();
             this.companyWebsiteTextBox = new System.Windows.Forms.TextBox();
-            this.companyZipCodeTextBox = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.companyPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.companyZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -218,6 +218,7 @@
             this.companyIDTextBox.ReadOnly = true;
             this.companyIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.companyIDTextBox.TabIndex = 74;
+            this.companyIDTextBox.TextChanged += new System.EventHandler(this.companyIDTextBox_TextChanged);
             // 
             // companyNameTextBox
             // 
@@ -308,14 +309,6 @@
             this.companyWebsiteTextBox.Size = new System.Drawing.Size(401, 26);
             this.companyWebsiteTextBox.TabIndex = 7;
             // 
-            // companyZipCodeTextBox
-            // 
-            this.companyZipCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyZipCode", true));
-            this.companyZipCodeTextBox.Location = new System.Drawing.Point(542, 173);
-            this.companyZipCodeTextBox.Name = "companyZipCodeTextBox";
-            this.companyZipCodeTextBox.Size = new System.Drawing.Size(98, 26);
-            this.companyZipCodeTextBox.TabIndex = 4;
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.HotPink;
@@ -360,7 +353,7 @@
             this.companyPhoneMaskedTextBox.Mask = "(999) 000-0000";
             this.companyPhoneMaskedTextBox.Name = "companyPhoneMaskedTextBox";
             this.companyPhoneMaskedTextBox.Size = new System.Drawing.Size(143, 26);
-            this.companyPhoneMaskedTextBox.TabIndex = 89;
+            this.companyPhoneMaskedTextBox.TabIndex = 5;
             // 
             // companyFaxMaskedTextBox
             // 
@@ -368,7 +361,15 @@
             this.companyFaxMaskedTextBox.Mask = "(999) 000-0000";
             this.companyFaxMaskedTextBox.Name = "companyFaxMaskedTextBox";
             this.companyFaxMaskedTextBox.Size = new System.Drawing.Size(143, 26);
-            this.companyFaxMaskedTextBox.TabIndex = 90;
+            this.companyFaxMaskedTextBox.TabIndex = 6;
+            // 
+            // companyZipCodeMaskedTextBox
+            // 
+            this.companyZipCodeMaskedTextBox.Location = new System.Drawing.Point(542, 173);
+            this.companyZipCodeMaskedTextBox.Mask = "00000-9999";
+            this.companyZipCodeMaskedTextBox.Name = "companyZipCodeMaskedTextBox";
+            this.companyZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.companyZipCodeMaskedTextBox.TabIndex = 89;
             // 
             // CompanyForm
             // 
@@ -376,6 +377,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(732, 535);
+            this.Controls.Add(this.companyZipCodeMaskedTextBox);
             this.Controls.Add(this.companyFaxMaskedTextBox);
             this.Controls.Add(this.companyPhoneMaskedTextBox);
             this.Controls.Add(this.btnSave);
@@ -398,7 +400,6 @@
             this.Controls.Add(companyWebsiteLabel);
             this.Controls.Add(this.companyWebsiteTextBox);
             this.Controls.Add(companyZipCodeLabel);
-            this.Controls.Add(this.companyZipCodeTextBox);
             this.Controls.Add(this.lblCompanyInfoTitle);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -422,11 +423,11 @@
         private System.Windows.Forms.TextBox companyNotesTextBox;
         private System.Windows.Forms.ComboBox companyStateComboBox;
         private System.Windows.Forms.TextBox companyWebsiteTextBox;
-        private System.Windows.Forms.TextBox companyZipCodeTextBox;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.MaskedTextBox companyPhoneMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox companyFaxMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox companyZipCodeMaskedTextBox;
     }
 }
