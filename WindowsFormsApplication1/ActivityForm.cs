@@ -1,4 +1,7 @@
-﻿using System;
+﻿// ActivityForm
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +40,7 @@ namespace WindowsFormsApplication1
             activityJobIDTextBox.Clear();
             activityContactIDTextBox.Clear();
             activityNotesTextBox.Clear();
+            
         }
 
         private bool CloseProgram()
