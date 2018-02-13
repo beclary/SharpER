@@ -64,5 +64,10 @@ namespace WindowsFormsApplication1
             companyMainForm = new CompanyForm();
             companyMainForm.ShowDialog();
         }
+
+        private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
