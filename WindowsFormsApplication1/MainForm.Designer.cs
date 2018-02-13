@@ -58,7 +58,7 @@
             this.exitToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(761, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,21 +83,21 @@
             // companyToolStripMenuItem
             // 
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.companyToolStripMenuItem.Text = "Company";
             this.companyToolStripMenuItem.Click += new System.EventHandler(this.companyToolStripMenuItem_Click);
             // 
             // activityToolStripMenuItem
             // 
             this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
-            this.activityToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.activityToolStripMenuItem.Text = "Activity";
             this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
             // 
             // jobToolStripMenuItem
             // 
             this.jobToolStripMenuItem.Name = "jobToolStripMenuItem";
-            this.jobToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.jobToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.jobToolStripMenuItem.Text = "Job";
             this.jobToolStripMenuItem.Click += new System.EventHandler(this.jobToolStripMenuItem_Click);
             // 
@@ -182,6 +182,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources._09_9226610_uploadsmember665562yourshot_665562_9226610jpg_igdjhxksrjifxjzu4rgbsw37bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000_adapt_1190_1;
+            this.ClientSize = new System.Drawing.Size(761, 430);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
