@@ -154,5 +154,145 @@ namespace SharpERDAL
             }
             return specificContact;
         }
+        public static bool UpdateModifyContact (Contact oldContact, Contact newContact)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string updateStmt =
+                "UPDATE Contact SET " +
+                "ContactFirstName = @NewContactFirstName, " +
+                "ContactLastName = @NewContactLastName, " +
+                "ContactTitle = @NewContactTitle, " +
+                "ContactDepartment = @NewContactDepartment, " +
+                "ContactAddress = @NewContactAddress, " +
+                "ContactCity = @NewContactCity, " +
+                "ContactState = @NewContactState, " +
+                "ContactZipCode = @NewContactZipCode, " +
+                "ContactPhone = @NewContactPhone, " +
+                "ContactMobile = @NewContactMobile, " +
+                "ContactFax = @NewContactFax, " +
+                "ContactEmail = @NewContactEmail, " +
+                "ContactContactedVia = @NewContactContactedVia, " +
+                "ContactNotes = @NewContactNotes " +
+                "WHERE ContactID = @OldContactID " +
+                "AND ContactFirstName = @OldContactFirstName " +
+                "AND ContactLastName = @OldContactLastName " +
+                "AND (ContactTitle = @OldContactTitle " +
+                    "OR ContactTitle IS NULL AND @OldContactTitle IS NULL) " +
+                "AND (ContactDepartment = @OldContactDepartment " +
+                    "OR ContactDepartment IS NULL AND @OldContactDepartment IS NULL) " +
+                "AND ContactAddress = @OldContactAddress " +
+                "AND ContactCity = @OldContactCity " +
+                "AND ContactState = @OldContactState " +
+                "AND ContactZipCode = @OldContactZipCode " +
+                "AND (ContactPhone = @OldContactPhone " +
+                    "OR ContactPhone IS NULL AND @OldContactPhone IS NULL) " +
+                "AND (ContactMobile = @OldContactMobile " +
+                    "OR ContactMobile IS NULL AND @OldContactMobile IS NULL) " +
+                "AND (ContactFax = @OldContactFax " +
+                    "OR ContactFax IS NULL AND @OldContactFax IS NULL) " +
+                "AND (ContactEmail = @OldContactEmail " +
+                    "OR ContactEmail IS NULL AND @OldContactEmail IS NULL) " +
+                "AND (ContactContactedVia = @OldContactContactedVia " +
+                    "OR ContactContactedVia IS NULL AND @OldContactContactedVia IS NULL) " +
+                "AND ContactNotes = @OldContactNotes " +
+                    "OR ContactNotes IS NULL AND @OldContactNotes IS NULL)";
+            SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
+            // NewContact changes
+            updateCmd.Parameters.AddWithValue("@NewContactFirstName", newContact.ContactFirstName);
+            updateCmd.Parameters.AddWithValue("@NewContactLastName", newContact.ContactLastName);
+            if (newContact.ContactTitle == "")
+                updateCmd.Parameters.AddWithValue("@NewContactTitle", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactTitle", newContact.ContactTitle);
+            if (newContact.ContactDepartment == "")
+                updateCmd.Parameters.AddWithValue("@NewContactDepartment", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactDepartment", newContact.ContactDepartment);
+            updateCmd.Parameters.AddWithValue("@NewContactAddress", newContact.ContactAddress);
+            updateCmd.Parameters.AddWithValue("@NewContactCity", newContact.ContactCity);
+            updateCmd.Parameters.AddWithValue("@NewContactState", newContact.ContactState);
+            updateCmd.Parameters.AddWithValue("@NewContactZipCode", newContact.ContactZipCode);
+            if (newContact.ContactPhone == "")
+                updateCmd.Parameters.AddWithValue("@NewContactPhone", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactPhone", newContact.ContactPhone);
+            if (newContact.ContactMobile == "")
+                updateCmd.Parameters.AddWithValue("@NewContactMobile", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactMobile", newContact.ContactMobile);
+            if (newContact.ContactFax == "")
+                updateCmd.Parameters.AddWithValue("@NewContactFax", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactFax", newContact.ContactFax);
+            if (newContact.ContactEmail == "")
+                updateCmd.Parameters.AddWithValue("@NewContactEmail", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactEmail", newContact.ContactEmail);
+            if (newContact.ContactContactedVia == "")
+                updateCmd.Parameters.AddWithValue("@NewContactContactedVia", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactContactedVia", newContact.ContactContactedVia);
+            if (newContact.ContactNotes == "")
+                updateCmd.Parameters.AddWithValue("@NewContactNotes", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactNotes", newContact.ContactNotes);
+            // OldContact changes
+            updateCmd.Parameters.AddWithValue("@OldContactFirstName", oldContact.ContactFirstName);
+            updateCmd.Parameters.AddWithValue("@OldContactLastName", oldContact.ContactLastName);
+            if (oldContact.ContactTitle == "")
+                updateCmd.Parameters.AddWithValue("@OldContactTitle", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactTitle", oldContact.ContactTitle);
+            if (oldContact.ContactDepartment == "")
+                updateCmd.Parameters.AddWithValue("@OldContactDepartment", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactDepartment", oldContact.ContactDepartment);
+            updateCmd.Parameters.AddWithValue("@OldContactAddress", oldContact.ContactAddress);
+            updateCmd.Parameters.AddWithValue("@OldContactCity", oldContact.ContactCity);
+            updateCmd.Parameters.AddWithValue("@OldContactState", oldContact.ContactState);
+            updateCmd.Parameters.AddWithValue("@OldContactZipCode", oldContact.ContactZipCode);
+            if (oldContact.ContactPhone == "")
+                updateCmd.Parameters.AddWithValue("@OldContactPhone", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactPhone", oldContact.ContactPhone);
+            if (oldContact.ContactMobile == "")
+                updateCmd.Parameters.AddWithValue("@OldContactMobile", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactMobile", oldContact.ContactMobile);
+            if (oldContact.ContactFax == "")
+                updateCmd.Parameters.AddWithValue("@OldContactFax", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactFax", oldContact.ContactFax);
+            if (oldContact.ContactEmail == "")
+                updateCmd.Parameters.AddWithValue("@OldContactEmail", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactEmail", oldContact.ContactEmail);
+            if (oldContact.ContactContactedVia == "")
+                updateCmd.Parameters.AddWithValue("@OldContactContactedVia", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactContactedVia", oldContact.ContactContactedVia);
+            if (oldContact.ContactNotes == "")
+                updateCmd.Parameters.AddWithValue("@OldContactNotes", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactNotes", oldContact.ContactNotes);
+
+            try
+            {
+                conn.Open();
+                int count = updateCmd.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch(SqlException xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
