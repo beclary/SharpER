@@ -154,6 +154,7 @@ namespace SharpERDAL
             }
             return specificContact;
         }
+
         public static bool UpdateModifyContact (Contact oldContact, Contact newContact)
         {
             SqlConnection conn = SharpERDB.GetConnection();
