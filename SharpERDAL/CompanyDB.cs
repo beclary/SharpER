@@ -134,5 +134,99 @@ namespace SharpERDAL
             }
             return specificCompany;
         }
+
+        // Update/Modify method for Company
+        public static bool UpdateModifyCompany(Company oldCompany, Company newCompany)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string updateStmt =
+                "UPDATE Company SET " +
+                "CompanyName = @NewCompanyName, " +
+                "CompanyAddress = @NewCompanyAddress, " +
+                "CompanyCity = @NewCompanyCity, " +
+                "CompanyState = @NewCompanyState, " +
+                "CompanyZipCode = @NewCompanyZipCode, " +
+                "CompanyPhone = @NewCompanyPhone, " +
+                "CompanyFax = @NewCompanyFax, " +
+                "CompanyWebsite = @NewCompanyWebsite, " +
+                "CompanyNotes = @NewCompanyNotes " +
+                "WHERE CompanyID = @OldCompanyID " +
+                "AND CompanyName = @OldCompanyName " +
+                "AND CompanyAddress = @OldCompanyAddress " +
+                "AND CompanyCity = @OldCompanyCity " +
+                "AND CompanyState = @OldCompanyState " +
+                "AND CompanyZipCode = @OldCompanyZipCode " +
+                "AND (CompanyPhone = @OldCompanyPhone " +
+                    "OR CompanyPhone IS NULL AND @OldCompanyPhone IS NULL) " +
+                "AND (CompanyFax = @OldCompanyFax " +
+                    "OR CompanyFax IS NULL AND @OldCompanyFax IS NULL) " +
+                "AND (CompanyWebsite = @OldCompanyWebsite " +
+                    "OR CompanyWebsite IS NULL AND @OldCompanyWebsite IS NULL) " +
+                "AND CompanyNotes = @OldCompanyNotes " +
+                    "OR CompanyNotes IS NULL AND @OldCompanyNotes IS NULL)";
+            SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
+            // New Company changes
+            updateCmd.Parameters.AddWithValue("@NewCompanyName", newCompany.CompanyName);
+            updateCmd.Parameters.AddWithValue("@NewCompanyAddress", newCompany.CompanyAddress);
+            updateCmd.Parameters.AddWithValue("@NewCompanyCity", newCompany.CompanyCity);
+            updateCmd.Parameters.AddWithValue("@NewCompanyState", newCompany.CompanyState);
+            updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", newCompany.CompanyZipCode);
+            if (newCompany.CompanyPhone == "")
+                updateCmd.Parameters.AddWithValue("@NewCompanyPhone", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewCompanyPhone", newCompany.CompanyPhone);
+            if (newCompany.CompanyFax == "")
+                updateCmd.Parameters.AddWithValue("@NewCompanyFax", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewCompanyFax", newCompany.CompanyFax);
+            if (newCompany.CompanyWebsite == "")
+                updateCmd.Parameters.AddWithValue("@NewCompanyWebsite", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewCompanyWebsite", newCompany.CompanyWebsite);
+            if (newCompany.CompanyNotes == "")
+                updateCmd.Parameters.AddWithValue("@NewCompanyNotes", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewCompanyNotes", newCompany.CompanyNotes);
+            // Old Company changes
+            updateCmd.Parameters.AddWithValue("@OldCompanyName", oldCompany.CompanyName);
+            updateCmd.Parameters.AddWithValue("@OldCompanyAddress", oldCompany.CompanyAddress);
+            updateCmd.Parameters.AddWithValue("@OldCompanyCity", oldCompany.CompanyCity);
+            updateCmd.Parameters.AddWithValue("@OldCompanyState", oldCompany.CompanyState);
+            updateCmd.Parameters.AddWithValue("@OldCompanyZipCode", oldCompany.CompanyZipCode);
+            if (oldCompany.CompanyPhone == "")
+                updateCmd.Parameters.AddWithValue("@OldCompanyPhone", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldCompanyPhone", oldCompany.CompanyPhone);
+            if (oldCompany.CompanyFax == "")
+                updateCmd.Parameters.AddWithValue("@OldCompanyFax", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldCompanyFax", oldCompany.CompanyFax);
+            if (oldCompany.CompanyWebsite == "")
+                updateCmd.Parameters.AddWithValue("@OldCompanyWebsite", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldCompanyWebsite", oldCompany.CompanyWebsite);
+            if (oldCompany.CompanyNotes == "")
+                updateCmd.Parameters.AddWithValue("@OldCompanyNotes", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldCompanyNotes", oldCompany.CompanyNotes);
+
+            try
+            {
+                conn.Open();
+                int count = updateCmd.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
