@@ -16,6 +16,10 @@ namespace WindowsFormsApplication1
         public static Form companyMainForm = null;
         public static Form activityMainForm = null;
         public static Form jobMainForm = null;
+        public static Form searchContactForm = null;
+        public static Form searchCompanyForm = null;
+        public static Form searchActivityForm = null;
+        public static Form searchJobForm = null;
 
         public MainForm()
         {
