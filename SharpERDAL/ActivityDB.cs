@@ -13,9 +13,7 @@ namespace SharpERDAL
 {
     public static class ActivityDB
     {
-        /// <summary>
-        /// This will provide a listing of all the activities in the database
-        /// </summary>
+        // This will provide a listing of all the activities in the database
         public static List<Activity> GetAllActivities()
         {
             List<Activity> activityList = new List<Activity>();
@@ -67,17 +65,13 @@ namespace SharpERDAL
             return activityList;
         }
 
-        /// <summary>
-        /// This will provide a list of the activity that was done given a specific date
-        /// </summary>
+        // This will provide a list of the activity that was done given a specific date
         public static Activity GetActivityByDate(DateTime activityDate)
         {
             throw new System.NotImplementedException();
         }
 
-        /// <summary>
-        /// This will provide the activity that was done given a specific activityID
-        /// </summary>
+        // This will provide the activity that was done given a specific activityID
         public static Activity GetSpecificActivityInfo(string activityID)
         {
             Activity specificActivity = new Activity();
@@ -94,7 +88,6 @@ namespace SharpERDAL
             {
                 conn.Open();
                 return specificActivity;
-
             }
             catch (Exception xsept)
             {
@@ -103,7 +96,72 @@ namespace SharpERDAL
             finally
             {
                 conn.Close();
+            }
+        }
 
+        // This is the methof to update or modify (change) information on a form
+        public static bool UpdateModifyActivity (Activity oldActivity, Activity newActivity)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string updateStmt =
+                "UPDATE Activity SET " +
+                "ActivityDate = @NewActivityDate, " +
+                "ActivityDescription = @NewActivityDescription, " +
+                "ActivityTravel = @NewActivityTravel, " +
+                "ActivityContactID = @NewActivityContactID, " +
+                "ActivityNotes = @NewActivityNotes " +
+                "WHERE ActivityID = @OldActivityID " +
+                "AND ActivityDate = @OldActivityDate " +
+                "AND ActivityDescription = @OldActivityDescription " +
+                "AND ActivityTravel = @OldActivityTravel " +
+                "AND (ActivityContactID = @OldActivityContactID " +
+                    "OR ActivityContactID IS NULL AND @OldActivityContactID IS NULL) " +
+                "AND (ActivityNotes = @OldActivityNotes " +
+                    "OR ActivityNotes IS NULL AND @OldActivityNotes IS NULL)";
+            SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
+
+            // New Activity changes
+            updateCmd.Parameters.AddWithValue("@NewActivityDate", newActivity.ActivityDate);
+            updateCmd.Parameters.AddWithValue("@NewActivityDescription", newActivity.ActivityDescription);
+            updateCmd.Parameters.AddWithValue("@NewActivityTravel", newActivity.ActivityTravel);
+            if (newActivity.ActivityContactID == -1)
+                updateCmd.Parameters.AddWithValue("@NewActivityContactID", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewActivityContactID", newActivity.ActivityContactID);
+            if (newActivity.ActivityNotes == "")
+                updateCmd.Parameters.AddWithValue("@NewActivityNotes", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewActivityNotes", newActivity.ActivityNotes);
+
+            // Old Activity changes
+            updateCmd.Parameters.AddWithValue("@OldActivityDate", oldActivity.ActivityDate);
+            updateCmd.Parameters.AddWithValue("@OldActivityDescription", oldActivity.ActivityDescription);
+            updateCmd.Parameters.AddWithValue("@OldActivityTravel", oldActivity.ActivityTravel);
+            if (oldActivity.ActivityContactID == -1)
+                updateCmd.Parameters.AddWithValue("@OldActivityContactID", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldActivityContactID", oldActivity.ActivityContactID);
+            if (oldActivity.ActivityNotes == "")
+                updateCmd.Parameters.AddWithValue("@OldActivityNotes", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldActivityNotes", oldActivity.ActivityNotes);
+
+            try
+            {
+                conn.Open();
+                int count = updateCmd.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

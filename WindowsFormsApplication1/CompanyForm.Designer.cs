@@ -376,7 +376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
-            this.ClientSize = new System.Drawing.Size(732, 535);
+            this.ClientSize = new System.Drawing.Size(732, 454);
             this.Controls.Add(this.companyZipCodeMaskedTextBox);
             this.Controls.Add(this.companyFaxMaskedTextBox);
             this.Controls.Add(this.companyPhoneMaskedTextBox);
