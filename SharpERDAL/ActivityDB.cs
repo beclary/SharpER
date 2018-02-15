@@ -65,10 +65,54 @@ namespace SharpERDAL
             return activityList;
         }
 
-        // This will provide a list of the activity that was done given a specific date
+        // This will provide a list of the activity that was done given a specific date.
+        // This will probably be the most used search for this table
         public static Activity GetActivityByDate(DateTime activityDate)
         {
-            throw new System.NotImplementedException();
+            Activity specificActivityByDate = new Activity();
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "SELECT ActivityID, ActivityDate, ActivityDescription, ActivityTravel, " +
+                "ActivityContactID, ActivityJobID, ActivityNotes " +
+                "FROM Activity " +
+                "WHERE ActivityDate = @ActivityDate";
+            SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            selectCmd.Parameters.AddWithValue("@ActivityDate", activityDate);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader readur = selectCmd.ExecuteReader();
+                int actActivityIDOrd = readur.GetOrdinal("ActivityID");
+                int actActivityDateOrd = readur.GetOrdinal("ActivityDate");
+                int actActivityDescriptionOrd = readur.GetOrdinal("ActivityDescription");
+                int actActivityTravelOrd = readur.GetOrdinal("ActivityTravel");
+                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
+                int actActivityContactIDOrd = readur.GetOrdinal("ActivityContactID");
+                int actActivityNotesOrd = readur.GetOrdinal("ActivityNotes");
+
+                while (readur.Read())
+                {
+                    Activity actRowInfo = new Activity();
+                    actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+                    actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
+                    actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
+                    actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
+                    actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
+                    actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
+                    actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
+                }
+                readur.Close();
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return specificActivityByDate;
         }
 
         // This will provide the activity that was done given a specific activityID
@@ -87,7 +131,27 @@ namespace SharpERDAL
             try
             {
                 conn.Open();
-                return specificActivity;
+                SqlDataReader readur = selectCmd.ExecuteReader();
+                int actActivityIDOrd = readur.GetOrdinal("ActivityID");
+                int actActivityDateOrd = readur.GetOrdinal("ActivityDate");
+                int actActivityDescriptionOrd = readur.GetOrdinal("ActivityDescription");
+                int actActivityTravelOrd = readur.GetOrdinal("ActivityTravel");
+                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
+                int actActivityContactIDOrd = readur.GetOrdinal("ActivityContactID");
+                int actActivityNotesOrd = readur.GetOrdinal("ActivityNotes");
+
+                while (readur.Read())
+                {
+                    Activity actRowInfo = new Activity();
+                    actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+                    actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
+                    actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
+                    actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
+                    actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
+                    actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
+                    actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
+                }
+                readur.Close();
             }
             catch (Exception xsept)
             {
@@ -97,6 +161,8 @@ namespace SharpERDAL
             {
                 conn.Close();
             }
+            return specificActivity;
+
         }
 
         // This is the methof to update or modify (change) information on a form
