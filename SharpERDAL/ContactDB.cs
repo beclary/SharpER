@@ -155,6 +155,7 @@ namespace SharpERDAL
             return specificContact;
         }
 
+        // This is the method to update / modify a contact
         public static bool UpdateModifyContact (Contact oldContact, Contact newContact)
         {
             SqlConnection conn = SharpERDB.GetConnection();
@@ -287,6 +288,76 @@ namespace SharpERDAL
                     return false;
             }
             catch(SqlException xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        // This is the method to add a contact
+        public static int AddContact (Contact newContact)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string insertStmt =
+                "INSERT Contact " +
+                "(ContactFirstName, ContactLastName, ContactTitle, ContactDepartment, " +
+                "ContactAddress, ContactCity, ContactState, ContactZipCode, ContactContactedVia, " +
+                "ContactPhone, ContactMobile, ContactFax, ContactEmail, ContactNotes) " +
+                "VALUES (@ContactFirstName, @ContactLastName, @ContactTitle, @ContactDepartment, " +
+                "@ContactAddress, @ContactCity, @ContactState, @ContactZipCode, @ContactContactedVia, " +
+                "@ContactPhone, @ContactMobile, @ContactFax, @ContactEmail, @ContactNotes)";
+            SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
+            insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName);
+            insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);
+            if (newContact.ContactTitle == "")
+                insertCmd.Parameters.AddWithValue("@ContactTitle", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ContactTitle", newContact.ContactTitle);
+            if (newContact.ContactDepartment == "")
+                insertCmd.Parameters.AddWithValue("@ContactDepartment", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ContactDepartment", newContact.ContactDepartment);
+            insertCmd.Parameters.AddWithValue("@ContactAddress", newContact.ContactAddress);
+            insertCmd.Parameters.AddWithValue("@ContactCity", newContact.ContactCity);
+            insertCmd.Parameters.AddWithValue("@ContactState", newContact.ContactState);
+            insertCmd.Parameters.AddWithValue("@ContactZipCode", newContact.ContactZipCode);
+            insertCmd.Parameters.AddWithValue("@ContactContactedVia", newContact.ContactContactedVia);
+            insertCmd.Parameters.AddWithValue("@ContactPhone", newContact.ContactPhone);
+            if (newContact.ContactMobile == "")
+                insertCmd.Parameters.AddWithValue("@ContactMobile", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ContactMobile", newContact.ContactMobile);
+            if (newContact.ContactFax == "")
+                insertCmd.Parameters.AddWithValue("@ContactFax", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ContactFax", newContact.ContactFax);
+            if (newContact.ContactEmail == "")
+                insertCmd.Parameters.AddWithValue("@ContactEmail", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ContactEmail", newContact.ContactEmail);
+            if (newContact.ContactNotes == "")
+                insertCmd.Parameters.AddWithValue("@ContactNotes", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ContactNotes", newContact.ContactNotes);
+
+            try
+            {
+                conn.Open();
+                insertCmd.ExecuteNonQuery();
+                string selectStmt =
+                    "SELECT SCOPE_IDENTITY ('Contact') FROM Contact";
+                SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+                int contactID = Convert.ToInt32(selectCmd.ExecuteScalar());
+                return contactID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
             {
                 throw xsept;
             }

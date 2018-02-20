@@ -277,6 +277,7 @@
             "Email",
             "In Person",
             "Letter",
+            "Myself",
             "Phone",
             "Text"});
             this.contactContactedViaComboBox.Location = new System.Drawing.Point(161, 297);
@@ -532,6 +533,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ContactForm";
             this.Text = "Contact";
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
