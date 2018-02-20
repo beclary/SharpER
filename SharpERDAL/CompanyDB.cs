@@ -156,8 +156,7 @@ namespace SharpERDAL
                 "AND CompanyCity = @OldCompanyCity " +
                 "AND CompanyState = @OldCompanyState " +
                 "AND CompanyZipCode = @OldCompanyZipCode " +
-                "AND (CompanyPhone = @OldCompanyPhone " +
-                    "OR CompanyPhone IS NULL AND @OldCompanyPhone IS NULL) " +
+                "AND CompanyPhone = @OldCompanyPhone " +
                 "AND (CompanyFax = @OldCompanyFax " +
                     "OR CompanyFax IS NULL AND @OldCompanyFax IS NULL) " +
                 "AND (CompanyWebsite = @OldCompanyWebsite " +
@@ -171,10 +170,7 @@ namespace SharpERDAL
             updateCmd.Parameters.AddWithValue("@NewCompanyCity", newCompany.CompanyCity);
             updateCmd.Parameters.AddWithValue("@NewCompanyState", newCompany.CompanyState);
             updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", newCompany.CompanyZipCode);
-            if (newCompany.CompanyPhone == "")
-                updateCmd.Parameters.AddWithValue("@NewCompanyPhone", DBNull.Value);
-            else
-                updateCmd.Parameters.AddWithValue("@NewCompanyPhone", newCompany.CompanyPhone);
+            updateCmd.Parameters.AddWithValue("@NewCompanyPhone", newCompany.CompanyPhone);
             if (newCompany.CompanyFax == "")
                 updateCmd.Parameters.AddWithValue("@NewCompanyFax", DBNull.Value);
             else
@@ -193,10 +189,7 @@ namespace SharpERDAL
             updateCmd.Parameters.AddWithValue("@OldCompanyCity", oldCompany.CompanyCity);
             updateCmd.Parameters.AddWithValue("@OldCompanyState", oldCompany.CompanyState);
             updateCmd.Parameters.AddWithValue("@OldCompanyZipCode", oldCompany.CompanyZipCode);
-            if (oldCompany.CompanyPhone == "")
-                updateCmd.Parameters.AddWithValue("@OldCompanyPhone", DBNull.Value);
-            else
-                updateCmd.Parameters.AddWithValue("@OldCompanyPhone", oldCompany.CompanyPhone);
+            updateCmd.Parameters.AddWithValue("@OldCompanyPhone", oldCompany.CompanyPhone);
             if (oldCompany.CompanyFax == "")
                 updateCmd.Parameters.AddWithValue("@OldCompanyFax", DBNull.Value);
             else
@@ -220,6 +213,60 @@ namespace SharpERDAL
                     return false;
             }
             catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        // This is the method to add a contact
+        public static int AddCompany (Company newCompany)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string insertStmt =
+                "INSERT Company " +
+                "(CompanyName, CompanyAddress, CompanyCity, CompanyState, CompanyZipCode, " +
+                "CompanyPhone, CompanyFax, CompanyWebsite, CompanyNotes) " +
+                "VALUES (@CompanyName, @CompanyAddress, @CompanyCity, @CompanyState, " +
+                "@CompanyZipCode, @CompanyPhone, @CompanyFax, @CompanyWebsite, @CompanyNotes)";
+            SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
+            insertCmd.Parameters.AddWithValue("@CompanyName", newCompany.CompanyName);
+            insertCmd.Parameters.AddWithValue("@CompanyAddress", newCompany.CompanyAddress);
+            insertCmd.Parameters.AddWithValue("@CompanyCity", newCompany.CompanyCity);
+            insertCmd.Parameters.AddWithValue("@CompanyState", newCompany.CompanyState);
+            insertCmd.Parameters.AddWithValue("@CompanyZipCode", newCompany.CompanyZipCode);
+            insertCmd.Parameters.AddWithValue("@CompanyPhone", newCompany.CompanyPhone);
+            if (newCompany.CompanyFax == "")
+                insertCmd.Parameters.AddWithValue("@CompanyFax", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@CompanyFax", newCompany.CompanyFax);
+            if (newCompany.CompanyWebsite == "")
+                insertCmd.Parameters.AddWithValue("@CompanyWebsite", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@CompanyWebsite", newCompany.CompanyWebsite);
+            if (newCompany.CompanyNotes == "")
+                insertCmd.Parameters.AddWithValue("@CompanyNotes", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@CompanyNotes", newCompany.CompanyNotes);
+
+            try
+            {
+                conn.Open();
+                insertCmd.ExecuteNonQuery();
+                string selectStmt =
+                    "SELECT SCOPE_IDENTITY ('Company') FROM Company";
+                SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+                int companyID = Convert.ToInt32(selectCmd.ExecuteScalar());
+                return companyID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
             {
                 throw xsept;
             }
