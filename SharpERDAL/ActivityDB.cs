@@ -136,8 +136,8 @@ namespace SharpERDAL
                 int actActivityDateOrd = readur.GetOrdinal("ActivityDate");
                 int actActivityDescriptionOrd = readur.GetOrdinal("ActivityDescription");
                 int actActivityTravelOrd = readur.GetOrdinal("ActivityTravel");
-                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
                 int actActivityContactIDOrd = readur.GetOrdinal("ActivityContactID");
+                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
                 int actActivityNotesOrd = readur.GetOrdinal("ActivityNotes");
 
                 while (readur.Read())
@@ -147,8 +147,8 @@ namespace SharpERDAL
                     actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
                     actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
                     actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
-                    actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
                     actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
+                    actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
                     actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
                 }
                 readur.Close();
@@ -175,6 +175,7 @@ namespace SharpERDAL
                 "ActivityDescription = @NewActivityDescription, " +
                 "ActivityTravel = @NewActivityTravel, " +
                 "ActivityContactID = @NewActivityContactID, " +
+                "ActivityJobID = @NewActivityJobID, " +
                 "ActivityNotes = @NewActivityNotes " +
                 "WHERE ActivityID = @OldActivityID " +
                 "AND ActivityDate = @OldActivityDate " +
@@ -182,6 +183,8 @@ namespace SharpERDAL
                 "AND ActivityTravel = @OldActivityTravel " +
                 "AND (ActivityContactID = @OldActivityContactID " +
                     "OR ActivityContactID IS NULL AND @OldActivityContactID IS NULL) " +
+                "AND (ActivityJobID = @OldActivityJobID " +
+                    "OR ActivityJobID IS NULL AND @OldActivityJobID IS NULL) " +
                 "AND (ActivityNotes = @OldActivityNotes " +
                     "OR ActivityNotes IS NULL AND @OldActivityNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
@@ -194,6 +197,10 @@ namespace SharpERDAL
                 updateCmd.Parameters.AddWithValue("@NewActivityContactID", DBNull.Value);
             else
                 updateCmd.Parameters.AddWithValue("@NewActivityContactID", newActivity.ActivityContactID);
+            if (newActivity.ActivityJobID == -1)
+                updateCmd.Parameters.AddWithValue("@NewActivityJobID", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewActivityJobID", newActivity.ActivityJobID);
             if (newActivity.ActivityNotes == "")
                 updateCmd.Parameters.AddWithValue("@NewActivityNotes", DBNull.Value);
             else
@@ -207,6 +214,10 @@ namespace SharpERDAL
                 updateCmd.Parameters.AddWithValue("@OldActivityContactID", DBNull.Value);
             else
                 updateCmd.Parameters.AddWithValue("@OldActivityContactID", oldActivity.ActivityContactID);
+            if (newActivity.ActivityJobID == -1)
+                updateCmd.Parameters.AddWithValue("@OldActivityJobID", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@OldActivityJobID", newActivity.ActivityJobID);
             if (oldActivity.ActivityNotes == "")
                 updateCmd.Parameters.AddWithValue("@OldActivityNotes", DBNull.Value);
             else
@@ -222,6 +233,56 @@ namespace SharpERDAL
                     return false;
             }
             catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        // This is the method to add an activity
+        public static int AddActivity (Activity newActivity)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string insertStmt =
+                "(ActivityDate, ActivityDescription, ActivityTravel, ActivityJobID, " +
+                "ActivityContactID, ActivityNotes) " +
+                "VALUES (@ActivityDate, @ActivityDescription, @ActivityTravel, " +
+                "@ActivityContactID, @ActivityJobID, @ActivityNotes)";
+            SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
+            insertCmd.Parameters.AddWithValue("@ActivityDate", newActivity.ActivityDate);
+            insertCmd.Parameters.AddWithValue("@ActivityDescription", newActivity.ActivityDescription);
+            insertCmd.Parameters.AddWithValue("@ActivityTravel", newActivity.ActivityTravel);
+            if (newActivity.ActivityContactID == -1)
+                insertCmd.Parameters.AddWithValue("@ActivityContactID", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ActivityContactID", newActivity.ActivityContactID);
+            if (newActivity.ActivityJobID == -1)
+                insertCmd.Parameters.AddWithValue("@ActivityJobID", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ActivityJobID", newActivity.ActivityJobID);
+            if (newActivity.ActivityNotes == "")
+                insertCmd.Parameters.AddWithValue("@ActivityNotes", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@ActivityNotes", newActivity.ActivityNotes);
+
+            try
+            {
+                conn.Open();
+                insertCmd.ExecuteNonQuery();
+                string selectStmt =
+                    "SELECT SCOPE_IDENTITY ('Activity') FROM Activity";
+                SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+                int activityID = Convert.ToInt32(selectCmd.ExecuteScalar());
+                return activityID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
             {
                 throw xsept;
             }

@@ -143,6 +143,15 @@ namespace SharpERDAL
             }
         }
 
-        // This is the method to add 
+        // This is the method to add a job
+        public static int AddJob (Job newJob)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string insertStmt =
+                "INSERT Job " +
+                "(JobPosition, JobApplied, JobPay, JobContactID, JobCompanyID, JobNotes) " +
+                "VALUES (@JobPosition, @JobApplied, @JobPay, @JobContactID, @JobCompanyID, @JobNotes)";
+            SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
+        }
     }
 }
