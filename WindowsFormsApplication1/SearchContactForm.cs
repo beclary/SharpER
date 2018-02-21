@@ -39,5 +39,10 @@ namespace WindowsFormsApplication1
         //                                      why doesn't it accept the method call I creaated
         //                                      in the ContactDB class?
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

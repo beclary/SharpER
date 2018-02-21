@@ -79,5 +79,23 @@ namespace WindowsFormsApplication1
             contactMainForm = new SearchContactForm();
             contactMainForm.ShowDialog();
         }
+
+        private void companyToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            companyMainForm = new SearchCompanyForm();
+            companyMainForm.ShowDialog();
+        }
+
+        private void activityToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            activityMainForm = new SearchActivityForm();
+            activityMainForm.ShowDialog();
+        }
+
+        private void jobToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            jobMainForm = new SearchJobForm();
+            jobMainForm.ShowDialog();
+        }
     }
 }

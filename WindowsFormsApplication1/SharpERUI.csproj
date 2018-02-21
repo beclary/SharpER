@@ -99,11 +99,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchActivityForm.Designer.cs">
+      <DependentUpon>SearchActivityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCompanyForm.Designer.cs">
+      <DependentUpon>SearchCompanyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchContactForm.Designer.cs">
       <DependentUpon>SearchContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchJobForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchJobForm.Designer.cs">
+      <DependentUpon>SearchJobForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ActivityForm.resx">
       <DependentUpon>ActivityForm.cs</DependentUpon>
@@ -133,8 +151,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SearchActivityForm.resx">
+      <DependentUpon>SearchActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCompanyForm.resx">
+      <DependentUpon>SearchCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchContactForm.resx">
       <DependentUpon>SearchContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchJobForm.resx">
+      <DependentUpon>SearchJobForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\SharpERBLL.Activity.datasource" />
     <None Include="Properties\DataSources\SharpERBLL.Company.datasource" />

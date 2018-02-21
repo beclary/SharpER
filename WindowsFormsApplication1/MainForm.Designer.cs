@@ -78,18 +78,21 @@
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
             this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.companyToolStripMenuItem.Text = "Company";
+            this.companyToolStripMenuItem.Click += new System.EventHandler(this.companyToolStripMenuItem_Click_1);
             // 
             // activityToolStripMenuItem
             // 
             this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
             this.activityToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.activityToolStripMenuItem.Text = "Activity";
+            this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click_1);
             // 
             // jobToolStripMenuItem
             // 
             this.jobToolStripMenuItem.Name = "jobToolStripMenuItem";
             this.jobToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.jobToolStripMenuItem.Text = "Job";
+            this.jobToolStripMenuItem.Click += new System.EventHandler(this.jobToolStripMenuItem_Click_1);
             // 
             // helpToolStripMenuItem
             // 
@@ -104,19 +107,19 @@
             // aboutProgramToolStripMenuItem
             // 
             this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.aboutProgramToolStripMenuItem.Text = "About";
             // 
             // developerInfoToolStripMenuItem
             // 
             this.developerInfoToolStripMenuItem.Name = "developerInfoToolStripMenuItem";
-            this.developerInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.developerInfoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.developerInfoToolStripMenuItem.Text = "Developer Info";
             // 
             // versionInfoToolStripMenuItem
             // 
             this.versionInfoToolStripMenuItem.Name = "versionInfoToolStripMenuItem";
-            this.versionInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.versionInfoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.versionInfoToolStripMenuItem.Text = "Version Info";
             // 
             // exitToolStripMenuItem1

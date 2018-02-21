@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchContactForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchContactForm));
             this.btnExit = new System.Windows.Forms.Button();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddNewContact = new System.Windows.Forms.Button();
             this.btnUpdateModifyContact = new System.Windows.Forms.Button();
             this.btnDeleteContact = new System.Windows.Forms.Button();
             this.contactDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnViewContactInfo = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnViewContactInfo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingNavigator)).BeginInit();
             this.contactBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -69,16 +69,13 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExit.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(569, 355);
+            this.btnExit.Location = new System.Drawing.Point(557, 370);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(127, 33);
+            this.btnExit.Size = new System.Drawing.Size(176, 62);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "E X I T";
             this.btnExit.UseVisualStyleBackColor = false;
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // contactBindingNavigator
             // 
@@ -114,24 +111,6 @@
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -151,24 +130,6 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
@@ -180,9 +141,9 @@
             this.btnAddNewContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddNewContact.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewContact.ForeColor = System.Drawing.Color.Maroon;
-            this.btnAddNewContact.Location = new System.Drawing.Point(558, 79);
+            this.btnAddNewContact.Location = new System.Drawing.Point(557, 78);
             this.btnAddNewContact.Name = "btnAddNewContact";
-            this.btnAddNewContact.Size = new System.Drawing.Size(152, 33);
+            this.btnAddNewContact.Size = new System.Drawing.Size(176, 62);
             this.btnAddNewContact.TabIndex = 10;
             this.btnAddNewContact.Text = "Add New Contact";
             this.btnAddNewContact.UseVisualStyleBackColor = false;
@@ -194,9 +155,9 @@
             this.btnUpdateModifyContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUpdateModifyContact.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateModifyContact.ForeColor = System.Drawing.Color.Maroon;
-            this.btnUpdateModifyContact.Location = new System.Drawing.Point(558, 118);
+            this.btnUpdateModifyContact.Location = new System.Drawing.Point(557, 146);
             this.btnUpdateModifyContact.Name = "btnUpdateModifyContact";
-            this.btnUpdateModifyContact.Size = new System.Drawing.Size(152, 33);
+            this.btnUpdateModifyContact.Size = new System.Drawing.Size(176, 62);
             this.btnUpdateModifyContact.TabIndex = 11;
             this.btnUpdateModifyContact.Text = "Update / Modify Contact";
             this.btnUpdateModifyContact.UseVisualStyleBackColor = false;
@@ -208,9 +169,9 @@
             this.btnDeleteContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteContact.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteContact.ForeColor = System.Drawing.Color.Maroon;
-            this.btnDeleteContact.Location = new System.Drawing.Point(558, 196);
+            this.btnDeleteContact.Location = new System.Drawing.Point(557, 282);
             this.btnDeleteContact.Name = "btnDeleteContact";
-            this.btnDeleteContact.Size = new System.Drawing.Size(152, 33);
+            this.btnDeleteContact.Size = new System.Drawing.Size(176, 62);
             this.btnDeleteContact.TabIndex = 12;
             this.btnDeleteContact.Text = "Delete Contact";
             this.btnDeleteContact.UseVisualStyleBackColor = false;
@@ -234,6 +195,19 @@
             this.contactDataGridView.ReadOnly = true;
             this.contactDataGridView.Size = new System.Drawing.Size(519, 354);
             this.contactDataGridView.TabIndex = 12;
+            // 
+            // btnViewContactInfo
+            // 
+            this.btnViewContactInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnViewContactInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnViewContactInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewContactInfo.ForeColor = System.Drawing.Color.Maroon;
+            this.btnViewContactInfo.Location = new System.Drawing.Point(556, 214);
+            this.btnViewContactInfo.Name = "btnViewContactInfo";
+            this.btnViewContactInfo.Size = new System.Drawing.Size(176, 62);
+            this.btnViewContactInfo.TabIndex = 13;
+            this.btnViewContactInfo.Text = "View Contact Info";
+            this.btnViewContactInfo.UseVisualStyleBackColor = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -295,18 +269,45 @@
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 125;
             // 
-            // btnViewContactInfo
+            // contactBindingSource
             // 
-            this.btnViewContactInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnViewContactInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnViewContactInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewContactInfo.ForeColor = System.Drawing.Color.Maroon;
-            this.btnViewContactInfo.Location = new System.Drawing.Point(558, 157);
-            this.btnViewContactInfo.Name = "btnViewContactInfo";
-            this.btnViewContactInfo.Size = new System.Drawing.Size(152, 33);
-            this.btnViewContactInfo.TabIndex = 13;
-            this.btnViewContactInfo.Text = "View Contact Info";
-            this.btnViewContactInfo.UseVisualStyleBackColor = false;
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // SearchContactForm
             // 
@@ -326,11 +327,11 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchContactForm";
             this.Text = "Get / Find Contact Form";
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingNavigator)).EndInit();
             this.contactBindingNavigator.ResumeLayout(false);
             this.contactBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
