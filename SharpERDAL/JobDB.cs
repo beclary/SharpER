@@ -152,6 +152,47 @@ namespace SharpERDAL
                 "(JobPosition, JobApplied, JobPay, JobContactID, JobCompanyID, JobNotes) " +
                 "VALUES (@JobPosition, @JobApplied, @JobPay, @JobContactID, @JobCompanyID, @JobNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
+            insertCmd.Parameters.AddWithValue("@JobPosition", newJob.JobPosition);
+            insertCmd.Parameters.AddWithValue("@JobApplied", newJob.JobApplied);
+            if (newJob.JobPay == -1)
+                insertCmd.Parameters.AddWithValue("@JobPay", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@JobPay", newJob.JobPay);
+            if (newJob.JobContactID == -1)
+                insertCmd.Parameters.AddWithValue("@JobContactID", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@JobContactID", newJob.JobContactID);
+            if (newJob.JobCompanyID == -1)
+                insertCmd.Parameters.AddWithValue("@JobCompanyID", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@JobCompanyID", newJob.JobCompanyID);
+            if (newJob.JobNotes == "")
+                insertCmd.Parameters.AddWithValue("@JobNotes", DBNull.Value);
+            else
+                insertCmd.Parameters.AddWithValue("@JobNotes", newJob.JobNotes);
+
+            try
+            {
+                conn.Open();
+                insertCmd.ExecuteNonQuery();
+                string selectStmt =
+                    "SELECT SCOPE_IDENTITY ('Job') FROM Job";
+                SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+                int jobID = Convert.ToInt32(selectCmd.ExecuteScalar());
+                return jobID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
