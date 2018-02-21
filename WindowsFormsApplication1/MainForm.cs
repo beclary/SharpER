@@ -38,12 +38,12 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
+ /*       private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             contactMainForm = new ContactForm();
             contactMainForm.ShowDialog();
         }
-
+*/
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -72,6 +72,12 @@ namespace WindowsFormsApplication1
         private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void contactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            contactMainForm = new SearchContactForm();
+            contactMainForm.ShowDialog();
         }
     }
 }

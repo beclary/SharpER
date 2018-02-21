@@ -37,9 +37,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -48,16 +46,15 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.contactBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.btnAddNewContact = new System.Windows.Forms.Button();
             this.btnUpdateModifyContact = new System.Windows.Forms.Button();
             this.btnDeleteContact = new System.Windows.Forms.Button();
             this.contactDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnViewContactInfo = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnViewContactInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingNavigator)).BeginInit();
             this.contactBindingNavigator.SuspendLayout();
@@ -85,10 +82,10 @@
             // 
             // contactBindingNavigator
             // 
-            this.contactBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.contactBindingNavigator.AddNewItem = null;
             this.contactBindingNavigator.BindingSource = this.contactBindingSource;
             this.contactBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.contactBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.contactBindingNavigator.DeleteItem = null;
             this.contactBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -98,10 +95,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.contactBindingNavigatorSaveItem});
+            this.bindingNavigatorSeparator2});
             this.contactBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.contactBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.contactBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -113,30 +107,12 @@
             this.contactBindingNavigator.TabIndex = 4;
             this.contactBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -198,15 +174,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // contactBindingNavigatorSaveItem
-            // 
-            this.contactBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.contactBindingNavigatorSaveItem.Enabled = false;
-            this.contactBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("contactBindingNavigatorSaveItem.Image")));
-            this.contactBindingNavigatorSaveItem.Name = "contactBindingNavigatorSaveItem";
-            this.contactBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.contactBindingNavigatorSaveItem.Text = "Save Data";
-            // 
             // btnAddNewContact
             // 
             this.btnAddNewContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -219,6 +186,7 @@
             this.btnAddNewContact.TabIndex = 10;
             this.btnAddNewContact.Text = "Add New Contact";
             this.btnAddNewContact.UseVisualStyleBackColor = false;
+            this.btnAddNewContact.Click += new System.EventHandler(this.btnAddNewContact_Click);
             // 
             // btnUpdateModifyContact
             // 
@@ -266,19 +234,6 @@
             this.contactDataGridView.ReadOnly = true;
             this.contactDataGridView.Size = new System.Drawing.Size(519, 354);
             this.contactDataGridView.TabIndex = 12;
-            // 
-            // btnViewContactInfo
-            // 
-            this.btnViewContactInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnViewContactInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnViewContactInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewContactInfo.ForeColor = System.Drawing.Color.Maroon;
-            this.btnViewContactInfo.Location = new System.Drawing.Point(558, 157);
-            this.btnViewContactInfo.Name = "btnViewContactInfo";
-            this.btnViewContactInfo.Size = new System.Drawing.Size(152, 33);
-            this.btnViewContactInfo.TabIndex = 13;
-            this.btnViewContactInfo.Text = "View Contact Info";
-            this.btnViewContactInfo.UseVisualStyleBackColor = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -340,6 +295,19 @@
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 125;
             // 
+            // btnViewContactInfo
+            // 
+            this.btnViewContactInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnViewContactInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnViewContactInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewContactInfo.ForeColor = System.Drawing.Color.Maroon;
+            this.btnViewContactInfo.Location = new System.Drawing.Point(558, 157);
+            this.btnViewContactInfo.Name = "btnViewContactInfo";
+            this.btnViewContactInfo.Size = new System.Drawing.Size(152, 33);
+            this.btnViewContactInfo.TabIndex = 13;
+            this.btnViewContactInfo.Text = "View Contact Info";
+            this.btnViewContactInfo.UseVisualStyleBackColor = false;
+            // 
             // SearchContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -372,9 +340,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.BindingSource contactBindingSource;
         private System.Windows.Forms.BindingNavigator contactBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -383,7 +349,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton contactBindingNavigatorSaveItem;
         private System.Windows.Forms.Button btnAddNewContact;
         private System.Windows.Forms.Button btnUpdateModifyContact;
         private System.Windows.Forms.Button btnDeleteContact;
