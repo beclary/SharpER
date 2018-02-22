@@ -8,6 +8,7 @@ using System.Text;
 using System.Data.SqlClient;
 using SharpERBLL;
 using SharpERDAL;
+using System.Windows.Forms;
 
 
 namespace SharpERDAL
@@ -27,11 +28,12 @@ namespace SharpERDAL
                 "FROM Contact " +
                 "ORDER BY con_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                SqlDataReader readur = selectCmd.ExecuteReader();
+                readur = selectCmd.ExecuteReader();
                 int conContactIDOrd = readur.GetOrdinal("con_id");
                 int conContactFirstNameOrd = readur.GetOrdinal("con_first_name");
                 int conContactLastNameOrd = readur.GetOrdinal("con_last_name");
@@ -68,10 +70,10 @@ namespace SharpERDAL
                     conRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
                     contactList.Add(conRowInfo);
                 }
-                readur.Close();
             }
             catch (SqlException xsept)
             {
+                MessageBox.Show(xsept.Number + "\n" + xsept.Message);
                 throw xsept;
             }
             catch (Exception xsept)
@@ -80,6 +82,7 @@ namespace SharpERDAL
             }
             finally
             {
+                readur.Close();
                 conn.Close();
             }
             return contactList;

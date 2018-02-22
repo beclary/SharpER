@@ -1,0 +1,19 @@
+﻿CREATE TABLE [dbo].[Contact] (
+    [con_id]            INT            IDENTITY (1, 1) NOT NULL,
+    [con_first_name]    VARCHAR (30)   NULL,
+    [con_last_name]     VARCHAR (30)   NULL,
+    [con_title]         VARCHAR (40)   NULL,
+    [con_department]    VARCHAR (40)   NULL,
+    [con_address]       VARCHAR (50)   NULL,
+    [con_city]          VARCHAR (30)   NULL,
+    [con_state]         VARCHAR (20)   NULL,
+    [con_zip_code]      VARCHAR (10)   NULL,
+    [con_phone]         VARCHAR (12)   NULL,
+    [con_mobile]        VARCHAR (12)   NULL,
+    [con_fax]           VARCHAR (12)   NULL,
+    [con_email]         VARCHAR (50)   NULL,
+    [con_contacted_via] VARCHAR (30)   NULL,
+    [con_notes]         VARCHAR (5000) NULL,
+    PRIMARY KEY CLUSTERED ([con_id] ASC)
+);
+

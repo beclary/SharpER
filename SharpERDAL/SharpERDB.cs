@@ -28,7 +28,6 @@ namespace SharpERDAL
         {
             SqlConnectionStringBuilder bldr = new SqlConnectionStringBuilder();
             bldr.DataSource = "(localdb)\\MSSQLLocalDB";
-            // bldr.InitialCatalog = "SharpER";
             bldr.AttachDBFilename = "|DataDirectory|\\SharpER.mdf";
             bldr.IntegratedSecurity = true;
             SqlConnection conn = new SqlConnection(bldr.ConnectionString);
