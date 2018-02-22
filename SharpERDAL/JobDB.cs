@@ -21,20 +21,20 @@ namespace SharpERDAL
             string selectStmt =
                 "SELECT * " +
                 "FROM Job " +
-                "ORDER BY JobID";
+                "ORDER BY job_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int jobJobIDOrd = readur.GetOrdinal("JobID");
-                int jobJobPositionOrd = readur.GetOrdinal("JobPosition");
-                int jobJobAppliedOrd = readur.GetOrdinal("JobApplied");
-                int jobJobPayOrd = readur.GetOrdinal("JobPay");
-                int jobJobContactIDOrd = readur.GetOrdinal("JobContactID");
-                int jobJobCompanyIDOrd = readur.GetOrdinal("JobCompanyID");
-                int jobJobNotesOrd = readur.GetOrdinal("JobNotes");
+                int jobJobIDOrd = readur.GetOrdinal("job_id");
+                int jobJobPositionOrd = readur.GetOrdinal("job_position");
+                int jobJobAppliedOrd = readur.GetOrdinal("job_applied");
+                int jobJobPayOrd = readur.GetOrdinal("job_pay");
+                int jobJobContactIDOrd = readur.GetOrdinal("job_contact_id");
+                int jobJobCompanyIDOrd = readur.GetOrdinal("job_company_id");
+                int jobJobNotesOrd = readur.GetOrdinal("job_notes");
 
                 while (readur.Read())
                 {
@@ -77,21 +77,21 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string updateStmt =
                 "UPDATE Job SET " +
-                "JobPosition = @NewJobPosition, " +
-                "JobApplied = @NewJobApplied, " +
-                "JobPay = @NewJobPay, " +
-                "JobContactID = @NewJobContactID, " +
-                "JobCompanyID = @NewJobCompanyID, " +
-                "JobNotes = @NewJobNotes " +
-                "WHERE JobID = @OldJobID " +
-                "AND JobPosition = @OldJobPosition " +
-                "AND JobApplied = @OldJobApplied " +
-                "AND (JobPay = @OldJobPay " +
-                    "OR JobPay IS NULL AND @OldJobPay IS NULL) " +
-                "AND (JobContactID = @OldJobContactID " +
-                    "OR JobContactID IS NULL AND @OldJobContactID IS NULL) " +
-                "AND (JobNotes = @OldJobNotes " +
-                    "OR JobNotes IS NULL AND @OldJobNotes IS NULL)";
+                "job_position = @NewJobPosition, " +
+                "job_applied = @NewJobApplied, " +
+                "job_pay = @NewJobPay, " +
+                "job_contact_id = @NewJobContactID, " +
+                "job_company_id = @NewJobCompanyID, " +
+                "job_notes = @NewJobNotes " +
+                "WHERE job_id = @OldJobID " +
+                "AND job_position = @OldJobPosition " +
+                "AND job_applied = @OldJobApplied " +
+                "AND (job_pay = @OldJobPay " +
+                    "OR job_pay IS NULL AND @OldJobPay IS NULL) " +
+                "AND (job_contact_id = @OldJobContactID " +
+                    "OR job_contact_id IS NULL AND @OldJobContactID IS NULL) " +
+                "AND (job_notes = @OldJobNotes " +
+                    "OR job_notes IS NULL AND @OldJobNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
 
             // New Job changes
@@ -149,7 +149,7 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
                 "INSERT Job " +
-                "(JobPosition, JobApplied, JobPay, JobContactID, JobCompanyID, JobNotes) " +
+                "(job_position, job_applied, job_pay, job_contact_id, job_company_id, job_notes) " +
                 "VALUES (@JobPosition, @JobApplied, @JobPay, @JobContactID, @JobCompanyID, @JobNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
             insertCmd.Parameters.AddWithValue("@JobPosition", newJob.JobPosition);
