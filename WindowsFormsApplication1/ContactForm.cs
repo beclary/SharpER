@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SharpERBLL;
+using SharpERDAL;
 
 namespace WindowsFormsApplication1
 {
@@ -129,6 +131,12 @@ namespace WindowsFormsApplication1
             contactFaxMaskedTextBox.Clear();
             contactEmailTextBox.Clear();
             contactNotesTextBox.Clear();
+        }
+
+        private void ContactForm_Load(object sender, EventArgs e)
+        {
+                
+
         }
     }
 }

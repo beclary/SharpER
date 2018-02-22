@@ -25,28 +25,28 @@ namespace SharpERDAL
             string selectStmt =
                 "SELECT * " +
                 "FROM Contact " +
-                "ORDER BY ContactID";
+                "ORDER BY con_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int conContactIDOrd = readur.GetOrdinal("ContactID");
-                int conContactFirstNameOrd = readur.GetOrdinal("ContactFirstName");
-                int conContactLastNameOrd = readur.GetOrdinal("ContactLastName");
-                int conContactTitleOrd = readur.GetOrdinal("ContactTitle");
-                int conContactDepartmentOrd = readur.GetOrdinal("ContactDepartment");
-                int conContactAddressOrd = readur.GetOrdinal("ContactAddress");
-                int conContactCityOrd = readur.GetOrdinal("ContactCity");
-                int conContactStateOrd = readur.GetOrdinal("ContactState");
-                int conContactZipCodeOrd = readur.GetOrdinal("ContactZipCode");
-                int conContactPhoneOrd = readur.GetOrdinal("ContactPhone");
-                int conContactMobileOrd = readur.GetOrdinal("ContactMobile");
-                int conContactFaxOrd = readur.GetOrdinal("ContactFax");
-                int conContactEmailOrd = readur.GetOrdinal("ContactEmail");
-                int conContactContactedViaOrd = readur.GetOrdinal("ContactContactedVia");
-                int conContactNotesOrd = readur.GetOrdinal("ContactNotes");
+                int conContactIDOrd = readur.GetOrdinal("con_id");
+                int conContactFirstNameOrd = readur.GetOrdinal("con_first_name");
+                int conContactLastNameOrd = readur.GetOrdinal("con_last_name");
+                int conContactTitleOrd = readur.GetOrdinal("con_title");
+                int conContactDepartmentOrd = readur.GetOrdinal("con_department");
+                int conContactAddressOrd = readur.GetOrdinal("con_address");
+                int conContactCityOrd = readur.GetOrdinal("con_city");
+                int conContactStateOrd = readur.GetOrdinal("con_state");
+                int conContactZipCodeOrd = readur.GetOrdinal("con_zip_code");
+                int conContactPhoneOrd = readur.GetOrdinal("con_phone");
+                int conContactMobileOrd = readur.GetOrdinal("con_mobile");
+                int conContactFaxOrd = readur.GetOrdinal("con_fax");
+                int conContactEmailOrd = readur.GetOrdinal("con_email");
+                int conContactContactedViaOrd = readur.GetOrdinal("con_contacted_via");
+                int conContactNotesOrd = readur.GetOrdinal("con_notes");
 
                 while (readur.Read())
                 {
@@ -93,31 +93,31 @@ namespace SharpERDAL
             Contact specificContact = new Contact();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
-                "SELECT ContactID, ContactFirstName, ContactLastName, ContactTitle, ContactDepartment, ContactAddress, ContactCity, ContactState, ContactZipCode, ContactContactedVia, ContactPhone, ContactMobile, ContactFax, ContactEmail, ContactNotes " +
+                "SELECT con_id, con_first_name, con_last_name, con_title, con_department, con_address, con_city, con_state, con_zip_code, con_contacted_via, con_phone, con_mobile,  con_fax, con_email, con_notes " +
                 "FROM Contact " +
-                "WHERE ContactID = @ContactID";
+                "WHERE con_id = @con_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            selectCmd.Parameters.AddWithValue("@ContactID", contactID);
+            selectCmd.Parameters.AddWithValue("@con_id", contactID);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int conContactIDOrd = readur.GetOrdinal("ContactID");
-                int conContactFirstNameOrd = readur.GetOrdinal("ContactFirstName");
-                int conContactLastNameOrd = readur.GetOrdinal("ContactLastName");
-                int conContactTitleOrd = readur.GetOrdinal("ContactTitle");
-                int conContactDepartmentOrd = readur.GetOrdinal("ContactDepartment");
-                int conContactAddressOrd = readur.GetOrdinal("ContactAddress");
-                int conContactCityOrd = readur.GetOrdinal("ContactCity");
-                int conContactStateOrd = readur.GetOrdinal("ContactState");
-                int conContactZipCodeOrd = readur.GetOrdinal("ContactZipCode");
-                int conContactContactedViaOrd = readur.GetOrdinal("ContactContactedVia");
-                int conContactPhoneOrd = readur.GetOrdinal("ContactPhone");
-                int conContactMobileOrd = readur.GetOrdinal("ContactMobile");
-                int conContactFaxOrd = readur.GetOrdinal("ContactFax");
-                int conContactEmailOrd = readur.GetOrdinal("ContactEmail");
-                int conContactNotesOrd = readur.GetOrdinal("ContactNotes");
+                int conContactIDOrd = readur.GetOrdinal("con_id");
+                int conContactFirstNameOrd = readur.GetOrdinal("con_first_name");
+                int conContactLastNameOrd = readur.GetOrdinal("con_last_name");
+                int conContactTitleOrd = readur.GetOrdinal("con_title");
+                int conContactDepartmentOrd = readur.GetOrdinal("con_department");
+                int conContactAddressOrd = readur.GetOrdinal("con_address");
+                int conContactCityOrd = readur.GetOrdinal("con_city");
+                int conContactStateOrd = readur.GetOrdinal("con_state");
+                int conContactZipCodeOrd = readur.GetOrdinal("con_zip_code");
+                int conContactContactedViaOrd = readur.GetOrdinal("con_contacted_via");
+                int conContactPhoneOrd = readur.GetOrdinal("con_phone");
+                int conContactMobileOrd = readur.GetOrdinal("con_mobile");
+                int conContactFaxOrd = readur.GetOrdinal("con_fax");
+                int conContactEmailOrd = readur.GetOrdinal("con_email");
+                int conContactNotesOrd = readur.GetOrdinal("con_notes");
 
                 while (readur.Read())
                 {
@@ -161,43 +161,43 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string updateStmt =
                 "UPDATE Contact SET " +
-                "ContactFirstName = @NewContactFirstName, " +
-                "ContactLastName = @NewContactLastName, " +
-                "ContactTitle = @NewContactTitle, " +
-                "ContactDepartment = @NewContactDepartment, " +
-                "ContactAddress = @NewContactAddress, " +
-                "ContactCity = @NewContactCity, " +
-                "ContactState = @NewContactState, " +
-                "ContactZipCode = @NewContactZipCode, " +
-                "ContactPhone = @NewContactPhone, " +
-                "ContactMobile = @NewContactMobile, " +
-                "ContactFax = @NewContactFax, " +
-                "ContactEmail = @NewContactEmail, " +
-                "ContactContactedVia = @NewContactContactedVia, " +
-                "ContactNotes = @NewContactNotes " +
-                "WHERE ContactID = @OldContactID " +
-                "AND ContactFirstName = @OldContactFirstName " +
-                "AND ContactLastName = @OldContactLastName " +
-                "AND (ContactTitle = @OldContactTitle " +
-                    "OR ContactTitle IS NULL AND @OldContactTitle IS NULL) " +
-                "AND (ContactDepartment = @OldContactDepartment " +
-                    "OR ContactDepartment IS NULL AND @OldContactDepartment IS NULL) " +
-                "AND ContactAddress = @OldContactAddress " +
-                "AND ContactCity = @OldContactCity " +
-                "AND ContactState = @OldContactState " +
-                "AND ContactZipCode = @OldContactZipCode " +
-                "AND (ContactPhone = @OldContactPhone " +
-                    "OR ContactPhone IS NULL AND @OldContactPhone IS NULL) " +
-                "AND (ContactMobile = @OldContactMobile " +
-                    "OR ContactMobile IS NULL AND @OldContactMobile IS NULL) " +
-                "AND (ContactFax = @OldContactFax " +
-                    "OR ContactFax IS NULL AND @OldContactFax IS NULL) " +
-                "AND (ContactEmail = @OldContactEmail " +
-                    "OR ContactEmail IS NULL AND @OldContactEmail IS NULL) " +
-                "AND (ContactContactedVia = @OldContactContactedVia " +
-                    "OR ContactContactedVia IS NULL AND @OldContactContactedVia IS NULL) " +
-                "AND ContactNotes = @OldContactNotes " +
-                    "OR ContactNotes IS NULL AND @OldContactNotes IS NULL)";
+                "con_first_name = @NewContactFirstName, " +
+                "con_last_name = @NewContactLastName, " +
+                "con_title = @NewContactTitle, " +
+                "con_department = @NewContactDepartment, " +
+                "con_address = @NewContactAddress, " +
+                "con_city = @NewContactCity, " +
+                "con_state = @NewContactState, " +
+                "con_zip_code = @NewContactZipCode, " +
+                "con_phone = @NewContactPhone, " +
+                "con_mobile = @NewContactMobile, " +
+                "con_fax = @NewContactFax, " +
+                "con_email = @NewContactEmail, " +
+                "con_contacted_via = @NewContactContactedVia, " +
+                "con_notes = @NewContactNotes " +
+                "WHERE con_id = @OldContactID " +
+                "AND con_first_name = @OldContactFirstName " +
+                "AND con_last_name = @OldContactLastName " +
+                "AND (con_title = @OldContactTitle " +
+                    "OR con_title IS NULL AND @OldContactTitle IS NULL) " +
+                "AND (con_department = @OldContactDepartment " +
+                    "OR con_department IS NULL AND @OldContactDepartment IS NULL) " +
+                "AND con_address = @OldContactAddress " +
+                "AND con_city = @OldContactCity " +
+                "AND con_state = @OldContactState " +
+                "AND con_zip_code = @OldContactZipCode " +
+                "AND (con_phone = @OldContactPhone " +
+                    "OR con_phone IS NULL AND @OldContactPhone IS NULL) " +
+                "AND (con_mobile = @OldContactMobile " +
+                    "OR con_mobile IS NULL AND @OldContactMobile IS NULL) " +
+                "AND (con_fax = @OldContactFax " +
+                    "OR con_fax IS NULL AND @OldContactFax IS NULL) " +
+                "AND (con_email = @OldContactEmail " +
+                    "OR con_email IS NULL AND @OldContactEmail IS NULL) " +
+                "AND (con_contacted_via = @OldContactContactedVia " +
+                    "OR con_contacted_via IS NULL AND @OldContactContactedVia IS NULL) " +
+                "AND con_notes = @OldContactNotes " +
+                    "OR con_notes IS NULL AND @OldContactNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
             // NewContact changes
             updateCmd.Parameters.AddWithValue("@NewContactFirstName", newContact.ContactFirstName);
@@ -303,12 +303,11 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
                 "INSERT Contact " +
-                "(ContactFirstName, ContactLastName, ContactTitle, ContactDepartment, " +
-                "ContactAddress, ContactCity, ContactState, ContactZipCode, ContactContactedVia, " +
-                "ContactPhone, ContactMobile, ContactFax, ContactEmail, ContactNotes) " +
+                "(con_first_name, con_last_name, con_title, con_department, " +
+                "con_address, con_city, con_state, con_zip_code, con_contacted_via, " +
+                "con_phone, con_mobile, con_fax, con_email, con_notes) " +
                 "VALUES (@ContactFirstName, @ContactLastName, @ContactTitle, @ContactDepartment, " +
-                "@ContactAddress, @ContactCity, @ContactState, @ContactZipCode, @ContactContactedVia, " +
-                "@ContactPhone, @ContactMobile, @ContactFax, @ContactEmail, @ContactNotes)";
+                "@ContactAddress, @ContactCity, @ContactState, @ContactZipCode, @ContactContactedVia, @ContactPhone, @ContactMobile, @ContactFax, @ContactEmail, @ContactNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
             insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName);
             insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);
