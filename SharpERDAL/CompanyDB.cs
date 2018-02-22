@@ -23,23 +23,23 @@ namespace SharpERDAL
             string selectStmt =
                 "SELECT * " +
                 "FROM Company " +
-                "ORDER BY CompanyID";
+                "ORDER BY com_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int comCompanyIDOrd = readur.GetOrdinal("CompanyID");
-                int comCompanyNameOrd = readur.GetOrdinal("CompanyName");
-                int comCompanyAddressOrd = readur.GetOrdinal("CompanyAddress");
-                int comCompanyCityOrd = readur.GetOrdinal("CompanyCity");
-                int comCompanyStateOrd = readur.GetOrdinal("CompanyState");
-                int comCompanyZipCodeOrd = readur.GetOrdinal("CompanyZipCode");
-                int comCompanyPhoneOrd = readur.GetOrdinal("CompanyPhone");
-                int comCompanyFaxOrd = readur.GetOrdinal("CompanyFax");
-                int comCompanyWebsiteOrd = readur.GetOrdinal("CompanyWebsite");
-                int comCompanyNotesOrd = readur.GetOrdinal("CompanyNotes");
+                int comCompanyIDOrd = readur.GetOrdinal("com_id");
+                int comCompanyNameOrd = readur.GetOrdinal("com_name");
+                int comCompanyAddressOrd = readur.GetOrdinal("com_address");
+                int comCompanyCityOrd = readur.GetOrdinal("com_city");
+                int comCompanyStateOrd = readur.GetOrdinal("com_state");
+                int comCompanyZipCodeOrd = readur.GetOrdinal("com_zip_code");
+                int comCompanyPhoneOrd = readur.GetOrdinal("com_phone");
+                int comCompanyFaxOrd = readur.GetOrdinal("com_fax");
+                int comCompanyWebsiteOrd = readur.GetOrdinal("com_website");
+                int comCompanyNotesOrd = readur.GetOrdinal("com_notes");
 
                 while (readur.Read())
                 {
@@ -81,28 +81,28 @@ namespace SharpERDAL
             Company specificCompany = new Company();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
-                "SELECT CompanyID, CompanyName, CompanyAddress, CompanyCity, " +
-                "CompanyState, CompanyZipCode, CompanyPhone, CompanyFax, " +
-                "CompanyWebsite, CompanyNotes " +
+                "SELECT com_id, com_name, com_address, com_city, " +
+                "com_state, com_zip_code, com_phone, com_fax, " +
+                "com_website, com_notes " +
                 "FROM Company " +
-                "WHERE CompanyID = @CompanyID";
+                "WHERE com_id = @com_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            selectCmd.Parameters.AddWithValue("@CompanyID", companyID);
+            selectCmd.Parameters.AddWithValue("@com_id", companyID);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int comCompanyIDOrd = readur.GetOrdinal("CompanyID");
-                int comCompanyNameOrd = readur.GetOrdinal("CompanyName");
-                int comCompanyAddressOrd = readur.GetOrdinal("CompanyAddress");
-                int comCompanyCityOrd = readur.GetOrdinal("CompanyCity");
-                int comCompanyStateOrd = readur.GetOrdinal("CompanyState");
-                int comCompanyZipCodeOrd = readur.GetOrdinal("CompanyZipCode");
-                int comCompanyPhoneOrd = readur.GetOrdinal("CompanyPhone");
-                int comCompanyFaxOrd = readur.GetOrdinal("CompanyFax");
-                int comCompanyWebsiteOrd = readur.GetOrdinal("CompanyWebsite");
-                int comCompanyNotesOrd = readur.GetOrdinal("CompanyNotes");
+                int comCompanyIDOrd = readur.GetOrdinal("com_id");
+                int comCompanyNameOrd = readur.GetOrdinal("com_name");
+                int comCompanyAddressOrd = readur.GetOrdinal("com_address");
+                int comCompanyCityOrd = readur.GetOrdinal("com_city");
+                int comCompanyStateOrd = readur.GetOrdinal("com_state");
+                int comCompanyZipCodeOrd = readur.GetOrdinal("com_zip_code");
+                int comCompanyPhoneOrd = readur.GetOrdinal("com_phone");
+                int comCompanyFaxOrd = readur.GetOrdinal("com_fax");
+                int comCompanyWebsiteOrd = readur.GetOrdinal("com_website");
+                int comCompanyNotesOrd = readur.GetOrdinal("com_notes");
 
                 while (readur.Read())
                 {
@@ -141,28 +141,28 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string updateStmt =
                 "UPDATE Company SET " +
-                "CompanyName = @NewCompanyName, " +
-                "CompanyAddress = @NewCompanyAddress, " +
-                "CompanyCity = @NewCompanyCity, " +
-                "CompanyState = @NewCompanyState, " +
-                "CompanyZipCode = @NewCompanyZipCode, " +
-                "CompanyPhone = @NewCompanyPhone, " +
-                "CompanyFax = @NewCompanyFax, " +
-                "CompanyWebsite = @NewCompanyWebsite, " +
-                "CompanyNotes = @NewCompanyNotes " +
-                "WHERE CompanyID = @OldCompanyID " +
-                "AND CompanyName = @OldCompanyName " +
-                "AND CompanyAddress = @OldCompanyAddress " +
-                "AND CompanyCity = @OldCompanyCity " +
-                "AND CompanyState = @OldCompanyState " +
-                "AND CompanyZipCode = @OldCompanyZipCode " +
-                "AND CompanyPhone = @OldCompanyPhone " +
-                "AND (CompanyFax = @OldCompanyFax " +
-                    "OR CompanyFax IS NULL AND @OldCompanyFax IS NULL) " +
-                "AND (CompanyWebsite = @OldCompanyWebsite " +
-                    "OR CompanyWebsite IS NULL AND @OldCompanyWebsite IS NULL) " +
-                "AND CompanyNotes = @OldCompanyNotes " +
-                    "OR CompanyNotes IS NULL AND @OldCompanyNotes IS NULL)";
+                "com_name = @NewCompanyName, " +
+                "com_address = @NewCompanyAddress, " +
+                "com_city = @NewCompanyCity, " +
+                "com_state = @NewCompanyState, " +
+                "com_zip_code = @NewCompanyZipCode, " +
+                "com_phone = @NewCompanyPhone, " +
+                "com_fax = @NewCompanyFax, " +
+                "com_website = @NewCompanyWebsite, " +
+                "com_notes = @NewCompanyNotes " +
+                "WHERE com_id = @OldCompanyID " +
+                "AND com_name = @OldCompanyName " +
+                "AND com_address = @OldCompanyAddress " +
+                "AND com_city = @OldCompanyCity " +
+                "AND com_state = @OldCompanyState " +
+                "AND com_zip_code = @OldCompanyZipCode " +
+                "AND com_phone = @OldCompanyPhone " +
+                "AND (com_fax = @OldCompanyFax " +
+                    "OR com_fax IS NULL AND @OldCompanyFax IS NULL) " +
+                "AND (com_website = @OldCompanyWebsite " +
+                    "OR com_website IS NULL AND @OldCompanyWebsite IS NULL) " +
+                "AND com_notes = @OldCompanyNotes " +
+                    "OR com_notes IS NULL AND @OldCompanyNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
             // New Company changes
             updateCmd.Parameters.AddWithValue("@NewCompanyName", newCompany.CompanyName);
@@ -228,29 +228,29 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
                 "INSERT Company " +
-                "(CompanyName, CompanyAddress, CompanyCity, CompanyState, CompanyZipCode, " +
-                "CompanyPhone, CompanyFax, CompanyWebsite, CompanyNotes) " +
-                "VALUES (@CompanyName, @CompanyAddress, @CompanyCity, @CompanyState, " +
-                "@CompanyZipCode, @CompanyPhone, @CompanyFax, @CompanyWebsite, @CompanyNotes)";
+                "(com_name, com_address, com_city, com_state, com_zip_code, " +
+                "com_phone, com_fax, com_website, com_notes) " +
+                "VALUES (@com_name, @com_address, @com_city, @com_state, @com_zip_code, " +
+                "@com_phone, @com_fax, @com_website, @com_notes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
-            insertCmd.Parameters.AddWithValue("@CompanyName", newCompany.CompanyName);
-            insertCmd.Parameters.AddWithValue("@CompanyAddress", newCompany.CompanyAddress);
-            insertCmd.Parameters.AddWithValue("@CompanyCity", newCompany.CompanyCity);
-            insertCmd.Parameters.AddWithValue("@CompanyState", newCompany.CompanyState);
-            insertCmd.Parameters.AddWithValue("@CompanyZipCode", newCompany.CompanyZipCode);
-            insertCmd.Parameters.AddWithValue("@CompanyPhone", newCompany.CompanyPhone);
+            insertCmd.Parameters.AddWithValue("@com_name", newCompany.CompanyName);
+            insertCmd.Parameters.AddWithValue("@com_address", newCompany.CompanyAddress);
+            insertCmd.Parameters.AddWithValue("@com_city", newCompany.CompanyCity);
+            insertCmd.Parameters.AddWithValue("@com_state", newCompany.CompanyState);
+            insertCmd.Parameters.AddWithValue("@com_zip_code", newCompany.CompanyZipCode);
+            insertCmd.Parameters.AddWithValue("@com_phone", newCompany.CompanyPhone);
             if (newCompany.CompanyFax == "")
-                insertCmd.Parameters.AddWithValue("@CompanyFax", DBNull.Value);
+                insertCmd.Parameters.AddWithValue("@com_fax", DBNull.Value);
             else
-                insertCmd.Parameters.AddWithValue("@CompanyFax", newCompany.CompanyFax);
+                insertCmd.Parameters.AddWithValue("@com_fax", newCompany.CompanyFax);
             if (newCompany.CompanyWebsite == "")
-                insertCmd.Parameters.AddWithValue("@CompanyWebsite", DBNull.Value);
+                insertCmd.Parameters.AddWithValue("@com_website", DBNull.Value);
             else
-                insertCmd.Parameters.AddWithValue("@CompanyWebsite", newCompany.CompanyWebsite);
+                insertCmd.Parameters.AddWithValue("@com_website", newCompany.CompanyWebsite);
             if (newCompany.CompanyNotes == "")
-                insertCmd.Parameters.AddWithValue("@CompanyNotes", DBNull.Value);
+                insertCmd.Parameters.AddWithValue("@com_notes", DBNull.Value);
             else
-                insertCmd.Parameters.AddWithValue("@CompanyNotes", newCompany.CompanyNotes);
+                insertCmd.Parameters.AddWithValue("@com_notes", newCompany.CompanyNotes);
 
             try
             {
