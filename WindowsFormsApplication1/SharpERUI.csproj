@@ -218,10 +218,10 @@
       <Project>{1e5c880d-e4c1-4787-919d-c1dadea19532}</Project>
       <Name>SharpERDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharpER\SharpER.sqlproj">
+<!--     <ProjectReference Include="..\SharpER\SharpER.sqlproj">
       <Project>{218acbf8-b690-472f-997d-ec24f9761449}</Project>
       <Name>SharpER</Name>
-    </ProjectReference>
+    </ProjectReference> -->
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\screen-shot-2013-09-06-at-11.06.52-am_850_563__large1.jpg" />
