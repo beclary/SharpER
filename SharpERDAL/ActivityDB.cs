@@ -21,20 +21,20 @@ namespace SharpERDAL
             string selectStmt =
                 "SELECT * " +
                 "FROM Activity " +
-                "ORDER BY ActivityID";
+                "ORDER BY act_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int actActivityIDOrd = readur.GetOrdinal("ActivityID");
-                int actActivityDateOrd = readur.GetOrdinal("ActivityDate");
-                int actActivityDescriptionOrd = readur.GetOrdinal("ActivityDescription");
-                int actActivityTravelOrd = readur.GetOrdinal("ActivityTravel");
-                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
-                int actActivityContactIDOrd = readur.GetOrdinal("ActivityContactID");
-                int actActivityNotesOrd = readur.GetOrdinal("ActivityNotes");
+                int actActivityIDOrd = readur.GetOrdinal("act_id");
+                int actActivityDateOrd = readur.GetOrdinal("act_date");
+                int actActivityDescriptionOrd = readur.GetOrdinal("act_description");
+                int actActivityTravelOrd = readur.GetOrdinal("act_travel");
+                int actActivityJobIDOrd = readur.GetOrdinal("act_job_id");
+                int actActivityContactIDOrd = readur.GetOrdinal("act_Contact_id");
+                int actActivityNotesOrd = readur.GetOrdinal("act_notes");
 
                 while (readur.Read())
                 {
@@ -72,24 +72,24 @@ namespace SharpERDAL
             Activity specificActivityByDate = new Activity();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
-                "SELECT ActivityID, ActivityDate, ActivityDescription, ActivityTravel, " +
-                "ActivityContactID, ActivityJobID, ActivityNotes " +
+                "SELECT act_id, act_date, act_description, , act_travel, " +
+                "act_contact_id, act_job_id, act_notes " +
                 "FROM Activity " +
-                "WHERE ActivityDate = @ActivityDate";
+                "WHERE act_date = @act_date";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            selectCmd.Parameters.AddWithValue("@ActivityDate", activityDate);
+            selectCmd.Parameters.AddWithValue("@act_date", activityDate);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int actActivityIDOrd = readur.GetOrdinal("ActivityID");
-                int actActivityDateOrd = readur.GetOrdinal("ActivityDate");
-                int actActivityDescriptionOrd = readur.GetOrdinal("ActivityDescription");
-                int actActivityTravelOrd = readur.GetOrdinal("ActivityTravel");
-                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
-                int actActivityContactIDOrd = readur.GetOrdinal("ActivityContactID");
-                int actActivityNotesOrd = readur.GetOrdinal("ActivityNotes");
+                int actActivityIDOrd = readur.GetOrdinal("act_id");
+                int actActivityDateOrd = readur.GetOrdinal("act_date");
+                int actActivityDescriptionOrd = readur.GetOrdinal("act_description");
+                int actActivityTravelOrd = readur.GetOrdinal("act_travel");
+                int actActivityJobIDOrd = readur.GetOrdinal("act_job_id");
+                int actActivityContactIDOrd = readur.GetOrdinal("act_contact_id");
+                int actActivityNotesOrd = readur.GetOrdinal("act_notes");
 
                 while (readur.Read())
                 {
@@ -121,24 +121,24 @@ namespace SharpERDAL
             Activity specificActivity = new Activity();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
-                "SELECT ActivityID, ActivityDate, ActivityDescription, ActivityTravel, " +
-                "ActivityContactID, ActivityJobID, ActivityNotes " +
+                "SELECT act_id, act_date, act_description, act_travel, " +
+                "act_contact_id, act_Job_id, act_contact_id, act_notes " +
                 "FROM Activity " +
-                "WHERE ActivityID = @ActivityID";
+                "WHERE act_id = @act_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            selectCmd.Parameters.AddWithValue("@ActivityID", activityID);
+            selectCmd.Parameters.AddWithValue("@act_id", activityID);
 
             try
             {
                 conn.Open();
                 SqlDataReader readur = selectCmd.ExecuteReader();
-                int actActivityIDOrd = readur.GetOrdinal("ActivityID");
-                int actActivityDateOrd = readur.GetOrdinal("ActivityDate");
-                int actActivityDescriptionOrd = readur.GetOrdinal("ActivityDescription");
-                int actActivityTravelOrd = readur.GetOrdinal("ActivityTravel");
-                int actActivityContactIDOrd = readur.GetOrdinal("ActivityContactID");
-                int actActivityJobIDOrd = readur.GetOrdinal("ActivityJobID");
-                int actActivityNotesOrd = readur.GetOrdinal("ActivityNotes");
+                int actActivityIDOrd = readur.GetOrdinal("act_id");
+                int actActivityDateOrd = readur.GetOrdinal("act_date");
+                int actActivityDescriptionOrd = readur.GetOrdinal("act_desctiption");
+                int actActivityTravelOrd = readur.GetOrdinal("act_travel");
+                int actActivityContactIDOrd = readur.GetOrdinal("act_contact_id");
+                int actActivityJobIDOrd = readur.GetOrdinal("act_job_id");
+                int actActivityNotesOrd = readur.GetOrdinal("act_notes");
 
                 while (readur.Read())
                 {
