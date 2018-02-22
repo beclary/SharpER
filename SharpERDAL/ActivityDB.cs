@@ -171,22 +171,22 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string updateStmt =
                 "UPDATE Activity SET " +
-                "ActivityDate = @NewActivityDate, " +
-                "ActivityDescription = @NewActivityDescription, " +
-                "ActivityTravel = @NewActivityTravel, " +
-                "ActivityContactID = @NewActivityContactID, " +
-                "ActivityJobID = @NewActivityJobID, " +
-                "ActivityNotes = @NewActivityNotes " +
-                "WHERE ActivityID = @OldActivityID " +
-                "AND ActivityDate = @OldActivityDate " +
-                "AND ActivityDescription = @OldActivityDescription " +
-                "AND ActivityTravel = @OldActivityTravel " +
-                "AND (ActivityContactID = @OldActivityContactID " +
-                    "OR ActivityContactID IS NULL AND @OldActivityContactID IS NULL) " +
-                "AND (ActivityJobID = @OldActivityJobID " +
-                    "OR ActivityJobID IS NULL AND @OldActivityJobID IS NULL) " +
-                "AND (ActivityNotes = @OldActivityNotes " +
-                    "OR ActivityNotes IS NULL AND @OldActivityNotes IS NULL)";
+                "act_date = @NewActivityDate, " +
+                "act_description = @NewActivityDescription, " +
+                "act_travel = @NewActivityTravel, " +
+                "act_contact_id = @NewActivityContactID, " +
+                "act-job_id = @NewActivityJobID, " +
+                "act_notes = @NewActivityNotes " +
+                "WHERE act_id = @OldActivityID " +
+                "AND act_date = @OldActivityDate " +
+                "AND act_description = @OldActivityDescription " +
+                "AND act_travel = @OldActivityTravel " +
+                "AND (act_contact_id = @OldActivityContactID " +
+                    "OR act_contact_id IS NULL AND @OldActivityContactID IS NULL) " +
+                "AND (act_job_id = @OldActivityJobID " +
+                    "OR act_job_id IS NULL AND @OldActivityJobID IS NULL) " +
+                "AND (act_notes = @OldActivityNotes " +
+                    "OR act_notes IS NULL AND @OldActivityNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
 
             // New Activity changes
@@ -247,8 +247,8 @@ namespace SharpERDAL
         {
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
-                "(ActivityDate, ActivityDescription, ActivityTravel, ActivityJobID, " +
-                "ActivityContactID, ActivityNotes) " +
+                "(act_date, act_description, act_travel, act_job_id, " +
+                "act_contact_id, act_notes) " +
                 "VALUES (@ActivityDate, @ActivityDescription, @ActivityTravel, " +
                 "@ActivityContactID, @ActivityJobID, @ActivityNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
