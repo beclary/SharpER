@@ -106,6 +106,12 @@ namespace WindowsFormsApplication1
             CloseProgram();
         }
 
+        // Method for populating the textboxes with the data
+        private void DisplayContact()
+        {
+            
+        }
+
         // method for clearing the updates or modifications the user makes
         private void btnClear_Click(object sender, EventArgs e)
         {
