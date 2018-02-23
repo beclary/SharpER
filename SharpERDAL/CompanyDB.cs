@@ -44,16 +44,46 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Company comRowInfo = new Company();
-                    comRowInfo.CompanyID = readur.GetInt32(comCompanyIDOrd);
-                    comRowInfo.CompanyName = readur.GetString(comCompanyNameOrd);
-                    comRowInfo.CompanyAddress = readur.GetString(comCompanyAddressOrd);
-                    comRowInfo.CompanyCity = readur.GetString(comCompanyCityOrd);
-                    comRowInfo.CompanyState = readur.GetString(comCompanyStateOrd);
-                    comRowInfo.CompanyZipCode = readur.GetString(comCompanyZipCodeOrd);
-                    comRowInfo.CompanyPhone = readur.GetString(comCompanyPhoneOrd);
-                    comRowInfo.CompanyFax = readur.GetString(comCompanyFaxOrd);
-                    comRowInfo.CompanyWebsite = readur.GetString(comCompanyWebsiteOrd);
-                    comRowInfo.CompanyNotes = readur.GetString(comCompanyNotesOrd);
+                    if (readur[comCompanyIDOrd] == DBNull.Value)
+                        comRowInfo.CompanyID = -1;
+                    else
+                        comRowInfo.CompanyID = readur.GetInt32(comCompanyIDOrd);
+                    if (readur[comCompanyNameOrd] == DBNull.Value)
+                        comRowInfo.CompanyName = "";
+                    else
+                        comRowInfo.CompanyName = readur.GetString(comCompanyNameOrd);
+                    if (readur[comCompanyAddressOrd] == DBNull.Value)
+                        comRowInfo.CompanyAddress = "";
+                    else
+                        comRowInfo.CompanyAddress = readur.GetString(comCompanyAddressOrd);
+                    if (readur[comCompanyCityOrd] == DBNull.Value)
+                        comRowInfo.CompanyCity = "";
+                    else
+                        comRowInfo.CompanyCity = readur.GetString(comCompanyCityOrd);
+                    if (readur[comCompanyStateOrd] == DBNull.Value)
+                        comRowInfo.CompanyState = "";
+                    else
+                        comRowInfo.CompanyState = readur.GetString(comCompanyStateOrd);
+                    if (readur[comCompanyZipCodeOrd] == DBNull.Value)
+                        comRowInfo.CompanyState = "";
+                    else
+                        comRowInfo.CompanyZipCode = readur.GetString(comCompanyZipCodeOrd);
+                    if (readur[comCompanyPhoneOrd] == DBNull.Value)
+                        comRowInfo.CompanyZipCode = "";
+                    else
+                        comRowInfo.CompanyPhone = readur.GetString(comCompanyPhoneOrd);
+                    if (readur[comCompanyFaxOrd] == DBNull.Value)
+                        comRowInfo.CompanyFax = "";
+                    else
+                        comRowInfo.CompanyFax = readur.GetString(comCompanyFaxOrd);
+                    if (readur[comCompanyWebsiteOrd] == DBNull.Value)
+                        comRowInfo.CompanyWebsite = "";
+                    else
+                        comRowInfo.CompanyWebsite = readur.GetString(comCompanyWebsiteOrd);
+                    if (readur[comCompanyNotesOrd] == DBNull.Value)
+                        comRowInfo.CompanyNotes = "";
+                    else
+                        comRowInfo.CompanyNotes = readur.GetString(comCompanyNotesOrd);
                     companyList.Add(comRowInfo);
                 }
                 readur.Close();
