@@ -170,21 +170,66 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Contact specificContactRowInfo = new Contact();
-                    specificContactRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
-                    specificContactRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
-                    specificContactRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
-                    specificContactRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
-                    specificContactRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
-                    specificContactRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
-                    specificContactRowInfo.ContactCity = readur.GetString(conContactCityOrd);
-                    specificContactRowInfo.ContactState = readur.GetString(conContactStateOrd);
-                    specificContactRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
-                    specificContactRowInfo.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
-                    specificContactRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
-                    specificContactRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
-                    specificContactRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
-                    specificContactRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
-                    specificContactRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
+                    if (readur[conContactIDOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactID = -1;
+                    else
+                        specificContactRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
+                    if (readur[conContactFirstNameOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactFirstName = "";
+                    else
+                        specificContactRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
+                    if (readur[conContactLastNameOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactLastName = "";
+                    else
+                        specificContactRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
+                    if (readur[conContactTitleOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactTitle = "";
+                    else
+                        specificContactRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
+                    if (readur[conContactDepartmentOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactDepartment = "";
+                    else
+                        specificContactRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
+                    if (readur[conContactAddressOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactAddress = "";
+                    else
+                        specificContactRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
+                    if (readur[conContactCityOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactCity = "";
+                    else
+                        specificContactRowInfo.ContactCity = readur.GetString(conContactCityOrd);
+                    if (readur[conContactStateOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactState = "";
+                    else
+                        specificContactRowInfo.ContactState = readur.GetString(conContactStateOrd);
+                    if (readur[conContactZipCodeOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactZipCode = "";
+                    else
+                        specificContactRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
+                    if (readur[conContactContactedViaOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactContactedVia = "";
+                    else
+                        specificContactRowInfo.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
+                    if (readur[conContactPhoneOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactPhone = "";
+                    else
+                        specificContactRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
+                    if (readur[conContactMobileOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactMobile = "";
+                    else
+                        specificContactRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
+                    if (readur[conContactFaxOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactFax = "";
+                    else
+                        specificContactRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
+                    if (readur[conContactEmailOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactEmail = "";
+                    else
+                        specificContactRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
+                    if (readur[conContactNotesOrd] == DBNull.Value)
+                        specificContactRowInfo.ContactNotes = "";
+                    else
+                        specificContactRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
                 }
                 readur.Close();
             }
