@@ -14,7 +14,8 @@ namespace WindowsFormsApplication1
 {
     public partial class SearchCompanyForm : Form
     {
-        public static Form searchCompanyForm = null;
+        public static Form companyForm = null;
+        public static List<Company> companyListing;
 
         public SearchCompanyForm()
         {
@@ -28,14 +29,21 @@ namespace WindowsFormsApplication1
 
         private void btnAddNewCompany_Click(object sender, EventArgs e)
         {
-            searchCompanyForm = new CompanyForm();
-            searchCompanyForm.ShowDialog();
+            companyForm = new CompanyForm();
+            companyForm.ShowDialog();
         }
 
         private void btnUpdateModifyCompany_Click(object sender, EventArgs e)
         {
-            searchCompanyForm = new CompanyForm();
-            searchCompanyForm.ShowDialog();
+            companyForm = new CompanyForm();
+            companyForm.ShowDialog();
+        }
+
+        private void SearchCompanyForm_Load(object sender, EventArgs e)
+        {
+            companyListing = CompanyDB.GetAllCompanies();
+            companyDataGridView.DataSource = companyBindingSource;
+            companyBindingSource.DataSource = companyListing;
         }
     }
 }
