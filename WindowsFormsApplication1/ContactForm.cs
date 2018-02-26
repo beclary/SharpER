@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            CloseProgram();
+            Close();
         }
 
         // Method for populating the textboxes with the data
