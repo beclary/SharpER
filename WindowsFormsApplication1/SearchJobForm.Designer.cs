@@ -288,6 +288,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchJobForm";
             this.Text = "Get / Find Job Form";
+            this.Load += new System.EventHandler(this.SearchJobForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingNavigator)).EndInit();
             this.jobBindingNavigator.ResumeLayout(false);
