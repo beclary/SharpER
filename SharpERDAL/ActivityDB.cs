@@ -43,10 +43,10 @@ namespace SharpERDAL
                         actRowInfo.ActivityID = -1;
                     else
                         actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
-                    if (readur[actActivityDateOrd] == DBNull.Value)
-                        actRowInfo.ActivityID = -1;
-                    else
-                        actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
+
+                    // Requires them to enter a date before entering any activity done
+                    actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
+
                     if (readur[actActivityDescriptionOrd] == DBNull.Value)
                         actRowInfo.ActivityDescription = "";
                     else
@@ -88,8 +88,11 @@ namespace SharpERDAL
 
         // This will provide a list of the activity that was done given a specific date.
         // This will probably be the most used search for this table
+
+        
         public static Activity GetActivityByDate(DateTime activityDate)
         {
+            // TO DO : Not corrected for NULLS, be sure to fix these FIRST before using
             Activity specificActivityByDate = new Activity();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
@@ -115,16 +118,42 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Activity actRowInfo = new Activity();
-                    actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+                    if (readur[actActivityIDOrd] == DBNull.Value)
+                        actRowInfo.ActivityID = -1;
+                    else
+                        actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+
+                    // Requires them to enter a date for when an activity was done
                     actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
-                    actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
-                    actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
-                    actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
-                    actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
-                    actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
+
+                    if (readur[actActivityDescriptionOrd] == DBNull.Value)
+                        actRowInfo.ActivityDescription = "";
+                    else
+                        actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
+                    if (readur[actActivityTravelOrd] == DBNull.Value)
+                        actRowInfo.ActivityTravel = "";
+                    else
+                        actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
+                    if (readur[actActivityJobIDOrd] == DBNull.Value)
+                        actRowInfo.ActivityJobID = -1;
+                    else
+                        actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
+                    if (readur[actActivityContactIDOrd] == DBNull.Value)
+                        actRowInfo.ActivityContactID = -1;
+                    else
+                        actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
+                    if (readur[actActivityNotesOrd] == DBNull.Value)
+                        actRowInfo.ActivityNotes = "";
+                    else
+                        actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
                 }
                 readur.Close();
             }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+
             catch (Exception xsept)
             {
                 throw xsept;
@@ -139,6 +168,7 @@ namespace SharpERDAL
         // This will provide the activity that was done given a specific activityID
         public static Activity GetSpecificActivityInfo(string activityID)
         {
+            // TO DO : Not corrected for NULLS, be sure to fix these FIRST before using
             Activity specificActivity = new Activity();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
