@@ -39,13 +39,33 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Job jobRowInfo = new Job();
-                    jobRowInfo.JobID = readur.GetInt32(jobJobIDOrd);
-                    jobRowInfo.JobPosition = readur.GetString(jobJobPositionOrd);
-                    jobRowInfo.JobApplied = readur.GetDateTime(jobJobAppliedOrd);
-                    jobRowInfo.JobPay = readur.GetDecimal(jobJobPayOrd);
-                    jobRowInfo.JobContactID = readur.GetInt32(jobJobContactIDOrd);
-                    jobRowInfo.JobCompanyID = readur.GetInt32(jobJobCompanyIDOrd);
-                    jobRowInfo.JobNotes = readur.GetString(jobJobNotesOrd);
+                    if (readur[jobJobIDOrd] == DBNull.Value)
+                        jobRowInfo.JobID = -1;
+                    else
+                        jobRowInfo.JobID = readur.GetInt32(jobJobIDOrd);
+                    if (readur[jobJobPositionOrd] == DBNull.Value)
+                        jobRowInfo.JobPosition = "";
+                    else
+                        jobRowInfo.JobPosition = readur.GetString(jobJobPositionOrd);
+
+                    // JobApplied was left blank because couldn't figure how to assign
+
+                    if (readur[jobJobPayOrd] == DBNull.Value)
+                        jobRowInfo.JobPay = -1;
+                    else
+                        jobRowInfo.JobPay = readur.GetDecimal(jobJobPayOrd);
+                    if (readur[jobJobContactIDOrd] == DBNull.Value)
+                        jobRowInfo.JobContactID = -1;
+                    else
+                        jobRowInfo.JobContactID = readur.GetInt32(jobJobContactIDOrd);
+                    if (readur[jobJobCompanyIDOrd] == DBNull.Value)
+                        jobRowInfo.JobCompanyID = -1;
+                    else
+                        jobRowInfo.JobCompanyID = readur.GetInt32(jobJobCompanyIDOrd);
+                    if (readur[jobJobNotesOrd] == DBNull.Value)
+                        jobRowInfo.JobNotes = "";
+                    else
+                        jobRowInfo.JobNotes = readur.GetString(jobJobNotesOrd);
                     jobList.Add(jobRowInfo);
                 }
                 readur.Close();
@@ -134,6 +154,10 @@ namespace SharpERDAL
                     return false;
             }
             catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch(Exception xsept)
             {
                 throw xsept;
             }
