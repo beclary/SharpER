@@ -194,13 +194,33 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Activity actRowInfo = new Activity();
-                    actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
-                    actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
-                    actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
-                    actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
-                    actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
-                    actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
-                    actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
+                    if (readur[actActivityIDOrd] == DBNull.Value)
+                        actRowInfo.ActivityID = -1;
+                    else
+                        actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+
+                    // left out the dattime function ActivityDate
+
+                    if (readur[actActivityDescriptionOrd] == DBNull.Value)
+                        actRowInfo.ActivityDescription = "";
+                    else
+                        actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
+                    if (readur[actActivityTravelOrd] == DBNull.Value)
+                        actRowInfo.ActivityTravel = "";
+                    else
+                        actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
+                    if (readur[actActivityContactIDOrd] == DBNull.Value)
+                        actRowInfo.ActivityContactID = -1;
+                    else
+                        actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
+                    if (readur[actActivityJobIDOrd] == DBNull.Value)
+                        actRowInfo.ActivityJobID = -1;
+                    else
+                        actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
+                    if (readur[actActivityNotesOrd] == DBNull.Value)
+                        actRowInfo.ActivityNotes = "";
+                    else
+                        actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
                 }
                 readur.Close();
             }
