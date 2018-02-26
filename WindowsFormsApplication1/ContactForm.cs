@@ -90,16 +90,16 @@ namespace WindowsFormsApplication1
 
         }
 
-        private bool CloseProgram()
-        {
-            if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-                return true;
-            }
-            else
-                return false;
-        }
+        //private bool CloseProgram()
+        //{
+        //    if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+        //    {
+        //        this.Close();
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
 
 
 
