@@ -60,7 +60,6 @@ namespace WindowsFormsApplication1
         {
             jobMainForm = new JobForm();
             jobMainForm.ShowDialog();
-            this.Close();
         }
 
         private void companyToolStripMenuItem_Click(object sender, EventArgs e)
