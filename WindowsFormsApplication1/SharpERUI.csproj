@@ -218,7 +218,7 @@
       <Project>{1e5c880d-e4c1-4787-919d-c1dadea19532}</Project>
       <Name>SharpERDAL</Name>
     </ProjectReference>
-<!--     <ProjectReference Include="..\SharpER\SharpER.sqlproj">
+    <!--     <ProjectReference Include="..\SharpER\SharpER.sqlproj">
       <Project>{218acbf8-b690-472f-997d-ec24f9761449}</Project>
       <Name>SharpER</Name>
     </ProjectReference> -->
@@ -255,7 +255,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="SharpER_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>SharpER.mdf</DependentUpon>
     </Content>
   </ItemGroup>

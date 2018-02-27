@@ -53,10 +53,7 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Contact conRowInfo = new Contact();
-                    if (readur[conContactIDOrd] == DBNull.Value)
-                        conRowInfo.ContactID = -1;
-                    else
-                        conRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
+                    conRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
                     if (readur[conContactFirstNameOrd] == DBNull.Value)
                         conRowInfo.ContactFirstName = "";
                     else

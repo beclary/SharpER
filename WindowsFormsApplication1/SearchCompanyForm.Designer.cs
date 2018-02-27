@@ -36,23 +36,13 @@
             this.btnAddNewCompany = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCompanyTitle = new System.Windows.Forms.Label();
+            this.lblSelectingCompany = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).BeginInit();
-            this.companyBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,9 +52,9 @@
             this.btnViewCompanyInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnViewCompanyInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewCompanyInfo.ForeColor = System.Drawing.Color.Maroon;
-            this.btnViewCompanyInfo.Location = new System.Drawing.Point(557, 207);
+            this.btnViewCompanyInfo.Location = new System.Drawing.Point(549, 321);
             this.btnViewCompanyInfo.Name = "btnViewCompanyInfo";
-            this.btnViewCompanyInfo.Size = new System.Drawing.Size(176, 62);
+            this.btnViewCompanyInfo.Size = new System.Drawing.Size(176, 41);
             this.btnViewCompanyInfo.TabIndex = 18;
             this.btnViewCompanyInfo.Text = "View Company Info";
             this.btnViewCompanyInfo.UseVisualStyleBackColor = false;
@@ -75,9 +65,9 @@
             this.btnDeleteCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteCompany.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCompany.ForeColor = System.Drawing.Color.Maroon;
-            this.btnDeleteCompany.Location = new System.Drawing.Point(557, 275);
+            this.btnDeleteCompany.Location = new System.Drawing.Point(549, 389);
             this.btnDeleteCompany.Name = "btnDeleteCompany";
-            this.btnDeleteCompany.Size = new System.Drawing.Size(176, 62);
+            this.btnDeleteCompany.Size = new System.Drawing.Size(176, 41);
             this.btnDeleteCompany.TabIndex = 17;
             this.btnDeleteCompany.Text = "Delete Company";
             this.btnDeleteCompany.UseVisualStyleBackColor = false;
@@ -88,9 +78,9 @@
             this.btnUpdateModifyCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUpdateModifyCompany.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateModifyCompany.ForeColor = System.Drawing.Color.Maroon;
-            this.btnUpdateModifyCompany.Location = new System.Drawing.Point(557, 139);
+            this.btnUpdateModifyCompany.Location = new System.Drawing.Point(549, 253);
             this.btnUpdateModifyCompany.Name = "btnUpdateModifyCompany";
-            this.btnUpdateModifyCompany.Size = new System.Drawing.Size(176, 62);
+            this.btnUpdateModifyCompany.Size = new System.Drawing.Size(176, 41);
             this.btnUpdateModifyCompany.TabIndex = 16;
             this.btnUpdateModifyCompany.Text = "Update / Modify Company";
             this.btnUpdateModifyCompany.UseVisualStyleBackColor = false;
@@ -102,9 +92,9 @@
             this.btnAddNewCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddNewCompany.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewCompany.ForeColor = System.Drawing.Color.Maroon;
-            this.btnAddNewCompany.Location = new System.Drawing.Point(557, 71);
+            this.btnAddNewCompany.Location = new System.Drawing.Point(549, 185);
             this.btnAddNewCompany.Name = "btnAddNewCompany";
-            this.btnAddNewCompany.Size = new System.Drawing.Size(176, 62);
+            this.btnAddNewCompany.Size = new System.Drawing.Size(176, 41);
             this.btnAddNewCompany.TabIndex = 15;
             this.btnAddNewCompany.Text = "Add New Company";
             this.btnAddNewCompany.UseVisualStyleBackColor = false;
@@ -114,13 +104,13 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.Yellow;
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExit.Font = new System.Drawing.Font("Constantia", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(557, 363);
+            this.btnExit.Font = new System.Drawing.Font("Wide Latin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnExit.Location = new System.Drawing.Point(551, 18);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(176, 62);
+            this.btnExit.Size = new System.Drawing.Size(154, 45);
             this.btnExit.TabIndex = 14;
             this.btnExit.Text = "E X I T";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -130,106 +120,12 @@
             // 
             this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
-            // companyBindingNavigator
-            // 
-            this.companyBindingNavigator.AddNewItem = null;
-            this.companyBindingNavigator.BindingSource = this.companyBindingSource;
-            this.companyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.companyBindingNavigator.DeleteItem = null;
-            this.companyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.companyBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.companyBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.companyBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.companyBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.companyBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.companyBindingNavigator.Name = "companyBindingNavigator";
-            this.companyBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.companyBindingNavigator.Size = new System.Drawing.Size(753, 25);
-            this.companyBindingNavigator.TabIndex = 19;
-            this.companyBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // companyDataGridView
             // 
             this.companyDataGridView.AllowUserToAddRows = false;
             this.companyDataGridView.AllowUserToDeleteRows = false;
             this.companyDataGridView.AutoGenerateColumns = false;
-            this.companyDataGridView.BackgroundColor = System.Drawing.Color.NavajoWhite;
+            this.companyDataGridView.BackgroundColor = System.Drawing.Color.Pink;
             this.companyDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.companyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.companyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -237,10 +133,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn7});
             this.companyDataGridView.DataSource = this.companyBindingSource;
-            this.companyDataGridView.Location = new System.Drawing.Point(12, 78);
+            this.companyDataGridView.Location = new System.Drawing.Point(26, 203);
+            this.companyDataGridView.MultiSelect = false;
             this.companyDataGridView.Name = "companyDataGridView";
             this.companyDataGridView.ReadOnly = true;
-            this.companyDataGridView.Size = new System.Drawing.Size(519, 354);
+            this.companyDataGridView.Size = new System.Drawing.Size(519, 211);
             this.companyDataGridView.TabIndex = 19;
             // 
             // dataGridViewTextBoxColumn1
@@ -270,14 +167,41 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 120;
             // 
+            // lblCompanyTitle
+            // 
+            this.lblCompanyTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblCompanyTitle.Font = new System.Drawing.Font("Goudy Old Style", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyTitle.ForeColor = System.Drawing.Color.Indigo;
+            this.lblCompanyTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCompanyTitle.Location = new System.Drawing.Point(24, 12);
+            this.lblCompanyTitle.Name = "lblCompanyTitle";
+            this.lblCompanyTitle.Size = new System.Drawing.Size(522, 51);
+            this.lblCompanyTitle.TabIndex = 21;
+            this.lblCompanyTitle.Text = "Get / Find Company Form";
+            this.lblCompanyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSelectingCompany
+            // 
+            this.lblSelectingCompany.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectingCompany.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblSelectingCompany.Location = new System.Drawing.Point(27, 63);
+            this.lblSelectingCompany.Name = "lblSelectingCompany";
+            this.lblSelectingCompany.Size = new System.Drawing.Size(519, 134);
+            this.lblSelectingCompany.TabIndex = 20;
+            this.lblSelectingCompany.Text = resources.GetString("lblSelectingCompany.Text");
+            this.lblSelectingCompany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SearchCompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(753, 450);
+            this.CancelButton = this.btnExit;
+            this.ClientSize = new System.Drawing.Size(745, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblCompanyTitle);
+            this.Controls.Add(this.lblSelectingCompany);
             this.Controls.Add(this.companyDataGridView);
-            this.Controls.Add(this.companyBindingNavigator);
             this.Controls.Add(this.btnViewCompanyInfo);
             this.Controls.Add(this.btnDeleteCompany);
             this.Controls.Add(this.btnUpdateModifyCompany);
@@ -287,15 +211,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchCompanyForm";
-            this.Text = "Get / Find Company Form";
+            this.Text = "Search Company Form";
             this.Load += new System.EventHandler(this.SearchCompanyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingNavigator)).EndInit();
-            this.companyBindingNavigator.ResumeLayout(false);
-            this.companyBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -307,19 +227,11 @@
         private System.Windows.Forms.Button btnAddNewCompany;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.BindingSource companyBindingSource;
-        private System.Windows.Forms.BindingNavigator companyBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView companyDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label lblCompanyTitle;
+        private System.Windows.Forms.Label lblSelectingCompany;
     }
 }
