@@ -37,11 +37,11 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
+            this.lblCompanyTitle = new System.Windows.Forms.Label();
+            this.lblSelectingCompany = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblCompanyTitle = new System.Windows.Forms.Label();
-            this.lblSelectingCompany = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +52,9 @@
             this.btnViewCompanyInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnViewCompanyInfo.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewCompanyInfo.ForeColor = System.Drawing.Color.Maroon;
-            this.btnViewCompanyInfo.Location = new System.Drawing.Point(549, 321);
+            this.btnViewCompanyInfo.Location = new System.Drawing.Point(597, 321);
             this.btnViewCompanyInfo.Name = "btnViewCompanyInfo";
-            this.btnViewCompanyInfo.Size = new System.Drawing.Size(176, 41);
+            this.btnViewCompanyInfo.Size = new System.Drawing.Size(128, 41);
             this.btnViewCompanyInfo.TabIndex = 18;
             this.btnViewCompanyInfo.Text = "View Company Info";
             this.btnViewCompanyInfo.UseVisualStyleBackColor = false;
@@ -65,9 +65,9 @@
             this.btnDeleteCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteCompany.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCompany.ForeColor = System.Drawing.Color.Maroon;
-            this.btnDeleteCompany.Location = new System.Drawing.Point(549, 389);
+            this.btnDeleteCompany.Location = new System.Drawing.Point(597, 389);
             this.btnDeleteCompany.Name = "btnDeleteCompany";
-            this.btnDeleteCompany.Size = new System.Drawing.Size(176, 41);
+            this.btnDeleteCompany.Size = new System.Drawing.Size(128, 41);
             this.btnDeleteCompany.TabIndex = 17;
             this.btnDeleteCompany.Text = "Delete Company";
             this.btnDeleteCompany.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
             this.btnUpdateModifyCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUpdateModifyCompany.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateModifyCompany.ForeColor = System.Drawing.Color.Maroon;
-            this.btnUpdateModifyCompany.Location = new System.Drawing.Point(549, 253);
+            this.btnUpdateModifyCompany.Location = new System.Drawing.Point(597, 253);
             this.btnUpdateModifyCompany.Name = "btnUpdateModifyCompany";
-            this.btnUpdateModifyCompany.Size = new System.Drawing.Size(176, 41);
+            this.btnUpdateModifyCompany.Size = new System.Drawing.Size(128, 41);
             this.btnUpdateModifyCompany.TabIndex = 16;
             this.btnUpdateModifyCompany.Text = "Update / Modify Company";
             this.btnUpdateModifyCompany.UseVisualStyleBackColor = false;
@@ -92,9 +92,9 @@
             this.btnAddNewCompany.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddNewCompany.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewCompany.ForeColor = System.Drawing.Color.Maroon;
-            this.btnAddNewCompany.Location = new System.Drawing.Point(549, 185);
+            this.btnAddNewCompany.Location = new System.Drawing.Point(597, 185);
             this.btnAddNewCompany.Name = "btnAddNewCompany";
-            this.btnAddNewCompany.Size = new System.Drawing.Size(176, 41);
+            this.btnAddNewCompany.Size = new System.Drawing.Size(128, 41);
             this.btnAddNewCompany.TabIndex = 15;
             this.btnAddNewCompany.Text = "Add New Company";
             this.btnAddNewCompany.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnExit.Font = new System.Drawing.Font("Wide Latin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnExit.Location = new System.Drawing.Point(551, 18);
+            this.btnExit.Location = new System.Drawing.Point(579, 18);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(154, 45);
             this.btnExit.TabIndex = 14;
@@ -137,35 +137,8 @@
             this.companyDataGridView.MultiSelect = false;
             this.companyDataGridView.Name = "companyDataGridView";
             this.companyDataGridView.ReadOnly = true;
-            this.companyDataGridView.Size = new System.Drawing.Size(519, 211);
+            this.companyDataGridView.Size = new System.Drawing.Size(547, 211);
             this.companyDataGridView.TabIndex = 19;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CompanyID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CompanyID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CompanyName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CompanyName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 118;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompanyPhone";
-            this.dataGridViewTextBoxColumn7.HeaderText = "CompanyPhone";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 120;
             // 
             // lblCompanyTitle
             // 
@@ -190,6 +163,31 @@
             this.lblSelectingCompany.TabIndex = 20;
             this.lblSelectingCompany.Text = resources.GetString("lblSelectingCompany.Text");
             this.lblSelectingCompany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CompanyID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Company ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CompanyName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Company Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompanyPhone";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Company Phone";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // SearchCompanyForm
             // 
@@ -228,10 +226,10 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.DataGridView companyDataGridView;
+        private System.Windows.Forms.Label lblCompanyTitle;
+        private System.Windows.Forms.Label lblSelectingCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Label lblCompanyTitle;
-        private System.Windows.Forms.Label lblSelectingCompany;
     }
 }

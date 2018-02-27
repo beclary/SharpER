@@ -69,5 +69,10 @@ namespace WindowsFormsApplication1
         {
             Close();
         }
+
+        private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
