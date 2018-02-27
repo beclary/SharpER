@@ -15,6 +15,7 @@ namespace SharpERDAL
 {
     public static class ContactDB
     {
+
         /// <summary>
         /// This will provide a listing of all the customers in the database
         /// </summary>

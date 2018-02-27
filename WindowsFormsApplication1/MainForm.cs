@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SharpERBLL;
+using SharpERDAL;
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +23,9 @@ namespace WindowsFormsApplication1
         public static Form searchActivityForm = null;
         public static Form searchJobForm = null;
 
+        List<Contact> contactList;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -29,21 +34,20 @@ namespace WindowsFormsApplication1
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            contactList = new List<Contact>();
         }
 
 
- /*       private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            contactMainForm = new ContactForm();
-            contactMainForm.ShowDialog();
-        }
-*/
+        /*       private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
+               {
+                   contactMainForm = new ContactForm();
+                   contactMainForm.ShowDialog();
+               }
+       */
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
