@@ -50,6 +50,7 @@ namespace WindowsFormsApplication1
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
+            
         }
     }
 }

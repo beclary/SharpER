@@ -23,7 +23,6 @@ namespace WindowsFormsApplication1
         public static Form searchActivityForm = null;
         public static Form searchJobForm = null;
 
-        List<Contact> contactList;
 
 
         public MainForm()
@@ -38,7 +37,6 @@ namespace WindowsFormsApplication1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            contactList = new List<Contact>();
         }
 
 
