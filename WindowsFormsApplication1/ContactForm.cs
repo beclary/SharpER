@@ -14,6 +14,9 @@ namespace WindowsFormsApplication1
 {
     public partial class ContactForm : Form
     {
+         public static List<Contact> contact;
+
+
         public ContactForm()
         {
             InitializeComponent();
@@ -79,7 +82,7 @@ namespace WindowsFormsApplication1
                 return true;
         }
 
-    private void toolStripButtonContactExitButton_Click(object sender, EventArgs e)
+        private void toolStripButtonContactExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
             MainForm.contactMainForm = null;
@@ -90,16 +93,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        //private bool CloseProgram()
-        //{
-        //    if (MessageBox.Show("Are you sure you want to quit?", "LEAVING???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-        //    {
-        //        this.Close();
-        //        return true;
-        //    }
-        //    else
-        //        return false;
-        //}
 
 
 
@@ -135,8 +128,12 @@ namespace WindowsFormsApplication1
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
-                
+        }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            ContactDB.AddContact(contact);
         }
     }
 }
+

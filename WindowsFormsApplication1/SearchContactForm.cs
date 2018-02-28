@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
         {
             contactForm = new ContactForm();
             contactForm.ShowDialog();
-        //    ContactDB.AddContact();           This is where the method should be called, but
+         //   ContactDB.AddContact();           This is where the method should be called, but
         //                                      why doesn't it accept the method call I creaated
         //                                      in the ContactDB class?
         }
