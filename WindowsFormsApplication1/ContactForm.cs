@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using SharpERBLL;
 using SharpERDAL;
 
@@ -14,7 +15,9 @@ namespace WindowsFormsApplication1
 {
     public partial class ContactForm : Form
     {
-         public static List<Contact> contact;
+        public static List<Contact> conList;
+        public Contact contact;
+        public bool addContact;
 
 
         public ContactForm()
@@ -76,7 +79,9 @@ namespace WindowsFormsApplication1
                     IsPresent(contactContactedViaComboBox, "Contacted via") &&
                     IsPresent(contactPhoneMaskedTextBox, "Phone number") &&
                     IsPresent(contactMobileMaskedTextBox, "Mobile number") &&
-                    IsPresent(contactEmailTextBox, "Email");
+                    IsPresent(contactFaxMaskedTextBox, "Fax number") &&
+                    IsPresent(contactEmailTextBox, "Email") &&
+                    IsPresent(contactNotesTextBox, "Notes");
             }
             else
                 return true;
@@ -128,11 +133,78 @@ namespace WindowsFormsApplication1
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
+         //   conList = ContactDB.AddContact(selContact);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ContactDB.AddContact(contact);
+            if (IsDataValid())
+            {
+                if (addContact)
+                {
+                    contact = new Contact();
+                    this.PopulateContactData(contact);
+                    try
+                    {
+                        contact.ContactID = ContactDB.AddContact(contact);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    catch (SqlException xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                    catch (Exception xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                }
+                else
+                {
+                    Contact newContact = new Contact();
+                    newContact.ContactID = contact.ContactID;
+                    this.PopulateContactData(newContact);
+                    try
+                    {
+                        if (!ContactDB.UpdateModifyContact(contact, newContact))
+                        {
+                            MessageBox.Show("Another user has updated or deleted that contact",
+                                "Database Error");
+                            this.DialogResult = DialogResult.Retry;
+                        }
+                        else
+                        {
+                            contact = newContact;
+                            this.DialogResult = DialogResult.OK;
+                        }
+                    }
+                    catch (SqlException xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                    catch (Exception xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                }
+            }
+        }
+
+        private void PopulateContactData (Contact contact)
+        {
+            contact.ContactFirstName = contactFirstNameTextBox.Text;
+            contact.ContactLastName = contactLastNameTextBox.Text;
+            contact.ContactTitle = contactTitleTextBox.Text;
+            contact.ContactDepartment = contactDepartmentTextBox.Text;
+            contact.ContactAddress = contactAddressTextBox.Text;
+            contact.ContactCity = contactCityTextBox.Text;
+            contact.ContactState = contactStateComboBox.SelectedValue.ToString();
+            contact.ContactZipCode = contactZipCodeMaskedTextBox.Text;
+            contact.ContactContactedVia = contactStateComboBox.SelectedValue.ToString();
+            contact.ContactPhone = contactPhoneMaskedTextBox.Text;
+            contact.ContactMobile = contactMobileMaskedTextBox.Text;
+            contact.ContactFax = contactFaxMaskedTextBox.Text;
+            contact.ContactEmail = contactEmailTextBox.Text;
+            contact.ContactNotes = contactNotesTextBox.Text;
         }
     }
 }
