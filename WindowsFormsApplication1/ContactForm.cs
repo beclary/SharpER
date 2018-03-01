@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
         public Contact contact;
         public bool addContact;
 
-
+        
         public ContactForm()
         {
             InitializeComponent();
