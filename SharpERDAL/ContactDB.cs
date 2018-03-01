@@ -393,7 +393,7 @@ namespace SharpERDAL
         {
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
-                "INSERT Contact " +
+                "INSERT INTO Contact " +
                 "(con_first_name, con_last_name, con_title, con_department, " +
                 "con_address, con_city, con_state, con_zip_code, con_contacted_via, " +
                 "con_phone, con_mobile, con_fax, con_email, con_notes) " +
@@ -417,7 +417,10 @@ namespace SharpERDAL
             insertCmd.Parameters.AddWithValue("@ContactContactedVia", newContact.ContactContactedVia);
             insertCmd.Parameters.AddWithValue("@ContactPhone", newContact.ContactPhone);
             if (newContact.ContactMobile == "")
+            {
                 insertCmd.Parameters.AddWithValue("@ContactMobile", DBNull.Value);
+                insertCmd.Parameters["@ContactMobile"].IsNullable = true;
+            }
             else
                 insertCmd.Parameters.AddWithValue("@ContactMobile", newContact.ContactMobile);
             if (newContact.ContactFax == "")

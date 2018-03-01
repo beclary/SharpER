@@ -17,9 +17,9 @@ namespace WindowsFormsApplication1
     {
         public static List<Contact> conList;
         public Contact contact;
+        public Contact newContact;
         public bool addContact;
 
-        
         public ContactForm()
         {
             InitializeComponent();
@@ -40,17 +40,18 @@ namespace WindowsFormsApplication1
 
         private bool IsPresent(Control control, string name)
         {
-            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
-            {
-                TextBox textBox = (TextBox)control;
-                if (textBox.Text == "")
-                {
-                    MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
-                    textBox.Focus();
-                    return false;
-                }
-            }
-            else if (control.GetType().ToString() == "System.Windows.Forms.ComboBox")
+            //if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            //{
+            //    TextBox textBox = (TextBox)control;
+            //    if (textBox.Text == "")
+            //    {
+            //        MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
+            //        textBox.Focus();
+            //        return false;
+            //    }
+            //}
+   //         else 
+            if (control.GetType().ToString() == "System.Windows.Forms.ComboBox")
             {
                 ComboBox comboBox = (ComboBox)control;
                 if (comboBox.SelectedIndex == -1)
@@ -93,26 +94,12 @@ namespace WindowsFormsApplication1
             MainForm.contactMainForm = null;
         }
 
-        private void openToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        // Method for populating the textboxes with the data
-        private void DisplayContact()
-        {
-            
-        }
-
-        // method for clearing the updates or modifications the user makes
+        // Method for clearing the updates or modifications the user makes
         private void btnClear_Click(object sender, EventArgs e)
         {
             contactFirstNameTextBox.Clear();
@@ -133,7 +120,17 @@ namespace WindowsFormsApplication1
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
-         //   conList = ContactDB.AddContact(selContact);
+            // Bindings need to be set, so I have to test here to see if it was an 
+            // ADD or a MODIFY
+            if (addContact == true)
+            {
+                contact = new Contact();
+                contactBindingSource.Add(contact);
+            }
+            else
+            {
+                // this will be for if user selecvted MODIFY
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -142,25 +139,28 @@ namespace WindowsFormsApplication1
             {
                 if (addContact)
                 {
-                    contact = new Contact();
-                    this.PopulateContactData(contact);
-                    try
-                    {
-                        contact.ContactID = ContactDB.AddContact(contact);
-                        this.DialogResult = DialogResult.OK;
-                    }
-                    catch (SqlException xsept)
-                    {
-                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
-                    }
-                    catch (Exception xsept)
-                    {
-                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
-                    }
+                    contact.ContactState = contactStateComboBox.Text.ToString();
+                    contact.ContactContactedVia = contactStateComboBox.Text.ToString();
+                    contact.ContactID = ContactDB.AddContact(contact);
+                    this.DialogResult = DialogResult.OK;
+
+                    //contact = new Contact();
+                    //this.PopulateContactData(contact);
+                    //try
+                    //{
+                    //}
+                    //catch (SqlException xsept)
+                    //{
+                    //    MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    //}
+                    //catch (Exception xsept)
+                    //{
+                    //    MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    //}
                 }
                 else
                 {
-                    Contact newContact = new Contact();
+                    newContact = new Contact();
                     newContact.ContactID = contact.ContactID;
                     this.PopulateContactData(newContact);
                     try

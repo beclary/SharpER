@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
 {
     public partial class SearchContactForm : Form
     {
-        public static Form contactForm = null;
+        public static ContactForm contactForm = null;
         public static List<Contact> contactListing;
 
         public SearchContactForm()
@@ -34,6 +34,7 @@ namespace WindowsFormsApplication1
         private void btnAddNewContact_Click(object sender, EventArgs e)
         {
             contactForm = new ContactForm();
+            contactForm.addContact = true;
             contactForm.ShowDialog();
          //   ContactDB.AddContact();           This is where the method should be called, but
         //                                      why doesn't it accept the method call I creaated
