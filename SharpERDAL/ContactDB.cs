@@ -400,20 +400,54 @@ namespace SharpERDAL
                 "VALUES (@ContactFirstName, @ContactLastName, @ContactTitle, @ContactDepartment, " +
                 "@ContactAddress, @ContactCity, @ContactState, @ContactZipCode, @ContactContactedVia, @ContactPhone, @ContactMobile, @ContactFax, @ContactEmail, @ContactNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
-            insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName);
-            insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);
-            if (newContact.ContactTitle == "")
+            insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName);        // Required
+            insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);          // Required
+            if (newContact.ContactTitle == "")                                                          // Optional
+            {
                 insertCmd.Parameters.AddWithValue("@ContactTitle", DBNull.Value);
+                insertCmd.Parameters["@ContactTitle"].IsNullable = true;
+            }
             else
                 insertCmd.Parameters.AddWithValue("@ContactTitle", newContact.ContactTitle);
-            if (newContact.ContactDepartment == "")
+            if (newContact.ContactDepartment == "")                                                     // Optional
+            {
                 insertCmd.Parameters.AddWithValue("@ContactDepartment", DBNull.Value);
+                insertCmd.Parameters["@ContactDepartment"].IsNullable = true;
+            }
             else
                 insertCmd.Parameters.AddWithValue("@ContactDepartment", newContact.ContactDepartment);
-            insertCmd.Parameters.AddWithValue("@ContactAddress", newContact.ContactAddress);
-            insertCmd.Parameters.AddWithValue("@ContactCity", newContact.ContactCity);
-            insertCmd.Parameters.AddWithValue("@ContactState", newContact.ContactState);
-            insertCmd.Parameters.AddWithValue("@ContactZipCode", newContact.ContactZipCode);
+            if (newContact.ContactAddress == "")                                                        // Optional
+            {
+                insertCmd.Parameters.AddWithValue("@ContactAddress", DBNull.Value);
+                insertCmd.Parameters["@ContactAddress"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactAddress", newContact.ContactAddress);
+            if (newContact.ContactCity == "")                                                           // Optional
+            {
+                insertCmd.Parameters.AddWithValue("@ContactCity", DBNull.Value);
+                insertCmd.Parameters["@ContactCity"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactCity", newContact.ContactCity);
+            if (newContact.ContactState == "")                                                          // Optional
+            {
+                insertCmd.Parameters.AddWithValue("@ContactState", DBNull.Value);
+                insertCmd.Parameters["@ContactState"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactState", newContact.ContactState);
+            if (newContact.ContactZipCode == "")                                                        // Optional
+            {
+                insertCmd.Parameters.AddWithValue("@ContactZipCode", DBNull.Value);
+                insertCmd.Parameters["@ContactZipCode"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactZipCode", newContact.ContactZipCode);
+
+
+            // PICK UP HERE
+
             insertCmd.Parameters.AddWithValue("@ContactContactedVia", newContact.ContactContactedVia);
             insertCmd.Parameters.AddWithValue("@ContactPhone", newContact.ContactPhone);
             if (newContact.ContactMobile == "")
