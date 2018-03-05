@@ -333,7 +333,10 @@ namespace SharpERDAL
             updateCmd.Parameters.AddWithValue("@OldContactFirstName", oldContact.ContactFirstName);
             updateCmd.Parameters.AddWithValue("@OldContactLastName", oldContact.ContactLastName);
             if (oldContact.ContactTitle == "")
+            {
                 updateCmd.Parameters.AddWithValue("@OldContactTitle", DBNull.Value);
+                updateCmd.Parameters["@OldContactTitle"].IsNullable = true;         // Pickup here
+            }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactTitle", oldContact.ContactTitle);
             if (oldContact.ContactDepartment == "")
@@ -444,29 +447,46 @@ namespace SharpERDAL
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactZipCode", newContact.ContactZipCode);
-
-
-            // PICK UP HERE
-
-            insertCmd.Parameters.AddWithValue("@ContactContactedVia", newContact.ContactContactedVia);
-            insertCmd.Parameters.AddWithValue("@ContactPhone", newContact.ContactPhone);
-            if (newContact.ContactMobile == "")
+            if (newContact.ContactContactedVia == "")                                                   // Required
+            {
+                insertCmd.Parameters.AddWithValue("@ContactContactedVia", DBNull.Value);
+                insertCmd.Parameters["@ContactContactedVia"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactContactedVia", newContact.ContactContactedVia);
+            if (newContact.ContactPhone == "")                                                          // Optional
+            {
+                insertCmd.Parameters.AddWithValue("@ContactPhone", DBNull.Value);
+                insertCmd.Parameters["@ContactPhone"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactPhone", newContact.ContactPhone);
+            if (newContact.ContactMobile == "")                                                         // Optional
             {
                 insertCmd.Parameters.AddWithValue("@ContactMobile", DBNull.Value);
                 insertCmd.Parameters["@ContactMobile"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactMobile", newContact.ContactMobile);
-            if (newContact.ContactFax == "")
+            if (newContact.ContactFax == "")                                                            // Optional
+            {
                 insertCmd.Parameters.AddWithValue("@ContactFax", DBNull.Value);
+                insertCmd.Parameters["@ContactFax"].IsNullable = true;
+            }
             else
                 insertCmd.Parameters.AddWithValue("@ContactFax", newContact.ContactFax);
-            if (newContact.ContactEmail == "")
+            if (newContact.ContactEmail == "")                                                          // Optional
+            {
                 insertCmd.Parameters.AddWithValue("@ContactEmail", DBNull.Value);
+                insertCmd.Parameters["@ContactEmail"].IsNullable = true;
+            }
             else
                 insertCmd.Parameters.AddWithValue("@ContactEmail", newContact.ContactEmail);
-            if (newContact.ContactNotes == "")
+            if (newContact.ContactNotes == "")                                                          // Optional
+            {
                 insertCmd.Parameters.AddWithValue("@ContactNotes", DBNull.Value);
+                insertCmd.Parameters["@ContactNotes"].IsNullable = true;
+            }
             else
                 insertCmd.Parameters.AddWithValue("@ContactNotes", newContact.ContactNotes);
 
