@@ -606,5 +606,34 @@ namespace SharpERDAL
                 conn.Close();
             }
         }
+        public static int DeleteContact()
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "DELETE FROM Contact " +
+                "WHERE con_id = @ContactID";
+            SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
+
+            try
+            {
+                conn.Open();
+                int contactID = Convert.ToInt32(deleteCmd.ExecuteScalar());
+                return contactID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
+            
+        }
     }
 }
