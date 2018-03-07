@@ -496,8 +496,21 @@ namespace SharpERDAL
                 "VALUES (@ContactFirstName, @ContactLastName, @ContactTitle, @ContactDepartment, " +
                 "@ContactAddress, @ContactCity, @ContactState, @ContactZipCode, @ContactContactedVia, @ContactPhone, @ContactMobile, @ContactFax, @ContactEmail, @ContactNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
-            insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName);        // Required
-            insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);          // Required
+            if (newContact.ContactFirstName == null)
+            {
+                insertCmd.Parameters.AddWithValue("@ContactFirstName", DBNull.Value);
+                insertCmd.Parameters["@ContactFirstName"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName); 
+            
+            if (newContact.ContactLastName == null)
+            {
+                insertCmd.Parameters.AddWithValue("@ContactLastName", DBNull.Value);
+                insertCmd.Parameters["@ContactLastName"].IsNullable = true;
+            }
+            else
+                insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);         
             if (newContact.ContactTitle == null)                                                          // Optional
             {
                 insertCmd.Parameters.AddWithValue("@ContactTitle", DBNull.Value);
@@ -588,7 +601,7 @@ namespace SharpERDAL
                 conn.Open();
                 insertCmd.ExecuteNonQuery();
                 string selectStmt =
-                    "SELECT SCOPE_IDENTITY ('Contact') FROM Contact";
+                    "SELECT SCOPE_IDENTITY () FROM Contact";
                 SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
                 int contactID = Convert.ToInt32(selectCmd.ExecuteScalar());
                 return contactID;
@@ -596,7 +609,7 @@ namespace SharpERDAL
             catch (SqlException xsept)
             {
                 throw xsept;
-            }
+            } 
             catch (Exception xsept)
             {
                 throw xsept;
@@ -606,19 +619,20 @@ namespace SharpERDAL
                 conn.Close();
             }
         }
-        public static int DeleteContact()
+        public static int DeleteContact(int contactID)
         {
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "DELETE FROM Contact " +
                 "WHERE con_id = @ContactID";
             SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
+            deleteCmd.Parameters.AddWithValue("@ContactID", contactID);
 
             try
             {
                 conn.Open();
-                int contactID = Convert.ToInt32(deleteCmd.ExecuteScalar());
-                return contactID;
+                int rowDel = Convert.ToInt32(deleteCmd.ExecuteNonQuery());
+                return rowDel;
             }
             catch (SqlException xsept)
             {

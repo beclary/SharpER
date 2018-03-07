@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpERDAL;
 using SharpERBLL;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
@@ -25,6 +26,8 @@ namespace WindowsFormsApplication1
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
             contactForm = new ContactForm();
+            contactDataGridView.DataSource = contactBindingSource;
+            contactBindingSource.DataSource = contactListing;
             contactForm.ShowDialog();
         //    ContactDB.UpdateModifyContact();  Same problem here as below. Am I missing the 
         //                                      ContactID? It does not give me a ContactID to 
@@ -50,8 +53,42 @@ namespace WindowsFormsApplication1
         {
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
+            
             contactBindingSource.DataSource = contactListing;
             
         }
+
+        private void btnDeleteContact_Click(object sender, DataGridViewCellEventArgs e)
+        {
+
+                int i = e.RowIndex;
+                DataGridViewRow row = contactDataGridView.Rows[i];
+                DataGridViewCell cell = row.Cells[4];
+                int conID = (int)cell.Value;
+
+                Form delForm = new ContactForm();
+                delForm.Tag = conID;
+                delForm.Show();
+
+                try
+                {
+                    ContactDB.DeleteContact(conID);
+
+                }
+                catch (SqlException xsept)
+                {
+                    throw xsept;
+                }
+                catch (Exception xsept)
+                {
+                    throw xsept;
+                }
+                finally
+                {
+                    
+                }
+
+            }
+        }
     }
-}
+

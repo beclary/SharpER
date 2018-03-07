@@ -140,7 +140,7 @@ namespace WindowsFormsApplication1
                 if (addContact)
                 {
                     contact.ContactState = contactStateComboBox.Text.ToString();
-                    contact.ContactContactedVia = contactStateComboBox.Text.ToString();
+                    contact.ContactContactedVia = contactContactedViaComboBox.Text.ToString();
                     contact.ContactID = ContactDB.AddContact(contact);
                     this.DialogResult = DialogResult.OK;
 
@@ -198,11 +198,11 @@ namespace WindowsFormsApplication1
             contact.ContactAddress = contactAddressTextBox.Text;
             contact.ContactCity = contactCityTextBox.Text;
             contact.ContactState = contactStateComboBox.SelectedValue.ToString();
-            contact.ContactZipCode = contactZipCodeMaskedTextBox.Text;
-            contact.ContactContactedVia = contactStateComboBox.SelectedValue.ToString();
-            contact.ContactPhone = contactPhoneMaskedTextBox.Text;
-            contact.ContactMobile = contactMobileMaskedTextBox.Text;
-            contact.ContactFax = contactFaxMaskedTextBox.Text;
+            contact.ContactZipCode = contactZipCodeMaskedTextBox.ToString();
+            contact.ContactContactedVia = contactContactedViaComboBox.SelectedValue.ToString();
+            contact.ContactPhone = contactPhoneMaskedTextBox.ToString();
+            contact.ContactMobile = contactMobileMaskedTextBox.ToString();
+            contact.ContactFax = contactFaxMaskedTextBox.ToString();
             contact.ContactEmail = contactEmailTextBox.Text;
             contact.ContactNotes = contactNotesTextBox.Text;
         }
