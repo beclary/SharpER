@@ -102,10 +102,15 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[4];
             int conID = (int)cell.Value;
 
-            MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
-            Form delForm = new ContactForm();
-            delForm.Tag = conID;
-            delForm.Show();
+            
+    //        MessageBox.Show("Are you sure you want to delete " + ContactID + " which is " +
+//              i + "???\n\nThis cannot be undone. Are you sure?", "WARNING - READ CAREFULLY",
+//              MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+     //       MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
+     //       Form delForm = new ContactForm();
+     //       delForm.Tag = conID;
+     //       delForm.Show();
 
             try
             {
