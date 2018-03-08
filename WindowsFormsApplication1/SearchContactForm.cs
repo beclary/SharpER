@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
-            int i = contactDataGridView.SelectedRows[0].Index;
+    /*        int i = contactDataGridView.SelectedRows[0].Index;
             DataGridViewRow row = contactDataGridView.Rows[i];
             DataGridViewCell cell = row.Cells[4];
             int conID = (int)cell.Value;
@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
 
             }
 
-
+    */
 
 
             contactForm = new ContactForm();
@@ -137,6 +137,14 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void contactDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            DataGridViewRow row = contactDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[4];
+            int contactRowSelected = (int)cell.Value;
+      //      contactDataGridView
+        }
     }
 }
     

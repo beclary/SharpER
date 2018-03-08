@@ -39,15 +39,15 @@
             this.btnUpdateModifyContact = new System.Windows.Forms.Button();
             this.btnDeleteContact = new System.Windows.Forms.Button();
             this.contactDataGridView = new System.Windows.Forms.DataGridView();
-            this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnViewContactInfo = new System.Windows.Forms.Button();
             this.lblSelectingContact = new System.Windows.Forms.Label();
             this.lblContactTitle = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MobileNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +122,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
+            this.MobileNumber,
             this.ContactID});
             this.contactDataGridView.DataSource = this.contactBindingSource;
             this.contactDataGridView.Location = new System.Drawing.Point(26, 203);
@@ -131,14 +131,11 @@
             this.contactDataGridView.ReadOnly = true;
             this.contactDataGridView.Size = new System.Drawing.Size(547, 211);
             this.contactDataGridView.TabIndex = 12;
+            this.contactDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.contactDataGridView_CellContentClick);
             // 
-            // ContactID
+            // contactBindingSource
             // 
-            this.ContactID.DataPropertyName = "ContactID";
-            this.ContactID.HeaderText = "ContactID";
-            this.ContactID.Name = "ContactID";
-            this.ContactID.ReadOnly = true;
-            this.ContactID.Visible = false;
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
             // 
             // btnViewContactInfo
             // 
@@ -219,23 +216,27 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn11
+            // MobileNumber
             // 
-            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ContactMobile";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.MobileNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MobileNumber.DataPropertyName = "ContactMobile";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Mobile Number";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.MobileNumber.DefaultCellStyle = dataGridViewCellStyle4;
+            this.MobileNumber.HeaderText = "Mobile Number";
+            this.MobileNumber.Name = "MobileNumber";
+            this.MobileNumber.ReadOnly = true;
             // 
-            // contactBindingSource
+            // ContactID
             // 
-            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
+            this.ContactID.DataPropertyName = "ContactID";
+            this.ContactID.HeaderText = "ContactID";
+            this.ContactID.Name = "ContactID";
+            this.ContactID.ReadOnly = true;
+            this.ContactID.Visible = false;
             // 
             // SearchContactForm
             // 
@@ -278,7 +279,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MobileNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactID;
     }
 }

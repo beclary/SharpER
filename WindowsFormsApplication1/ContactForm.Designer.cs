@@ -45,7 +45,6 @@
             System.Windows.Forms.Label contactTitleLabel;
             System.Windows.Forms.Label contactZipCodeLabel;
             this.contactAddressTextBox = new System.Windows.Forms.TextBox();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactCityTextBox = new System.Windows.Forms.TextBox();
             this.contactContactedViaComboBox = new System.Windows.Forms.ComboBox();
             this.contactDepartmentTextBox = new System.Windows.Forms.TextBox();
@@ -64,6 +63,7 @@
             this.contactMobileMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
             contactContactedViaLabel = new System.Windows.Forms.Label();
@@ -255,10 +255,6 @@
             this.contactAddressTextBox.Size = new System.Drawing.Size(301, 26);
             this.contactAddressTextBox.TabIndex = 5;
             // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
-            // 
             // contactCityTextBox
             // 
             this.contactCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactCity", true));
@@ -270,6 +266,7 @@
             // contactContactedViaComboBox
             // 
             this.contactContactedViaComboBox.BackColor = System.Drawing.Color.LightGray;
+            this.contactContactedViaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactContactedVia", true));
             this.contactContactedViaComboBox.DisplayMember = "Text";
             this.contactContactedViaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactContactedViaComboBox.FormattingEnabled = true;
@@ -343,6 +340,7 @@
             this.contactStateComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.contactStateComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.contactStateComboBox.BackColor = System.Drawing.Color.LightGray;
+            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactState", true));
             this.contactStateComboBox.DisplayMember = "Text";
             this.contactStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactStateComboBox.FormattingEnabled = true;
@@ -472,6 +470,7 @@
             // 
             // contactMobileMaskedTextBox
             // 
+            this.contactMobileMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactMobile", true));
             this.contactMobileMaskedTextBox.Location = new System.Drawing.Point(370, 331);
             this.contactMobileMaskedTextBox.Mask = "(999) 000-0000";
             this.contactMobileMaskedTextBox.Name = "contactMobileMaskedTextBox";
@@ -480,6 +479,7 @@
             // 
             // contactFaxMaskedTextBox
             // 
+            this.contactFaxMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFax", true));
             this.contactFaxMaskedTextBox.Location = new System.Drawing.Point(161, 361);
             this.contactFaxMaskedTextBox.Mask = "(999) 000-0000";
             this.contactFaxMaskedTextBox.Name = "contactFaxMaskedTextBox";
@@ -494,6 +494,10 @@
             this.contactZipCodeMaskedTextBox.Name = "contactZipCodeMaskedTextBox";
             this.contactZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.contactZipCodeMaskedTextBox.TabIndex = 8;
+            // 
+            // contactBindingSource
+            // 
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
             // 
             // ContactForm
             // 
