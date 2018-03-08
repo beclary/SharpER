@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchContactForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchContactForm));
             this.btnExit = new System.Windows.Forms.Button();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddNewContact = new System.Windows.Forms.Button();
             this.btnUpdateModifyContact = new System.Windows.Forms.Button();
             this.btnDeleteContact = new System.Windows.Forms.Button();
             this.contactDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnViewContactInfo = new System.Windows.Forms.Button();
             this.lblSelectingContact = new System.Windows.Forms.Label();
             this.lblContactTitle = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -67,10 +67,6 @@
             this.btnExit.Text = "E X I T";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
             // 
             // btnAddNewContact
             // 
@@ -112,6 +108,7 @@
             this.btnDeleteContact.TabIndex = 12;
             this.btnDeleteContact.Text = "Delete Contact";
             this.btnDeleteContact.UseVisualStyleBackColor = false;
+            this.btnDeleteContact.Click += new System.EventHandler(this.btnDeleteContact_Click);
             // 
             // contactDataGridView
             // 
@@ -134,6 +131,51 @@
             this.contactDataGridView.ReadOnly = true;
             this.contactDataGridView.Size = new System.Drawing.Size(547, 211);
             this.contactDataGridView.TabIndex = 12;
+            // 
+            // ContactID
+            // 
+            this.ContactID.DataPropertyName = "ContactID";
+            this.ContactID.HeaderText = "ContactID";
+            this.ContactID.Name = "ContactID";
+            this.ContactID.ReadOnly = true;
+            this.ContactID.Visible = false;
+            // 
+            // btnViewContactInfo
+            // 
+            this.btnViewContactInfo.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnViewContactInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnViewContactInfo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewContactInfo.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnViewContactInfo.Location = new System.Drawing.Point(579, 258);
+            this.btnViewContactInfo.Name = "btnViewContactInfo";
+            this.btnViewContactInfo.Size = new System.Drawing.Size(154, 51);
+            this.btnViewContactInfo.TabIndex = 13;
+            this.btnViewContactInfo.Text = "View Contact Info";
+            this.btnViewContactInfo.UseVisualStyleBackColor = false;
+            // 
+            // lblSelectingContact
+            // 
+            this.lblSelectingContact.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectingContact.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblSelectingContact.Location = new System.Drawing.Point(27, 63);
+            this.lblSelectingContact.Name = "lblSelectingContact";
+            this.lblSelectingContact.Size = new System.Drawing.Size(519, 134);
+            this.lblSelectingContact.TabIndex = 14;
+            this.lblSelectingContact.Text = resources.GetString("lblSelectingContact.Text");
+            this.lblSelectingContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblContactTitle
+            // 
+            this.lblContactTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblContactTitle.Font = new System.Drawing.Font("Goudy Old Style", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactTitle.ForeColor = System.Drawing.Color.Indigo;
+            this.lblContactTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblContactTitle.Location = new System.Drawing.Point(24, 12);
+            this.lblContactTitle.Name = "lblContactTitle";
+            this.lblContactTitle.Size = new System.Drawing.Size(522, 51);
+            this.lblContactTitle.TabIndex = 15;
+            this.lblContactTitle.Text = "Get / Find Contact Form";
+            this.lblContactTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -191,50 +233,9 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
-            // ContactID
+            // contactBindingSource
             // 
-            this.ContactID.DataPropertyName = "ContactID";
-            this.ContactID.HeaderText = "ContactID";
-            this.ContactID.Name = "ContactID";
-            this.ContactID.ReadOnly = true;
-            this.ContactID.Visible = false;
-            // 
-            // btnViewContactInfo
-            // 
-            this.btnViewContactInfo.BackColor = System.Drawing.Color.Goldenrod;
-            this.btnViewContactInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnViewContactInfo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewContactInfo.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnViewContactInfo.Location = new System.Drawing.Point(579, 258);
-            this.btnViewContactInfo.Name = "btnViewContactInfo";
-            this.btnViewContactInfo.Size = new System.Drawing.Size(154, 51);
-            this.btnViewContactInfo.TabIndex = 13;
-            this.btnViewContactInfo.Text = "View Contact Info";
-            this.btnViewContactInfo.UseVisualStyleBackColor = false;
-            // 
-            // lblSelectingContact
-            // 
-            this.lblSelectingContact.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectingContact.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSelectingContact.Location = new System.Drawing.Point(27, 63);
-            this.lblSelectingContact.Name = "lblSelectingContact";
-            this.lblSelectingContact.Size = new System.Drawing.Size(519, 134);
-            this.lblSelectingContact.TabIndex = 14;
-            this.lblSelectingContact.Text = resources.GetString("lblSelectingContact.Text");
-            this.lblSelectingContact.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblContactTitle
-            // 
-            this.lblContactTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblContactTitle.Font = new System.Drawing.Font("Goudy Old Style", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactTitle.ForeColor = System.Drawing.Color.Indigo;
-            this.lblContactTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblContactTitle.Location = new System.Drawing.Point(24, 12);
-            this.lblContactTitle.Name = "lblContactTitle";
-            this.lblContactTitle.Size = new System.Drawing.Size(522, 51);
-            this.lblContactTitle.TabIndex = 15;
-            this.lblContactTitle.Text = "Get / Find Contact Form";
-            this.lblContactTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
             // 
             // SearchContactForm
             // 
@@ -258,8 +259,8 @@
             this.Name = "SearchContactForm";
             this.Text = "Search Contact Form";
             this.Load += new System.EventHandler(this.SearchContactForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

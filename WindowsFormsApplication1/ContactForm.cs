@@ -129,7 +129,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                // this will be for if user selecvted MODIFY
+                contact = new Contact();
+         //       contactBindingSource.DataSource 
             }
         }
 

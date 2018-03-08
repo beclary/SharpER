@@ -291,86 +291,98 @@ namespace SharpERDAL
                     "OR con_notes IS NULL AND @OldContactNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
             // NewContact changes
-            updateCmd.Parameters.AddWithValue("@NewContactFirstName", newContact.ContactFirstName);         // Required
-            updateCmd.Parameters.AddWithValue("@NewContactLastName", newContact.ContactLastName);           // Required
-            if (newContact.ContactTitle == "")                                                              // Optional
+            if (newContact.ContactFirstName == null)
+            {
+                updateCmd.Parameters.AddWithValue("@NewContactFirstName", DBNull.Value);
+                updateCmd.Parameters["@NewContactFirstName"].IsNullable = true;
+            }
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactFirstName", newContact.ContactFirstName); 
+            if (newContact.ContactLastName == null)
+            {
+                updateCmd.Parameters.AddWithValue("@NewContactLastName", DBNull.Value);
+                updateCmd.Parameters["@NewContactLastName"].IsNullable = true;
+            }      
+            else
+                updateCmd.Parameters.AddWithValue("@NewContactLastName", newContact.ContactLastName);         
+            if (newContact.ContactTitle == null)                                                           
             {
                 updateCmd.Parameters.AddWithValue("@NewContactTitle", DBNull.Value);
                 updateCmd.Parameters["@NewContactTitle"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactTitle", newContact.ContactTitle);
-            if (newContact.ContactDepartment == "")                                                         // Optional
+            if (newContact.ContactDepartment == null)                                                      
             {
                 updateCmd.Parameters.AddWithValue("@NewContactDepartment", DBNull.Value);
                 updateCmd.Parameters["@NewContactDepartment"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactDepartment", newContact.ContactDepartment);
-            if (newContact.ContactAddress == "")                                                            // Optional
+            if (newContact.ContactAddress == null)                                                            
             {
                 updateCmd.Parameters.AddWithValue("@NewContactAddress", DBNull.Value);
                 updateCmd.Parameters["@NewContactAddress"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactAddress", newContact.ContactAddress);
-            if (newContact.ContactCity == "")                                                               // Optional
+            if (newContact.ContactCity == null)                                                               
             {
                 updateCmd.Parameters.AddWithValue("@NewContactCity", DBNull.Value);
                 updateCmd.Parameters["@NewContactCity"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactCity", newContact.ContactCity);
-            if (newContact.ContactState == "")                                                              // Optional
+            if (newContact.ContactState == null)                                                              
             {
                 updateCmd.Parameters.AddWithValue("@NewContactState", DBNull.Value);
                 updateCmd.Parameters["@NewContactState"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactState", newContact.ContactState);
-            if (newContact.ContactZipCode == "")                                                            // Optional
+            if (newContact.ContactZipCode == null)                                                        
             {
                 updateCmd.Parameters.AddWithValue("@NewContactZipCode", DBNull.Value);
                 updateCmd.Parameters["@NewContactZipCode"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactZipCode", newContact.ContactZipCode);
-            if (newContact.ContactPhone == "")                                                              // Optional
+            if (newContact.ContactPhone == null)                                                             
             {
                 updateCmd.Parameters.AddWithValue("@NewContactPhone", DBNull.Value);
                 updateCmd.Parameters["@NewContactPhone"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactPhone", newContact.ContactPhone);
-            if (newContact.ContactMobile == "")                                                             // Optional
+            if (newContact.ContactMobile == null)                                                          
             {
                 updateCmd.Parameters.AddWithValue("@NewContactMobile", DBNull.Value);
                 updateCmd.Parameters["@NewContactMobile"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactMobile", newContact.ContactMobile);
-            if (newContact.ContactFax == "")                                                                // Optional
+            if (newContact.ContactFax == null)                                                            
             {
                 updateCmd.Parameters.AddWithValue("@NewContactFax", DBNull.Value);
                 updateCmd.Parameters["@NewContactFax"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactFax", newContact.ContactFax);
-            if (newContact.ContactEmail == "")                                                              // Optional
+            if (newContact.ContactEmail == null)                                                             
             {
                 updateCmd.Parameters.AddWithValue("@NewContactEmail", DBNull.Value);
                 updateCmd.Parameters["@NewContactEmail"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactEmail", newContact.ContactEmail);
-            if (newContact.ContactContactedVia == "")                                                       // Optional
+            if (newContact.ContactContactedVia == null)                                                     
             {
                 updateCmd.Parameters.AddWithValue("@NewContactContactedVia", DBNull.Value);
                 updateCmd.Parameters["@NewContactContactedVia"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@NewContactContactedVia", newContact.ContactContactedVia);
-            if (newContact.ContactNotes == "")                                                              // Optional
+            if (newContact.ContactNotes == null)                                                             
             {
                 updateCmd.Parameters.AddWithValue("@NewContactNotes", DBNull.Value);
                 updateCmd.Parameters["@NewContactNotes"].IsNullable = true;
@@ -378,86 +390,98 @@ namespace SharpERDAL
             else
                 updateCmd.Parameters.AddWithValue("@NewContactNotes", newContact.ContactNotes);
             // OldContact changes
-            updateCmd.Parameters.AddWithValue("@OldContactFirstName", oldContact.ContactFirstName);
-            updateCmd.Parameters.AddWithValue("@OldContactLastName", oldContact.ContactLastName);
-            if (oldContact.ContactTitle == "")
+            if (oldContact.ContactFirstName == null)
+            {
+                updateCmd.Parameters.AddWithValue("@OldContactFirstName", DBNull.Value);
+                updateCmd.Parameters["@OldContactFirstName"].IsNullable = true;
+            }
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactFirstName", oldContact.ContactFirstName);
+            if (oldContact.ContactLastName == null)
+            {
+                updateCmd.Parameters.AddWithValue("@OldContactLastName", DBNull.Value);
+                updateCmd.Parameters["@OldContactLastName"].IsNullable = true;
+            }
+            else
+                updateCmd.Parameters.AddWithValue("@OldContactLastName", oldContact.ContactLastName);
+            if (oldContact.ContactTitle == null)
             {
                 updateCmd.Parameters.AddWithValue("@OldContactTitle", DBNull.Value);
-                updateCmd.Parameters["@OldContactTitle"].IsNullable = true;         // Pickup here
+                updateCmd.Parameters["@OldContactTitle"].IsNullable = true;        
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactTitle", oldContact.ContactTitle);
-            if (oldContact.ContactDepartment == "")                                                         // Optional
+            if (oldContact.ContactDepartment == null)                                                        
             {
                 updateCmd.Parameters.AddWithValue("@OldContactDepartment", DBNull.Value);
                 updateCmd.Parameters["@NewContactDepartment"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactDepartment", oldContact.ContactDepartment);
-            if (oldContact.ContactAddress == "")                                                            // Optional
+            if (oldContact.ContactAddress == null)                                                        
             {
                 updateCmd.Parameters.AddWithValue("@OldContactAddress", DBNull.Value);
                 updateCmd.Parameters["@OldContactAddress"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactAddress", oldContact.ContactAddress);
-            if (oldContact.ContactCity == "")                                                               // Optional
+            if (oldContact.ContactCity == null)                                                               // Optional
             {
                 updateCmd.Parameters.AddWithValue("@OldContactCity", DBNull.Value);
                 updateCmd.Parameters["@OldContactCity"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactCity", oldContact.ContactCity);
-            if (oldContact.ContactState == "")                                                              // Optional
+            if (oldContact.ContactState == null)                                                              // Optional
             {
                 updateCmd.Parameters.AddWithValue("@OldContactState", DBNull.Value);
                 updateCmd.Parameters["@OldContactState"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactState", oldContact.ContactState);
-            if (oldContact.ContactZipCode == "")                                                            // Optional
+            if (oldContact.ContactZipCode == null)                                                            // Optional
             {
                 updateCmd.Parameters.AddWithValue("@OldContactZipCode", DBNull.Value);
                 updateCmd.Parameters["@OldContactZipCode"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactZipCode", oldContact.ContactZipCode);
-            if (oldContact.ContactPhone == "")                                                              // Optional
+            if (oldContact.ContactPhone == null)                                                              // Optional
             {
                 updateCmd.Parameters.AddWithValue("@OldContactPhone", DBNull.Value);
                 updateCmd.Parameters["@OldContactPhone"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactPhone", oldContact.ContactPhone);
-            if (oldContact.ContactMobile == "")                                                             // Optional
+            if (oldContact.ContactMobile == null)                                                             // Optional
             {
                 updateCmd.Parameters.AddWithValue("@OldContactMobile", DBNull.Value);
                 updateCmd.Parameters["@OldContactMobile"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactMobile", oldContact.ContactMobile);
-            if (oldContact.ContactFax == "")                                                                // Optional
+            if (oldContact.ContactFax == null)                                                        
             {
                 updateCmd.Parameters.AddWithValue("@OldContactFax", DBNull.Value);
                 updateCmd.Parameters["@OldContactFax"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactFax", oldContact.ContactFax);
-            if (oldContact.ContactEmail == "")                                                              // Optional
+            if (oldContact.ContactEmail == null)                                                            
             {
                 updateCmd.Parameters.AddWithValue("@OldContactEmail", DBNull.Value);
                 updateCmd.Parameters["@OldContactEmail"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactEmail", oldContact.ContactEmail);
-            if (oldContact.ContactContactedVia == "")                                                       // Optional
+            if (oldContact.ContactContactedVia == null)                                                    
             {
                 updateCmd.Parameters.AddWithValue("@OldContactContactedVia", DBNull.Value);
                 updateCmd.Parameters["@OldContactContactedVia"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactContactedVia", oldContact.ContactContactedVia);
-            if (oldContact.ContactNotes == "")                                                              // Optional
+            if (oldContact.ContactNotes == null)                                                           
             {
                 updateCmd.Parameters.AddWithValue("@OldContactNotes", DBNull.Value);
                 updateCmd.Parameters["@OldContactNotes"].IsNullable = true;
@@ -474,7 +498,11 @@ namespace SharpERDAL
                 else
                     return false;
             }
-            catch(SqlException xsept)
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
             {
                 throw xsept;
             }
@@ -503,7 +531,6 @@ namespace SharpERDAL
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactFirstName", newContact.ContactFirstName); 
-            
             if (newContact.ContactLastName == null)
             {
                 insertCmd.Parameters.AddWithValue("@ContactLastName", DBNull.Value);
@@ -511,84 +538,84 @@ namespace SharpERDAL
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactLastName", newContact.ContactLastName);         
-            if (newContact.ContactTitle == null)                                                          // Optional
+            if (newContact.ContactTitle == null)                                                      
             {
                 insertCmd.Parameters.AddWithValue("@ContactTitle", DBNull.Value);
                 insertCmd.Parameters["@ContactTitle"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactTitle", newContact.ContactTitle);
-            if (newContact.ContactDepartment == null)                                                     // Optional
+            if (newContact.ContactDepartment == null)                                                   
             {
                 insertCmd.Parameters.AddWithValue("@ContactDepartment", DBNull.Value);
                 insertCmd.Parameters["@ContactDepartment"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactDepartment", newContact.ContactDepartment);
-            if (newContact.ContactAddress == null)                                                        // Optional
+            if (newContact.ContactAddress == null)                                                      
             {
                 insertCmd.Parameters.AddWithValue("@ContactAddress", DBNull.Value);
                 insertCmd.Parameters["@ContactAddress"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactAddress", newContact.ContactAddress);
-            if (newContact.ContactCity == null)                                                           // Optional
+            if (newContact.ContactCity == null)                                                          
             {
                 insertCmd.Parameters.AddWithValue("@ContactCity", DBNull.Value);
                 insertCmd.Parameters["@ContactCity"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactCity", newContact.ContactCity);
-            if (newContact.ContactState == null)                                                          // Optional
+            if (newContact.ContactState == null)                                                         
             {
                 insertCmd.Parameters.AddWithValue("@ContactState", DBNull.Value);
                 insertCmd.Parameters["@ContactState"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactState", newContact.ContactState);
-            if (newContact.ContactZipCode == null)                                                        // Optional
+            if (newContact.ContactZipCode == null)                                                       
             {
                 insertCmd.Parameters.AddWithValue("@ContactZipCode", DBNull.Value);
                 insertCmd.Parameters["@ContactZipCode"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactZipCode", newContact.ContactZipCode);
-            if (newContact.ContactContactedVia == null)                                                   // Required
+            if (newContact.ContactContactedVia == null)                                                  
             {
                 insertCmd.Parameters.AddWithValue("@ContactContactedVia", DBNull.Value);
                 insertCmd.Parameters["@ContactContactedVia"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactContactedVia", newContact.ContactContactedVia);
-            if (newContact.ContactPhone == null)                                                          // Optional
+            if (newContact.ContactPhone == null)                                                          
             {
                 insertCmd.Parameters.AddWithValue("@ContactPhone", DBNull.Value);
                 insertCmd.Parameters["@ContactPhone"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactPhone", newContact.ContactPhone);
-            if (newContact.ContactMobile == null)                                                         // Optional
+            if (newContact.ContactMobile == null)                                                       
             {
                 insertCmd.Parameters.AddWithValue("@ContactMobile", DBNull.Value);
                 insertCmd.Parameters["@ContactMobile"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactMobile", newContact.ContactMobile);
-            if (newContact.ContactFax == null)                                                            // Optional
+            if (newContact.ContactFax == null)                                                            
             {
                 insertCmd.Parameters.AddWithValue("@ContactFax", DBNull.Value);
                 insertCmd.Parameters["@ContactFax"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactFax", newContact.ContactFax);
-            if (newContact.ContactEmail == null)                                                          // Optional
+            if (newContact.ContactEmail == null)                                                          
             {
                 insertCmd.Parameters.AddWithValue("@ContactEmail", DBNull.Value);
                 insertCmd.Parameters["@ContactEmail"].IsNullable = true;
             }
             else
                 insertCmd.Parameters.AddWithValue("@ContactEmail", newContact.ContactEmail);
-            if (newContact.ContactNotes == null)                                                          // Optional
+            if (newContact.ContactNotes == null)                                                        
             {
                 insertCmd.Parameters.AddWithValue("@ContactNotes", DBNull.Value);
                 insertCmd.Parameters["@ContactNotes"].IsNullable = true;
@@ -601,7 +628,7 @@ namespace SharpERDAL
                 conn.Open();
                 insertCmd.ExecuteNonQuery();
                 string selectStmt =
-                    "SELECT SCOPE_IDENTITY () FROM Contact";
+                    "SELECT SCOPE_IDENTITY() FROM Contact";
                 SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
                 int contactID = Convert.ToInt32(selectCmd.ExecuteScalar());
                 return contactID;

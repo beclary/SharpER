@@ -25,6 +25,42 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
+            int i = contactDataGridView.SelectedRows[0].Index;
+            DataGridViewRow row = contactDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[4];
+            int conID = (int)cell.Value;
+
+            MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
+            Form modifyForm = new ContactForm();
+            modifyForm.Tag = conID;
+            modifyForm.Show();
+
+            try
+            {
+   //             ContactDB.UpdateModifyContact(conID)
+
+     //           contactListing = ContactDB.UpdateModifyContact(conID);
+                contactDataGridView.DataSource = contactBindingSource;
+                contactBindingSource.DataSource = contactListing;
+
+
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+
+            }
+
+
+
+
             contactForm = new ContactForm();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
@@ -53,42 +89,50 @@ namespace WindowsFormsApplication1
         {
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
-            
             contactBindingSource.DataSource = contactListing;
-            
         }
 
-        private void btnDeleteContact_Click(object sender, DataGridViewCellEventArgs e)
+        
+
+
+        private void btnDeleteContact_Click(object sender, EventArgs e)
         {
+            int i = contactDataGridView.SelectedRows[0].Index;
+            DataGridViewRow row = contactDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[4];
+            int conID = (int)cell.Value;
 
-                int i = e.RowIndex;
-                DataGridViewRow row = contactDataGridView.Rows[i];
-                DataGridViewCell cell = row.Cells[4];
-                int conID = (int)cell.Value;
+            MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
+            Form delForm = new ContactForm();
+            delForm.Tag = conID;
+            delForm.Show();
 
-                Form delForm = new ContactForm();
-                delForm.Tag = conID;
-                delForm.Show();
+            try
+            {
+                ContactDB.DeleteContact(conID);
 
-                try
-                {
-                    ContactDB.DeleteContact(conID);
+                contactListing = ContactDB.GetAllContacts();
+                contactDataGridView.DataSource = contactBindingSource;
+                contactBindingSource.DataSource = contactListing;
 
-                }
-                catch (SqlException xsept)
-                {
-                    throw xsept;
-                }
-                catch (Exception xsept)
-                {
-                    throw xsept;
-                }
-                finally
-                {
-                    
-                }
 
             }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+
+            }
+
         }
+
     }
+}
+    
 
