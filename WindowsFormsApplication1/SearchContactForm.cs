@@ -97,20 +97,40 @@ namespace WindowsFormsApplication1
 
         private void btnDeleteContact_Click(object sender, EventArgs e)
         {
-            int i = contactDataGridView.SelectedRows[0].Index;
+            int i = 0;
+            if (contactDataGridView.SelectedRows == null)
+            {
+                if (contactDataGridView.CurrentCell == null)
+                {
+                    MessageBox.Show("You must make a selection in order to view, update / " +
+                        "modify, or delete a customer", "ERROR");
+                }
+                else
+                {
+                     i = contactDataGridView.CurrentCell.RowIndex;
+                }
+            }
+            else
+            {
+                 i = contactDataGridView.SelectedRows[0].Index;
+            }
             DataGridViewRow row = contactDataGridView.Rows[i];
             DataGridViewCell cell = row.Cells[4];
             int conID = (int)cell.Value;
 
-            // Work on these
-    //        MessageBox.Show("Are you sure you want to delete " + ContactID + " which is " +
-//              i + "???\n\nThis cannot be undone. Are you sure?", "WARNING - READ CAREFULLY",
-//              MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
-     //       MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
-     //       Form delForm = new ContactForm();
-     //       delForm.Tag = conID;
-     //       delForm.Show();
+
+
+
+            // Work on these
+            //        MessageBox.Show("Are you sure you want to delete " + ContactID + " which is " +
+            //              i + "???\n\nThis cannot be undone. Are you sure?", "WARNING - READ CAREFULLY",
+            //              MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            //       MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
+            //       Form delForm = new ContactForm();
+            //       delForm.Tag = conID;
+            //       delForm.Show();
 
             try
             {
