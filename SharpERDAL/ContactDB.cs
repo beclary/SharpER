@@ -660,6 +660,7 @@ namespace SharpERDAL
                 conn.Open();
                 int rowDel = Convert.ToInt32(deleteCmd.ExecuteNonQuery());
                 return rowDel;
+
             }
             catch (SqlException xsept)
             {

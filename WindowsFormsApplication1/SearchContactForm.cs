@@ -90,6 +90,7 @@ namespace WindowsFormsApplication1
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
+            contactDataGridView.ClearSelection();
         }
 
         
@@ -97,18 +98,13 @@ namespace WindowsFormsApplication1
 
         private void btnDeleteContact_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            if (contactDataGridView.SelectedRows == null)
+            int i = -1;
+            
+            if (contactDataGridView.SelectedRows.Count <= 0)
             {
-                if (contactDataGridView.CurrentCell == null)
-                {
                     MessageBox.Show("You must make a selection in order to view, update / " +
-                        "modify, or delete a customer", "ERROR");
-                }
-                else
-                {
-                     i = contactDataGridView.CurrentCell.RowIndex;
-                }
+                        "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
+                return;
             }
             else
             {
@@ -117,6 +113,8 @@ namespace WindowsFormsApplication1
             DataGridViewRow row = contactDataGridView.Rows[i];
             DataGridViewCell cell = row.Cells[4];
             int conID = (int)cell.Value;
+
+
 
 
 

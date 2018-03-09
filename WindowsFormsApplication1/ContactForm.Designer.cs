@@ -45,6 +45,7 @@
             System.Windows.Forms.Label contactTitleLabel;
             System.Windows.Forms.Label contactZipCodeLabel;
             this.contactAddressTextBox = new System.Windows.Forms.TextBox();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactCityTextBox = new System.Windows.Forms.TextBox();
             this.contactContactedViaComboBox = new System.Windows.Forms.ComboBox();
             this.contactDepartmentTextBox = new System.Windows.Forms.TextBox();
@@ -63,7 +64,7 @@
             this.contactMobileMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contactBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
             contactContactedViaLabel = new System.Windows.Forms.Label();
@@ -80,6 +81,7 @@
             contactTitleLabel = new System.Windows.Forms.Label();
             contactZipCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // contactAddressLabel
@@ -255,6 +257,10 @@
             this.contactAddressTextBox.Size = new System.Drawing.Size(301, 26);
             this.contactAddressTextBox.TabIndex = 5;
             // 
+            // contactBindingSource
+            // 
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
+            // 
             // contactCityTextBox
             // 
             this.contactCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactCity", true));
@@ -341,6 +347,8 @@
             this.contactStateComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.contactStateComboBox.BackColor = System.Drawing.Color.LightGray;
             this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactState", true));
+            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.contactBindingSource, "ContactState", true));
+            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.contactBindingSource1, "ContactState", true));
             this.contactStateComboBox.DisplayMember = "Text";
             this.contactStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactStateComboBox.FormattingEnabled = true;
@@ -400,6 +408,7 @@
             this.contactStateComboBox.Size = new System.Drawing.Size(122, 26);
             this.contactStateComboBox.Sorted = true;
             this.contactStateComboBox.TabIndex = 7;
+            this.contactStateComboBox.SelectedIndexChanged += new System.EventHandler(this.contactStateComboBox_SelectedIndexChanged);
             // 
             // contactTitleTextBox
             // 
@@ -495,9 +504,9 @@
             this.contactZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.contactZipCodeMaskedTextBox.TabIndex = 8;
             // 
-            // contactBindingSource
+            // contactBindingSource1
             // 
-            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
+            this.contactBindingSource1.DataSource = typeof(SharpERBLL.Contact);
             // 
             // ContactForm
             // 
@@ -546,6 +555,7 @@
             this.Text = "Contact";
             this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,5 +583,6 @@
         private System.Windows.Forms.MaskedTextBox contactMobileMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactFaxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactZipCodeMaskedTextBox;
+        private System.Windows.Forms.BindingSource contactBindingSource1;
     }
 }

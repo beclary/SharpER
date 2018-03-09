@@ -207,6 +207,11 @@ namespace WindowsFormsApplication1
             contact.ContactEmail = contactEmailTextBox.Text;
             contact.ContactNotes = contactNotesTextBox.Text;
         }
+
+        private void contactStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
