@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
     {
         public static ContactForm contactForm = null;
         public static List<Contact> contactListing;
+        public static Contact contact;
+        public static int conID = 0;
 
         public SearchContactForm()
         {
@@ -25,41 +27,6 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
-    /*        int i = contactDataGridView.SelectedRows[0].Index;
-            DataGridViewRow row = contactDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[4];
-            int conID = (int)cell.Value;
-
-            MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
-            Form modifyForm = new ContactForm();
-            modifyForm.Tag = conID;
-            modifyForm.Show();
-
-            try
-            {
-   //             ContactDB.UpdateModifyContact(conID)
-
-     //           contactListing = ContactDB.UpdateModifyContact(conID);
-                contactDataGridView.DataSource = contactBindingSource;
-                contactBindingSource.DataSource = contactListing;
-
-
-            }
-            catch (SqlException xsept)
-            {
-                throw xsept;
-            }
-            catch (Exception xsept)
-            {
-                throw xsept;
-            }
-            finally
-            {
-
-            }
-
-    */
-
 
             contactForm = new ContactForm();
             contactDataGridView.DataSource = contactBindingSource;
@@ -114,22 +81,6 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[4];
             int conID = (int)cell.Value;
 
-
-
-
-
-
-
-            // Work on these
-            //        MessageBox.Show("Are you sure you want to delete " + ContactID + " which is " +
-            //              i + "???\n\nThis cannot be undone. Are you sure?", "WARNING - READ CAREFULLY",
-            //              MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            //       MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
-            //       Form delForm = new ContactForm();
-            //       delForm.Tag = conID;
-            //       delForm.Show();
-
             try
             {
                 ContactDB.DeleteContact(conID);
@@ -162,6 +113,101 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[4];
             int contactRowSelected = (int)cell.Value;
       //      contactDataGridView
+        }
+
+        private void btnViewContactInfo_Click(object sender, EventArgs e)
+        {
+            int i = -1;
+
+            if (contactDataGridView.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("You must make a selection in order to view, update / " +
+                    "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                i = contactDataGridView.SelectedRows[0].Index;
+            }
+            DataGridViewRow row = contactDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[4];
+            int conID = (int)cell.Value;
+
+            try
+            {
+
+                contact = ContactDB.GetSpecificContactInfo(conID);
+          //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
+                ContactForm view = new ContactForm();
+                view.PopulateContactDataForViewing(contact);
+
+                view.ShowDialog();
+
+                //contactDataGridView.DataSource = contactBindingSource;
+                //contactBindingSource.DataSource = contact;
+
+                contactListing = ContactDB.GetAllContacts();
+                contactDataGridView.DataSource = contactBindingSource;
+                contactBindingSource.DataSource = contactListing;
+                contactDataGridView.ClearSelection();
+
+
+
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                
+            }
+
+        
+
+
+
+        /*        int i = contactDataGridView.SelectedRows[0].Index;
+    DataGridViewRow row = contactDataGridView.Rows[i];
+    DataGridViewCell cell = row.Cells[4];
+    int conID = (int)cell.Value;
+
+    MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
+    Form modifyForm = new ContactForm();
+    modifyForm.Tag = conID;
+    modifyForm.Show();
+
+    try
+    {
+//             ContactDB.UpdateModifyContact(conID)
+
+//           contactListing = ContactDB.UpdateModifyContact(conID);
+        contactDataGridView.DataSource = contactBindingSource;
+        contactBindingSource.DataSource = contactListing;
+
+
+    }
+    catch (SqlException xsept)
+    {
+        throw xsept;
+    }
+    catch (Exception xsept)
+    {
+        throw xsept;
+    }
+    finally
+    {
+
+    }
+
+*/
+
+
+
         }
     }
 }

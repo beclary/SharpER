@@ -163,7 +163,7 @@ namespace WindowsFormsApplication1
                 {
                     newContact = new Contact();
                     newContact.ContactID = contact.ContactID;
-                    this.PopulateContactData(newContact);
+                    this.PopulateContactDataForViewing(newContact);
                     try
                     {
                         if (!ContactDB.UpdateModifyContact(contact, newContact))
@@ -190,22 +190,69 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void PopulateContactData (Contact contact)
+        public void PopulateContactDataForViewing (Contact contact)
         {
-            contact.ContactFirstName = contactFirstNameTextBox.Text;
-            contact.ContactLastName = contactLastNameTextBox.Text;
-            contact.ContactTitle = contactTitleTextBox.Text;
-            contact.ContactDepartment = contactDepartmentTextBox.Text;
-            contact.ContactAddress = contactAddressTextBox.Text;
-            contact.ContactCity = contactCityTextBox.Text;
-            contact.ContactState = contactStateComboBox.SelectedValue.ToString();
-            contact.ContactZipCode = contactZipCodeMaskedTextBox.ToString();
-            contact.ContactContactedVia = contactContactedViaComboBox.SelectedValue.ToString();
-            contact.ContactPhone = contactPhoneMaskedTextBox.ToString();
-            contact.ContactMobile = contactMobileMaskedTextBox.ToString();
-            contact.ContactFax = contactFaxMaskedTextBox.ToString();
-            contact.ContactEmail = contactEmailTextBox.Text;
-            contact.ContactNotes = contactNotesTextBox.Text;
+            btnSave.Visible = false;
+            btnClear.Visible = false;
+
+            contactIDTextBox.Text = contact.ContactID.ToString();
+            contactIDTextBox.ReadOnly = true;
+            contactIDTextBox.BackColor = Color.LightGray;
+            
+            contactFirstNameTextBox.Text = contact.ContactFirstName;
+            contactFirstNameTextBox.ReadOnly = true;
+            contactFirstNameTextBox.BackColor = Color.LightGray;
+
+            contactLastNameTextBox.Text = contact.ContactLastName;
+            contactLastNameTextBox.ReadOnly = true;
+            contactLastNameTextBox.BackColor = Color.LightGray;
+
+            contactTitleTextBox.Text = contact.ContactTitle;
+            contactTitleTextBox.ReadOnly = true;
+            contactTitleTextBox.BackColor = Color.LightGray;
+
+            contactDepartmentTextBox.Text = contact.ContactDepartment;
+            contactDepartmentTextBox.ReadOnly = true;
+            contactDepartmentTextBox.BackColor = Color.LightGray;
+
+            contactAddressTextBox.Text = contact.ContactAddress;
+            contactAddressTextBox.ReadOnly = true;
+            contactAddressTextBox.BackColor = Color.LightGray;
+
+            contactCityTextBox.Text = contact.ContactCity;
+            contactCityTextBox.ReadOnly = true;
+            contactCityTextBox.BackColor = Color.LightGray;
+
+            contactStateComboBox.ValueMember = contact.ContactState;
+          //  contactStateComboBox.SelectedValue.ToString()
+
+            contactZipCodeMaskedTextBox.Text = contact.ContactZipCode;
+            contactZipCodeMaskedTextBox.ReadOnly = true;
+            contactZipCodeMaskedTextBox.BackColor = Color.LightGray;
+
+            contactContactedViaComboBox.SelectedText = contact.ContactContactedVia;
+         //   contactContactedViaComboBox.Enabled = true; 
+
+            contactPhoneMaskedTextBox.Text = contact.ContactPhone;
+            contactPhoneMaskedTextBox.ReadOnly = true;
+            contactPhoneMaskedTextBox.BackColor = Color.LightGray;
+
+            contactMobileMaskedTextBox.Text = contact.ContactMobile;
+            contactMobileMaskedTextBox.ReadOnly = true;
+            contactMobileMaskedTextBox.BackColor = Color.LightGray;
+
+            contactFaxMaskedTextBox.Text = contact.ContactFax;
+            contactFaxMaskedTextBox.ReadOnly = true;
+            contactFaxMaskedTextBox.BackColor = Color.LightGray;
+
+            contactEmailTextBox.Text = contact.ContactEmail;
+            contactEmailTextBox.ReadOnly = true;
+            contactEmailTextBox.BackColor = Color.LightGray;
+
+            contactNotesTextBox.Text = contact.ContactNotes;
+            contactNotesTextBox.ReadOnly = true;
+            contactNotesTextBox.BackColor = Color.LightGray;
+
         }
 
         private void contactStateComboBox_SelectedIndexChanged(object sender, EventArgs e)

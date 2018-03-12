@@ -165,72 +165,71 @@ namespace SharpERDAL
                 int conContactEmailOrd = readur.GetOrdinal("con_email");
                 int conContactNotesOrd = readur.GetOrdinal("con_notes");
 
-                while (readur.Read())
-                {
-                    Contact specificContactRowInfo = new Contact();
+                readur.Read();
                     if (readur[conContactIDOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactID = -1;
+                        specificContact = null;
                     else
-                        specificContactRowInfo.ContactID = readur.GetInt32(conContactIDOrd);
+                        specificContact.ContactID = readur.GetInt32(conContactIDOrd);
                     if (readur[conContactFirstNameOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactFirstName = "";
+                        specificContact.ContactFirstName = null;
                     else
-                        specificContactRowInfo.ContactFirstName = readur.GetString(conContactFirstNameOrd);
+                        specificContact.ContactFirstName = readur.GetString(conContactFirstNameOrd);
                     if (readur[conContactLastNameOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactLastName = "";
+                        specificContact.ContactLastName = null;
                     else
-                        specificContactRowInfo.ContactLastName = readur.GetString(conContactLastNameOrd);
+                        specificContact.ContactLastName = readur.GetString(conContactLastNameOrd);
                     if (readur[conContactTitleOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactTitle = "";
+                        specificContact.ContactTitle = null;
                     else
-                        specificContactRowInfo.ContactTitle = readur.GetString(conContactTitleOrd);
+                        specificContact.ContactTitle = readur.GetString(conContactTitleOrd);
                     if (readur[conContactDepartmentOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactDepartment = "";
+                        specificContact.ContactDepartment = null;
                     else
-                        specificContactRowInfo.ContactDepartment = readur.GetString(conContactDepartmentOrd);
+                        specificContact.ContactDepartment = readur.GetString(conContactDepartmentOrd);
                     if (readur[conContactAddressOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactAddress = "";
+                        specificContact.ContactAddress = null;
                     else
-                        specificContactRowInfo.ContactAddress = readur.GetString(conContactAddressOrd);
+                        specificContact.ContactAddress = readur.GetString(conContactAddressOrd);
                     if (readur[conContactCityOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactCity = "";
+                        specificContact.ContactCity = null;
                     else
-                        specificContactRowInfo.ContactCity = readur.GetString(conContactCityOrd);
+                        specificContact.ContactCity = readur.GetString(conContactCityOrd);
                     if (readur[conContactStateOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactState = "";
+                        specificContact.ContactState = null;
                     else
-                        specificContactRowInfo.ContactState = readur.GetString(conContactStateOrd);
+                        specificContact.ContactState = readur.GetString(conContactStateOrd);
                     if (readur[conContactZipCodeOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactZipCode = "";
+                        specificContact.ContactZipCode = null;
                     else
-                        specificContactRowInfo.ContactZipCode = readur.GetString(conContactZipCodeOrd);
+                        specificContact.ContactZipCode = readur.GetString(conContactZipCodeOrd);
                     if (readur[conContactContactedViaOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactContactedVia = "";
+                        specificContact.ContactContactedVia = null;
                     else
-                        specificContactRowInfo.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
+                        specificContact.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
                     if (readur[conContactPhoneOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactPhone = "";
+                        specificContact.ContactPhone = null;
                     else
-                        specificContactRowInfo.ContactPhone = readur.GetString(conContactPhoneOrd);
+                        specificContact.ContactPhone = readur.GetString(conContactPhoneOrd);
                     if (readur[conContactMobileOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactMobile = "";
+                        specificContact.ContactMobile = null;
                     else
-                        specificContactRowInfo.ContactMobile = readur.GetString(conContactMobileOrd);
+                        specificContact.ContactMobile = readur.GetString(conContactMobileOrd);
                     if (readur[conContactFaxOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactFax = "";
+                        specificContact.ContactFax = null;
                     else
-                        specificContactRowInfo.ContactFax = readur.GetString(conContactFaxOrd);
+                        specificContact.ContactFax = readur.GetString(conContactFaxOrd);
                     if (readur[conContactEmailOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactEmail = "";
+                        specificContact.ContactEmail = null;
                     else
-                        specificContactRowInfo.ContactEmail = readur.GetString(conContactEmailOrd);
+                        specificContact.ContactEmail = readur.GetString(conContactEmailOrd);
                     if (readur[conContactNotesOrd] == DBNull.Value)
-                        specificContactRowInfo.ContactNotes = "";
+                        specificContact.ContactNotes = null;
                     else
-                        specificContactRowInfo.ContactNotes = readur.GetString(conContactNotesOrd);
-                }
+                        specificContact.ContactNotes = readur.GetString(conContactNotesOrd);
                 readur.Close();
+                return specificContact;
             }
+            
             catch (SqlException xsept)
             {
                 throw xsept;
@@ -243,7 +242,6 @@ namespace SharpERDAL
             {
                 conn.Close();
             }
-            return specificContact;
         }
 
         // This is the method to update / modify a contact
@@ -425,35 +423,35 @@ namespace SharpERDAL
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactAddress", oldContact.ContactAddress);
-            if (oldContact.ContactCity == null)                                                               // Optional
+            if (oldContact.ContactCity == null)                                                             
             {
                 updateCmd.Parameters.AddWithValue("@OldContactCity", DBNull.Value);
                 updateCmd.Parameters["@OldContactCity"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactCity", oldContact.ContactCity);
-            if (oldContact.ContactState == null)                                                              // Optional
+            if (oldContact.ContactState == null)                                                            
             {
                 updateCmd.Parameters.AddWithValue("@OldContactState", DBNull.Value);
                 updateCmd.Parameters["@OldContactState"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactState", oldContact.ContactState);
-            if (oldContact.ContactZipCode == null)                                                            // Optional
+            if (oldContact.ContactZipCode == null)                                                           
             {
                 updateCmd.Parameters.AddWithValue("@OldContactZipCode", DBNull.Value);
                 updateCmd.Parameters["@OldContactZipCode"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactZipCode", oldContact.ContactZipCode);
-            if (oldContact.ContactPhone == null)                                                              // Optional
+            if (oldContact.ContactPhone == null)                                                             
             {
                 updateCmd.Parameters.AddWithValue("@OldContactPhone", DBNull.Value);
                 updateCmd.Parameters["@OldContactPhone"].IsNullable = true;
             }
             else
                 updateCmd.Parameters.AddWithValue("@OldContactPhone", oldContact.ContactPhone);
-            if (oldContact.ContactMobile == null)                                                             // Optional
+            if (oldContact.ContactMobile == null)                                                           
             {
                 updateCmd.Parameters.AddWithValue("@OldContactMobile", DBNull.Value);
                 updateCmd.Parameters["@OldContactMobile"].IsNullable = true;
@@ -636,7 +634,7 @@ namespace SharpERDAL
             catch (SqlException xsept)
             {
                 throw xsept;
-            } 
+            }
             catch (Exception xsept)
             {
                 throw xsept;
@@ -676,6 +674,16 @@ namespace SharpERDAL
             }
             
             
+        }
+
+        public static void ViewContact()
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "SELECT @con_ID " +
+                "FROM Contact " +
+                "WHERE con_id = @ContactID";
+            SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
         }
     }
 }

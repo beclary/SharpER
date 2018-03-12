@@ -214,6 +214,7 @@
             this.btnViewContactInfo.TabIndex = 13;
             this.btnViewContactInfo.Text = "View Contact Info";
             this.btnViewContactInfo.UseVisualStyleBackColor = false;
+            this.btnViewContactInfo.Click += new System.EventHandler(this.btnViewContactInfo_Click);
             // 
             // lblSelectingContact
             // 
