@@ -19,6 +19,8 @@ namespace WindowsFormsApplication1
         public static List<Contact> contactListing;
         public static Contact contact;
         public static int conID = 0;
+        public int oldContact;
+        public int newContact;
 
         public SearchContactForm()
         {
@@ -28,13 +30,63 @@ namespace WindowsFormsApplication1
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
 
+            int i = -1;
+
+            if (contactDataGridView.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("You must make a selection in order to view, update / " +
+                    "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                i = contactDataGridView.SelectedRows[0].Index;
+            }
+            DataGridViewRow row = contactDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[4];
+            int conID = (int)cell.Value;
+
+            try
+            {
+
+        //        contact = ContactDB.UpdateModifyContact(oldContact, newContact);
+                //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
+                ContactForm view = new ContactForm();
+                view.PopulateContactDataForViewing(contact);
+
+                view.ShowDialog();
+
+                //contactDataGridView.DataSource = contactBindingSource;
+                //contactBindingSource.DataSource = contact;
+
+//              contactListing = ContactDB.GetSpecificContactInfo(oldContact, newContact);
+                contactDataGridView.DataSource = contactBindingSource;
+                contactBindingSource.DataSource = contactListing;
+                contactDataGridView.ClearSelection();
+
+
+
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+
+            }
+
+
+
             contactForm = new ContactForm();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
             contactForm.ShowDialog();
-        //    ContactDB.UpdateModifyContact();  Same problem here as below. Am I missing the 
-        //                                      ContactID? It does not give me a ContactID to 
-        //                                      put in as an argument
+            
         }
 
         private void btnAddNewContact_Click(object sender, EventArgs e)
@@ -42,9 +94,9 @@ namespace WindowsFormsApplication1
             contactForm = new ContactForm();
             contactForm.addContact = true;
             contactForm.ShowDialog();
-         //   ContactDB.AddContact();           This is where the method should be called, but
-        //                                      why doesn't it accept the method call I creaated
-        //                                      in the ContactDB class?
+            contactListing = ContactDB.GetAllContacts();
+            contactDataGridView.DataSource = contactBindingSource;
+            contactBindingSource.DataSource = contactListing;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -40,24 +40,13 @@ namespace WindowsFormsApplication1
 
         private bool IsPresent(Control control, string name)
         {
-            //if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
-            //{
-            //    TextBox textBox = (TextBox)control;
-            //    if (textBox.Text == "")
-            //    {
-            //        MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
-            //        textBox.Focus();
-            //        return false;
-            //    }
-            //}
-   //         else 
-            if (control.GetType().ToString() == "System.Windows.Forms.ComboBox")
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
             {
-                ComboBox comboBox = (ComboBox)control;
-                if (comboBox.SelectedIndex == -1)
+                TextBox textBox = (TextBox)control;
+                if (textBox.Text == "")
                 {
                     MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
-                    comboBox.Focus();
+                    textBox.Focus();
                     return false;
                 }
             }
@@ -70,19 +59,7 @@ namespace WindowsFormsApplication1
             {
                 return
                     IsPresent(contactFirstNameTextBox, "First Name") &&
-                    IsPresent(contactLastNameTextBox, "Last Name") &&
-                    IsPresent(contactTitleTextBox, "Title") &&
-                    IsPresent(contactDepartmentTextBox, "Department") &&
-                    IsPresent(contactAddressTextBox, "Address") &&
-                    IsPresent(contactCityTextBox, "City") &&
-                    IsPresent(contactStateComboBox, "State") &&
-                    IsPresent(contactZipCodeMaskedTextBox, "Zip Code") &&
-                    IsPresent(contactContactedViaComboBox, "Contacted via") &&
-                    IsPresent(contactPhoneMaskedTextBox, "Phone number") &&
-                    IsPresent(contactMobileMaskedTextBox, "Mobile number") &&
-                    IsPresent(contactFaxMaskedTextBox, "Fax number") &&
-                    IsPresent(contactEmailTextBox, "Email") &&
-                    IsPresent(contactNotesTextBox, "Notes");
+                    IsPresent(contactLastNameTextBox, "Last Name");
             }
             else
                 return true;
@@ -125,9 +102,10 @@ namespace WindowsFormsApplication1
             if (addContact == true)
             {
                 contact = new Contact();
+                contactBindingSource.Clear();
                 contactBindingSource.Add(contact);
             }
-            else
+            else // this is the MODIFY
             {
                 contact = new Contact();
          //       contactBindingSource.DataSource 
@@ -140,24 +118,22 @@ namespace WindowsFormsApplication1
             {
                 if (addContact)
                 {
-                    contact.ContactState = contactStateComboBox.Text.ToString();
-                    contact.ContactContactedVia = contactContactedViaComboBox.Text.ToString();
-                    contact.ContactID = ContactDB.AddContact(contact);
-                    this.DialogResult = DialogResult.OK;
 
                     //contact = new Contact();
-                    //this.PopulateContactData(contact);
-                    //try
-                    //{
-                    //}
-                    //catch (SqlException xsept)
-                    //{
-                    //    MessageBox.Show(xsept.Message, xsept.GetType().ToString());
-                    //}
-                    //catch (Exception xsept)
-                    //{
-                    //    MessageBox.Show(xsept.Message, xsept.GetType().ToString());
-                    //}
+                    //this.PopulateContactDataForViewing(contact);
+                    try
+                    {
+                        ContactDB.AddContact(contact);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    catch (SqlException xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                    catch (Exception xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
                 }
                 else
                 {
@@ -187,6 +163,8 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
+                MessageBox.Show("Data was saved. YeeHaa", "SUCCESS");
+                this.Close();
             }
         }
 

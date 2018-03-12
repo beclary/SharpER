@@ -55,6 +55,7 @@
             this.contactLastNameTextBox = new System.Windows.Forms.TextBox();
             this.contactNotesTextBox = new System.Windows.Forms.TextBox();
             this.contactStateComboBox = new System.Windows.Forms.ComboBox();
+            this.contactBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contactTitleTextBox = new System.Windows.Forms.TextBox();
             this.lblContactInfoTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -64,7 +65,6 @@
             this.contactMobileMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.contactBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
             contactContactedViaLabel = new System.Windows.Forms.Label();
@@ -347,8 +347,6 @@
             this.contactStateComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.contactStateComboBox.BackColor = System.Drawing.Color.LightGray;
             this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactState", true));
-            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.contactBindingSource, "ContactState", true));
-            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.contactBindingSource1, "ContactState", true));
             this.contactStateComboBox.DisplayMember = "Text";
             this.contactStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactStateComboBox.FormattingEnabled = true;
@@ -409,6 +407,10 @@
             this.contactStateComboBox.Sorted = true;
             this.contactStateComboBox.TabIndex = 7;
             this.contactStateComboBox.SelectedIndexChanged += new System.EventHandler(this.contactStateComboBox_SelectedIndexChanged);
+            // 
+            // contactBindingSource1
+            // 
+            this.contactBindingSource1.DataSource = typeof(SharpERBLL.Contact);
             // 
             // contactTitleTextBox
             // 
@@ -503,10 +505,6 @@
             this.contactZipCodeMaskedTextBox.Name = "contactZipCodeMaskedTextBox";
             this.contactZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.contactZipCodeMaskedTextBox.TabIndex = 8;
-            // 
-            // contactBindingSource1
-            // 
-            this.contactBindingSource1.DataSource = typeof(SharpERBLL.Contact);
             // 
             // ContactForm
             // 

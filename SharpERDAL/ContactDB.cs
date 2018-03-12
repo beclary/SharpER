@@ -626,7 +626,7 @@ namespace SharpERDAL
                 conn.Open();
                 insertCmd.ExecuteNonQuery();
                 string selectStmt =
-                    "SELECT SCOPE_IDENTITY() FROM Contact";
+                    "SELECT SCOPE_IDENTITY('Contact') FROM Contact";
                 SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
                 int contactID = Convert.ToInt32(selectCmd.ExecuteScalar());
                 return contactID;
