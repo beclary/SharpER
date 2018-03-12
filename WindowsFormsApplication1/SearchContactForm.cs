@@ -29,40 +29,46 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
-
-            int i = -1;
-
-            if (contactDataGridView.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("You must make a selection in order to view, update / " +
-                    "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
-                return;
-            }
-            else
-            {
-                i = contactDataGridView.SelectedRows[0].Index;
-            }
-            DataGridViewRow row = contactDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[4];
-            int conID = (int)cell.Value;
+            Contact modifyContact = (Contact)contactBindingSource.Current;
+            Contact newContact = new Contact();
+            int conID = modifyContact.ContactID;
 
             try
             {
+                newContact.ContactID = contact.ContactID;
+                newContact.ContactFirstName = contact.ContactFirstName;
+                newContact.ContactLastName = contact.ContactLastName;
+                newContact.ContactTitle = contact.ContactTitle;
+                newContact.ContactDepartment = contact.ContactDepartment;
+                newContact.ContactAddress = contact.ContactAddress;
+                newContact.ContactCity = contact.ContactCity;
+                newContact.ContactState = contact.ContactState;
+                newContact.ContactZipCode = contact.ContactZipCode;
+                newContact.ContactContactedVia = contact.ContactContactedVia;
+                newContact.ContactPhone = contact.ContactPhone;
+                newContact.ContactMobile = contact.ContactMobile;
+                newContact.ContactFax = contact.ContactFax;
+                newContact.ContactEmail = contact.ContactEmail;
+                newContact.ContactNotes = contact.ContactNotes;
 
-        //        contact = ContactDB.UpdateModifyContact(oldContact, newContact);
+                // Set Binding
+                contactBindingSource.Add(contact);
+                contactBindingSource.Clear();
+
+
+
                 //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
-                ContactForm view = new ContactForm();
-                view.PopulateContactDataForViewing(contact);
+                //ContactForm view = new ContactForm();
+                //view.PopulateContactDataForViewing(contact);
 
-                view.ShowDialog();
+                //view.ShowDialog();
 
-                //contactDataGridView.DataSource = contactBindingSource;
-                //contactBindingSource.DataSource = contact;
 
-//              contactListing = ContactDB.GetSpecificContactInfo(oldContact, newContact);
+                ContactDB.UpdateModifyContact(contact, newContact);
+                // Refreshes the list
+                contactListing = ContactDB.GetAllContacts();
                 contactDataGridView.DataSource = contactBindingSource;
                 contactBindingSource.DataSource = contactListing;
-                contactDataGridView.ClearSelection();
 
 
 
@@ -82,10 +88,10 @@ namespace WindowsFormsApplication1
 
 
 
-            contactForm = new ContactForm();
-            contactDataGridView.DataSource = contactBindingSource;
-            contactBindingSource.DataSource = contactListing;
-            contactForm.ShowDialog();
+            //contactForm = new ContactForm();
+            //contactDataGridView.DataSource = contactBindingSource;
+            //contactBindingSource.DataSource = contactListing;
+            //contactForm.ShowDialog();
             
         }
 
@@ -94,6 +100,7 @@ namespace WindowsFormsApplication1
             contactForm = new ContactForm();
             contactForm.addContact = true;
             contactForm.ShowDialog();
+
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
@@ -117,26 +124,14 @@ namespace WindowsFormsApplication1
 
         private void btnDeleteContact_Click(object sender, EventArgs e)
         {
-            int i = -1;
-            
-            if (contactDataGridView.SelectedRows.Count <= 0)
-            {
-                    MessageBox.Show("You must make a selection in order to view, update / " +
-                        "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
-                return;
-            }
-            else
-            {
-                 i = contactDataGridView.SelectedRows[0].Index;
-            }
-            DataGridViewRow row = contactDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[4];
-            int conID = (int)cell.Value;
+            Contact delContact = (Contact)contactBindingSource.Current;
+            int conID = delContact.ContactID;
 
             try
             {
                 ContactDB.DeleteContact(conID);
 
+                // Refreshes the list
                 contactListing = ContactDB.GetAllContacts();
                 contactDataGridView.DataSource = contactBindingSource;
                 contactBindingSource.DataSource = contactListing;
@@ -150,10 +145,6 @@ namespace WindowsFormsApplication1
             catch (Exception xsept)
             {
                 throw xsept;
-            }
-            finally
-            {
-
             }
 
         }
@@ -188,12 +179,14 @@ namespace WindowsFormsApplication1
             try
             {
 
-                contact = ContactDB.GetSpecificContactInfo(conID);
-          //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
-                ContactForm view = new ContactForm();
-                view.PopulateContactDataForViewing(contact);
+                contact = (Contact)contactBindingSource.Current;
+                contactBindingSource.Add(contact);
+                contactBindingSource.Clear();
+                //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
+                //      ContactForm view = new ContactForm();
+                //      view.PopulateContactDataForViewing(contact);
 
-                view.ShowDialog();
+                //      contact.ShowDialog();
 
                 //contactDataGridView.DataSource = contactBindingSource;
                 //contactBindingSource.DataSource = contact;
@@ -201,7 +194,7 @@ namespace WindowsFormsApplication1
                 contactListing = ContactDB.GetAllContacts();
                 contactDataGridView.DataSource = contactBindingSource;
                 contactBindingSource.DataSource = contactListing;
-                contactDataGridView.ClearSelection();
+                //contactDataGridView.ClearSelection();
 
 
 
@@ -213,10 +206,6 @@ namespace WindowsFormsApplication1
             catch (Exception xsept)
             {
                 throw xsept;
-            }
-            finally
-            {
-                
             }
 
         
