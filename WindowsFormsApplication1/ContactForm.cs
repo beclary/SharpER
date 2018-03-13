@@ -25,6 +25,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+
+
         private bool IsInt64(string s)
         {
             try
@@ -76,24 +78,6 @@ namespace WindowsFormsApplication1
             Close();
         }
 
-        // Method for clearing the updates or modifications the user makes
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            contactFirstNameTextBox.Clear();
-            contactLastNameTextBox.Clear();
-            contactTitleTextBox.Clear();
-            contactDepartmentTextBox.Clear();
-            contactAddressTextBox.Clear();
-            contactCityTextBox.Clear();
-            contactStateComboBox.SelectedIndex = -1;
-            contactZipCodeMaskedTextBox.Clear();
-            contactContactedViaComboBox.SelectedIndex = -1;
-            contactPhoneMaskedTextBox.Clear();
-            contactMobileMaskedTextBox.Clear();
-            contactFaxMaskedTextBox.Clear();
-            contactEmailTextBox.Clear();
-            contactNotesTextBox.Clear();
-        }
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
@@ -107,8 +91,33 @@ namespace WindowsFormsApplication1
             }
             else // this is the MODIFY
             {
-                contact = new Contact();
-         //       contactBindingSource.DataSource 
+                // Set contact to row held by bindingSource.Current (whatever the user clicked
+                // in grid
+                contact = (Contact)contactBindingSource.Current; // cast from Object to real type
+
+                // Create new (empty) contact: newContact
+                newContact = new Contact();
+
+                // Copy field by field data in contact (i.e.: newContact.ContactID = contact.ContactID)
+                newContact.ContactID = contact.ContactID;
+                newContact.ContactFirstName = contact.ContactFirstName;
+                newContact.ContactLastName = contact.ContactLastName;
+                newContact.ContactTitle = contact.ContactTitle;
+                newContact.ContactDepartment = contact.ContactDepartment;
+                newContact.ContactAddress = contact.ContactAddress;
+                newContact.ContactCity = contact.ContactCity;
+                newContact.ContactState = contact.ContactState;
+                newContact.ContactZipCode = contact.ContactZipCode;
+                newContact.ContactContactedVia = contact.ContactContactedVia;
+                newContact.ContactPhone = contact.ContactPhone;
+                newContact.ContactMobile = contact.ContactMobile;
+                newContact.ContactFax = contact.ContactFax;
+                newContact.ContactEmail = contact.ContactEmail;
+                newContact.ContactNotes = contact.ContactNotes;
+
+                // Set Binding (see p. 285)
+                contactBindingSource.Clear();
+                contactBindingSource.Add(newContact);
             }
         }
 
@@ -137,9 +146,9 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    newContact = new Contact();
-                    newContact.ContactID = contact.ContactID;
-                    this.PopulateContactDataForViewing(newContact);
+                    //newContact = new Contact();
+                    //newContact.ContactID = contact.ContactID;
+                    //this.PopulateContactDataForViewing(newContact);
                     try
                     {
                         if (!ContactDB.UpdateModifyContact(contact, newContact))
@@ -150,6 +159,7 @@ namespace WindowsFormsApplication1
                         }
                         else
                         {
+                            //ContactDB.UpdateModifyContact(contact, newContact);
                             contact = newContact;
                             this.DialogResult = DialogResult.OK;
                         }
@@ -163,75 +173,11 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
-                MessageBox.Show("Data was saved. YeeHaa", "SUCCESS");
+                //MessageBox.Show("Data was saved. YeeHaa", "SUCCESS");
                 this.Close();
             }
         }
 
-        public void PopulateContactDataForViewing (Contact contact)
-        {
-            btnSave.Visible = false;
-            btnClear.Visible = false;
-
-            contactIDTextBox.Text = contact.ContactID.ToString();
-            contactIDTextBox.ReadOnly = true;
-            contactIDTextBox.BackColor = Color.LightGray;
-            
-            contactFirstNameTextBox.Text = contact.ContactFirstName;
-            contactFirstNameTextBox.ReadOnly = true;
-            contactFirstNameTextBox.BackColor = Color.LightGray;
-
-            contactLastNameTextBox.Text = contact.ContactLastName;
-            contactLastNameTextBox.ReadOnly = true;
-            contactLastNameTextBox.BackColor = Color.LightGray;
-
-            contactTitleTextBox.Text = contact.ContactTitle;
-            contactTitleTextBox.ReadOnly = true;
-            contactTitleTextBox.BackColor = Color.LightGray;
-
-            contactDepartmentTextBox.Text = contact.ContactDepartment;
-            contactDepartmentTextBox.ReadOnly = true;
-            contactDepartmentTextBox.BackColor = Color.LightGray;
-
-            contactAddressTextBox.Text = contact.ContactAddress;
-            contactAddressTextBox.ReadOnly = true;
-            contactAddressTextBox.BackColor = Color.LightGray;
-
-            contactCityTextBox.Text = contact.ContactCity;
-            contactCityTextBox.ReadOnly = true;
-            contactCityTextBox.BackColor = Color.LightGray;
-
-            contactStateComboBox.ValueMember = contact.ContactState;
-          //  contactStateComboBox.SelectedValue.ToString()
-
-            contactZipCodeMaskedTextBox.Text = contact.ContactZipCode;
-            contactZipCodeMaskedTextBox.ReadOnly = true;
-            contactZipCodeMaskedTextBox.BackColor = Color.LightGray;
-
-            contactContactedViaComboBox.SelectedText = contact.ContactContactedVia;
-         //   contactContactedViaComboBox.Enabled = true; 
-
-            contactPhoneMaskedTextBox.Text = contact.ContactPhone;
-            contactPhoneMaskedTextBox.ReadOnly = true;
-            contactPhoneMaskedTextBox.BackColor = Color.LightGray;
-
-            contactMobileMaskedTextBox.Text = contact.ContactMobile;
-            contactMobileMaskedTextBox.ReadOnly = true;
-            contactMobileMaskedTextBox.BackColor = Color.LightGray;
-
-            contactFaxMaskedTextBox.Text = contact.ContactFax;
-            contactFaxMaskedTextBox.ReadOnly = true;
-            contactFaxMaskedTextBox.BackColor = Color.LightGray;
-
-            contactEmailTextBox.Text = contact.ContactEmail;
-            contactEmailTextBox.ReadOnly = true;
-            contactEmailTextBox.BackColor = Color.LightGray;
-
-            contactNotesTextBox.Text = contact.ContactNotes;
-            contactNotesTextBox.ReadOnly = true;
-            contactNotesTextBox.BackColor = Color.LightGray;
-
-        }
 
         private void contactStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {

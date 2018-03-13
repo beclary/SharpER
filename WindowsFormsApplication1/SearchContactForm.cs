@@ -29,70 +29,130 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyContact_Click(object sender, EventArgs e)
         {
-            Contact modifyContact = (Contact)contactBindingSource.Current;
-            Contact newContact = new Contact();
-            int conID = modifyContact.ContactID;
+            ContactForm modifyForm = new ContactForm();
+            modifyForm.newContact = (Contact) contactBindingSource.Current;
+            modifyForm.contact = (Contact)contactBindingSource.Current;
+            modifyForm.contactBindingSource.Clear();
+            modifyForm.contactBindingSource.Add(modifyForm.contact);
+            modifyForm.ShowDialog();
 
-            try
-            {
-                newContact.ContactID = contact.ContactID;
-                newContact.ContactFirstName = contact.ContactFirstName;
-                newContact.ContactLastName = contact.ContactLastName;
-                newContact.ContactTitle = contact.ContactTitle;
-                newContact.ContactDepartment = contact.ContactDepartment;
-                newContact.ContactAddress = contact.ContactAddress;
-                newContact.ContactCity = contact.ContactCity;
-                newContact.ContactState = contact.ContactState;
-                newContact.ContactZipCode = contact.ContactZipCode;
-                newContact.ContactContactedVia = contact.ContactContactedVia;
-                newContact.ContactPhone = contact.ContactPhone;
-                newContact.ContactMobile = contact.ContactMobile;
-                newContact.ContactFax = contact.ContactFax;
-                newContact.ContactEmail = contact.ContactEmail;
-                newContact.ContactNotes = contact.ContactNotes;
+            //Contact contact = (Contact)contactBindingSource.Current;
+            //contactBindingSource.Add(contact);
 
-                // Set Binding
-                contactBindingSource.Add(contact);
-                contactBindingSource.Clear();
-
-
-
-                //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
-                //ContactForm view = new ContactForm();
-                //view.PopulateContactDataForViewing(contact);
-
-                //view.ShowDialog();
-
-
-                ContactDB.UpdateModifyContact(contact, newContact);
-                // Refreshes the list
-                contactListing = ContactDB.GetAllContacts();
-                contactDataGridView.DataSource = contactBindingSource;
-                contactBindingSource.DataSource = contactListing;
-
-
-
-            }
-            catch (SqlException xsept)
-            {
-                throw xsept;
-            }
-            catch (Exception xsept)
-            {
-                throw xsept;
-            }
-            finally
-            {
-
-            }
-
-
+            //Contact newContact = new Contact();
 
             //contactForm = new ContactForm();
-            //contactDataGridView.DataSource = contactBindingSource;
-            //contactBindingSource.DataSource = contactListing;
-            //contactForm.ShowDialog();
-            
+            //contactForm.addContact = false;
+
+
+            //newContact.ContactID = contact.ContactID;
+            //newContact.ContactFirstName = contact.ContactFirstName;
+            //newContact.ContactLastName = contact.ContactLastName;
+            //newContact.ContactTitle = contact.ContactTitle;
+            //newContact.ContactDepartment = contact.ContactDepartment;
+            //newContact.ContactAddress = contact.ContactAddress;
+            //newContact.ContactCity = contact.ContactCity;
+            //newContact.ContactState = contact.ContactState;
+            //newContact.ContactZipCode = contact.ContactZipCode;
+            //newContact.ContactContactedVia = contact.ContactContactedVia;
+            //newContact.ContactPhone = contact.ContactPhone;
+            //newContact.ContactMobile = contact.ContactMobile;
+            //newContact.ContactFax = contact.ContactFax;
+            //newContact.ContactEmail = contact.ContactEmail;
+            //newContact.ContactNotes = contact.ContactNotes;
+
+
+
+            //int i = -1;
+
+            //if (contactDataGridView.SelectedRows.Count <= 0)
+            //{
+            //    MessageBox.Show("You must make a selection in order to view, update / " +
+            //        "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
+            //    return;
+            //}
+            //else
+            //{
+            //    i = contactDataGridView.SelectedRows[0].Index;
+            //}
+            //DataGridViewRow row = contactDataGridView.Rows[i];
+            //DataGridViewCell cell = row.Cells[4];
+            //int conID = (int)cell.Value;
+
+
+            //            try
+            //            {
+
+            //                contact = (Contact)contactBindingSource.Current;
+            //                contactBindingSource.Clear();
+            //                //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
+            //                //      ContactForm view = new ContactForm();
+            //                //      view.PopulateContactDataForViewing(contact);
+
+            //                //      contact.ShowDialog();
+
+            //                //contactDataGridView.DataSource = contactBindingSource;
+            //                //contactBindingSource.DataSource = contact;
+
+            //                contactListing = ContactDB.GetAllContacts();
+            //                contactDataGridView.DataSource = contactBindingSource;
+            //                contactBindingSource.DataSource = contactListing;
+            //                //contactDataGridView.ClearSelection();
+
+
+
+
+
+
+
+            //try
+            //{
+            //    Contact contact = (Contact)contactBindingSource.Current;
+            //    contactBindingSource.Add(contact);
+
+            //    newContact.ContactID = contact.ContactID;
+            //    newContact.ContactFirstName = contact.ContactFirstName;
+            //    newContact.ContactLastName = contact.ContactLastName;
+            //    newContact.ContactTitle = contact.ContactTitle;
+            //    newContact.ContactDepartment = contact.ContactDepartment;
+            //    newContact.ContactAddress = contact.ContactAddress;
+            //    newContact.ContactCity = contact.ContactCity;
+            //    newContact.ContactState = contact.ContactState;
+            //    newContact.ContactZipCode = contact.ContactZipCode;
+            //    newContact.ContactContactedVia = contact.ContactContactedVia;
+            //    newContact.ContactPhone = contact.ContactPhone;
+            //    newContact.ContactMobile = contact.ContactMobile;
+            //    newContact.ContactFax = contact.ContactFax;
+            //    newContact.ContactEmail = contact.ContactEmail;
+            //    newContact.ContactNotes = contact.ContactNotes;
+
+
+            //    // Set Binding
+            //    contactBindingSource.Clear();
+
+
+
+            //    contactBindingSource.Add(contact);
+            //    contactForm.ShowDialog();
+
+            //    // Refreshes the list
+            //    contactListing = ContactDB.GetAllContacts();
+            //    contactDataGridView.DataSource = contactBindingSource;
+            //    contactBindingSource.DataSource = contactListing;
+
+            //}
+            //catch (SqlException xsept)
+            //{
+            //    throw xsept;
+            //}
+            //catch (Exception xsept)
+            //{
+            //    throw xsept;
+            //}
+            //finally
+            //{
+
+            //}
         }
 
         private void btnAddNewContact_Click(object sender, EventArgs e)
@@ -135,8 +195,6 @@ namespace WindowsFormsApplication1
                 contactListing = ContactDB.GetAllContacts();
                 contactDataGridView.DataSource = contactBindingSource;
                 contactBindingSource.DataSource = contactListing;
-
-
             }
             catch (SqlException xsept)
             {
@@ -158,99 +216,99 @@ namespace WindowsFormsApplication1
       //      contactDataGridView
         }
 
-        private void btnViewContactInfo_Click(object sender, EventArgs e)
-        {
-            int i = -1;
+//        private void btnViewContactInfo_Click(object sender, EventArgs e)
+//        {
+//            int i = -1;
 
-            if (contactDataGridView.SelectedRows.Count <= 0)
-            {
-                MessageBox.Show("You must make a selection in order to view, update / " +
-                    "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
-                return;
-            }
-            else
-            {
-                i = contactDataGridView.SelectedRows[0].Index;
-            }
-            DataGridViewRow row = contactDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[4];
-            int conID = (int)cell.Value;
+//            if (contactDataGridView.SelectedRows.Count <= 0)
+//            {
+//                MessageBox.Show("You must make a selection in order to view, update / " +
+//                    "modify, or delete a customer", "ERROR", MessageBoxButtons.OK);
+//                return;
+//            }
+//            else
+//            {
+//                i = contactDataGridView.SelectedRows[0].Index;
+//            }
+//            DataGridViewRow row = contactDataGridView.Rows[i];
+//            DataGridViewCell cell = row.Cells[4];
+//            int conID = (int)cell.Value;
 
-            try
-            {
+//            try
+//            {
 
-                contact = (Contact)contactBindingSource.Current;
-                contactBindingSource.Add(contact);
-                contactBindingSource.Clear();
-                //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
-                //      ContactForm view = new ContactForm();
-                //      view.PopulateContactDataForViewing(contact);
+//                contact = (Contact)contactBindingSource.Current;
+//                contactBindingSource.Add(contact);
+//                contactBindingSource.Clear();
+//                //      MessageBox.Show("Contact ID is: " + conID.ToString(), "ERROR", MessageBoxButtons.OK);
+//                //      ContactForm view = new ContactForm();
+//                //      view.PopulateContactDataForViewing(contact);
 
-                //      contact.ShowDialog();
+//                //      contact.ShowDialog();
 
-                //contactDataGridView.DataSource = contactBindingSource;
-                //contactBindingSource.DataSource = contact;
+//                //contactDataGridView.DataSource = contactBindingSource;
+//                //contactBindingSource.DataSource = contact;
 
-                contactListing = ContactDB.GetAllContacts();
-                contactDataGridView.DataSource = contactBindingSource;
-                contactBindingSource.DataSource = contactListing;
-                //contactDataGridView.ClearSelection();
+//                contactListing = ContactDB.GetAllContacts();
+//                contactDataGridView.DataSource = contactBindingSource;
+//                contactBindingSource.DataSource = contactListing;
+//                //contactDataGridView.ClearSelection();
 
 
 
-            }
-            catch (SqlException xsept)
-            {
-                throw xsept;
-            }
-            catch (Exception xsept)
-            {
-                throw xsept;
-            }
+//            }
+//            catch (SqlException xsept)
+//            {
+//                throw xsept;
+//            }
+//            catch (Exception xsept)
+//            {
+//                throw xsept;
+//            }
 
         
 
 
 
-        /*        int i = contactDataGridView.SelectedRows[0].Index;
-    DataGridViewRow row = contactDataGridView.Rows[i];
-    DataGridViewCell cell = row.Cells[4];
-    int conID = (int)cell.Value;
+//        /*        int i = contactDataGridView.SelectedRows[0].Index;
+//    DataGridViewRow row = contactDataGridView.Rows[i];
+//    DataGridViewCell cell = row.Cells[4];
+//    int conID = (int)cell.Value;
 
-    MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
-    Form modifyForm = new ContactForm();
-    modifyForm.Tag = conID;
-    modifyForm.Show();
+//    MessageBox.Show(Convert.ToString(ContactID), Convert.ToString(i));
+//    Form modifyForm = new ContactForm();
+//    modifyForm.Tag = conID;
+//    modifyForm.Show();
 
-    try
-    {
-//             ContactDB.UpdateModifyContact(conID)
+//    try
+//    {
+////             ContactDB.UpdateModifyContact(conID)
 
-//           contactListing = ContactDB.UpdateModifyContact(conID);
-        contactDataGridView.DataSource = contactBindingSource;
-        contactBindingSource.DataSource = contactListing;
+////           contactListing = ContactDB.UpdateModifyContact(conID);
+//        contactDataGridView.DataSource = contactBindingSource;
+//        contactBindingSource.DataSource = contactListing;
 
 
-    }
-    catch (SqlException xsept)
-    {
-        throw xsept;
-    }
-    catch (Exception xsept)
-    {
-        throw xsept;
-    }
-    finally
-    {
+//    }
+//    catch (SqlException xsept)
+//    {
+//        throw xsept;
+//    }
+//    catch (Exception xsept)
+//    {
+//        throw xsept;
+//    }
+//    finally
+//    {
 
-    }
+//    }
 
-*/
+//*/
 
 
 
         }
     }
-}
+
     
 

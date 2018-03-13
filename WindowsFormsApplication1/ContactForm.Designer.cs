@@ -60,7 +60,6 @@
             this.lblContactInfoTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.contactPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactMobileMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -436,7 +435,7 @@
             this.btnSave.BackColor = System.Drawing.Color.HotPink;
             this.btnSave.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSave.Location = new System.Drawing.Point(395, 12);
+            this.btnSave.Location = new System.Drawing.Point(437, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
             this.btnSave.TabIndex = 16;
@@ -449,26 +448,13 @@
             this.btnCancel.BackColor = System.Drawing.Color.HotPink;
             this.btnCancel.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnCancel.Location = new System.Drawing.Point(623, 12);
+            this.btnCancel.Location = new System.Drawing.Point(558, 12);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(97, 43);
+            this.btnCancel.Size = new System.Drawing.Size(162, 43);
             this.btnCancel.TabIndex = 18;
-            this.btnCancel.Text = "Exit";
+            this.btnCancel.Text = "Cancel / Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.HotPink;
-            this.btnClear.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnClear.Location = new System.Drawing.Point(508, 12);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(97, 43);
-            this.btnClear.TabIndex = 17;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // contactPhoneMaskedTextBox
             // 
@@ -517,7 +503,6 @@
             this.Controls.Add(this.contactFaxMaskedTextBox);
             this.Controls.Add(this.contactMobileMaskedTextBox);
             this.Controls.Add(this.contactPhoneMaskedTextBox);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblContactInfoTitle);
@@ -560,8 +545,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource contactBindingSource;
         private System.Windows.Forms.TextBox contactAddressTextBox;
         private System.Windows.Forms.TextBox contactCityTextBox;
         private System.Windows.Forms.ComboBox contactContactedViaComboBox;
@@ -576,11 +559,11 @@
         private System.Windows.Forms.Label lblContactInfoTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.MaskedTextBox contactPhoneMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactMobileMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactFaxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactZipCodeMaskedTextBox;
         private System.Windows.Forms.BindingSource contactBindingSource1;
+        public System.Windows.Forms.BindingSource contactBindingSource;
     }
 }
