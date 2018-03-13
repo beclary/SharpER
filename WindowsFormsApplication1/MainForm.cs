@@ -79,5 +79,15 @@ namespace WindowsFormsApplication1
             jobMainForm = new SearchJobForm();
             jobMainForm.ShowDialog();
         }
+
+        private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is an application that will be used by me to do job searches and record the different contacts that I make through job searches, the companies I am interested in working for, jobs that may be offered through said companies, or other companies or businesses, and the different activities I undertake to obtain, process and receive from various companies, jobs and contacts.\n\nThis will be used throughout the remainder of my course here as well as my job searching when my program here is completed. I hope to keep this throughout the remainder of my working career to keep and maintain any job related information.", "APPLICATION INFORMATION");
+        }
+
+        private void developerInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This application was developed by Bruce Clary, whilie he was a client undertaking the computer programming curriculum at the South Carolina Vocational Rehabilitation, Information Technology and Training Center in Columbia, South Carolina.\n\nBruce is a hard-working fellow who aspires to be useful as a computer programmer someday. He has two beautiful daughters and, as a resul of them being teenagers, the prettiest head of gray hair around the city of Columbia.\nHis contact information is as follows:\n\n\tBruce Clary\n\t400 Forest Lane Drive\n\tGaffney, South Carolina 29340\n\tMobile: 864.300.7714\n\tEmail: bruce.clary72z@gmail.com", "DEVELOPER INFORMATION");
+        }
     }
 }
