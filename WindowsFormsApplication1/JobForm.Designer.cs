@@ -46,7 +46,6 @@
             this.jobPositionTextBox = new System.Windows.Forms.TextBox();
             this.lblSalaryPerYear = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyNameComboBox = new System.Windows.Forms.ComboBox();
@@ -223,33 +222,20 @@
             this.btnCancel.BackColor = System.Drawing.Color.HotPink;
             this.btnCancel.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnCancel.Location = new System.Drawing.Point(625, 12);
+            this.btnCancel.Location = new System.Drawing.Point(558, 12);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(97, 43);
+            this.btnCancel.Size = new System.Drawing.Size(162, 43);
             this.btnCancel.TabIndex = 56;
-            this.btnCancel.Text = "Exit";
+            this.btnCancel.Text = "Cancel / Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.HotPink;
-            this.btnClear.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnClear.Location = new System.Drawing.Point(505, 12);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(97, 43);
-            this.btnClear.TabIndex = 57;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.HotPink;
             this.btnSave.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSave.Location = new System.Drawing.Point(384, 12);
+            this.btnSave.Location = new System.Drawing.Point(437, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
             this.btnSave.TabIndex = 58;
@@ -279,7 +265,6 @@
             this.ClientSize = new System.Drawing.Size(742, 477);
             this.Controls.Add(this.companyNameComboBox);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblSalaryPerYear);
             this.Controls.Add(jobAppliedLabel);
@@ -320,7 +305,6 @@
         private System.Windows.Forms.TextBox jobPositionTextBox;
         private System.Windows.Forms.Label lblSalaryPerYear;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.ComboBox companyNameComboBox;

@@ -23,8 +23,6 @@ namespace WindowsFormsApplication1
         public static Form searchActivityForm = null;
         public static Form searchJobForm = null;
 
-
-
         public MainForm()
         {
             InitializeComponent();
@@ -34,18 +32,6 @@ namespace WindowsFormsApplication1
         {
             this.Close();
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-        }
-
-
-        /*       private void contactToolStripMenuItem_Click_1(object sender, EventArgs e)
-               {
-                   contactMainForm = new ContactForm();
-                   contactMainForm.ShowDialog();
-               }
-       */
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -68,11 +54,6 @@ namespace WindowsFormsApplication1
         {
             companyMainForm = new CompanyForm();
             companyMainForm.ShowDialog();
-        }
-
-        private void tablesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void contactToolStripMenuItem_Click(object sender, EventArgs e)
