@@ -24,9 +24,6 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
-
-
         private bool IsInt64(string s)
         {
             try
@@ -83,7 +80,7 @@ namespace WindowsFormsApplication1
         {
             // Bindings need to be set, so I have to test here to see if it was an 
             // ADD or a MODIFY
-            if (addContact == true)
+            if (addContact == true) // This is the ADD
             {
                 contact = new Contact();
                 contactBindingSource.Clear();
@@ -127,9 +124,6 @@ namespace WindowsFormsApplication1
             {
                 if (addContact)
                 {
-
-                    //contact = new Contact();
-                    //this.PopulateContactDataForViewing(contact);
                     try
                     {
                         ContactDB.AddContact(contact);
@@ -146,9 +140,6 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    //newContact = new Contact();
-                    //newContact.ContactID = contact.ContactID;
-                    //this.PopulateContactDataForViewing(newContact);
                     try
                     {
                         if (!ContactDB.UpdateModifyContact(contact, newContact))
@@ -159,7 +150,6 @@ namespace WindowsFormsApplication1
                         }
                         else
                         {
-                            //ContactDB.UpdateModifyContact(contact, newContact);
                             contact = newContact;
                             this.DialogResult = DialogResult.OK;
                         }
@@ -173,15 +163,8 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
-                //MessageBox.Show("Data was saved. YeeHaa", "SUCCESS");
                 this.Close();
             }
-        }
-
-
-        private void contactStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

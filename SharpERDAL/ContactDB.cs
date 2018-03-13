@@ -15,11 +15,8 @@ namespace SharpERDAL
 {
     public static class ContactDB
     {
-
-        /// <summary>
-        /// This will provide a listing of all the customers in the database
-        /// </summary>
-        /// <returns>a listing of all the customers using a list T</returns>
+        // This will provide a listing of all the customers in the database
+        // This returns a listing of all the customers using a list T
         public static List<Contact> GetAllContacts()
         {
             List<Contact> contactList = new List<Contact>();
@@ -229,7 +226,6 @@ namespace SharpERDAL
                 readur.Close();
                 return specificContact;
             }
-            
             catch (SqlException xsept)
             {
                 throw xsept;
@@ -265,16 +261,22 @@ namespace SharpERDAL
                 "con_contacted_via = @NewContactContactedVia, " +
                 "con_notes = @NewContactNotes " +
                 "WHERE con_id = @OldContactID " +
-                "AND con_first_name = @OldContactFirstName " +
-                "AND con_last_name = @OldContactLastName " +
+                "AND (con_first_name = @OldContactFirstName " +
+                    "OR con_first_name IS NULL AND @OldContactFirstName IS NULL)" +
+                "AND (con_last_name = @OldContactLastName " +
+                    "OR con_last_name IS NULL AND @OldContactLastName IS NULL)" +
                 "AND (con_title = @OldContactTitle " +
                     "OR con_title IS NULL AND @OldContactTitle IS NULL) " +
                 "AND (con_department = @OldContactDepartment " +
                     "OR con_department IS NULL AND @OldContactDepartment IS NULL) " +
-                "AND con_address = @OldContactAddress " +
-                "AND con_city = @OldContactCity " +
-                "AND con_state = @OldContactState " +
-                "AND con_zip_code = @OldContactZipCode " +
+                "AND (con_address = @OldContactAddress " +
+                    "OR con_address IS NULL AND @OldContactAddress IS NULL)" +
+                "AND (con_city = @OldContactCity " +
+                    "OR con_city IS NULL AND @OldContactCity IS NULL)" +
+                "AND (con_state = @OldContactState " +
+                    "OR con_state IS NULL AND @OldContactState IS NULL)" +
+                "AND (con_zip_code = @OldContactZipCode " +
+                    "OR con_zip_code IS NULL AND @OldContactZipCode IS NULL)" +
                 "AND (con_phone = @OldContactPhone " +
                     "OR con_phone IS NULL AND @OldContactPhone IS NULL) " +
                 "AND (con_mobile = @OldContactMobile " +
@@ -646,6 +648,8 @@ namespace SharpERDAL
                 conn.Close();
             }
         }
+
+        // This is the method to delete a contact
         public static int DeleteContact(int contactID)
         {
             SqlConnection conn = SharpERDB.GetConnection();
@@ -660,7 +664,6 @@ namespace SharpERDAL
                 conn.Open();
                 int rowDel = Convert.ToInt32(deleteCmd.ExecuteNonQuery());
                 return rowDel;
-
             }
             catch (SqlException xsept)
             {
@@ -674,18 +677,6 @@ namespace SharpERDAL
             {
                 conn.Close();
             }
-            
-            
-        }
-
-        public static void ViewContact()
-        {
-            SqlConnection conn = SharpERDB.GetConnection();
-            string selectStmt =
-                "SELECT @con_ID " +
-                "FROM Contact " +
-                "WHERE con_id = @ContactID";
-            SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
         }
     }
 }

@@ -405,7 +405,6 @@
             this.contactStateComboBox.Size = new System.Drawing.Size(122, 26);
             this.contactStateComboBox.Sorted = true;
             this.contactStateComboBox.TabIndex = 7;
-            this.contactStateComboBox.SelectedIndexChanged += new System.EventHandler(this.contactStateComboBox_SelectedIndexChanged);
             // 
             // contactBindingSource1
             // 

@@ -58,7 +58,7 @@
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnExit.Font = new System.Drawing.Font("Wide Latin", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
             this.btnExit.Location = new System.Drawing.Point(579, 18);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(154, 45);
@@ -215,14 +215,14 @@
             // lblContactTitle
             // 
             this.lblContactTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblContactTitle.Font = new System.Drawing.Font("Goudy Old Style", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactTitle.Font = new System.Drawing.Font("Goudy Old Style", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactTitle.ForeColor = System.Drawing.Color.Indigo;
             this.lblContactTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblContactTitle.Location = new System.Drawing.Point(24, 12);
             this.lblContactTitle.Name = "lblContactTitle";
             this.lblContactTitle.Size = new System.Drawing.Size(522, 51);
             this.lblContactTitle.TabIndex = 15;
-            this.lblContactTitle.Text = "Get / Find Contact Form";
+            this.lblContactTitle.Text = "Search Contact Form";
             this.lblContactTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SearchContactForm

@@ -136,6 +136,6 @@
     <value>17, 17</value>
   </metadata>
   <data name="lblSelectingContact.Text" xml:space="preserve">
-    <value>If you want to use one of the gold-colored buttons to either UPDATE / MODIFY a contact, VIEW a contact's information, or DELETE a contact, then in the grid below, select the contact row you want, and then click the desired button.                                                                                                                  If you need to ADD a new contact, just click the teal-colored button    labeled ADD NEW CONTACT</value>
+    <value>If you want to use one of the gold-colored buttons to either VIEW / MODIFY a contact, or DELETE a contact, then in the grid below, select the contact row                            you want, and then click the desired button.                            If you need to ADD a new contact, just click the teal-colored button  labeled ADD NEW CONTACT</value>
   </data>
 </root>
