@@ -87,7 +87,7 @@ namespace WindowsFormsApplication1
 
         private void developerInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This application was developed by Bruce Clary, whilie he was a client undertaking the computer programming curriculum at the South Carolina Vocational Rehabilitation, Information Technology and Training Center in Columbia, South Carolina.\n\nBruce is a hard-working fellow who aspires to be useful as a computer programmer someday. He has two beautiful daughters and, as a resul of them being teenagers, the prettiest head of gray hair around the city of Columbia.\nHis contact information is as follows:\n\n\tBruce Clary\n\t400 Forest Lane Drive\n\tGaffney, South Carolina 29340\n\tMobile: 864.300.7714\n\tEmail: bruce.clary72z@gmail.com", "DEVELOPER INFORMATION");
+            MessageBox.Show("This application was developed by Bruce Clary, while studying computer programming at South Carolina Vocational Rehabilitation, Information Technology and Training Center in Columbia, South Carolina.\n\nBruce is a hard-working fellow who aspires to be useful as a computer programmer someday. He has two beautiful daughters and, since they are both teenagers, he has a shiny head of silver-gray hair.\nHis contact information is as follows:\n\n\tBruce Clary\n\t400 Forest Lane Drive\n\tGaffney, South Carolina 29340\n\tMobile: 864.300.7714\n\tEmail: bruce.clary72z@gmail.com", "DEVELOPER INFORMATION");
         }
     }
 }
