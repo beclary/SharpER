@@ -75,7 +75,15 @@ namespace WindowsFormsApplication1
 
             try
             {
-                ContactDB.DeleteContact(conID);
+                if (MessageBox.Show("Deleting " + delContact.ContactFirstName + " " + delContact.ContactLastName + " from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this contact?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    ContactDB.DeleteContact(conID);
+                }
+                else
+                {
+                }
+
+
 
                 // Refreshes the gridview
                 contactListing = ContactDB.GetAllContacts();

@@ -87,7 +87,12 @@ namespace WindowsFormsApplication1
 
         private void developerInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This application was developed by Bruce Clary, while studying computer programming at South Carolina Vocational Rehabilitation, Information Technology and Training Center in Columbia, South Carolina.\n\nBruce is a hard-working fellow who aspires to be useful as a computer programmer someday. He has two beautiful daughters and, since they are both teenagers, he has a shiny head of silver-gray hair.\nHis contact information is as follows:\n\n\tBruce Clary\n\t400 Forest Lane Drive\n\tGaffney, South Carolina 29340\n\tMobile: 864.300.7714\n\tEmail: bruce.clary72z@gmail.com", "DEVELOPER INFORMATION");
+            MessageBox.Show("This application was developed by Bruce Clary, while studying computer programming at South Carolina Vocational Rehabilitation, Information Technology and Training Center in Columbia, South Carolina.\n\nBruce is a hard-working fellow who aspires to be useful as a computer programmer someday. As far as the field of developing, as a result of having two beautiful teenage daughters,he has \"developed\" a shiny head of silver-gray hair.\nHis contact information is as follows:\n\n\tBruce Clary\n\t400 Forest Lane Drive\n\tGaffney, South Carolina 29340\n\tMobile: 864.300.7714\n\tEmail: bruce.clary72z@gmail.com", "DEVELOPER INFORMATION");
+        }
+
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Latest version: 1.1", "SharpER Version Information");
         }
     }
 }
