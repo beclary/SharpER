@@ -13,9 +13,8 @@ namespace SharpERDAL
 {
     public static class CompanyDB
     {
-        /// <summary>
-        /// This will provide a listing of all companies in the database
-        /// </summary>
+        // This will provide a listing of all companies in the database
+        // This returns a listing of all the companies using a List T
         public static List<Company> GetAllCompanies()
         {
             List<Company> companyList = new List<Company>();
@@ -45,10 +44,7 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Company comRowInfo = new Company();
-                    if (readur[comCompanyIDOrd] == DBNull.Value)
-                        comRowInfo.CompanyID = -1;
-                    else
-                        comRowInfo.CompanyID = readur.GetInt32(comCompanyIDOrd);
+                    comRowInfo.CompanyID = readur.GetInt32(comCompanyIDOrd);
                     if (readur[comCompanyNameOrd] == DBNull.Value)
                         comRowInfo.CompanyName = "";
                     else
@@ -87,7 +83,6 @@ namespace SharpERDAL
                         comRowInfo.CompanyNotes = readur.GetString(comCompanyNotesOrd);
                     companyList.Add(comRowInfo);
                 }
-                readur.Close();
             }
             catch (SqlException xsept)
             {
@@ -99,14 +94,13 @@ namespace SharpERDAL
             }
             finally
             {
+                readur.Close();
                 conn.Close();
             }
             return companyList;
         }
 
-        /// <summary>
-        /// This will provide the Company information given a specific companyID
-        /// </summary>
+        // This will provide the Company information given a specific companyID
         public static Company GetSpecificCompanyInfo(int companyID)
         {
             Company specificCompany = new Company();
@@ -119,12 +113,11 @@ namespace SharpERDAL
                 "WHERE com_id = @com_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
             selectCmd.Parameters.AddWithValue("@com_id", companyID);
-            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                readur = selectCmd.ExecuteReader();
+                SqlDataReader readur = selectCmd.ExecuteReader();
                 int comCompanyIDOrd = readur.GetOrdinal("com_id");
                 int comCompanyNameOrd = readur.GetOrdinal("com_name");
                 int comCompanyAddressOrd = readur.GetOrdinal("com_address");
@@ -136,51 +129,49 @@ namespace SharpERDAL
                 int comCompanyWebsiteOrd = readur.GetOrdinal("com_website");
                 int comCompanyNotesOrd = readur.GetOrdinal("com_notes");
 
-                while (readur.Read())
-                {
-                    Company specificCompanyRowInfo = new Company();
+                readur.Read();
                     if (readur[comCompanyIDOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyID = -1;
+                        specificCompany = null;
                     else
-                        specificCompanyRowInfo.CompanyID = readur.GetInt32(comCompanyIDOrd);
+                        specificCompany.CompanyID = readur.GetInt32(comCompanyIDOrd);
                     if (readur[comCompanyNameOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyName = "";
+                        specificCompany.CompanyName = null;
                     else
-                        specificCompanyRowInfo.CompanyName = readur.GetString(comCompanyNameOrd);
+                        specificCompany.CompanyName = readur.GetString(comCompanyNameOrd);
                     if (readur[comCompanyAddressOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyAddress = "";
+                        specificCompany.CompanyAddress = null;
                     else
-                        specificCompanyRowInfo.CompanyAddress = readur.GetString(comCompanyAddressOrd);
+                        specificCompany.CompanyAddress = readur.GetString(comCompanyAddressOrd);
                     if (readur[comCompanyCityOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyCity = "";
+                        specificCompany.CompanyCity = null;
                     else
-                        specificCompanyRowInfo.CompanyCity = readur.GetString(comCompanyCityOrd);
+                        specificCompany.CompanyCity = readur.GetString(comCompanyCityOrd);
                     if (readur[comCompanyStateOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyState = "";
+                        specificCompany.CompanyState = null;
                     else
-                        specificCompanyRowInfo.CompanyState = readur.GetString(comCompanyStateOrd);
+                        specificCompany.CompanyState = readur.GetString(comCompanyStateOrd);
                     if (readur[comCompanyZipCodeOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyZipCode = "";
+                        specificCompany.CompanyZipCode = null;
                     else
-                        specificCompanyRowInfo.CompanyZipCode = readur.GetString(comCompanyZipCodeOrd);
+                        specificCompany.CompanyZipCode = readur.GetString(comCompanyZipCodeOrd);
                     if (readur[comCompanyPhoneOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyPhone = "";
+                        specificCompany.CompanyPhone = null;
                     else
-                        specificCompanyRowInfo.CompanyPhone = readur.GetString(comCompanyPhoneOrd);
+                        specificCompany.CompanyPhone = readur.GetString(comCompanyPhoneOrd);
                     if (readur[comCompanyFaxOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyFax = "";
+                        specificCompany.CompanyFax = null;
                     else
-                        specificCompanyRowInfo.CompanyFax = readur.GetString(comCompanyFaxOrd);
+                        specificCompany.CompanyFax = readur.GetString(comCompanyFaxOrd);
                     if (readur[comCompanyWebsiteOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyWebsite = "";
+                        specificCompany.CompanyWebsite = null;
                     else
-                        specificCompanyRowInfo.CompanyWebsite = readur.GetString(comCompanyWebsiteOrd);
+                        specificCompany.CompanyWebsite = readur.GetString(comCompanyWebsiteOrd);
                     if (readur[comCompanyNotesOrd] == DBNull.Value)
-                        specificCompanyRowInfo.CompanyNotes = "";
+                        specificCompany.CompanyNotes = null;
                     else
-                        specificCompanyRowInfo.CompanyNotes = readur.GetString(comCompanyNotesOrd);
-                }
+                        specificCompany.CompanyNotes = readur.GetString(comCompanyNotesOrd);
                 readur.Close();
+                return specificCompany;
             }
             catch (SqlException xsept)
             {
@@ -194,10 +185,9 @@ namespace SharpERDAL
             {
                 conn.Close();
             }
-            return specificCompany;
         }
 
-        // Update/Modify method for Company
+        // This is the method to update / modify a Company
         public static bool UpdateModifyCompany(Company oldCompany, Company newCompany)
         {
             SqlConnection conn = SharpERDB.GetConnection();
@@ -213,12 +203,18 @@ namespace SharpERDAL
                 "com_website = @NewCompanyWebsite, " +
                 "com_notes = @NewCompanyNotes " +
                 "WHERE com_id = @OldCompanyID " +
-                "AND com_name = @OldCompanyName " +
-                "AND com_address = @OldCompanyAddress " +
-                "AND com_city = @OldCompanyCity " +
-                "AND com_state = @OldCompanyState " +
-                "AND com_zip_code = @OldCompanyZipCode " +
-                "AND com_phone = @OldCompanyPhone " +
+                "AND (com_name = @OldCompanyName " +
+                    "OR com_name IS NULL AND @OldCompanyName IS NULL)" +
+                "AND (com_address = @OldCompanyAddress " +
+                    "OR com_address IS NULL AND @OldCompanyAddress IS NULL)" +
+                "AND (com_city = @OldCompanyCity " +
+                    "OR com_city IS NULL AND @OldCompanyCity IS NULL)" +
+                "AND (com_state = @OldCompanyState " +
+                    "OR com_state IS NULL AND @OldCompanyState IS NULL)" +
+                "AND (com_zip_code = @OldCompanyZipCode " +
+                    "OR com_zip_code IS NULL AND @OldCompanyZipCode IS NULL)" +
+                "AND (com_phone = @OldCompanyPhone " +
+                    "OR com_phone IS NULL AND @OldCompanyPhone IS NULL)" +
                 "AND (com_fax = @OldCompanyFax " +
                     "OR com_fax IS NULL AND @OldCompanyFax IS NULL) " +
                 "AND (com_website = @OldCompanyWebsite " +
@@ -317,28 +313,119 @@ namespace SharpERDAL
 
             // Company Notes
             if (newCompany.CompanyNotes == "")
+            {
                 updateCmd.Parameters.AddWithValue("@NewCompanyNotes", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyNotes"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewCompanyNotes", newCompany.CompanyNotes);
+            }
+
+
             // Old Company changes
-            updateCmd.Parameters.AddWithValue("@OldCompanyName", oldCompany.CompanyName);
-            updateCmd.Parameters.AddWithValue("@OldCompanyAddress", oldCompany.CompanyAddress);
-            updateCmd.Parameters.AddWithValue("@OldCompanyCity", oldCompany.CompanyCity);
-            updateCmd.Parameters.AddWithValue("@OldCompanyState", oldCompany.CompanyState);
-            updateCmd.Parameters.AddWithValue("@OldCompanyZipCode", oldCompany.CompanyZipCode);
-            updateCmd.Parameters.AddWithValue("@OldCompanyPhone", oldCompany.CompanyPhone);
+            // Company Identification Number
+            updateCmd.Parameters.AddWithValue("@OldCompanyID", oldCompany.CompanyID);
+
+            // Company Name
+            if (oldCompany.CompanyName == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyName", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyName"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyName", oldCompany.CompanyName);
+            }
+
+            // Company Address
+            if (oldCompany.CompanyAddress == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyAddress", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyAddress"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyAddress", oldCompany.CompanyAddress);
+            }
+
+            // Company City
+            if (oldCompany.CompanyCity == "")
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyCity", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyCity"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyCity", oldCompany.CompanyCity);
+            }
+
+            // Company State
+            if (oldCompany.CompanyState == "")
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyState", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyState"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyState", oldCompany.CompanyState);
+            }
+
+            // Company ZipCode
+            if (oldCompany.CompanyZipCode == "")
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyZipCode", DBNull.Value);
+                updateCmd.Parameters["OldCompanyZipCode"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyZipCode", oldCompany.CompanyZipCode);
+            }
+
+            // Company Phone
+            if (oldCompany.CompanyPhone == "")
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyPhone", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyPhone"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldCompanyPhone", oldCompany.CompanyPhone);
+            }
+
+            // Company Fax
             if (oldCompany.CompanyFax == "")
+            {
                 updateCmd.Parameters.AddWithValue("@OldCompanyFax", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyFax"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@OldCompanyFax", oldCompany.CompanyFax);
+            }
+
+            // Company Website
             if (oldCompany.CompanyWebsite == "")
+            {
                 updateCmd.Parameters.AddWithValue("@OldCompanyWebsite", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyWebsite"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@OldCompanyWebsite", oldCompany.CompanyWebsite);
+            }
+
+            // Company Notes
             if (oldCompany.CompanyNotes == "")
+            {
                 updateCmd.Parameters.AddWithValue("@OldCompanyNotes", DBNull.Value);
+                updateCmd.Parameters["OldCompanyNotes"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@OldCompanyNotes", oldCompany.CompanyNotes);
+            }
+
 
             try
             {
@@ -353,6 +440,10 @@ namespace SharpERDAL
             {
                 throw xsept;
             }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
             finally
             {
                 conn.Close();
@@ -364,40 +455,151 @@ namespace SharpERDAL
         {
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
-                "INSERT Company " +
+                "INSERT INTO Company " +
                 "(com_name, com_address, com_city, com_state, com_zip_code, " +
                 "com_phone, com_fax, com_website, com_notes) " +
-                "VALUES (@com_name, @com_address, @com_city, @com_state, @com_zip_code, " +
-                "@com_phone, @com_fax, @com_website, @com_notes)";
+                "VALUES (@CompanyName, @CompanyAddress, @CompanyCity, @CompanyState, @CompanyZipCode, " +
+                "@CompanyPhone, @CompanyFax, @CompanyWebsite, @CompanyNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
-            insertCmd.Parameters.AddWithValue("@com_name", newCompany.CompanyName);
-            insertCmd.Parameters.AddWithValue("@com_address", newCompany.CompanyAddress);
-            insertCmd.Parameters.AddWithValue("@com_city", newCompany.CompanyCity);
-            insertCmd.Parameters.AddWithValue("@com_state", newCompany.CompanyState);
-            insertCmd.Parameters.AddWithValue("@com_zip_code", newCompany.CompanyZipCode);
-            insertCmd.Parameters.AddWithValue("@com_phone", newCompany.CompanyPhone);
-            if (newCompany.CompanyFax == "")
-                insertCmd.Parameters.AddWithValue("@com_fax", DBNull.Value);
+
+            // Company Name
+            if (newCompany.CompanyName == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyName", DBNull.Value);
+                insertCmd.Parameters["@CompanyName"].IsNullable = true;
+            }
             else
-                insertCmd.Parameters.AddWithValue("@com_fax", newCompany.CompanyFax);
-            if (newCompany.CompanyWebsite == "")
-                insertCmd.Parameters.AddWithValue("@com_website", DBNull.Value);
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyName", newCompany.CompanyName);
+            }
+
+            // Company Address
+            if (newCompany.CompanyAddress == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyAddress", DBNull.Value);
+                insertCmd.Parameters["@CompanyAddress"].IsNullable = true;
+            }
             else
-                insertCmd.Parameters.AddWithValue("@com_website", newCompany.CompanyWebsite);
-            if (newCompany.CompanyNotes == "")
-                insertCmd.Parameters.AddWithValue("@com_notes", DBNull.Value);
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyAddress", newCompany.CompanyAddress);
+            }
+
+            // Company City
+            if (newCompany.CompanyCity == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyCity", DBNull.Value);
+                insertCmd.Parameters["@CompanyCity"].IsNullable = true;
+            }
             else
-                insertCmd.Parameters.AddWithValue("@com_notes", newCompany.CompanyNotes);
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyCity", newCompany.CompanyCity);
+            }
+
+            // Company State
+            if (newCompany.CompanyState == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyState", DBNull.Value);
+                insertCmd.Parameters["@CompanyState"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyState", newCompany.CompanyState);
+            }
+
+            // Company ZipCode
+            if (newCompany.CompanyZipCode == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyZipCode", DBNull.Value);
+                insertCmd.Parameters["@CompanyZipCode"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyZipCode", newCompany.CompanyZipCode);
+            }
+
+            // Company Phone
+            if (newCompany.CompanyPhone == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyPhone", DBNull.Value);
+                insertCmd.Parameters["@CompanyPhone"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyPhone", newCompany.CompanyPhone);
+            }
+
+            // Company Fax
+            if (newCompany.CompanyFax == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyFax", DBNull.Value);
+                insertCmd.Parameters["@CompanyFax"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyFax", newCompany.CompanyFax);
+            }
+
+            // Company Website
+            if (newCompany.CompanyWebsite == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyWebsite", DBNull.Value);
+                insertCmd.Parameters["@CompanyWebsite"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyWebsite", newCompany.CompanyWebsite);
+            }
+
+            // Company Notes
+            if (newCompany.CompanyNotes == null)
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyNotes", DBNull.Value);
+                insertCmd.Parameters["@CompanyNotes"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@CompanyNotes", newCompany.CompanyNotes);
+            }
 
             try
             {
                 conn.Open();
                 insertCmd.ExecuteNonQuery();
                 string selectStmt =
-                    "SELECT SCOPE_IDENTITY ('Company') FROM Company";
+                    "SELECT IDENT_CURRENT ('Company') FROM Company";
                 SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
                 int companyID = Convert.ToInt32(selectCmd.ExecuteScalar());
                 return companyID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        // This is the method to delete a company
+        public static int DeleteCompany(int companyID)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "DELETE FROM Company " +
+                "WHERE com_ID = @CompanyID";
+            SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
+            deleteCmd.Parameters.AddWithValue("@CompanyID", companyID);
+
+            try
+            {
+                conn.Open();
+                int rowDel = Convert.ToInt32(deleteCmd.ExecuteNonQuery());
+                return rowDel;
             }
             catch (SqlException xsept)
             {
