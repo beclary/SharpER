@@ -25,11 +25,12 @@ namespace SharpERDAL
                 "FROM Company " +
                 "ORDER BY com_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                SqlDataReader readur = selectCmd.ExecuteReader();
+                readur = selectCmd.ExecuteReader();
                 int comCompanyIDOrd = readur.GetOrdinal("com_id");
                 int comCompanyNameOrd = readur.GetOrdinal("com_name");
                 int comCompanyAddressOrd = readur.GetOrdinal("com_address");
@@ -118,11 +119,12 @@ namespace SharpERDAL
                 "WHERE com_id = @com_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
             selectCmd.Parameters.AddWithValue("@com_id", companyID);
+            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                SqlDataReader readur = selectCmd.ExecuteReader();
+                readur = selectCmd.ExecuteReader();
                 int comCompanyIDOrd = readur.GetOrdinal("com_id");
                 int comCompanyNameOrd = readur.GetOrdinal("com_name");
                 int comCompanyAddressOrd = readur.GetOrdinal("com_address");
@@ -225,20 +227,95 @@ namespace SharpERDAL
                     "OR com_notes IS NULL AND @OldCompanyNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
             // New Company changes
-            updateCmd.Parameters.AddWithValue("@NewCompanyName", newCompany.CompanyName);
-            updateCmd.Parameters.AddWithValue("@NewCompanyAddress", newCompany.CompanyAddress);
-            updateCmd.Parameters.AddWithValue("@NewCompanyCity", newCompany.CompanyCity);
-            updateCmd.Parameters.AddWithValue("@NewCompanyState", newCompany.CompanyState);
-            updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", newCompany.CompanyZipCode);
-            updateCmd.Parameters.AddWithValue("@NewCompanyPhone", newCompany.CompanyPhone);
+            // Company Name
+            if (newCompany.CompanyName == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyName", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyName"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyName", newCompany.CompanyName);
+            }
+
+            // Company Address
+            if (newCompany.CompanyAddress == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyAddress", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyAddress"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyAddress", newCompany.CompanyAddress);
+            }
+
+            // Company City
+            if (newCompany.CompanyCity == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyCity", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyCity"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyCity", newCompany.CompanyCity);
+            }
+
+            // Company State 
+            if (newCompany.CompanyState == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyState", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyState"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyState", newCompany.CompanyState);
+            }
+
+            // Company ZipCode
+            if (newCompany.CompanyZipCode == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyZipCode"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", newCompany.CompanyZipCode);
+            }
+
+            // Company Phone
+            if (newCompany.CompanyPhone == "")
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyZipCode"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewCompanyPhone", newCompany.CompanyPhone);
+            }
+
+            // Company Fax
             if (newCompany.CompanyFax == "")
+            {
                 updateCmd.Parameters.AddWithValue("@NewCompanyFax", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyFax"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewCompanyFax", newCompany.CompanyFax);
+            }
+
+            // Company Website
             if (newCompany.CompanyWebsite == "")
+            {
                 updateCmd.Parameters.AddWithValue("@NewCompanyWebsite", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyWebsite"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewCompanyWebsite", newCompany.CompanyWebsite);
+            }
+
+            // Company Notes
             if (newCompany.CompanyNotes == "")
                 updateCmd.Parameters.AddWithValue("@NewCompanyNotes", DBNull.Value);
             else

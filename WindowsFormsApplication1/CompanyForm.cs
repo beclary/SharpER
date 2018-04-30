@@ -12,6 +12,11 @@ namespace WindowsFormsApplication1
 {
     public partial class CompanyForm : Form
     {
+        public static List<Company> comList;
+        public Company company;
+        public Company newCompany;
+        public bool addCompany;
+
         public CompanyForm()
         {
             InitializeComponent();

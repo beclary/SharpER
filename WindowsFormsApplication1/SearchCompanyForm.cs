@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SharpERBLL;
 using SharpERDAL;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
     public partial class SearchCompanyForm : Form
     {
-        public static Form companyForm = null;
+        public static CompanyForm companyForm = null;
         public static List<Company> companyListing;
+        public static Company company;
+        public static int comID = 0;
+        public int oldCompany;
+        public int newCompany;
 
         public SearchCompanyForm()
         {
@@ -35,8 +40,15 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyCompany_Click(object sender, EventArgs e)
         {
-            companyForm = new CompanyForm();
-            companyForm.ShowDialog();
+            CompanyForm modifyForm = new CompanyForm();
+            modifyForm.newCompany = (Company)companyBindingSource.Current;
+            modifyForm.company = (Company)companyBindingSource.Current;
+            modifyForm.CompanyBindingSource.Clear();
+
+            companyListing = CompanyDB.GetAllCompanies();
+            companyDataGridView.DataSource = companyBindingSource;
+            companyBindingSource.DataSource = companyListing;
+
         }
 
         private void SearchCompanyForm_Load(object sender, EventArgs e)

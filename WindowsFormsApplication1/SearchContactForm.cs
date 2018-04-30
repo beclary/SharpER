@@ -79,11 +79,6 @@ namespace WindowsFormsApplication1
                 {
                     ContactDB.DeleteContact(conID);
                 }
-                else
-                {
-                }
-
-
 
                 // Refreshes the gridview
                 contactListing = ContactDB.GetAllContacts();
@@ -106,7 +101,6 @@ namespace WindowsFormsApplication1
             DataGridViewRow row = contactDataGridView.Rows[i];
             DataGridViewCell cell = row.Cells[4];
             int contactRowSelected = (int)cell.Value;
-
         }
     }
 }
