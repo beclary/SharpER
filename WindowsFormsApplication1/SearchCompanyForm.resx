@@ -123,7 +123,4 @@
   <data name="lblSelectingCompany.Text" xml:space="preserve">
     <value>If you want to use one of the gold-colored buttons to either UPDATE / MODIFY a company, VIEW a company's information, or DELETE a company, then in the grid below, select the company row you want, and then click the desired button.                                                                                                         If you need to ADD a new company, just click the teal-colored button    labeled ADD NEW COMPANY</value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>78</value>
-  </metadata>
 </root>

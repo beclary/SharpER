@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SharpERDAL;
 using SharpERBLL;
+using SharpERDAL;
 using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
@@ -35,6 +35,7 @@ namespace WindowsFormsApplication1
             modifyForm.contactBindingSource.Clear();
             modifyForm.contactBindingSource.Add(modifyForm.contact);
             modifyForm.ShowDialog();
+            
 
             // Refreshes the gridview
             contactListing = ContactDB.GetAllContacts();

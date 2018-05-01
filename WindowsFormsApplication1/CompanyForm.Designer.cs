@@ -41,7 +41,6 @@
             System.Windows.Forms.Label companyZipCodeLabel;
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyCityTextBox = new System.Windows.Forms.TextBox();
             this.companyIDTextBox = new System.Windows.Forms.TextBox();
             this.companyNameTextBox = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.companyPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -194,10 +194,6 @@
             this.companyAddressTextBox.Name = "companyAddressTextBox";
             this.companyAddressTextBox.Size = new System.Drawing.Size(299, 26);
             this.companyAddressTextBox.TabIndex = 1;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
             // companyCityTextBox
             // 
@@ -356,6 +352,10 @@
             this.companyZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.companyZipCodeMaskedTextBox.TabIndex = 89;
             // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
+            // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -399,7 +399,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblCompanyInfoTitle;
-        private System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.TextBox companyAddressTextBox;
         private System.Windows.Forms.TextBox companyCityTextBox;
         private System.Windows.Forms.TextBox companyIDTextBox;
@@ -412,5 +411,6 @@
         private System.Windows.Forms.MaskedTextBox companyPhoneMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox companyFaxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox companyZipCodeMaskedTextBox;
+        public System.Windows.Forms.BindingSource companyBindingSource;
     }
 }
