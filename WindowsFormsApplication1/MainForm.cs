@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Latest version: 1.1", "SharpER Version Information");
+            MessageBox.Show("Version: 1.1" + "\n\n" + DateTime.Now, "SharpER Version Information");
         }
     }
 }
