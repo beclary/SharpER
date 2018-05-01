@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using SharpERBLL;
+using SharpERDAL;
 
 namespace WindowsFormsApplication1
 {
@@ -22,9 +25,45 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void lblCompanyInfoTitle_Click(object sender, EventArgs e)
+        private bool IsInt64 (string s)
         {
+            try
+            {
+                Convert.ToInt64(s);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
 
+        private bool IsPresent (Control control, string name)
+        {
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            {
+                TextBox textBox = (TextBox)control;
+                if (textBox.Text == "")
+                {
+                    MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
+                    textBox.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool IsDataValid()
+        {
+            if (companyBindingSource.Count > 0)
+            {
+                return
+                    IsPresent(companyNameTextBox, "Name");
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private void toolStripButtonCompanyExitButton_Click(object sender, EventArgs e)
@@ -33,44 +72,94 @@ namespace WindowsFormsApplication1
             MainForm.companyMainForm = null;
         }
 
-        private void CompanyForm_Load(object sender, EventArgs e)
-        {
-        }
-
-        //private bool CloseProgram()
-        //{
-        //    if (MessageBox.Show("Are you sure you want to quit?", "LEAVING SO SOON ???????", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-        //    {
-        //        this.Close();
-        //        return true;
-        //    }
-        //    else
-        //        return false;
-        //}
-
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void CompanyForm_Load(object sender, EventArgs e)
         {
-            companyNameTextBox.Clear();
-            companyAddressTextBox.Clear();
-            companyCityTextBox.Clear();
-            companyStateComboBox.SelectedIndex = -1;
-            companyZipCodeMaskedTextBox.Clear();
-            companyPhoneMaskedTextBox.Clear();
-            companyFaxMaskedTextBox.Clear();
-            companyWebsiteTextBox.Clear();
-            companyNotesTextBox.Clear();
-            companyPhoneMaskedTextBox.Clear();
+            // Bindings need to be set, so I have to test here to see if it was an
+            // ADD or a MODIFY
+            if (addCompany == true) // This is the ADD
+            {
+                company = new Company();
+                companyBindingSource.Clear();
+                companyBindingSource.Add(company);
+            }
+            else // This is the MODIFY
+            {
+                // Set company to the row held by the companyBindingSource.Current (whatever
+                // the user clicked in the grid)
+                company = (Company)companyBindingSource.Current; // Cast from Object to real type
+
+                // Create a new (empty) company: newCompany
+                newCompany = new Company();
+
+                // Copy field by field data in company (i.e. newCompany.CompanyID = company.CompanyID)
+                newCompany.CompanyID = company.CompanyID;
+                newCompany.CompanyName = company.CompanyName;
+                newCompany.CompanyAddress = company.CompanyAddress;
+                newCompany.CompanyCity = company.CompanyCity;
+                newCompany.CompanyState = company.CompanyState;
+                newCompany.CompanyZipCode = company.CompanyZipCode;
+                newCompany.CompanyPhone = company.CompanyPhone;
+                newCompany.CompanyFax = company.CompanyFax;
+                newCompany.CompanyWebsite = company.CompanyWebsite;
+                newCompany.CompanyNotes = company.CompanyNotes;
+
+                // Set binding (see p.285)
+                companyBindingSource.Clear();
+                companyBindingSource.Add(newCompany);
+            }
         }
 
-        private void companyIDTextBox_TextChanged(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-
+            if (IsDataValid())
+            {
+                if (addCompany)
+                {
+                    try
+                    {
+                        CompanyDB.AddCompany(company);
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    catch (SqlException xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                    catch (Exception xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        if (!CompanyDB.UpdateModifyCompany(company, newCompany))
+                        {
+                            MessageBox.Show("Another user has updated or deleted that company", "DATABASE ERROR");
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            company = newCompany;
+                            this.DialogResult = DialogResult.OK;
+                        }
+                    }
+                    catch (SqlException xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                    catch (Exception xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                }
+                this.Close();
+            }
         }
     }
 }

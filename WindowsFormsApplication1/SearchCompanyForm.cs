@@ -43,8 +43,9 @@ namespace WindowsFormsApplication1
             CompanyForm modifyForm = new CompanyForm();
             modifyForm.newCompany = (Company)companyBindingSource.Current;
             modifyForm.company = (Company)companyBindingSource.Current;
-            modifyForm.CompanyBindingSource.Clear();
-
+            modifyForm.companyBindingSource.Clear();
+            
+            // Refreshes the gridview
             companyListing = CompanyDB.GetAllCompanies();
             companyDataGridView.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;

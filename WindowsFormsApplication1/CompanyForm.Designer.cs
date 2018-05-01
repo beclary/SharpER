@@ -186,7 +186,6 @@
             this.lblCompanyInfoTitle.Size = new System.Drawing.Size(291, 43);
             this.lblCompanyInfoTitle.TabIndex = 66;
             this.lblCompanyInfoTitle.Text = "Company Information";
-            this.lblCompanyInfoTitle.Click += new System.EventHandler(this.lblCompanyInfoTitle_Click);
             // 
             // companyAddressTextBox
             // 
@@ -217,7 +216,6 @@
             this.companyIDTextBox.ReadOnly = true;
             this.companyIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.companyIDTextBox.TabIndex = 74;
-            this.companyIDTextBox.TextChanged += new System.EventHandler(this.companyIDTextBox_TextChanged);
             // 
             // companyNameTextBox
             // 
@@ -319,6 +317,7 @@
             this.btnSave.TabIndex = 88;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
