@@ -41,6 +41,7 @@
             System.Windows.Forms.Label companyZipCodeLabel;
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyCityTextBox = new System.Windows.Forms.TextBox();
             this.companyIDTextBox = new System.Windows.Forms.TextBox();
             this.companyNameTextBox = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.companyPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -195,6 +195,10 @@
             this.companyAddressTextBox.Size = new System.Drawing.Size(299, 26);
             this.companyAddressTextBox.TabIndex = 1;
             // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
+            // 
             // companyCityTextBox
             // 
             this.companyCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyCity", true));
@@ -330,38 +334,37 @@
             // 
             // companyPhoneMaskedTextBox
             // 
+            this.companyPhoneMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyPhone", true));
             this.companyPhoneMaskedTextBox.Location = new System.Drawing.Point(117, 206);
             this.companyPhoneMaskedTextBox.Mask = "(999) 000-0000";
             this.companyPhoneMaskedTextBox.Name = "companyPhoneMaskedTextBox";
-            this.companyPhoneMaskedTextBox.Size = new System.Drawing.Size(143, 26);
+            this.companyPhoneMaskedTextBox.Size = new System.Drawing.Size(117, 26);
             this.companyPhoneMaskedTextBox.TabIndex = 5;
             // 
             // companyFaxMaskedTextBox
             // 
+            this.companyFaxMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyFax", true));
             this.companyFaxMaskedTextBox.Location = new System.Drawing.Point(117, 238);
             this.companyFaxMaskedTextBox.Mask = "(999) 000-0000";
             this.companyFaxMaskedTextBox.Name = "companyFaxMaskedTextBox";
-            this.companyFaxMaskedTextBox.Size = new System.Drawing.Size(143, 26);
+            this.companyFaxMaskedTextBox.Size = new System.Drawing.Size(117, 26);
             this.companyFaxMaskedTextBox.TabIndex = 6;
             // 
             // companyZipCodeMaskedTextBox
             // 
-            this.companyZipCodeMaskedTextBox.Location = new System.Drawing.Point(542, 173);
+            this.companyZipCodeMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyZipCode", true));
+            this.companyZipCodeMaskedTextBox.Location = new System.Drawing.Point(540, 174);
             this.companyZipCodeMaskedTextBox.Mask = "00000-9999";
             this.companyZipCodeMaskedTextBox.Name = "companyZipCodeMaskedTextBox";
             this.companyZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
-            this.companyZipCodeMaskedTextBox.TabIndex = 89;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
+            this.companyZipCodeMaskedTextBox.TabIndex = 4;
             // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
-            this.ClientSize = new System.Drawing.Size(732, 454);
+            this.ClientSize = new System.Drawing.Size(831, 454);
             this.Controls.Add(this.companyZipCodeMaskedTextBox);
             this.Controls.Add(this.companyFaxMaskedTextBox);
             this.Controls.Add(this.companyPhoneMaskedTextBox);
@@ -408,9 +411,9 @@
         private System.Windows.Forms.TextBox companyWebsiteTextBox;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        public System.Windows.Forms.BindingSource companyBindingSource;
         private System.Windows.Forms.MaskedTextBox companyPhoneMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox companyFaxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox companyZipCodeMaskedTextBox;
-        public System.Windows.Forms.BindingSource companyBindingSource;
     }
 }

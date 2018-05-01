@@ -204,22 +204,22 @@ namespace SharpERDAL
                 "com_notes = @NewCompanyNotes " +
                 "WHERE com_id = @OldCompanyID " +
                 "AND (com_name = @OldCompanyName " +
-                    "OR com_name IS NULL AND @OldCompanyName IS NULL)" +
+                    "OR com_name IS NULL AND @OldCompanyName IS NULL) " +
                 "AND (com_address = @OldCompanyAddress " +
-                    "OR com_address IS NULL AND @OldCompanyAddress IS NULL)" +
+                    "OR com_address IS NULL AND @OldCompanyAddress IS NULL) " +
                 "AND (com_city = @OldCompanyCity " +
-                    "OR com_city IS NULL AND @OldCompanyCity IS NULL)" +
+                    "OR com_city IS NULL AND @OldCompanyCity IS NULL) " +
                 "AND (com_state = @OldCompanyState " +
-                    "OR com_state IS NULL AND @OldCompanyState IS NULL)" +
+                    "OR com_state IS NULL AND @OldCompanyState IS NULL) " +
                 "AND (com_zip_code = @OldCompanyZipCode " +
-                    "OR com_zip_code IS NULL AND @OldCompanyZipCode IS NULL)" +
+                    "OR com_zip_code IS NULL AND @OldCompanyZipCode IS NULL) " +
                 "AND (com_phone = @OldCompanyPhone " +
-                    "OR com_phone IS NULL AND @OldCompanyPhone IS NULL)" +
+                    "OR com_phone IS NULL AND @OldCompanyPhone IS NULL) " +
                 "AND (com_fax = @OldCompanyFax " +
-                    "OR com_fax IS NULL AND @OldCompanyFax IS NULL) " +
+                    "OR com_fax IS NULL AND @OldCompanyFax IS NULL )" +
                 "AND (com_website = @OldCompanyWebsite " +
                     "OR com_website IS NULL AND @OldCompanyWebsite IS NULL) " +
-                "AND com_notes = @OldCompanyNotes " +
+                "AND (com_notes = @OldCompanyNotes " +
                     "OR com_notes IS NULL AND @OldCompanyNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
             // New Company changes
@@ -281,8 +281,8 @@ namespace SharpERDAL
             // Company Phone
             if (newCompany.CompanyPhone == "")
             {
-                updateCmd.Parameters.AddWithValue("@NewCompanyZipCode", DBNull.Value);
-                updateCmd.Parameters["@NewCompanyZipCode"].IsNullable = true;
+                updateCmd.Parameters.AddWithValue("@NewCompanyPhone", DBNull.Value);
+                updateCmd.Parameters["@NewCompanyPhone"].IsNullable = true;
             }
             else
             {
@@ -330,8 +330,8 @@ namespace SharpERDAL
             // Company Name
             if (oldCompany.CompanyName == "")
             {
-                updateCmd.Parameters.AddWithValue("@NewCompanyName", DBNull.Value);
-                updateCmd.Parameters["@NewCompanyName"].IsNullable = true;
+                updateCmd.Parameters.AddWithValue("@OldCompanyName", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyName"].IsNullable = true;
             }
             else
             {
@@ -341,8 +341,8 @@ namespace SharpERDAL
             // Company Address
             if (oldCompany.CompanyAddress == "")
             {
-                updateCmd.Parameters.AddWithValue("@NewCompanyAddress", DBNull.Value);
-                updateCmd.Parameters["@NewCompanyAddress"].IsNullable = true;
+                updateCmd.Parameters.AddWithValue("@OldCompanyAddress", DBNull.Value);
+                updateCmd.Parameters["@OldCompanyAddress"].IsNullable = true;
             }
             else
             {

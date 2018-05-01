@@ -40,6 +40,7 @@ namespace WindowsFormsApplication1
             companyListing = CompanyDB.GetAllCompanies();
             companyDataGridView.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
+            companyDataGridView.ClearSelection();
         }
 
         private void btnAddNewCompany_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace WindowsFormsApplication1
             companyListing = CompanyDB.GetAllCompanies();
             companyDataGridView.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
+            companyDataGridView.ClearSelection();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace WindowsFormsApplication1
         {
             int i = e.RowIndex;
             DataGridViewRow row = companyDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[2];
+            DataGridViewCell cell = row.Cells[4];
             int companyRowSelected = (int)cell.Value;
         }
     }

@@ -346,7 +346,6 @@
             this.contactStateComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.contactStateComboBox.BackColor = System.Drawing.Color.LightGray;
             this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactState", true));
-            this.contactStateComboBox.DisplayMember = "Text";
             this.contactStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactStateComboBox.FormattingEnabled = true;
             this.contactStateComboBox.Items.AddRange(new object[] {

@@ -30,17 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchCompanyForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnExit = new System.Windows.Forms.Button();
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblCompanyTitle = new System.Windows.Forms.Label();
             this.lblSelectingCompany = new System.Windows.Forms.Label();
             this.btnDeleteCompany = new System.Windows.Forms.Button();
             this.btnUpdateModifyCompany = new System.Windows.Forms.Button();
             this.btnAddNewCompany = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompanyPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,8 +73,10 @@
             this.companyDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.companyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.companyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn7,
+            this.CompanyName,
+            this.CompanyAddress,
+            this.CompanyCity,
+            this.CompanyPhone,
             this.dataGridViewTextBoxColumn1});
             this.companyDataGridView.DataSource = this.companyBindingSource;
             this.companyDataGridView.Location = new System.Drawing.Point(26, 203);
@@ -81,6 +86,10 @@
             this.companyDataGridView.Size = new System.Drawing.Size(547, 211);
             this.companyDataGridView.TabIndex = 19;
             this.companyDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.companyDataGridView_CellContentClick);
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
             // lblCompanyTitle
             // 
@@ -148,35 +157,51 @@
             this.btnAddNewCompany.UseVisualStyleBackColor = false;
             this.btnAddNewCompany.Click += new System.EventHandler(this.btnAddNewCompany_Click);
             // 
-            // dataGridViewTextBoxColumn2
+            // CompanyName
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CompanyName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Company Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.CompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CompanyName.DataPropertyName = "CompanyName";
+            this.CompanyName.HeaderText = "Name";
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn7
+            // CompanyAddress
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompanyPhone";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Company Phone";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.CompanyAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CompanyAddress.DataPropertyName = "CompanyAddress";
+            this.CompanyAddress.HeaderText = "Address";
+            this.CompanyAddress.Name = "CompanyAddress";
+            this.CompanyAddress.ReadOnly = true;
+            // 
+            // CompanyCity
+            // 
+            this.CompanyCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CompanyCity.DataPropertyName = "CompanyCity";
+            this.CompanyCity.HeaderText = "City";
+            this.CompanyCity.Name = "CompanyCity";
+            this.CompanyCity.ReadOnly = true;
+            // 
+            // CompanyPhone
+            // 
+            this.CompanyPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CompanyPhone.DataPropertyName = "CompanyPhone";
+            this.CompanyPhone.HeaderText = "Phone";
+            this.CompanyPhone.Name = "CompanyPhone";
+            this.CompanyPhone.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "CompanyID";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn1.HeaderText = "Company ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 90;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
             // SearchCompanyForm
             // 
@@ -214,8 +239,10 @@
         private System.Windows.Forms.Button btnDeleteCompany;
         private System.Windows.Forms.Button btnUpdateModifyCompany;
         private System.Windows.Forms.Button btnAddNewCompany;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
