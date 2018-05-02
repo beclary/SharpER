@@ -62,7 +62,7 @@
             activityContactIDLabel.AutoSize = true;
             activityContactIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityContactIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityContactIDLabel.Location = new System.Drawing.Point(25, 300);
+            activityContactIDLabel.Location = new System.Drawing.Point(24, 270);
             activityContactIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityContactIDLabel.Name = "activityContactIDLabel";
             activityContactIDLabel.Size = new System.Drawing.Size(85, 19);
@@ -74,7 +74,7 @@
             activityDateLabel.AutoSize = true;
             activityDateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityDateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityDateLabel.Location = new System.Drawing.Point(66, 112);
+            activityDateLabel.Location = new System.Drawing.Point(65, 112);
             activityDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityDateLabel.Name = "activityDateLabel";
             activityDateLabel.Size = new System.Drawing.Size(44, 19);
@@ -86,7 +86,7 @@
             activityDescriptionLabel.AutoSize = true;
             activityDescriptionLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityDescriptionLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityDescriptionLabel.Location = new System.Drawing.Point(25, 145);
+            activityDescriptionLabel.Location = new System.Drawing.Point(24, 145);
             activityDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityDescriptionLabel.Name = "activityDescriptionLabel";
             activityDescriptionLabel.Size = new System.Drawing.Size(85, 19);
@@ -98,7 +98,7 @@
             activityIDLabel.AutoSize = true;
             activityIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityIDLabel.Location = new System.Drawing.Point(369, 112);
+            activityIDLabel.Location = new System.Drawing.Point(359, 112);
             activityIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityIDLabel.Name = "activityIDLabel";
             activityIDLabel.Size = new System.Drawing.Size(87, 19);
@@ -110,7 +110,7 @@
             activityJobIDLabel.AutoSize = true;
             activityJobIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityJobIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityJobIDLabel.Location = new System.Drawing.Point(49, 336);
+            activityJobIDLabel.Location = new System.Drawing.Point(48, 306);
             activityJobIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityJobIDLabel.Name = "activityJobIDLabel";
             activityJobIDLabel.Size = new System.Drawing.Size(61, 19);
@@ -122,7 +122,7 @@
             activityNotesLabel.AutoSize = true;
             activityNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityNotesLabel.Location = new System.Drawing.Point(57, 365);
+            activityNotesLabel.Location = new System.Drawing.Point(57, 335);
             activityNotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityNotesLabel.Name = "activityNotesLabel";
             activityNotesLabel.Size = new System.Drawing.Size(52, 19);
@@ -134,7 +134,7 @@
             activityTravelLabel.AutoSize = true;
             activityTravelLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityTravelLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityTravelLabel.Location = new System.Drawing.Point(56, 231);
+            activityTravelLabel.Location = new System.Drawing.Point(55, 234);
             activityTravelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityTravelLabel.Name = "activityTravelLabel";
             activityTravelLabel.Size = new System.Drawing.Size(54, 19);
@@ -145,7 +145,7 @@
             // 
             this.activityContactIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityContactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
-            this.activityContactIDTextBox.Location = new System.Drawing.Point(127, 293);
+            this.activityContactIDTextBox.Location = new System.Drawing.Point(116, 266);
             this.activityContactIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityContactIDTextBox.Name = "activityContactIDTextBox";
             this.activityContactIDTextBox.Size = new System.Drawing.Size(117, 26);
@@ -159,7 +159,7 @@
             // 
             this.activityDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.activityBindingSource, "ActivityDate", true));
             this.activityDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.activityDateDateTimePicker.Location = new System.Drawing.Point(127, 109);
+            this.activityDateDateTimePicker.Location = new System.Drawing.Point(116, 109);
             this.activityDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.activityDateDateTimePicker.Name = "activityDateDateTimePicker";
             this.activityDateDateTimePicker.Size = new System.Drawing.Size(130, 26);
@@ -168,7 +168,7 @@
             // activityDescriptionTextBox
             // 
             this.activityDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityDescription", true));
-            this.activityDescriptionTextBox.Location = new System.Drawing.Point(127, 143);
+            this.activityDescriptionTextBox.Location = new System.Drawing.Point(116, 143);
             this.activityDescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityDescriptionTextBox.Multiline = true;
             this.activityDescriptionTextBox.Name = "activityDescriptionTextBox";
@@ -179,7 +179,7 @@
             // 
             this.activityIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityID", true));
-            this.activityIDTextBox.Location = new System.Drawing.Point(464, 109);
+            this.activityIDTextBox.Location = new System.Drawing.Point(454, 109);
             this.activityIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityIDTextBox.Name = "activityIDTextBox";
             this.activityIDTextBox.ReadOnly = true;
@@ -190,7 +190,7 @@
             // 
             this.activityJobIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityJobIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityJobID", true));
-            this.activityJobIDTextBox.Location = new System.Drawing.Point(127, 329);
+            this.activityJobIDTextBox.Location = new System.Drawing.Point(116, 302);
             this.activityJobIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityJobIDTextBox.Name = "activityJobIDTextBox";
             this.activityJobIDTextBox.Size = new System.Drawing.Size(117, 26);
@@ -200,7 +200,7 @@
             // activityNotesTextBox
             // 
             this.activityNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityNotes", true));
-            this.activityNotesTextBox.Location = new System.Drawing.Point(127, 363);
+            this.activityNotesTextBox.Location = new System.Drawing.Point(116, 336);
             this.activityNotesTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityNotesTextBox.Multiline = true;
             this.activityNotesTextBox.Name = "activityNotesTextBox";
@@ -216,7 +216,7 @@
             this.activityTravelComboBox.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.activityTravelComboBox.Location = new System.Drawing.Point(127, 229);
+            this.activityTravelComboBox.Location = new System.Drawing.Point(116, 232);
             this.activityTravelComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityTravelComboBox.Name = "activityTravelComboBox";
             this.activityTravelComboBox.Size = new System.Drawing.Size(72, 26);

@@ -41,7 +41,6 @@
             System.Windows.Forms.Label companyZipCodeLabel;
             this.lblCompanyInfoTitle = new System.Windows.Forms.Label();
             this.companyAddressTextBox = new System.Windows.Forms.TextBox();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyCityTextBox = new System.Windows.Forms.TextBox();
             this.companyIDTextBox = new System.Windows.Forms.TextBox();
             this.companyNameTextBox = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.companyPhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.companyZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             companyAddressLabel = new System.Windows.Forms.Label();
             companyCityLabel = new System.Windows.Forms.Label();
             companyFaxLabel = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             companyFaxLabel.AutoSize = true;
             companyFaxLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             companyFaxLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyFaxLabel.Location = new System.Drawing.Point(76, 240);
+            companyFaxLabel.Location = new System.Drawing.Point(77, 240);
             companyFaxLabel.Name = "companyFaxLabel";
             companyFaxLabel.Size = new System.Drawing.Size(38, 19);
             companyFaxLabel.TabIndex = 71;
@@ -115,7 +115,7 @@
             companyNameLabel.AutoSize = true;
             companyNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             companyNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyNameLabel.Location = new System.Drawing.Point(66, 112);
+            companyNameLabel.Location = new System.Drawing.Point(65, 112);
             companyNameLabel.Name = "companyNameLabel";
             companyNameLabel.Size = new System.Drawing.Size(50, 19);
             companyNameLabel.TabIndex = 75;
@@ -126,7 +126,7 @@
             companyNotesLabel.AutoSize = true;
             companyNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             companyNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyNotesLabel.Location = new System.Drawing.Point(64, 304);
+            companyNotesLabel.Location = new System.Drawing.Point(63, 304);
             companyNotesLabel.Name = "companyNotesLabel";
             companyNotesLabel.Size = new System.Drawing.Size(52, 19);
             companyNotesLabel.TabIndex = 77;
@@ -159,7 +159,7 @@
             companyWebsiteLabel.AutoSize = true;
             companyWebsiteLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             companyWebsiteLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            companyWebsiteLabel.Location = new System.Drawing.Point(49, 272);
+            companyWebsiteLabel.Location = new System.Drawing.Point(48, 272);
             companyWebsiteLabel.Name = "companyWebsiteLabel";
             companyWebsiteLabel.Size = new System.Drawing.Size(67, 19);
             companyWebsiteLabel.TabIndex = 83;
@@ -194,10 +194,6 @@
             this.companyAddressTextBox.Name = "companyAddressTextBox";
             this.companyAddressTextBox.Size = new System.Drawing.Size(299, 26);
             this.companyAddressTextBox.TabIndex = 1;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
             // 
             // companyCityTextBox
             // 
@@ -359,12 +355,16 @@
             this.companyZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.companyZipCodeMaskedTextBox.TabIndex = 4;
             // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
+            // 
             // CompanyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
-            this.ClientSize = new System.Drawing.Size(831, 454);
+            this.ClientSize = new System.Drawing.Size(732, 472);
             this.Controls.Add(this.companyZipCodeMaskedTextBox);
             this.Controls.Add(this.companyFaxMaskedTextBox);
             this.Controls.Add(this.companyPhoneMaskedTextBox);
