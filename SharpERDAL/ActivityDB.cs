@@ -23,11 +23,12 @@ namespace SharpERDAL
                 "FROM Activity " +
                 "ORDER BY act_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                SqlDataReader readur = selectCmd.ExecuteReader();
+                readur = selectCmd.ExecuteReader();
                 int actActivityIDOrd = readur.GetOrdinal("act_id");
                 int actActivityDateOrd = readur.GetOrdinal("act_date");
                 int actActivityDescriptionOrd = readur.GetOrdinal("act_description");
@@ -39,6 +40,7 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Activity actRowInfo = new Activity();
+                    //actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
                     if (readur[actActivityIDOrd] == DBNull.Value)
                         actRowInfo.ActivityID = -1;
                     else
@@ -51,25 +53,28 @@ namespace SharpERDAL
                         actRowInfo.ActivityDescription = "";
                     else
                         actRowInfo.ActivityDescription = readur.GetString(actActivityDescriptionOrd);
+
                     if (readur[actActivityTravelOrd] == DBNull.Value)
                         actRowInfo.ActivityTravel = "";
                     else
                         actRowInfo.ActivityTravel = readur.GetString(actActivityTravelOrd);
+
                     if (readur[actActivityJobIDOrd] == DBNull.Value)
                         actRowInfo.ActivityJobID = -1;
                     else
                         actRowInfo.ActivityJobID = readur.GetInt32(actActivityJobIDOrd);
+
                     if (readur[actActivityContactIDOrd] == DBNull.Value)
                         actRowInfo.ActivityContactID = -1;
                     else
                         actRowInfo.ActivityContactID = readur.GetInt32(actActivityContactIDOrd);
+
                     if (readur[actActivityNotesOrd] == DBNull.Value)
                         actRowInfo.ActivityNotes = "";
                     else
                         actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
                     activityList.Add(actRowInfo);
                 }
-                readur.Close();
             }
             catch (SqlException xsept)
             {
@@ -81,6 +86,7 @@ namespace SharpERDAL
             }
             finally
             {
+                readur.Close();
                 conn.Close();
             }
             return activityList;
@@ -166,23 +172,24 @@ namespace SharpERDAL
         }
 
         // This will provide the activity that was done given a specific activityID
-        public static Activity GetSpecificActivityInfo(string activityID)
+        public static Activity GetSpecificActivityInfo(int activityID)
         {
             // TO DO : Not corrected for NULLS, be sure to fix these FIRST before using
             Activity specificActivity = new Activity();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT act_id, act_date, act_description, act_travel, " +
-                "act_contact_id, act_Job_id, act_contact_id, act_notes " +
+                "act_contact_id, act_job_id, act_contact_id, act_notes " +
                 "FROM Activity " +
                 "WHERE act_id = @act_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            SqlDataReader readur = null;
             selectCmd.Parameters.AddWithValue("@act_id", activityID);
 
             try
             {
                 conn.Open();
-                SqlDataReader readur = selectCmd.ExecuteReader();
+                readur = selectCmd.ExecuteReader();
                 int actActivityIDOrd = readur.GetOrdinal("act_id");
                 int actActivityDateOrd = readur.GetOrdinal("act_date");
                 int actActivityDescriptionOrd = readur.GetOrdinal("act_desctiption");
@@ -191,13 +198,13 @@ namespace SharpERDAL
                 int actActivityJobIDOrd = readur.GetOrdinal("act_job_id");
                 int actActivityNotesOrd = readur.GetOrdinal("act_notes");
 
-                while (readur.Read())
-                {
-                    Activity actRowInfo = new Activity();
-                    if (readur[actActivityIDOrd] == DBNull.Value)
-                        actRowInfo.ActivityID = -1;
-                    else
-                        actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+                readur.Read();
+
+                //Activity actRowInfo = new Activity();
+                if (readur[actActivityIDOrd] == DBNull.Value)
+                    specificActivity = null;
+                else
+                    specificActivity.ActivityID = readur.GetInt32(actActivityIDOrd);
 
                     // left out the dattime function ActivityDate
 
@@ -221,7 +228,7 @@ namespace SharpERDAL
                         actRowInfo.ActivityNotes = "";
                     else
                         actRowInfo.ActivityNotes = readur.GetString(actActivityNotesOrd);
-                }
+                
                 readur.Close();
             }
             catch (Exception xsept)
