@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchActivityForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblActivityTitle = new System.Windows.Forms.Label();
             this.lblSelectingActivity = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdateModifyActivity = new System.Windows.Forms.Button();
             this.btnDeleteActivity = new System.Windows.Forms.Button();
             this.btnAddNewActivity = new System.Windows.Forms.Button();
+            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activityDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // lblActivityTitle
@@ -75,6 +86,7 @@
             this.btnExit.TabIndex = 24;
             this.btnExit.Text = "E X I T";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnUpdateModifyActivity
             // 
@@ -88,6 +100,7 @@
             this.btnUpdateModifyActivity.TabIndex = 25;
             this.btnUpdateModifyActivity.Text = "View / Modify Activity";
             this.btnUpdateModifyActivity.UseVisualStyleBackColor = false;
+            this.btnUpdateModifyActivity.Click += new System.EventHandler(this.btnUpdateModifyActivity_Click);
             // 
             // btnDeleteActivity
             // 
@@ -101,6 +114,7 @@
             this.btnDeleteActivity.TabIndex = 26;
             this.btnDeleteActivity.Text = "Delete Activity";
             this.btnDeleteActivity.UseVisualStyleBackColor = false;
+            this.btnDeleteActivity.Click += new System.EventHandler(this.btnDeleteActivity_Click);
             // 
             // btnAddNewActivity
             // 
@@ -114,14 +128,83 @@
             this.btnAddNewActivity.TabIndex = 27;
             this.btnAddNewActivity.Text = "Add New Activity";
             this.btnAddNewActivity.UseVisualStyleBackColor = false;
+            this.btnAddNewActivity.Click += new System.EventHandler(this.btnAddNewActivity_Click);
+            // 
+            // activityBindingSource
+            // 
+            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
+            // 
+            // activityDataGridView
+            // 
+            this.activityDataGridView.AllowUserToAddRows = false;
+            this.activityDataGridView.AllowUserToDeleteRows = false;
+            this.activityDataGridView.AutoGenerateColumns = false;
+            this.activityDataGridView.BackgroundColor = System.Drawing.Color.Pink;
+            this.activityDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.activityDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.activityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.activityDataGridView.DataSource = this.activityBindingSource;
+            this.activityDataGridView.Location = new System.Drawing.Point(26, 203);
+            this.activityDataGridView.MultiSelect = false;
+            this.activityDataGridView.Name = "activityDataGridView";
+            this.activityDataGridView.ReadOnly = true;
+            this.activityDataGridView.Size = new System.Drawing.Size(547, 211);
+            this.activityDataGridView.TabIndex = 28;
+            this.activityDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.activityDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ActivityID";
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Activity ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ActivityDate";
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Activity Date";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ActivityDescription";
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // SearchActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(749, 454);
+            this.ClientSize = new System.Drawing.Size(753, 465);
             this.ControlBox = false;
+            this.Controls.Add(this.activityDataGridView);
             this.Controls.Add(this.btnAddNewActivity);
             this.Controls.Add(this.btnDeleteActivity);
             this.Controls.Add(this.btnUpdateModifyActivity);
@@ -133,6 +216,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SearchActivityForm";
             this.Text = "Search Activity Form";
+            this.Load += new System.EventHandler(this.SearchActivityForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -145,5 +231,10 @@
         private System.Windows.Forms.Button btnUpdateModifyActivity;
         private System.Windows.Forms.Button btnDeleteActivity;
         private System.Windows.Forms.Button btnAddNewActivity;
+        private System.Windows.Forms.BindingSource activityBindingSource;
+        private System.Windows.Forms.DataGridView activityDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

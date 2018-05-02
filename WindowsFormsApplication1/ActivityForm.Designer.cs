@@ -294,8 +294,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource activityBindingSource;
         private System.Windows.Forms.TextBox activityContactIDTextBox;
         private System.Windows.Forms.DateTimePicker activityDateDateTimePicker;
         private System.Windows.Forms.TextBox activityDescriptionTextBox;
@@ -306,5 +304,6 @@
         private System.Windows.Forms.Label lblActivityInfoTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        public System.Windows.Forms.BindingSource activityBindingSource;
     }
 }
