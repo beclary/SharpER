@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblSelectingActivity.Text" xml:space="preserve">
+    <value>If you want to use one of the gold-colored buttons to either UPDATE /      MODIFY an activity, VIEW an activity's information, or DELETE an activity,      then in the grid below, select the activity row you want, and then click the                                                         desired button.                                                    If you need to ADD a new activity, just click the teal-colored button labeled ADD NEW ACTIVITY</value>
+  </data>
 </root>
