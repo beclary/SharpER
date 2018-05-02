@@ -134,12 +134,12 @@
             activityTravelLabel.AutoSize = true;
             activityTravelLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityTravelLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityTravelLabel.Location = new System.Drawing.Point(55, 234);
+            activityTravelLabel.Location = new System.Drawing.Point(40, 234);
             activityTravelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityTravelLabel.Name = "activityTravelLabel";
-            activityTravelLabel.Size = new System.Drawing.Size(54, 19);
+            activityTravelLabel.Size = new System.Drawing.Size(69, 19);
             activityTravelLabel.TabIndex = 13;
-            activityTravelLabel.Text = "Travel:";
+            activityTravelLabel.Text = "Traveled:";
             // 
             // activityContactIDTextBox
             // 
