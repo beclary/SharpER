@@ -195,7 +195,6 @@
             this.activityJobIDTextBox.Name = "activityJobIDTextBox";
             this.activityJobIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.activityJobIDTextBox.TabIndex = 4;
-            this.activityJobIDTextBox.TextChanged += new System.EventHandler(this.activityJobIDTextBox_TextChanged);
             // 
             // activityNotesTextBox
             // 
@@ -245,6 +244,7 @@
             this.btnSave.TabIndex = 61;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -286,6 +286,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActivityForm";
             this.Text = "Activity";
+            this.Load += new System.EventHandler(this.ActivityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

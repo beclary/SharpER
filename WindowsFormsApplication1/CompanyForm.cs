@@ -1,4 +1,7 @@
-﻿using System;
+﻿// CompanyForm.cs for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
