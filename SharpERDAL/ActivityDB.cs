@@ -40,11 +40,11 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Activity actRowInfo = new Activity();
-                    //actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
-                    if (readur[actActivityIDOrd] == DBNull.Value)
-                        actRowInfo.ActivityID = -1;
-                    else
-                        actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+                    actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
+                    //if (readur[actActivityIDOrd] == DBNull.Value)
+                    //    actRowInfo.ActivityID = -1;
+                    //else
+                    //    actRowInfo.ActivityID = readur.GetInt32(actActivityIDOrd);
 
                     // Requires them to enter a date before entering any activity done
                     actRowInfo.ActivityDate = readur.GetDateTime(actActivityDateOrd);
@@ -440,14 +440,12 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
                 "INSERT INTO Activity " +
-                "(act_date, act_description, act_travel, act_job_id, " +
-                "act_contact_id, act_notes) " +
-                "VALUES (@ActivityDate, @ActivityDescription, @ActivityTravel, @ActivityJobID, " +
-                "@ActivityContactID, @ActivityNotes)";
+                "(act_date, act_description, act_travel, act_contact_id, act_notes) " +
+                "VALUES (@ActivityDate, @ActivityDescription, @ActivityTravel, @ActivityContactID, @ActivityNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
 
             // Activity Date
-            if (newActivity.ActivityDate == null)
+            if (newActivity.ActivityDate == DateTime.Now)
             {
                 insertCmd.Parameters.AddWithValue("@ActivityDate", DBNull.Value);
                 insertCmd.Parameters["@ActivityDate"].IsNullable = true;
@@ -480,15 +478,15 @@ namespace SharpERDAL
             }
 
             // Activity JobID
-            if (newActivity.ActivityJobID == -1)
-            {
-                insertCmd.Parameters.AddWithValue("@ActivityJobID", DBNull.Value);
-                insertCmd.Parameters["@ActivityJobID"].IsNullable = true;
-            }
-            else
-            {
-                insertCmd.Parameters.AddWithValue("@ActivityJobID", newActivity.ActivityJobID);
-            }
+            //if (newActivity.ActivityJobID == -2)
+            //{
+            //    insertCmd.Parameters.AddWithValue("@ActivityJobID", DBNull.Value);
+            //    insertCmd.Parameters["@ActivityJobID"].IsNullable = true;
+            //}
+            //else
+            //{
+            //    insertCmd.Parameters.AddWithValue("@ActivityJobID", newActivity.ActivityJobID);
+            //}
 
             // Activity ContactID
             if (newActivity.ActivityContactID == -1)

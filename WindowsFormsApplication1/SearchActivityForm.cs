@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
         private void btnUpdateModifyActivity_Click(object sender, EventArgs e)
         {
-            ActivityForm modifyForm = new WindowsFormsApplication1.ActivityForm();
+            ActivityForm modifyForm = new ActivityForm();
             modifyForm.newActivity = (Activity)activityBindingSource.Current;
             modifyForm.activity = (Activity)activityBindingSource.Current;
             modifyForm.activityBindingSource.Clear();
@@ -46,15 +46,16 @@ namespace WindowsFormsApplication1
 
         private void btnAddNewActivity_Click(object sender, EventArgs e)
         {
-            activityForm = new WindowsFormsApplication1.ActivityForm();
-            activityForm.addActivity = true;
-            activityForm.ShowDialog();
+                MessageBox.Show("NOTE:\n\nBefore adding any activity information, YOU WILL NEED the Contact ID of the contact (if the activity is related to a contact) and/or the Job ID (if the activity is related to a specific job applied for).\n\nIf either or both of these fields is not related, just leave them blank.", "ATTENTION", MessageBoxButtons.OK);
+                activityForm = new ActivityForm();
+                activityForm.addActivity = true;
+                activityForm.ShowDialog();
 
-            // Refreshes the gridview
-            activityListing = ActivityDB.GetAllActivities();
-            activityDataGridView.DataSource = activityBindingSource;
-            activityBindingSource.DataSource = activityListing;
-            activityDataGridView.ClearSelection();
+                // Refreshes the gridview
+                activityListing = ActivityDB.GetAllActivities();
+                activityDataGridView.DataSource = activityBindingSource;
+                activityBindingSource.DataSource = activityListing;
+                activityDataGridView.ClearSelection();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

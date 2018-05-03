@@ -43,10 +43,10 @@
             this.activityIDTextBox = new System.Windows.Forms.TextBox();
             this.activityJobIDTextBox = new System.Windows.Forms.TextBox();
             this.activityNotesTextBox = new System.Windows.Forms.TextBox();
-            this.activityTravelComboBox = new System.Windows.Forms.ComboBox();
             this.lblActivityInfoTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.activityTravelComboBox1 = new System.Windows.Forms.ComboBox();
             activityContactIDLabel = new System.Windows.Forms.Label();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             activityContactIDLabel.AutoSize = true;
             activityContactIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityContactIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityContactIDLabel.Location = new System.Drawing.Point(24, 270);
+            activityContactIDLabel.Location = new System.Drawing.Point(24, 305);
             activityContactIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityContactIDLabel.Name = "activityContactIDLabel";
             activityContactIDLabel.Size = new System.Drawing.Size(85, 19);
@@ -110,7 +110,7 @@
             activityJobIDLabel.AutoSize = true;
             activityJobIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityJobIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityJobIDLabel.Location = new System.Drawing.Point(48, 306);
+            activityJobIDLabel.Location = new System.Drawing.Point(48, 270);
             activityJobIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityJobIDLabel.Name = "activityJobIDLabel";
             activityJobIDLabel.Size = new System.Drawing.Size(61, 19);
@@ -134,7 +134,7 @@
             activityTravelLabel.AutoSize = true;
             activityTravelLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityTravelLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityTravelLabel.Location = new System.Drawing.Point(40, 234);
+            activityTravelLabel.Location = new System.Drawing.Point(40, 232);
             activityTravelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityTravelLabel.Name = "activityTravelLabel";
             activityTravelLabel.Size = new System.Drawing.Size(69, 19);
@@ -145,11 +145,11 @@
             // 
             this.activityContactIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityContactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
-            this.activityContactIDTextBox.Location = new System.Drawing.Point(116, 266);
+            this.activityContactIDTextBox.Location = new System.Drawing.Point(116, 301);
             this.activityContactIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityContactIDTextBox.Name = "activityContactIDTextBox";
             this.activityContactIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityContactIDTextBox.TabIndex = 3;
+            this.activityContactIDTextBox.TabIndex = 4;
             // 
             // activityBindingSource
             // 
@@ -190,11 +190,12 @@
             // 
             this.activityJobIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityJobIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityJobID", true));
-            this.activityJobIDTextBox.Location = new System.Drawing.Point(116, 302);
+            this.activityJobIDTextBox.Location = new System.Drawing.Point(116, 266);
             this.activityJobIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityJobIDTextBox.Name = "activityJobIDTextBox";
+            this.activityJobIDTextBox.ReadOnly = true;
             this.activityJobIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityJobIDTextBox.TabIndex = 4;
+            this.activityJobIDTextBox.TabIndex = 3;
             // 
             // activityNotesTextBox
             // 
@@ -205,21 +206,6 @@
             this.activityNotesTextBox.Name = "activityNotesTextBox";
             this.activityNotesTextBox.Size = new System.Drawing.Size(454, 78);
             this.activityNotesTextBox.TabIndex = 5;
-            // 
-            // activityTravelComboBox
-            // 
-            this.activityTravelComboBox.BackColor = System.Drawing.Color.LightGray;
-            this.activityTravelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityTravel", true));
-            this.activityTravelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.activityTravelComboBox.FormattingEnabled = true;
-            this.activityTravelComboBox.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.activityTravelComboBox.Location = new System.Drawing.Point(116, 232);
-            this.activityTravelComboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.activityTravelComboBox.Name = "activityTravelComboBox";
-            this.activityTravelComboBox.Size = new System.Drawing.Size(72, 26);
-            this.activityTravelComboBox.TabIndex = 2;
             // 
             // lblActivityInfoTitle
             // 
@@ -259,12 +245,28 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // activityTravelComboBox1
+            // 
+            this.activityTravelComboBox1.BackColor = System.Drawing.Color.LightGray;
+            this.activityTravelComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityTravel", true));
+            this.activityTravelComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.activityTravelComboBox1.DropDownWidth = 72;
+            this.activityTravelComboBox1.FormattingEnabled = true;
+            this.activityTravelComboBox1.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.activityTravelComboBox1.Location = new System.Drawing.Point(116, 231);
+            this.activityTravelComboBox1.Name = "activityTravelComboBox1";
+            this.activityTravelComboBox1.Size = new System.Drawing.Size(72, 26);
+            this.activityTravelComboBox1.TabIndex = 2;
+            // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(732, 472);
+            this.ClientSize = new System.Drawing.Size(740, 472);
+            this.Controls.Add(this.activityTravelComboBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblActivityInfoTitle);
@@ -281,7 +283,6 @@
             this.Controls.Add(activityNotesLabel);
             this.Controls.Add(this.activityNotesTextBox);
             this.Controls.Add(activityTravelLabel);
-            this.Controls.Add(this.activityTravelComboBox);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActivityForm";
@@ -300,10 +301,10 @@
         private System.Windows.Forms.TextBox activityIDTextBox;
         private System.Windows.Forms.TextBox activityJobIDTextBox;
         private System.Windows.Forms.TextBox activityNotesTextBox;
-        private System.Windows.Forms.ComboBox activityTravelComboBox;
         private System.Windows.Forms.Label lblActivityInfoTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.BindingSource activityBindingSource;
+        private System.Windows.Forms.ComboBox activityTravelComboBox1;
     }
 }
