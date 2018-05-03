@@ -36,6 +36,7 @@
             System.Windows.Forms.Label activityJobIDLabel;
             System.Windows.Forms.Label activityNotesLabel;
             System.Windows.Forms.Label activityTravelLabel;
+            System.Windows.Forms.Label activityContactIDLabel1;
             this.activityContactIDTextBox = new System.Windows.Forms.TextBox();
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activityDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -47,6 +48,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.activityTravelComboBox1 = new System.Windows.Forms.ComboBox();
+            this.activityContactIDComboBox = new System.Windows.Forms.ComboBox();
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             activityContactIDLabel = new System.Windows.Forms.Label();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
@@ -54,7 +57,9 @@
             activityJobIDLabel = new System.Windows.Forms.Label();
             activityNotesLabel = new System.Windows.Forms.Label();
             activityTravelLabel = new System.Windows.Forms.Label();
+            activityContactIDLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activityContactIDLabel
@@ -140,6 +145,15 @@
             activityTravelLabel.Size = new System.Drawing.Size(69, 19);
             activityTravelLabel.TabIndex = 13;
             activityTravelLabel.Text = "Traveled:";
+            // 
+            // activityContactIDLabel1
+            // 
+            activityContactIDLabel1.AutoSize = true;
+            activityContactIDLabel1.Location = new System.Drawing.Point(399, 290);
+            activityContactIDLabel1.Name = "activityContactIDLabel1";
+            activityContactIDLabel1.Size = new System.Drawing.Size(179, 18);
+            activityContactIDLabel1.TabIndex = 62;
+            activityContactIDLabel1.Text = "Activity Contact First Name:";
             // 
             // activityContactIDTextBox
             // 
@@ -260,12 +274,33 @@
             this.activityTravelComboBox1.Size = new System.Drawing.Size(72, 26);
             this.activityTravelComboBox1.TabIndex = 2;
             // 
+            // activityContactIDComboBox
+            // 
+            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
+            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true));
+            this.activityContactIDComboBox.DataSource = this.contactBindingSource;
+            this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
+            this.activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.activityContactIDComboBox.FormattingEnabled = true;
+            this.activityContactIDComboBox.Location = new System.Drawing.Point(584, 287);
+            this.activityContactIDComboBox.Name = "activityContactIDComboBox";
+            this.activityContactIDComboBox.Size = new System.Drawing.Size(121, 26);
+            this.activityContactIDComboBox.TabIndex = 63;
+            this.activityContactIDComboBox.ValueMember = "ContactID";
+            this.activityContactIDComboBox.SelectedIndexChanged += new System.EventHandler(this.activityContactIDComboBox_SelectedIndexChanged);
+            // 
+            // contactBindingSource
+            // 
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
+            // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(740, 472);
+            this.Controls.Add(activityContactIDLabel1);
+            this.Controls.Add(this.activityContactIDComboBox);
             this.Controls.Add(this.activityTravelComboBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
@@ -289,6 +324,7 @@
             this.Text = "Activity";
             this.Load += new System.EventHandler(this.ActivityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +342,7 @@
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.BindingSource activityBindingSource;
         private System.Windows.Forms.ComboBox activityTravelComboBox1;
+        private System.Windows.Forms.ComboBox activityContactIDComboBox;
+        private System.Windows.Forms.BindingSource contactBindingSource;
     }
 }

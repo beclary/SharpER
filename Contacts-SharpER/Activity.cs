@@ -53,7 +53,7 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
 
             set
             {
-                activityDate = value;
+                activityDate = value.Date;
             }
         }
 

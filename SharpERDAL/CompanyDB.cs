@@ -419,7 +419,7 @@ namespace SharpERDAL
             if (oldCompany.CompanyNotes == "")
             {
                 updateCmd.Parameters.AddWithValue("@OldCompanyNotes", DBNull.Value);
-                updateCmd.Parameters["OldCompanyNotes"].IsNullable = true;
+                updateCmd.Parameters["@OldCompanyNotes"].IsNullable = true;
             }
             else
             {

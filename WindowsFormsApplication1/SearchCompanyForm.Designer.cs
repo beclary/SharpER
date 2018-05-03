@@ -42,12 +42,12 @@
             this.btnDeleteCompany = new System.Windows.Forms.Button();
             this.btnUpdateModifyCompany = new System.Windows.Forms.Button();
             this.btnAddNewCompany = new System.Windows.Forms.Button();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CompanyPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -77,11 +77,11 @@
             this.companyDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.companyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.companyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
             this.CompanyName,
             this.CompanyAddress,
             this.CompanyCity,
-            this.CompanyPhone,
-            this.dataGridViewTextBoxColumn1});
+            this.CompanyPhone});
             this.companyDataGridView.DataSource = this.companyBindingSource;
             this.companyDataGridView.Location = new System.Drawing.Point(26, 203);
             this.companyDataGridView.MultiSelect = false;
@@ -157,79 +157,84 @@
             this.btnAddNewCompany.UseVisualStyleBackColor = false;
             this.btnAddNewCompany.Click += new System.EventHandler(this.btnAddNewCompany_Click);
             // 
-            // CompanyName
+            // companyBindingSource
             // 
-            this.CompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CompanyName.DataPropertyName = "CompanyName";
+            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CompanyID";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.CompanyName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.CompanyName.HeaderText = "Name";
-            this.CompanyName.Name = "CompanyName";
-            this.CompanyName.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Company ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 105;
             // 
-            // CompanyAddress
+            // CompanyName
             // 
-            this.CompanyAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CompanyAddress.DataPropertyName = "CompanyAddress";
+            this.CompanyName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CompanyName.DataPropertyName = "CompanyName";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.CompanyAddress.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CompanyAddress.HeaderText = "Address";
-            this.CompanyAddress.Name = "CompanyAddress";
-            this.CompanyAddress.ReadOnly = true;
+            this.CompanyName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CompanyName.HeaderText = "Name";
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.ReadOnly = true;
+            this.CompanyName.Width = 66;
             // 
-            // CompanyCity
+            // CompanyAddress
             // 
-            this.CompanyCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CompanyCity.DataPropertyName = "CompanyCity";
+            this.CompanyAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CompanyAddress.DataPropertyName = "CompanyAddress";
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.CompanyCity.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CompanyCity.HeaderText = "City";
-            this.CompanyCity.Name = "CompanyCity";
-            this.CompanyCity.ReadOnly = true;
+            this.CompanyAddress.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CompanyAddress.HeaderText = "Address";
+            this.CompanyAddress.Name = "CompanyAddress";
+            this.CompanyAddress.ReadOnly = true;
+            this.CompanyAddress.Width = 83;
             // 
-            // CompanyPhone
+            // CompanyCity
             // 
-            this.CompanyPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CompanyPhone.DataPropertyName = "CompanyPhone";
+            this.CompanyCity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CompanyCity.DataPropertyName = "CompanyCity";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.CompanyPhone.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CompanyPhone.HeaderText = "Phone";
-            this.CompanyPhone.Name = "CompanyPhone";
-            this.CompanyPhone.ReadOnly = true;
+            this.CompanyCity.DefaultCellStyle = dataGridViewCellStyle4;
+            this.CompanyCity.HeaderText = "City";
+            this.CompanyCity.Name = "CompanyCity";
+            this.CompanyCity.ReadOnly = true;
+            this.CompanyCity.Width = 57;
             // 
-            // dataGridViewTextBoxColumn1
+            // CompanyPhone
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CompanyID";
+            this.CompanyPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CompanyPhone.DataPropertyName = "CompanyPhone";
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Company ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(SharpERBLL.Company);
+            this.CompanyPhone.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CompanyPhone.HeaderText = "Phone";
+            this.CompanyPhone.Name = "CompanyPhone";
+            this.CompanyPhone.ReadOnly = true;
+            this.CompanyPhone.Width = 68;
             // 
             // SearchCompanyForm
             // 
@@ -267,10 +272,10 @@
         private System.Windows.Forms.Button btnDeleteCompany;
         private System.Windows.Forms.Button btnUpdateModifyCompany;
         private System.Windows.Forms.Button btnAddNewCompany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

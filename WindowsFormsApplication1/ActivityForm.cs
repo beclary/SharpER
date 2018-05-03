@@ -82,6 +82,9 @@ namespace WindowsFormsApplication1
 
         private void ActivityForm_Load(object sender, EventArgs e)
         {
+            List<Contact> contactListing = ContactDB.GetAllContacts();
+            activityContactIDComboBox.DataSource = contactBindingSource;
+            contactBindingSource.DataSource = contactListing;
             // Bindings need to be set, so I have to test here to see if it was an
             // ADD or MODIFY
             if (addActivity == true) // This is the ADD
@@ -162,6 +165,14 @@ namespace WindowsFormsApplication1
                 }
             }
             this.Close();
+        }
+
+        private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activityContactIDComboBox.SelectedIndex != -1)
+            {
+                this.activityContactIDTextBox.Text = activityContactIDComboBox.SelectedValue.ToString();
+            }
         }
     }
 }

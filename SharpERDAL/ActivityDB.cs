@@ -445,18 +445,10 @@ namespace SharpERDAL
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
 
             // Activity Date
-            if (newActivity.ActivityDate == DateTime.Now)
-            {
-                insertCmd.Parameters.AddWithValue("@ActivityDate", DBNull.Value);
-                insertCmd.Parameters["@ActivityDate"].IsNullable = true;
-            }
-            else
-            {
                 insertCmd.Parameters.AddWithValue("@ActivityDate", newActivity.ActivityDate);
-            }
 
             // Activity Description
-            if (newActivity.ActivityDescription == "")
+            if (newActivity.ActivityDescription == null)
             {
                 insertCmd.Parameters.AddWithValue("@ActivityDescription", DBNull.Value);
                 insertCmd.Parameters["@ActivityDescription"].IsNullable = true;
@@ -467,7 +459,7 @@ namespace SharpERDAL
             }
 
             // Activity Travel
-            if (newActivity.ActivityTravel == "")
+            if (newActivity.ActivityTravel == null)
             {
                 insertCmd.Parameters.AddWithValue("@ActivityTravel", DBNull.Value);
                 insertCmd.Parameters["@ActivityTravel"].IsNullable = true;
@@ -500,7 +492,7 @@ namespace SharpERDAL
             }
 
             // Activity Notes
-            if (newActivity.ActivityNotes == "")
+            if (newActivity.ActivityNotes == null)
             {
                 insertCmd.Parameters.AddWithValue("@ActivityNotes", DBNull.Value);
                 insertCmd.Parameters["@ActivityNotes"].IsNullable = true;

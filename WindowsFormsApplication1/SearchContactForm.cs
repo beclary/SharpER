@@ -100,7 +100,7 @@ namespace WindowsFormsApplication1
         {
             int i = e.RowIndex;
             DataGridViewRow row = contactDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[4];
+            DataGridViewCell cell = row.Cells[0];
             int contactRowSelected = (int)cell.Value;
         }
     }
