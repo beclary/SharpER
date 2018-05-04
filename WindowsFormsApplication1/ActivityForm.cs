@@ -174,5 +174,6 @@ namespace WindowsFormsApplication1
                 this.activityContactIDTextBox.Text = activityContactIDComboBox.SelectedValue.ToString();
             }
         }
+
     }
 }

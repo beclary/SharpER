@@ -36,7 +36,7 @@
             System.Windows.Forms.Label activityJobIDLabel;
             System.Windows.Forms.Label activityNotesLabel;
             System.Windows.Forms.Label activityTravelLabel;
-            System.Windows.Forms.Label activityContactIDLabel1;
+            System.Windows.Forms.Label lblActivityContactFirstName;
             this.activityContactIDTextBox = new System.Windows.Forms.TextBox();
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activityDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +57,7 @@
             activityJobIDLabel = new System.Windows.Forms.Label();
             activityNotesLabel = new System.Windows.Forms.Label();
             activityTravelLabel = new System.Windows.Forms.Label();
-            activityContactIDLabel1 = new System.Windows.Forms.Label();
+            lblActivityContactFirstName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             activityContactIDLabel.AutoSize = true;
             activityContactIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityContactIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityContactIDLabel.Location = new System.Drawing.Point(24, 305);
+            activityContactIDLabel.Location = new System.Drawing.Point(75, 300);
             activityContactIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityContactIDLabel.Name = "activityContactIDLabel";
             activityContactIDLabel.Size = new System.Drawing.Size(85, 19);
@@ -103,7 +103,7 @@
             activityIDLabel.AutoSize = true;
             activityIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityIDLabel.Location = new System.Drawing.Point(359, 112);
+            activityIDLabel.Location = new System.Drawing.Point(358, 112);
             activityIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityIDLabel.Name = "activityIDLabel";
             activityIDLabel.Size = new System.Drawing.Size(87, 19);
@@ -115,7 +115,7 @@
             activityJobIDLabel.AutoSize = true;
             activityJobIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityJobIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityJobIDLabel.Location = new System.Drawing.Point(48, 270);
+            activityJobIDLabel.Location = new System.Drawing.Point(385, 300);
             activityJobIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityJobIDLabel.Name = "activityJobIDLabel";
             activityJobIDLabel.Size = new System.Drawing.Size(61, 19);
@@ -127,7 +127,7 @@
             activityNotesLabel.AutoSize = true;
             activityNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityNotesLabel.Location = new System.Drawing.Point(57, 335);
+            activityNotesLabel.Location = new System.Drawing.Point(57, 329);
             activityNotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityNotesLabel.Name = "activityNotesLabel";
             activityNotesLabel.Size = new System.Drawing.Size(52, 19);
@@ -146,22 +146,25 @@
             activityTravelLabel.TabIndex = 13;
             activityTravelLabel.Text = "Traveled:";
             // 
-            // activityContactIDLabel1
+            // lblActivityContactFirstName
             // 
-            activityContactIDLabel1.AutoSize = true;
-            activityContactIDLabel1.Location = new System.Drawing.Point(399, 290);
-            activityContactIDLabel1.Name = "activityContactIDLabel1";
-            activityContactIDLabel1.Size = new System.Drawing.Size(179, 18);
-            activityContactIDLabel1.TabIndex = 62;
-            activityContactIDLabel1.Text = "Activity Contact First Name:";
+            lblActivityContactFirstName.AutoSize = true;
+            lblActivityContactFirstName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblActivityContactFirstName.ForeColor = System.Drawing.Color.DarkBlue;
+            lblActivityContactFirstName.Location = new System.Drawing.Point(8, 265);
+            lblActivityContactFirstName.Name = "lblActivityContactFirstName";
+            lblActivityContactFirstName.Size = new System.Drawing.Size(152, 19);
+            lblActivityContactFirstName.TabIndex = 62;
+            lblActivityContactFirstName.Text = "Contact\'s First Name:";
             // 
             // activityContactIDTextBox
             // 
             this.activityContactIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityContactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
-            this.activityContactIDTextBox.Location = new System.Drawing.Point(116, 301);
+            this.activityContactIDTextBox.Location = new System.Drawing.Point(167, 296);
             this.activityContactIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityContactIDTextBox.Name = "activityContactIDTextBox";
+            this.activityContactIDTextBox.ReadOnly = true;
             this.activityContactIDTextBox.Size = new System.Drawing.Size(117, 26);
             this.activityContactIDTextBox.TabIndex = 4;
             // 
@@ -193,7 +196,7 @@
             // 
             this.activityIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityID", true));
-            this.activityIDTextBox.Location = new System.Drawing.Point(454, 109);
+            this.activityIDTextBox.Location = new System.Drawing.Point(453, 109);
             this.activityIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityIDTextBox.Name = "activityIDTextBox";
             this.activityIDTextBox.ReadOnly = true;
@@ -204,7 +207,7 @@
             // 
             this.activityJobIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.activityJobIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityJobID", true));
-            this.activityJobIDTextBox.Location = new System.Drawing.Point(116, 266);
+            this.activityJobIDTextBox.Location = new System.Drawing.Point(453, 296);
             this.activityJobIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityJobIDTextBox.Name = "activityJobIDTextBox";
             this.activityJobIDTextBox.ReadOnly = true;
@@ -214,12 +217,12 @@
             // activityNotesTextBox
             // 
             this.activityNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityNotes", true));
-            this.activityNotesTextBox.Location = new System.Drawing.Point(116, 336);
+            this.activityNotesTextBox.Location = new System.Drawing.Point(116, 330);
             this.activityNotesTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityNotesTextBox.Multiline = true;
             this.activityNotesTextBox.Name = "activityNotesTextBox";
             this.activityNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.activityNotesTextBox.TabIndex = 5;
+            this.activityNotesTextBox.TabIndex = 4;
             // 
             // lblActivityInfoTitle
             // 
@@ -241,7 +244,7 @@
             this.btnSave.Location = new System.Drawing.Point(437, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
-            this.btnSave.TabIndex = 61;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -282,10 +285,10 @@
             this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
             this.activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activityContactIDComboBox.FormattingEnabled = true;
-            this.activityContactIDComboBox.Location = new System.Drawing.Point(584, 287);
+            this.activityContactIDComboBox.Location = new System.Drawing.Point(166, 263);
             this.activityContactIDComboBox.Name = "activityContactIDComboBox";
             this.activityContactIDComboBox.Size = new System.Drawing.Size(121, 26);
-            this.activityContactIDComboBox.TabIndex = 63;
+            this.activityContactIDComboBox.TabIndex = 3;
             this.activityContactIDComboBox.ValueMember = "ContactID";
             this.activityContactIDComboBox.SelectedIndexChanged += new System.EventHandler(this.activityContactIDComboBox_SelectedIndexChanged);
             // 
@@ -299,7 +302,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(740, 472);
-            this.Controls.Add(activityContactIDLabel1);
+            this.Controls.Add(lblActivityContactFirstName);
             this.Controls.Add(this.activityContactIDComboBox);
             this.Controls.Add(this.activityTravelComboBox1);
             this.Controls.Add(this.btnSave);
