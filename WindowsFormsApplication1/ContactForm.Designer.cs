@@ -88,7 +88,7 @@
             contactAddressLabel.AutoSize = true;
             contactAddressLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactAddressLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactAddressLabel.Location = new System.Drawing.Point(89, 235);
+            contactAddressLabel.Location = new System.Drawing.Point(89, 236);
             contactAddressLabel.Name = "contactAddressLabel";
             contactAddressLabel.Size = new System.Drawing.Size(66, 19);
             contactAddressLabel.TabIndex = 1;
@@ -99,7 +99,7 @@
             contactCityLabel.AutoSize = true;
             contactCityLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactCityLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactCityLabel.Location = new System.Drawing.Point(115, 267);
+            contactCityLabel.Location = new System.Drawing.Point(115, 268);
             contactCityLabel.Name = "contactCityLabel";
             contactCityLabel.Size = new System.Drawing.Size(40, 19);
             contactCityLabel.TabIndex = 3;
@@ -121,7 +121,7 @@
             contactDepartmentLabel.AutoSize = true;
             contactDepartmentLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactDepartmentLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactDepartmentLabel.Location = new System.Drawing.Point(68, 203);
+            contactDepartmentLabel.Location = new System.Drawing.Point(68, 204);
             contactDepartmentLabel.Name = "contactDepartmentLabel";
             contactDepartmentLabel.Size = new System.Drawing.Size(87, 19);
             contactDepartmentLabel.TabIndex = 7;
@@ -132,7 +132,7 @@
             contactEmailLabel.AutoSize = true;
             contactEmailLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactEmailLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactEmailLabel.Location = new System.Drawing.Point(107, 395);
+            contactEmailLabel.Location = new System.Drawing.Point(107, 396);
             contactEmailLabel.Name = "contactEmailLabel";
             contactEmailLabel.Size = new System.Drawing.Size(48, 19);
             contactEmailLabel.TabIndex = 9;
@@ -143,7 +143,7 @@
             contactFaxLabel.AutoSize = true;
             contactFaxLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactFaxLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactFaxLabel.Location = new System.Drawing.Point(117, 363);
+            contactFaxLabel.Location = new System.Drawing.Point(117, 364);
             contactFaxLabel.Name = "contactFaxLabel";
             contactFaxLabel.Size = new System.Drawing.Size(38, 19);
             contactFaxLabel.TabIndex = 11;
@@ -154,7 +154,7 @@
             contactFirstNameLabel.AutoSize = true;
             contactFirstNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactFirstNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactFirstNameLabel.Location = new System.Drawing.Point(69, 107);
+            contactFirstNameLabel.Location = new System.Drawing.Point(69, 108);
             contactFirstNameLabel.Name = "contactFirstNameLabel";
             contactFirstNameLabel.Size = new System.Drawing.Size(86, 19);
             contactFirstNameLabel.TabIndex = 13;
@@ -165,7 +165,7 @@
             contactIDLabel.AutoSize = true;
             contactIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactIDLabel.Location = new System.Drawing.Point(467, 109);
+            contactIDLabel.Location = new System.Drawing.Point(467, 107);
             contactIDLabel.Name = "contactIDLabel";
             contactIDLabel.Size = new System.Drawing.Size(85, 19);
             contactIDLabel.TabIndex = 15;
@@ -176,7 +176,7 @@
             contactLastNameLabel.AutoSize = true;
             contactLastNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactLastNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactLastNameLabel.Location = new System.Drawing.Point(73, 139);
+            contactLastNameLabel.Location = new System.Drawing.Point(73, 140);
             contactLastNameLabel.Name = "contactLastNameLabel";
             contactLastNameLabel.Size = new System.Drawing.Size(82, 19);
             contactLastNameLabel.TabIndex = 17;
@@ -187,7 +187,7 @@
             contactMobileLabel.AutoSize = true;
             contactMobileLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactMobileLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactMobileLabel.Location = new System.Drawing.Point(314, 333);
+            contactMobileLabel.Location = new System.Drawing.Point(314, 334);
             contactMobileLabel.Name = "contactMobileLabel";
             contactMobileLabel.Size = new System.Drawing.Size(56, 19);
             contactMobileLabel.TabIndex = 19;
@@ -198,7 +198,7 @@
             contactNotesLabel.AutoSize = true;
             contactNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactNotesLabel.Location = new System.Drawing.Point(103, 427);
+            contactNotesLabel.Location = new System.Drawing.Point(103, 428);
             contactNotesLabel.Name = "contactNotesLabel";
             contactNotesLabel.Size = new System.Drawing.Size(52, 19);
             contactNotesLabel.TabIndex = 21;
@@ -209,7 +209,7 @@
             contactPhoneLabel.AutoSize = true;
             contactPhoneLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactPhoneLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactPhoneLabel.Location = new System.Drawing.Point(104, 331);
+            contactPhoneLabel.Location = new System.Drawing.Point(104, 332);
             contactPhoneLabel.Name = "contactPhoneLabel";
             contactPhoneLabel.Size = new System.Drawing.Size(51, 19);
             contactPhoneLabel.TabIndex = 23;
@@ -220,7 +220,7 @@
             contactStateLabel.AutoSize = true;
             contactStateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactStateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactStateLabel.Location = new System.Drawing.Point(314, 267);
+            contactStateLabel.Location = new System.Drawing.Point(314, 268);
             contactStateLabel.Name = "contactStateLabel";
             contactStateLabel.Size = new System.Drawing.Size(50, 19);
             contactStateLabel.TabIndex = 25;
@@ -231,7 +231,7 @@
             contactTitleLabel.AutoSize = true;
             contactTitleLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactTitleLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactTitleLabel.Location = new System.Drawing.Point(110, 171);
+            contactTitleLabel.Location = new System.Drawing.Point(110, 172);
             contactTitleLabel.Name = "contactTitleLabel";
             contactTitleLabel.Size = new System.Drawing.Size(45, 19);
             contactTitleLabel.TabIndex = 27;
@@ -242,7 +242,7 @@
             contactZipCodeLabel.AutoSize = true;
             contactZipCodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactZipCodeLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactZipCodeLabel.Location = new System.Drawing.Point(498, 267);
+            contactZipCodeLabel.Location = new System.Drawing.Point(498, 268);
             contactZipCodeLabel.Name = "contactZipCodeLabel";
             contactZipCodeLabel.Size = new System.Drawing.Size(71, 19);
             contactZipCodeLabel.TabIndex = 29;
@@ -253,7 +253,7 @@
             this.contactAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactAddress", true));
             this.contactAddressTextBox.Location = new System.Drawing.Point(161, 233);
             this.contactAddressTextBox.Name = "contactAddressTextBox";
-            this.contactAddressTextBox.Size = new System.Drawing.Size(301, 26);
+            this.contactAddressTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactAddressTextBox.TabIndex = 5;
             // 
             // contactBindingSource
@@ -284,7 +284,7 @@
             "Text"});
             this.contactContactedViaComboBox.Location = new System.Drawing.Point(161, 297);
             this.contactContactedViaComboBox.Name = "contactContactedViaComboBox";
-            this.contactContactedViaComboBox.Size = new System.Drawing.Size(145, 26);
+            this.contactContactedViaComboBox.Size = new System.Drawing.Size(117, 26);
             this.contactContactedViaComboBox.Sorted = true;
             this.contactContactedViaComboBox.TabIndex = 9;
             this.contactContactedViaComboBox.ValueMember = "Text";
@@ -294,7 +294,7 @@
             this.contactDepartmentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactDepartment", true));
             this.contactDepartmentTextBox.Location = new System.Drawing.Point(161, 201);
             this.contactDepartmentTextBox.Name = "contactDepartmentTextBox";
-            this.contactDepartmentTextBox.Size = new System.Drawing.Size(301, 26);
+            this.contactDepartmentTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactDepartmentTextBox.TabIndex = 4;
             // 
             // contactEmailTextBox
@@ -302,7 +302,7 @@
             this.contactEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactEmail", true));
             this.contactEmailTextBox.Location = new System.Drawing.Point(161, 393);
             this.contactEmailTextBox.Name = "contactEmailTextBox";
-            this.contactEmailTextBox.Size = new System.Drawing.Size(401, 26);
+            this.contactEmailTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactEmailTextBox.TabIndex = 13;
             // 
             // contactFirstNameTextBox
@@ -310,14 +310,14 @@
             this.contactFirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true));
             this.contactFirstNameTextBox.Location = new System.Drawing.Point(161, 105);
             this.contactFirstNameTextBox.Name = "contactFirstNameTextBox";
-            this.contactFirstNameTextBox.Size = new System.Drawing.Size(301, 26);
+            this.contactFirstNameTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactFirstNameTextBox.TabIndex = 1;
             // 
             // contactIDTextBox
             // 
             this.contactIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.contactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactID", true));
-            this.contactIDTextBox.Location = new System.Drawing.Point(558, 107);
+            this.contactIDTextBox.Location = new System.Drawing.Point(558, 105);
             this.contactIDTextBox.Name = "contactIDTextBox";
             this.contactIDTextBox.ReadOnly = true;
             this.contactIDTextBox.Size = new System.Drawing.Size(117, 26);
@@ -328,7 +328,7 @@
             this.contactLastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactLastName", true));
             this.contactLastNameTextBox.Location = new System.Drawing.Point(161, 137);
             this.contactLastNameTextBox.Name = "contactLastNameTextBox";
-            this.contactLastNameTextBox.Size = new System.Drawing.Size(301, 26);
+            this.contactLastNameTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactLastNameTextBox.TabIndex = 2;
             // 
             // contactNotesTextBox
@@ -401,7 +401,7 @@
             "Wyoming"});
             this.contactStateComboBox.Location = new System.Drawing.Point(370, 265);
             this.contactStateComboBox.Name = "contactStateComboBox";
-            this.contactStateComboBox.Size = new System.Drawing.Size(122, 26);
+            this.contactStateComboBox.Size = new System.Drawing.Size(117, 26);
             this.contactStateComboBox.Sorted = true;
             this.contactStateComboBox.TabIndex = 7;
             // 
@@ -414,7 +414,7 @@
             this.contactTitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactTitle", true));
             this.contactTitleTextBox.Location = new System.Drawing.Point(161, 169);
             this.contactTitleTextBox.Name = "contactTitleTextBox";
-            this.contactTitleTextBox.Size = new System.Drawing.Size(301, 26);
+            this.contactTitleTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactTitleTextBox.TabIndex = 3;
             // 
             // lblContactInfoTitle
@@ -422,7 +422,7 @@
             this.lblContactInfoTitle.AutoSize = true;
             this.lblContactInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactInfoTitle.ForeColor = System.Drawing.Color.Crimson;
-            this.lblContactInfoTitle.Location = new System.Drawing.Point(4, 45);
+            this.lblContactInfoTitle.Location = new System.Drawing.Point(1, 50);
             this.lblContactInfoTitle.Name = "lblContactInfoTitle";
             this.lblContactInfoTitle.Size = new System.Drawing.Size(274, 43);
             this.lblContactInfoTitle.TabIndex = 37;
@@ -460,7 +460,7 @@
             this.contactPhoneMaskedTextBox.Location = new System.Drawing.Point(161, 329);
             this.contactPhoneMaskedTextBox.Mask = "(999) 000-0000";
             this.contactPhoneMaskedTextBox.Name = "contactPhoneMaskedTextBox";
-            this.contactPhoneMaskedTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactPhoneMaskedTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactPhoneMaskedTextBox.TabIndex = 10;
             // 
             // contactMobileMaskedTextBox
@@ -469,7 +469,7 @@
             this.contactMobileMaskedTextBox.Location = new System.Drawing.Point(370, 331);
             this.contactMobileMaskedTextBox.Mask = "(999) 000-0000";
             this.contactMobileMaskedTextBox.Name = "contactMobileMaskedTextBox";
-            this.contactMobileMaskedTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactMobileMaskedTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactMobileMaskedTextBox.TabIndex = 11;
             // 
             // contactFaxMaskedTextBox
@@ -478,7 +478,7 @@
             this.contactFaxMaskedTextBox.Location = new System.Drawing.Point(161, 361);
             this.contactFaxMaskedTextBox.Mask = "(999) 000-0000";
             this.contactFaxMaskedTextBox.Name = "contactFaxMaskedTextBox";
-            this.contactFaxMaskedTextBox.Size = new System.Drawing.Size(145, 26);
+            this.contactFaxMaskedTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactFaxMaskedTextBox.TabIndex = 12;
             // 
             // contactZipCodeMaskedTextBox

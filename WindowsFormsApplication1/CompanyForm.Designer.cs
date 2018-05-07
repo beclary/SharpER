@@ -180,7 +180,7 @@
             // 
             this.lblCompanyInfoTitle.AutoSize = true;
             this.lblCompanyInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.Green;
+            this.lblCompanyInfoTitle.ForeColor = System.Drawing.Color.Crimson;
             this.lblCompanyInfoTitle.Location = new System.Drawing.Point(1, 50);
             this.lblCompanyInfoTitle.Name = "lblCompanyInfoTitle";
             this.lblCompanyInfoTitle.Size = new System.Drawing.Size(291, 43);
@@ -192,7 +192,7 @@
             this.companyAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyAddress", true));
             this.companyAddressTextBox.Location = new System.Drawing.Point(117, 141);
             this.companyAddressTextBox.Name = "companyAddressTextBox";
-            this.companyAddressTextBox.Size = new System.Drawing.Size(299, 26);
+            this.companyAddressTextBox.Size = new System.Drawing.Size(300, 26);
             this.companyAddressTextBox.TabIndex = 1;
             // 
             // companyBindingSource
@@ -222,7 +222,7 @@
             this.companyNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyName", true));
             this.companyNameTextBox.Location = new System.Drawing.Point(117, 109);
             this.companyNameTextBox.Name = "companyNameTextBox";
-            this.companyNameTextBox.Size = new System.Drawing.Size(299, 26);
+            this.companyNameTextBox.Size = new System.Drawing.Size(300, 26);
             this.companyNameTextBox.TabIndex = 0;
             // 
             // companyNotesTextBox
@@ -294,7 +294,7 @@
             "Wyoming"});
             this.companyStateComboBox.Location = new System.Drawing.Point(333, 174);
             this.companyStateComboBox.Name = "companyStateComboBox";
-            this.companyStateComboBox.Size = new System.Drawing.Size(126, 26);
+            this.companyStateComboBox.Size = new System.Drawing.Size(117, 26);
             this.companyStateComboBox.Sorted = true;
             this.companyStateComboBox.TabIndex = 3;
             // 
@@ -303,7 +303,7 @@
             this.companyWebsiteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyWebsite", true));
             this.companyWebsiteTextBox.Location = new System.Drawing.Point(117, 269);
             this.companyWebsiteTextBox.Name = "companyWebsiteTextBox";
-            this.companyWebsiteTextBox.Size = new System.Drawing.Size(401, 26);
+            this.companyWebsiteTextBox.Size = new System.Drawing.Size(300, 26);
             this.companyWebsiteTextBox.TabIndex = 7;
             // 
             // btnSave
@@ -363,8 +363,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(732, 472);
+            this.ControlBox = false;
             this.Controls.Add(this.companyZipCodeMaskedTextBox);
             this.Controls.Add(this.companyFaxMaskedTextBox);
             this.Controls.Add(this.companyPhoneMaskedTextBox);
