@@ -256,8 +256,8 @@ namespace SharpERDAL
                 "act_date = @NewActivityDate, " +
                 "act_description = @NewActivityDescription, " +
                 "act_travel = @NewActivityTravel, " +
-                "act_contact_id = @NewActivityContactID, " +
                 "act_job_id = @NewActivityJobID, " +
+                "act_contact_id = @NewActivityContactID, " +
                 "act_notes = @NewActivityNotes " +
                 "WHERE act_id = @OldActivityID " +
                 "AND (act_date = @OldActivityDate " +
@@ -276,18 +276,18 @@ namespace SharpERDAL
 
             // New Activity changes
             // Activity Date (try this and leave out if it doesn't work)
-            if (newActivity.ActivityDate == null)
-            {
-                updateCmd.Parameters.AddWithValue("@NewActivityDate", DBNull.Value);
-                updateCmd.Parameters["@NewActivityDate"].IsNullable = true;
-            }
-            else
-            {
+            //if (newActivity.ActivityDate == null)
+            //{
+            //    updateCmd.Parameters.AddWithValue("@NewActivityDate", DBNull.Value);
+            //    updateCmd.Parameters["@NewActivityDate"].IsNullable = true;
+            //}
+            //else
+            //{
                 updateCmd.Parameters.AddWithValue("@NewActivityDate", newActivity.ActivityDate);
-            }
+            //}
 
             // Activity Description
-            if (newActivity.ActivityDescription == "")
+            if (newActivity.ActivityDescription == null)
             {
                 updateCmd.Parameters.AddWithValue("@NewActivityDescription", DBNull.Value);
                 updateCmd.Parameters["@NewActivityDescription"].IsNullable = true;
@@ -298,7 +298,7 @@ namespace SharpERDAL
             }
 
             // Activity Travel
-            if (newActivity.ActivityTravel == "")
+            if (newActivity.ActivityTravel == null)
             {
                 updateCmd.Parameters.AddWithValue("@NewActivityTravel", DBNull.Value);
                 updateCmd.Parameters["@NewActivityTravel"].IsNullable = true;
@@ -331,7 +331,7 @@ namespace SharpERDAL
             }
 
             // Activity Notes
-            if (newActivity.ActivityNotes == "")
+            if (newActivity.ActivityNotes == null)
             {
                 updateCmd.Parameters.AddWithValue("@NewActivityNotes", DBNull.Value);
                 updateCmd.Parameters["@NewActivityNotes"].IsNullable = true;

@@ -110,7 +110,11 @@ namespace WindowsFormsApplication1
                 newActivity.ActivityDescription = activity.ActivityDescription;
                 newActivity.ActivityTravel = activity.ActivityTravel;
                 newActivity.ActivityJobID = activity.ActivityJobID;
+                newActivity.ActivityJobPosition = activity.ActivityJobPosition;
                 newActivity.ActivityContactID = activity.ActivityContactID;
+                newActivity.ActivityContactFirstName = activity.ActivityContactFirstName;
+                newActivity.ActivityCompanyID = activity.ActivityCompanyID;
+                newActivity.ActivityCompanyName = activity.ActivityCompanyName;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
                 // Set binding (see p.285)
@@ -139,32 +143,32 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
-            }
-            else
-            {
-                try
+                else
                 {
-                    if (!ActivityDB.UpdateModifyActivity(activity, newActivity))
+                    try
                     {
-                        MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                        this.DialogResult = DialogResult.OK;
+                        if (!ActivityDB.UpdateModifyActivity(activity, newActivity))
+                        {
+                            MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            activity = newActivity;
+                            this.DialogResult = DialogResult.OK;
+                        }
                     }
-                    else
+                    catch (SqlException xsept)
                     {
-                        activity = newActivity;
-                        this.DialogResult = DialogResult.OK;
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
+                    }
+                    catch (Exception xsept)
+                    {
+                        MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
-                catch (SqlException xsept)
-                {
-                    MessageBox.Show(xsept.Message, xsept.GetType().ToString());
-                }
-                catch (Exception xsept)
-                {
-                    MessageBox.Show(xsept.Message, xsept.GetType().ToString());
-                }
+                this.Close();
             }
-            this.Close();
         }
 
         private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
