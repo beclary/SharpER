@@ -120,4 +120,7 @@
   <data name="lblSelectingJob.Text" xml:space="preserve">
     <value> If you want to use one of the gold-colored buttons to either UPDATE /       MODIFY a job, VIEW a job's information, or DELETE a job, then in the grid           below select the job row you want, and then click the desired button.         If you need to ADD a new job, just click the teal-colored button labeled ADD NEW JOB</value>
   </data>
+  <metadata name="jobBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
