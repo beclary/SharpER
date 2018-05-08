@@ -100,11 +100,87 @@ namespace SharpERDAL
         {
             Job specificJob = new Job();
             SqlConnection conn = SharpERDB.GetConnection();
-            string selectStmt = 
-                "SELECT job"
+            string selectStmt =
+                "SELECT job_id, job_position, job_applied, job_pay, " +
+                "job_contact_id, job_company_id, job_notes " +
+                "FROM Job " +
+                "WHERE job_id = @job_id";
+            SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            SqlDataReader readur = null;
+            selectCmd.Parameters.AddWithValue("@job_id", jobID);
+
+            try
+            {
+                conn.Open();
+                readur = selectCmd.ExecuteReader();
+                int jobJobIDOrd = readur.GetOrdinal("job_id");
+                int jobJobPositionOrd = readur.GetOrdinal("job_position");
+                int jobJobAppliedOrd = readur.GetOrdinal("job_applied");
+                int jobJobPayOrd = readur.GetOrdinal("job_pay");
+                int jobJobContactIDOrd = readur.GetOrdinal("job_contact_id");
+                int jobJobCompanyIDOrd = readur.GetOrdinal("job_company_id");
+                int jobJobNotesOrd = readur.GetOrdinal("job_notes");
+
+                readur.Read();
+                // Job ID
+                if (readur[jobJobIDOrd] == DBNull.Value)
+                    specificJob = null;
+                else
+                    specificJob.JobID = readur.GetInt32(jobJobIDOrd);
+
+                // Job Position
+                if (readur[jobJobPositionOrd] == DBNull.Value)
+                    specificJob.JobPosition = null;
+                else
+                    specificJob.JobPosition = readur.GetString(jobJobPositionOrd);
+
+                // Job Applied
+                if (readur[jobJobAppliedOrd] == DBNull.Value)
+                    specificJob.JobApplied = DateTime.Now;
+                else
+                    specificJob.JobApplied = readur.GetDateTime(jobJobAppliedOrd);
+
+                // Job Pay
+                if (readur[jobJobPayOrd] == DBNull.Value)
+                    specificJob.JobPay = -1;
+                else
+                    specificJob.JobPay = readur.GetDecimal(jobJobPayOrd);
+
+                // Job Contact ID
+                if (readur[jobJobContactIDOrd] == DBNull.Value)
+                    specificJob.JobContactID = -1;
+                else
+                    specificJob.JobContactID = readur.GetInt32(jobJobContactIDOrd);
+
+                // Job Company ID
+                if (readur[jobJobCompanyIDOrd] == DBNull.Value)
+                    specificJob.JobCompanyID = -1;
+                else
+                    specificJob.JobCompanyID = readur.GetInt32(jobJobCompanyIDOrd);
+
+                // Job Notes
+                if (readur[jobJobNotesOrd] == DBNull.Value)
+                    specificJob.JobNotes = null;
+                else
+                    specificJob.JobNotes = readur.GetString(jobJobNotesOrd);
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                readur.Close();
+                conn.Close();
+            }
+            return specificJob;
         }
 
-        // This is the method to update or modify (change) information on a form
+        // This is the method to view or modify (change) information on a form
         public static bool UpdateModifyJob (Job oldJob, Job newJob)
         {
             SqlConnection conn = SharpERDB.GetConnection();
@@ -117,8 +193,10 @@ namespace SharpERDAL
                 "job_company_id = @NewJobCompanyID, " +
                 "job_notes = @NewJobNotes " +
                 "WHERE job_id = @OldJobID " +
-                "AND job_position = @OldJobPosition " +
-                "AND job_applied = @OldJobApplied " +
+                "AND (job_position = @OldJobPosition " +
+                    "OR job_position IS NULL AND @OldJobPosition IS NULL) " +
+                "AND (job_applied = @OldJobApplied " +
+                    "OR job_applied IS NULL AND @OldJobApplied IS NULL) " +
                 "AND (job_pay = @OldJobPay " +
                     "OR job_pay IS NULL AND @OldJobPay IS NULL) " +
                 "AND (job_contact_id = @OldJobContactID " +
@@ -127,18 +205,28 @@ namespace SharpERDAL
                     "OR job_notes IS NULL AND @OldJobNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
 
-            // New Job changes
+            // New Job changes (must have position and date)
             updateCmd.Parameters.AddWithValue("@NewJobPosition", newJob.JobPosition);
             updateCmd.Parameters.AddWithValue("@NewJobApplied", newJob.JobApplied);
+
             if (newJob.JobPay == -1)
                 updateCmd.Parameters.AddWithValue("@NewJobPay", DBNull.Value);
             else
                 updateCmd.Parameters.AddWithValue("@NewJobPay", newJob.JobPay);
+
             if (newJob.JobContactID == -1)
                 updateCmd.Parameters.AddWithValue("@NewJobContactID", DBNull.Value);
             else
                 updateCmd.Parameters.AddWithValue("@NewJobContactID", newJob.JobContactID);
+
+            if (newJob.JobCompanyID == -1)
+                updateCmd.Parameters.AddWithValue("@NewJobCompanyID", DBNull.Value);
+            else
+                updateCmd.Parameters.AddWithValue("@NewJobCompanyID", newJob.JobCompanyID);
+
             if (newJob.JobNotes == "")
+                updateCmd.Parameters.AddWithValue("@NewJobNotes", DBNull.Value);
+            else
                 updateCmd.Parameters.AddWithValue("@NewJobNotes", newJob.JobNotes);
 
             // Old Job changes
