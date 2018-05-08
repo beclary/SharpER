@@ -147,7 +147,6 @@
             this.lblJobInfoTitle.Size = new System.Drawing.Size(220, 43);
             this.lblJobInfoTitle.TabIndex = 39;
             this.lblJobInfoTitle.Text = "Job Information";
-            this.lblJobInfoTitle.Click += new System.EventHandler(this.lblJobInfoTitle_Click);
             // 
             // jobBindingSource
             // 
@@ -234,7 +233,6 @@
             this.btnSave.TabIndex = 58;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // companyBindingSource
             // 
@@ -248,7 +246,6 @@
             this.companyNameComboBox.Name = "companyNameComboBox";
             this.companyNameComboBox.Size = new System.Drawing.Size(249, 26);
             this.companyNameComboBox.TabIndex = 59;
-            this.companyNameComboBox.SelectedIndexChanged += new System.EventHandler(this.companyNameComboBox_SelectedIndexChanged);
             // 
             // txtJobPayOffered
             // 
