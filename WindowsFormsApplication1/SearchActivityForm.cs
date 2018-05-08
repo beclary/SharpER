@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
             }
             catch (SqlException xsept)
             {
-                throw xsept;
+                            throw xsept;
             }
             catch (Exception xsept)
             {

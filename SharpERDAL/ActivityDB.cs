@@ -273,18 +273,8 @@ namespace SharpERDAL
                 "AND (act_notes = @OldActivityNotes " +
                     "OR act_notes IS NULL AND @OldActivityNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
-
-            // New Activity changes
-            // Activity Date (try this and leave out if it doesn't work)
-            //if (newActivity.ActivityDate == null)
-            //{
-            //    updateCmd.Parameters.AddWithValue("@NewActivityDate", DBNull.Value);
-            //    updateCmd.Parameters["@NewActivityDate"].IsNullable = true;
-            //}
-            //else
-            //{
+            // Activity Date REQUIRED Field = so it will add whatever was accepted
                 updateCmd.Parameters.AddWithValue("@NewActivityDate", newActivity.ActivityDate);
-            //}
 
             // Activity Description
             if (newActivity.ActivityDescription == null)

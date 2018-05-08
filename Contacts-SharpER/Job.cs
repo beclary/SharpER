@@ -17,8 +17,12 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private string jobPosition;
         private DateTime jobApplied;
         private decimal jobPay;
+        private int jobActivityID;
+        private string jobActivityDescription;
         private int jobContactID; // Foreign key to the Contact class
+        private string jobContactFirstName;
         private int jobCompanyID; // Foreign key to the Company class
+        private string jobCompanyName;
         private string jobNotes;
 
         // CONSTRUCTORS
@@ -83,6 +87,30 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             }
         }
 
+        public int JobActivityID
+        {
+            get
+            {
+                return jobActivityID; 
+            }
+            set
+            {
+                jobActivityID = value;
+            }
+        }
+
+        public string JobActivityDescription
+        {
+            get
+            {
+                return jobActivityDescription;
+            }
+            set
+            {
+                jobActivityDescription = value;
+            }
+        }
+
         public int JobContactID
         {
             get
@@ -96,6 +124,18 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             }
         }
 
+        public string JobContactFirstName
+        {
+            get
+            {
+                return jobContactFirstName;
+            }
+            set
+            {
+                jobContactFirstName = value;
+            }
+        }
+
         public int JobCompanyID
         {
             get
@@ -106,6 +146,18 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             set
             {
                 jobCompanyID = value;
+            }
+        }
+
+        public string JobCompanyName
+        {
+            get
+            {
+                return jobCompanyName;
+            }
+            set
+            {
+                jobCompanyName = value;
             }
         }
 

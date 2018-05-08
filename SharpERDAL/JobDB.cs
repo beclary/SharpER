@@ -23,11 +23,12 @@ namespace SharpERDAL
                 "FROM Job " +
                 "ORDER BY job_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                SqlDataReader readur = selectCmd.ExecuteReader();
+                readur = selectCmd.ExecuteReader();
                 int jobJobIDOrd = readur.GetOrdinal("job_id");
                 int jobJobPositionOrd = readur.GetOrdinal("job_position");
                 int jobJobAppliedOrd = readur.GetOrdinal("job_applied");
