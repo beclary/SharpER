@@ -40,36 +40,44 @@ namespace SharpERDAL
                 while (readur.Read())
                 {
                     Job jobRowInfo = new Job();
-                    if (readur[jobJobIDOrd] == DBNull.Value)
-                        jobRowInfo.JobID = -1;
-                    else
-                        jobRowInfo.JobID = readur.GetInt32(jobJobIDOrd);
+                    // Both JobID and JobApplied are required fields, so they are listed as follows:
+                    jobRowInfo.JobID = readur.GetInt32(jobJobIDOrd);
+                    jobRowInfo.JobApplied = readur.GetDateTime(jobJobAppliedOrd);
+
+                    // Te rest can all have been left blank:
+
+                    // Job Position
                     if (readur[jobJobPositionOrd] == DBNull.Value)
                         jobRowInfo.JobPosition = "";
                     else
                         jobRowInfo.JobPosition = readur.GetString(jobJobPositionOrd);
 
-                    // JobApplied was left blank because couldn't figure how to assign
-
+                    // Job Pay
                     if (readur[jobJobPayOrd] == DBNull.Value)
                         jobRowInfo.JobPay = -1;
                     else
                         jobRowInfo.JobPay = readur.GetDecimal(jobJobPayOrd);
+
+                    // Job Contact ID
                     if (readur[jobJobContactIDOrd] == DBNull.Value)
                         jobRowInfo.JobContactID = -1;
                     else
                         jobRowInfo.JobContactID = readur.GetInt32(jobJobContactIDOrd);
+
+                    // Job Company ID
                     if (readur[jobJobCompanyIDOrd] == DBNull.Value)
                         jobRowInfo.JobCompanyID = -1;
                     else
                         jobRowInfo.JobCompanyID = readur.GetInt32(jobJobCompanyIDOrd);
+
+                    // Job Notes
                     if (readur[jobJobNotesOrd] == DBNull.Value)
                         jobRowInfo.JobNotes = "";
                     else
                         jobRowInfo.JobNotes = readur.GetString(jobJobNotesOrd);
+
                     jobList.Add(jobRowInfo);
                 }
-                readur.Close();
             }
             catch (SqlException xsept)
             {
@@ -81,15 +89,19 @@ namespace SharpERDAL
             }
             finally
             {
+                readur.Close();
                 conn.Close();
             }
             return jobList;
         }
 
-        // This will provide the job information given a specific jobID
-        public static Job GetSpecificJobInfo(int jobID)
+        // This will provide the job information given a specific job applied date
+        public static Job GetSpecificJobInfo(DateTime jobID)
         {
-            throw new System.NotImplementedException();
+            Job specificJob = new Job();
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt = 
+                "SELECT job"
         }
 
         // This is the method to update or modify (change) information on a form
