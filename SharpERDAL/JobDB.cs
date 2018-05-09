@@ -376,37 +376,107 @@ namespace SharpERDAL
             // Job Position
             if (newJob.JobPosition == "")
             {
-
+                insertCmd.Parameters.AddWithValue("@JobPosition", DBNull.Value);
+                insertCmd.Parameters["@JobApplied"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@JobPosition", newJob.JobPosition);
             }
 
-            insertCmd.Parameters.AddWithValue("@JobPosition", newJob.JobPosition);
-            insertCmd.Parameters.AddWithValue("@JobApplied", newJob.JobApplied);
+            // Job Applied
+            if (newJob.JobApplied == null)
+            {
+                insertCmd.Parameters.AddWithValue("@JobApplied", DBNull.Value);
+                insertCmd.Parameters["@JobApplied"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@JobApplied", newJob.JobApplied);
+            }
+
+            // Job Pay
             if (newJob.JobPay == -1)
+            {
                 insertCmd.Parameters.AddWithValue("@JobPay", DBNull.Value);
+                insertCmd.Parameters["@JobPay"].IsNullable = true;
+            }
             else
+            {
                 insertCmd.Parameters.AddWithValue("@JobPay", newJob.JobPay);
+            }
+
+            // Job Contact's ID number
             if (newJob.JobContactID == -1)
+            {
                 insertCmd.Parameters.AddWithValue("@JobContactID", DBNull.Value);
+                insertCmd.Parameters["@JobContactID"].IsNullable = true;
+            }
             else
+            {
                 insertCmd.Parameters.AddWithValue("@JobContactID", newJob.JobContactID);
+            }
+
+            // Job Company's ID number
             if (newJob.JobCompanyID == -1)
+            {
                 insertCmd.Parameters.AddWithValue("@JobCompanyID", DBNull.Value);
+                insertCmd.Parameters["@JobCompanyID"].IsNullable = true;
+            }
             else
+            {
                 insertCmd.Parameters.AddWithValue("@JobCompanyID", newJob.JobCompanyID);
+            }
+
+            // Job Notes
             if (newJob.JobNotes == "")
+            {
                 insertCmd.Parameters.AddWithValue("@JobNotes", DBNull.Value);
+                insertCmd.Parameters["@JobNotes"].IsNullable = true;
+            }
             else
+            {
                 insertCmd.Parameters.AddWithValue("@JobNotes", newJob.JobNotes);
+            }
 
             try
             {
                 conn.Open();
                 insertCmd.ExecuteNonQuery();
                 string selectStmt =
-                    "SELECT SCOPE_IDENTITY ('Job') FROM Job";
+                    "SELECT IDENT_CURRENT ('Job') FROM Job";
                 SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
                 int jobID = Convert.ToInt32(selectCmd.ExecuteScalar());
                 return jobID;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static int DeleteJob (int jobID)
+        {
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "DELETE FROM Job " +
+                "WHERE job_id = @Job_ID";
+            SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
+            deleteCmd.Parameters.AddWithValue("@JobID", jobID);
+
+            try
+            {
+                conn.Open();
+                int rowDel = Convert.ToInt32(deleteCmd.ExecuteScalar());
+                return rowDel;
             }
             catch (SqlException xsept)
             {
