@@ -75,17 +75,37 @@ namespace WindowsFormsApplication1
             MainForm.jobMainForm = null;
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void JobForm_Load(object sender, EventArgs e)
         {
+            List<Contact> contactListing = ContactDB.GetAllContacts();
+            contactFirstNameComboBox.DataSource = contactBindingSource;
+            contactBindingSource.DataSource = contactListing;
+
+            List<Company> companyListing = CompanyDB.GetAllCompanies();
+            companyNameComboBox.DataSource = companyBindingSource;
+            companyBindingSource.DataSource = companyListing;
+
+            List<Activity> activityListing = ActivityDB.GetAllActivities();
+            activityDescriptionComboBox.DataSource = activityBindingSource;
+            activityBindingSource.DataSource = activityListing;
+
+
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
-            if (addJob == true)
+            if (addJob == true) // This is the ADD
             {
                 job = new Job();
                 jobBindingSource.Clear();
                 jobBindingSource.Add(job);
             }
-            else
+            else  // This is the MODIFY
             {
+                // Set Job to the row held by the jobBindingSource.Current
+                // (wherever the user clicked in the grid)
                 job = (Job)jobBindingSource.Current;
 
                 newJob = new Job();
@@ -95,17 +115,16 @@ namespace WindowsFormsApplication1
                 newJob.JobApplied = job.JobApplied;
                 newJob.JobPay = job.JobPay;
                 newJob.JobContactID = job.JobContactID;
+                newJob.JobContactFirstName = job.JobContactFirstName;
                 newJob.JobCompanyID = job.JobCompanyID;
+                newJob.JobCompanyName = job.JobCompanyName;
                 newJob.JobNotes = job.JobNotes;
+                newJob.JobActivityID = job.JobActivityID;
+                newJob.JobActivityDescription = job.JobActivityDescription;
 
                 jobBindingSource.Clear();
                 jobBindingSource.Add(newJob);
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -166,9 +185,17 @@ namespace WindowsFormsApplication1
 
         private void ContactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ContactFirstNameComboBox.SelectedIndex != -1)
+            if (contactFirstNameComboBox.SelectedIndex != -1)
             {
-                this.jobContactIDTextBox.Text = ContactFirstNameComboBox.SelectedValue.ToString();
+                this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
+            }
+        }
+
+        private void activityDescriptionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activityDescriptionComboBox.SelectedIndex != -1)
+            {
+                this.jobActivityIDTextBox.Text = activityDescriptionComboBox.SelectedValue.ToString();
             }
         }
     }

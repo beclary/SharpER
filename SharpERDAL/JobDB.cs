@@ -36,6 +36,7 @@ namespace SharpERDAL
                 int jobJobContactIDOrd = readur.GetOrdinal("job_contact_id");
                 int jobJobCompanyIDOrd = readur.GetOrdinal("job_company_id");
                 int jobJobNotesOrd = readur.GetOrdinal("job_notes");
+                
 
                 while (readur.Read())
                 {
