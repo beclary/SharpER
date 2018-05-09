@@ -207,7 +207,7 @@ namespace SharpERDAL
 
             // New Job changes (must have position and date)
             // Job Position
-            if (newJob.JobPosition == null)
+            if (newJob.JobPosition == "")
             {
                 updateCmd.Parameters.AddWithValue("@NewJobPosition", DBNull.Value);
                 updateCmd.Parameters["@NewJobPosition"].IsNullable = true;
@@ -228,42 +228,116 @@ namespace SharpERDAL
                 updateCmd.Parameters.AddWithValue("@NewJobApplied", newJob.JobApplied);
             }
 
-
+            // Job Pay
             if (newJob.JobPay == -1)
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobPay", DBNull.Value);
+                updateCmd.Parameters["@NewJobPay"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobPay", newJob.JobPay);
+            }
 
+            // Job Contact's ID number
             if (newJob.JobContactID == -1)
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobContactID", DBNull.Value);
+                updateCmd.Parameters["@NewJobContactID"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobContactID", newJob.JobContactID);
+            }
 
+            // Job Company's ID number
             if (newJob.JobCompanyID == -1)
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobCompanyID", DBNull.Value);
+                updateCmd.Parameters["@NewJobCompanyID"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobCompanyID", newJob.JobCompanyID);
+            }
 
+            // Job Notes
             if (newJob.JobNotes == "")
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobNotes", DBNull.Value);
+                updateCmd.Parameters["@NewJobNotes"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@NewJobNotes", newJob.JobNotes);
+            }
 
             // Old Job changes
-            updateCmd.Parameters.AddWithValue("@OldJobPosition", oldJob.JobPosition);
-            updateCmd.Parameters.AddWithValue("@OldJobApplied", oldJob.JobApplied);
+            // Job Position
+            if (oldJob.JobPosition == "")
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobPosition", DBNull.Value);
+                updateCmd.Parameters["@OldJobPosition"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobPosition", oldJob.JobPosition);
+            }
+
+            // Job Applied
+            if (oldJob.JobApplied == null)
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobApplied", DBNull.Value);
+                updateCmd.Parameters["@OldJobApplied"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobApplied", oldJob.JobApplied);
+            }
+
+            // Job Pay
             if (oldJob.JobPay == -1)
+            {
                 updateCmd.Parameters.AddWithValue("@OldJobPay", DBNull.Value);
+                updateCmd.Parameters["@OldJobPay"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@OldJobPay", oldJob.JobPay);
-            if (oldJob.JobCompanyID == -1)
+            }
+
+            // Job Contact's ID number
+            if (oldJob.JobContactID == -1)
+            {
                 updateCmd.Parameters.AddWithValue("@OldJobContactID", DBNull.Value);
+                updateCmd.Parameters["@OldJobContactID"].IsNullable = true;
+            }
             else
+            {
                 updateCmd.Parameters.AddWithValue("@OldJobContactID", oldJob.JobContactID);
-            if (oldJob.JobNotes == "")
-                updateCmd.Parameters.AddWithValue("@OldJobNotes", DBNull.Value);
+            }
+
+            // Job Company's ID number
+            if (oldJob.JobCompanyID == -1)
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobCompanyID", DBNull.Value);
+                updateCmd.Parameters["@OldJobCompanyID"].IsNullable = true;
+            }
             else
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobCompanyID", oldJob.JobCompanyID);
+            }
+
+            // Job Notes
+            if (oldJob.JobNotes == "")
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobNotes", DBNull.Value);
+                updateCmd.Parameters["@OldJobNotes"].IsNullable = true;
+            }
+            else
+            {
                 updateCmd.Parameters.AddWithValue("@OldJobNotes", oldJob.JobNotes);
+            }
 
             try
             {
@@ -293,10 +367,18 @@ namespace SharpERDAL
         {
             SqlConnection conn = SharpERDB.GetConnection();
             string insertStmt =
-                "INSERT Job " +
+                "INSERT INTO Job " +
                 "(job_position, job_applied, job_pay, job_contact_id, job_company_id, job_notes) " +
                 "VALUES (@JobPosition, @JobApplied, @JobPay, @JobContactID, @JobCompanyID, @JobNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
+
+            // Job Position and Job Applied are both here required entries
+            // Job Position
+            if (newJob.JobPosition == "")
+            {
+
+            }
+
             insertCmd.Parameters.AddWithValue("@JobPosition", newJob.JobPosition);
             insertCmd.Parameters.AddWithValue("@JobApplied", newJob.JobApplied);
             if (newJob.JobPay == -1)
