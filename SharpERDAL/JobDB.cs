@@ -206,8 +206,28 @@ namespace SharpERDAL
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
 
             // New Job changes (must have position and date)
-            updateCmd.Parameters.AddWithValue("@NewJobPosition", newJob.JobPosition);
-            updateCmd.Parameters.AddWithValue("@NewJobApplied", newJob.JobApplied);
+            // Job Position
+            if (newJob.JobPosition == null)
+            {
+                updateCmd.Parameters.AddWithValue("@NewJobPosition", DBNull.Value);
+                updateCmd.Parameters["@NewJobPosition"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewJobPosition", newJob.JobPosition);
+            }
+
+            // Job Applied
+            if (newJob.JobApplied == null)
+            {
+                updateCmd.Parameters.AddWithValue("@NewJobApplied", DBNull.Value);
+                updateCmd.Parameters["@NewJobApplied"].IsNullable = true;
+            }
+            else
+            {
+                updateCmd.Parameters.AddWithValue("@NewJobApplied", newJob.JobApplied);
+            }
+
 
             if (newJob.JobPay == -1)
                 updateCmd.Parameters.AddWithValue("@NewJobPay", DBNull.Value);
