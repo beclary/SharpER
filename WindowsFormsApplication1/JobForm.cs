@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
         {
             if (jobBindingSource.Count > 0)
             {
-                return IsPresent(jobPositionTextBox, "Position");
+                return IsPresent(jobAppliedDateTimePicker, "Date");
             }
             else
             {
@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void JobForm_Load(object sender, EventArgs e)
@@ -115,12 +115,8 @@ namespace WindowsFormsApplication1
                 newJob.JobApplied = job.JobApplied;
                 newJob.JobPay = job.JobPay;
                 newJob.JobContactID = job.JobContactID;
-                newJob.JobContactFirstName = job.JobContactFirstName;
                 newJob.JobCompanyID = job.JobCompanyID;
-                newJob.JobCompanyName = job.JobCompanyName;
                 newJob.JobNotes = job.JobNotes;
-                newJob.JobActivityID = job.JobActivityID;
-                newJob.JobActivityDescription = job.JobActivityDescription;
 
                 jobBindingSource.Clear();
                 jobBindingSource.Add(newJob);
@@ -179,7 +175,7 @@ namespace WindowsFormsApplication1
         {
             if (companyNameComboBox.SelectedIndex != -1)
             {
-                this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
+                //this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
             }
         }
 
@@ -187,7 +183,7 @@ namespace WindowsFormsApplication1
         {
             if (contactFirstNameComboBox.SelectedIndex != -1)
             {
-                this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
+                //this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
             }
         }
 
@@ -195,8 +191,18 @@ namespace WindowsFormsApplication1
         {
             if (activityDescriptionComboBox.SelectedIndex != -1)
             {
-                this.jobActivityIDTextBox.Text = activityDescriptionComboBox.SelectedValue.ToString();
+                //this.jobActivityIDTextBox.Text = activityDescriptionComboBox.SelectedValue.ToString();
             }
+        }
+
+        private void companyBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJobPayOffered_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

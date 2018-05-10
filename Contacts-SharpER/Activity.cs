@@ -18,11 +18,8 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
         private string activityDescription;
         private string activityTravel;
         private int activityJobID; // Foreign key to the Job class
-        private string activityJobPosition;
         private int activityContactID; // Foreign key to the Contact class
-        private string activityContactFirstName;
         private int activityCompanyID; // Foreign key to the Company class
-        private string activityCompanyName;
         private string activityNotes;
 
         // CONSTRUCTORS
@@ -100,18 +97,6 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             }
         }
 
-        public string ActivityJobPosition
-        {
-            get
-            {
-                return activityJobPosition;
-            }
-            set
-            {
-                activityJobPosition = value;
-            }
-        }
-
         public int ActivityContactID
         {
             get
@@ -122,18 +107,6 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             set
             {
                 activityContactID = value;
-            }
-        }
-
-        public string ActivityContactFirstName
-        {
-            get
-            {
-                return activityContactFirstName;
-            }
-            set
-            {
-                activityContactFirstName = value;
             }
         }
 
@@ -149,17 +122,6 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
             }
         }
 
-        public string ActivityCompanyName
-        {
-            get
-            {
-                return activityCompanyName;
-            }
-            set
-            {
-                activityCompanyName = value;
-            }
-        }
 
         public string ActivityNotes
         {

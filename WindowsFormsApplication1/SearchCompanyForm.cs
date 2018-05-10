@@ -86,6 +86,7 @@ namespace WindowsFormsApplication1
                 companyListing = CompanyDB.GetAllCompanies();
                 companyDataGridView.DataSource = companyBindingSource;
                 companyBindingSource.DataSource = companyListing;
+                companyDataGridView.ClearSelection();
             }
             catch (SqlException xsept)
             {

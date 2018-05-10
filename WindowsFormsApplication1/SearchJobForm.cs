@@ -105,6 +105,9 @@ namespace WindowsFormsApplication1
         private void jobDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
+            DataGridViewRow row = jobDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[0];
+            int companyRowSelected = (int)cell.Value;
         }
     }
 }

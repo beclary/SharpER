@@ -41,6 +41,7 @@ namespace WindowsFormsApplication1
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
+            contactDataGridView.ClearSelection();
         }
 
         private void btnAddNewContact_Click(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace WindowsFormsApplication1
             contactListing = ContactDB.GetAllContacts();
             contactDataGridView.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
+            contactDataGridView.ClearSelection();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace WindowsFormsApplication1
                 contactListing = ContactDB.GetAllContacts();
                 contactDataGridView.DataSource = contactBindingSource;
                 contactBindingSource.DataSource = contactListing;
+                contactDataGridView.ClearSelection();
             }
             catch (SqlException xsept)
             {

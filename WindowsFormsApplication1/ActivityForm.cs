@@ -85,6 +85,11 @@ namespace WindowsFormsApplication1
             List<Contact> contactListing = ContactDB.GetAllContacts();
             activityContactIDComboBox.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
+
+            List<Job> jobListing = JobDB.GetAllJobs();
+            ActivityJobIDComboBox.DataSource = jobBindingSource;
+            jobBindingSource.DataSource = jobListing;
+
             // Bindings need to be set, so I have to test here to see if it was an
             // ADD or MODIFY
             if (addActivity == true) // This is the ADD
@@ -110,11 +115,8 @@ namespace WindowsFormsApplication1
                 newActivity.ActivityDescription = activity.ActivityDescription;
                 newActivity.ActivityTravel = activity.ActivityTravel;
                 newActivity.ActivityJobID = activity.ActivityJobID;
-                newActivity.ActivityJobPosition = activity.ActivityJobPosition;
                 newActivity.ActivityContactID = activity.ActivityContactID;
-                newActivity.ActivityContactFirstName = activity.ActivityContactFirstName;
                 newActivity.ActivityCompanyID = activity.ActivityCompanyID;
-                newActivity.ActivityCompanyName = activity.ActivityCompanyName;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
                 // Set binding (see p.285)
@@ -179,5 +181,12 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void ActivityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ActivityJobIDComboBox.SelectedIndex != -1)
+            {
+                this.activityJobIDTextBox.Text = ActivityJobIDComboBox.SelectedValue.ToString();
+            }
+        }
     }
 }

@@ -218,16 +218,8 @@ namespace SharpERDAL
                 updateCmd.Parameters.AddWithValue("@NewJobPosition", newJob.JobPosition);
             }
 
-            // Job Applied
-            if (newJob.JobApplied == null)
-            {
-                updateCmd.Parameters.AddWithValue("@NewJobApplied", DBNull.Value);
-                updateCmd.Parameters["@NewJobApplied"].IsNullable = true;
-            }
-            else
-            {
+            // Job Applied - Mandatory DateTime field
                 updateCmd.Parameters.AddWithValue("@NewJobApplied", newJob.JobApplied);
-            }
 
             // Job Pay
             if (newJob.JobPay == -1)
@@ -275,6 +267,8 @@ namespace SharpERDAL
 
             // Old Job changes
             // Job Position
+            updateCmd.Parameters.AddWithValue("@OldJobID", oldJob.JobID);
+
             if (oldJob.JobPosition == "")
             {
                 updateCmd.Parameters.AddWithValue("@OldJobPosition", DBNull.Value);
@@ -375,7 +369,7 @@ namespace SharpERDAL
 
             // Job Position and Job Applied are both here required entries
             // Job Position
-            if (newJob.JobPosition == "")
+            if (newJob.JobPosition == null)
             {
                 insertCmd.Parameters.AddWithValue("@JobPosition", DBNull.Value);
                 insertCmd.Parameters["@JobApplied"].IsNullable = true;
@@ -430,7 +424,7 @@ namespace SharpERDAL
             }
 
             // Job Notes
-            if (newJob.JobNotes == "")
+            if (newJob.JobNotes == null)
             {
                 insertCmd.Parameters.AddWithValue("@JobNotes", DBNull.Value);
                 insertCmd.Parameters["@JobNotes"].IsNullable = true;
@@ -471,7 +465,7 @@ namespace SharpERDAL
                 "DELETE FROM Job " +
                 "WHERE job_id = @Job_ID";
             SqlCommand deleteCmd = new SqlCommand(selectStmt, conn);
-            deleteCmd.Parameters.AddWithValue("@JobID", jobID);
+            deleteCmd.Parameters.AddWithValue("@Job_ID", jobID);
 
             try
             {

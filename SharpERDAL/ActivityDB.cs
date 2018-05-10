@@ -460,15 +460,15 @@ namespace SharpERDAL
             }
 
             // Activity JobID
-            //if (newActivity.ActivityJobID == -2)
-            //{
-            //    insertCmd.Parameters.AddWithValue("@ActivityJobID", DBNull.Value);
-            //    insertCmd.Parameters["@ActivityJobID"].IsNullable = true;
-            //}
-            //else
-            //{
-            //    insertCmd.Parameters.AddWithValue("@ActivityJobID", newActivity.ActivityJobID);
-            //}
+            if (newActivity.ActivityJobID == -1)
+            {
+                insertCmd.Parameters.AddWithValue("@ActivityJobID", DBNull.Value);
+                insertCmd.Parameters["@ActivityJobID"].IsNullable = true;
+            }
+            else
+            {
+                insertCmd.Parameters.AddWithValue("@ActivityJobID", newActivity.ActivityJobID);
+            }
 
             // Activity ContactID
             if (newActivity.ActivityContactID == -1)
