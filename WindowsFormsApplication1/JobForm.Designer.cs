@@ -227,6 +227,8 @@
             // 
             this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyName", true));
             this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jobBindingSource, "JobCompanyID", true));
+            this.companyNameComboBox.DataSource = this.companyBindingSource;
+            this.companyNameComboBox.DisplayMember = "CompanyName";
             this.companyNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.companyNameComboBox.FormattingEnabled = true;
             this.companyNameComboBox.Location = new System.Drawing.Point(161, 259);
@@ -234,7 +236,6 @@
             this.companyNameComboBox.Size = new System.Drawing.Size(249, 26);
             this.companyNameComboBox.TabIndex = 3;
             this.companyNameComboBox.ValueMember = "CompanyID";
-            this.companyNameComboBox.SelectedIndexChanged += new System.EventHandler(this.companyNameComboBox_SelectedIndexChanged);
             // 
             // txtJobPayOffered
             // 
@@ -258,7 +259,6 @@
             this.contactFirstNameComboBox.Size = new System.Drawing.Size(248, 26);
             this.contactFirstNameComboBox.TabIndex = 4;
             this.contactFirstNameComboBox.ValueMember = "ContactID";
-            this.contactFirstNameComboBox.SelectedIndexChanged += new System.EventHandler(this.ContactFirstNameComboBox_SelectedIndexChanged);
             // 
             // contactBindingSource
             // 
@@ -280,7 +280,7 @@
             this.jobActivityDescriptionLabel.AutoSize = true;
             this.jobActivityDescriptionLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.jobActivityDescriptionLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            this.jobActivityDescriptionLabel.Location = new System.Drawing.Point(11, 325);
+            this.jobActivityDescriptionLabel.Location = new System.Drawing.Point(347, 442);
             this.jobActivityDescriptionLabel.Name = "jobActivityDescriptionLabel";
             this.jobActivityDescriptionLabel.Size = new System.Drawing.Size(141, 19);
             this.jobActivityDescriptionLabel.TabIndex = 67;
@@ -293,12 +293,11 @@
             this.activityDescriptionComboBox.DisplayMember = "ActivityDescription";
             this.activityDescriptionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activityDescriptionComboBox.FormattingEnabled = true;
-            this.activityDescriptionComboBox.Location = new System.Drawing.Point(161, 323);
+            this.activityDescriptionComboBox.Location = new System.Drawing.Point(497, 440);
             this.activityDescriptionComboBox.Name = "activityDescriptionComboBox";
             this.activityDescriptionComboBox.Size = new System.Drawing.Size(248, 26);
             this.activityDescriptionComboBox.TabIndex = 5;
             this.activityDescriptionComboBox.ValueMember = "ActivityID";
-            this.activityDescriptionComboBox.SelectedIndexChanged += new System.EventHandler(this.activityDescriptionComboBox_SelectedIndexChanged);
             // 
             // activityBindingSource
             // 

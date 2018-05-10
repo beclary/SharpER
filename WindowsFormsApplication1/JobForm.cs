@@ -90,9 +90,9 @@ namespace WindowsFormsApplication1
             companyNameComboBox.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
 
-            List<Activity> activityListing = ActivityDB.GetAllActivities();
-            activityDescriptionComboBox.DataSource = activityBindingSource;
-            activityBindingSource.DataSource = activityListing;
+            //List<Activity> activityListing = ActivityDB.GetAllActivities();
+            //activityDescriptionComboBox.DataSource = activityBindingSource;
+            //activityBindingSource.DataSource = activityListing;
 
 
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
@@ -175,7 +175,6 @@ namespace WindowsFormsApplication1
         {
             if (companyNameComboBox.SelectedIndex != -1)
             {
-                //this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
             }
         }
 
@@ -183,17 +182,15 @@ namespace WindowsFormsApplication1
         {
             if (contactFirstNameComboBox.SelectedIndex != -1)
             {
-                //this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
             }
         }
 
-        private void activityDescriptionComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (activityDescriptionComboBox.SelectedIndex != -1)
-            {
-                //this.jobActivityIDTextBox.Text = activityDescriptionComboBox.SelectedValue.ToString();
-            }
-        }
+        //private void activityDescriptionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (activityDescriptionComboBox.SelectedIndex != -1)
+        //    {
+        //    }
+        //}
 
         private void companyBindingSource1_CurrentChanged(object sender, EventArgs e)
         {

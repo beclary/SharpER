@@ -52,6 +52,13 @@ namespace WindowsFormsApplication1
                     textBox.Focus();
                     return false;
                 }
+                //ComboBox comboBox = (ComboBox)control;
+                //if (comboBox.SelectedIndex == -1)
+                //{
+                //    MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
+                //    textBox.Focus();
+                //    return false;
+                //}
             }
             return true;
         }
@@ -61,7 +68,8 @@ namespace WindowsFormsApplication1
             if (activityBindingSource.Count > 0)
             {
                 return
-                    IsPresent(activityDateDateTimePicker, "Date");
+                    IsPresent(activityDateDateTimePicker, "Date") &&
+                    IsPresent(activityDescriptionTextBox, "Description");
             }
             else
             {
@@ -87,7 +95,7 @@ namespace WindowsFormsApplication1
             contactBindingSource.DataSource = contactListing;
 
             List<Job> jobListing = JobDB.GetAllJobs();
-            ActivityJobIDComboBox.DataSource = jobBindingSource;
+            activityJobIDComboBox.DataSource = jobBindingSource;
             jobBindingSource.DataSource = jobListing;
 
             // Bindings need to be set, so I have to test here to see if it was an
@@ -116,7 +124,7 @@ namespace WindowsFormsApplication1
                 newActivity.ActivityTravel = activity.ActivityTravel;
                 newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityContactID = activity.ActivityContactID;
-                newActivity.ActivityCompanyID = activity.ActivityCompanyID;
+                //newActivity.ActivityCompanyID = activity.ActivityCompanyID;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
                 // Set binding (see p.285)
@@ -181,11 +189,11 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void ActivityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ActivityJobIDComboBox.SelectedIndex != -1)
+            if (activityJobIDComboBox.SelectedIndex != -1)
             {
-                this.activityJobIDTextBox.Text = ActivityJobIDComboBox.SelectedValue.ToString();
+                this.activityJobIDTextBox.Text = activityJobIDComboBox.SelectedValue.ToString();
             }
         }
     }
