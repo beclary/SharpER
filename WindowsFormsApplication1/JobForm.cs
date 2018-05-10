@@ -90,10 +90,6 @@ namespace WindowsFormsApplication1
             companyNameComboBox.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
 
-            //List<Activity> activityListing = ActivityDB.GetAllActivities();
-            //activityDescriptionComboBox.DataSource = activityBindingSource;
-            //activityBindingSource.DataSource = activityListing;
-
 
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
             if (addJob == true) // This is the ADD
@@ -150,7 +146,7 @@ namespace WindowsFormsApplication1
                         if (!JobDB.UpdateModifyJob(job, newJob))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.OK;
+                            this.DialogResult = DialogResult.Retry;
                         }
                         else
                         {
@@ -175,31 +171,17 @@ namespace WindowsFormsApplication1
         {
             if (companyNameComboBox.SelectedIndex != -1)
             {
+                this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
             }
         }
 
-        private void ContactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (contactFirstNameComboBox.SelectedIndex != -1)
             {
+                this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
             }
         }
 
-        //private void activityDescriptionComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (activityDescriptionComboBox.SelectedIndex != -1)
-        //    {
-        //    }
-        //}
-
-        private void companyBindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtJobPayOffered_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -94,9 +94,9 @@ namespace WindowsFormsApplication1
             activityContactIDComboBox.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
 
-            List<Job> jobListing = JobDB.GetAllJobs();
-            activityJobIDComboBox.DataSource = jobBindingSource;
-            jobBindingSource.DataSource = jobListing;
+            //List<Job> jobListing = JobDB.GetAllJobs();
+            //activityJobIDComboBox.DataSource = jobBindingSource;
+            //jobBindingSource.DataSource = jobListing;
 
             // Bindings need to be set, so I have to test here to see if it was an
             // ADD or MODIFY
@@ -124,7 +124,6 @@ namespace WindowsFormsApplication1
                 newActivity.ActivityTravel = activity.ActivityTravel;
                 newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityContactID = activity.ActivityContactID;
-                //newActivity.ActivityCompanyID = activity.ActivityCompanyID;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
                 // Set binding (see p.285)
@@ -160,7 +159,7 @@ namespace WindowsFormsApplication1
                         if (!ActivityDB.UpdateModifyActivity(activity, newActivity))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.OK;
+                            this.DialogResult = DialogResult.Retry;
                         }
                         else
                         {
@@ -183,18 +182,23 @@ namespace WindowsFormsApplication1
 
         private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (activityContactIDComboBox.SelectedIndex != -1)
-            {
-                this.activityContactIDTextBox.Text = activityContactIDComboBox.SelectedValue.ToString();
-            }
+
         }
 
-        private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (activityJobIDComboBox.SelectedIndex != -1)
-            {
-                this.activityJobIDTextBox.Text = activityJobIDComboBox.SelectedValue.ToString();
-            }
-        }
+        //private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (activityContactIDComboBox.SelectedIndex != -1)
+        //    {
+        //        this.activityContactIDTextBox.Text = activityContactIDComboBox.SelectedValue.ToString();
+        //    }
+        //}
+
+        //private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (activityJobIDComboBox.SelectedIndex != -1)
+        //    {
+        //        this.activityJobIDTextBox.Text = activityJobIDComboBox.SelectedValue.ToString();
+        //    }
+        //}
     }
 }

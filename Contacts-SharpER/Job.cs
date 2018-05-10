@@ -66,7 +66,7 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
 
             set
             {
-                jobApplied = value;
+                jobApplied = value.Date;
             }
         }
 
