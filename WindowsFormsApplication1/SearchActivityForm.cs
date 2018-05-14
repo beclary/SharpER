@@ -75,7 +75,7 @@ namespace WindowsFormsApplication1
         private void btnDeleteActivity_Click(object sender, EventArgs e)
         {
             Activity delActivity = (Activity)activityBindingSource.Current;
-            actID = delActivity.ActivityID;
+            int actID = delActivity.ActivityID;
 
             try
             {
@@ -106,7 +106,7 @@ namespace WindowsFormsApplication1
             int i = e.RowIndex;
             DataGridViewRow row = activityDataGridView.Rows[i];
             DataGridViewCell cell = row.Cells[0];
-            int companyRowSelected = (int)cell.Value;
+            int activityRowSelected = (int)cell.Value;
         }
     }
 }
