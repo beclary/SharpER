@@ -69,7 +69,10 @@ namespace WindowsFormsApplication1
             {
                 return
                     IsPresent(activityDateDateTimePicker, "Date") &&
-                    IsPresent(activityDescriptionTextBox, "Description");
+                    IsPresent(activityDescriptionTextBox, "Description") &&
+                    IsPresent(activityTravelComboBox1, "Travel") &&
+                    IsPresent(activityContactIDComboBox, "Contact ID") &&
+                    IsPresent(activityNotesTextBox, "Notes");
             }
             else
             {
@@ -122,7 +125,7 @@ namespace WindowsFormsApplication1
                 newActivity.ActivityDate = activity.ActivityDate;
                 newActivity.ActivityDescription = activity.ActivityDescription;
                 newActivity.ActivityTravel = activity.ActivityTravel;
-                newActivity.ActivityJobID = activity.ActivityJobID;
+                //newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityContactID = activity.ActivityContactID;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
@@ -159,7 +162,7 @@ namespace WindowsFormsApplication1
                         if (!ActivityDB.UpdateModifyActivity(activity, newActivity))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.Retry;
+                            this.DialogResult = DialogResult.OK;
                         }
                         else
                         {
