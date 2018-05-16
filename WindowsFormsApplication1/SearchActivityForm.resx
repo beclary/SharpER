@@ -120,6 +120,15 @@
   <data name="lblSelectingActivity.Text" xml:space="preserve">
     <value>If you want to use one of the gold-colored buttons to either UPDATE /      MODIFY an activity, VIEW an activity's information, or DELETE an activity,      then in the grid below, select the activity row you want, and then click the                                                         desired button.                                                    If you need to ADD a new activity, just click the teal-colored button labeled ADD NEW ACTIVITY</value>
   </data>
+  <metadata name="ActivityTravel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ActivityContactID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ActivityNotes.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="activityBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

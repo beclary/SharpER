@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
 {
     public partial class ActivityForm : Form
     {
+        public static ContactForm contForm = null;
         public static List<Activity> actList;
         public Activity activity;
         public Activity newActivity;
@@ -28,30 +29,30 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private bool IsInt64 (string s)
-        {
-            try
-            {
-                Convert.ToInt64(s);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
-        }
+        //private bool IsInt64 (string s)
+        //{
+        //    try
+        //    {
+        //        Convert.ToInt64(s);
+        //        return true;
+        //    }
+        //    catch (FormatException)
+        //    {
+        //        return false;
+        //    }
+        //}
 
         private bool IsPresent (Control control, string name)
         {
-            if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
-            {
-                TextBox textBox = (TextBox)control;
-                if (textBox.Text == "")
-                {
-                    MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
-                    textBox.Focus();
-                    return false;
-                }
+            //if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
+            //{
+            //    TextBox textBox = (TextBox)control;
+            //    if (textBox.Text == "")
+            //    {
+            //        MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
+            //        textBox.Focus();
+                    //return false;
+                //}
                 //ComboBox comboBox = (ComboBox)control;
                 //if (comboBox.SelectedIndex == -1)
                 //{
@@ -59,25 +60,18 @@ namespace WindowsFormsApplication1
                 //    textBox.Focus();
                 //    return false;
                 //}
-            }
+            //}
             return true;
         }
 
         private bool IsDataValid()
         {
-            if (activityBindingSource.Count > 0)
-            {
-                return
-                    IsPresent(activityDateDateTimePicker, "Date") &&
+            return
+                IsPresent(activityDateDateTimePicker, "Date") &&
                     IsPresent(activityDescriptionTextBox, "Description") &&
                     IsPresent(activityTravelComboBox1, "Travel") &&
                     IsPresent(activityContactIDComboBox, "Contact ID") &&
                     IsPresent(activityNotesTextBox, "Notes");
-            }
-            else
-            {
-                return true;
-            }
         }
 
         private void toolStripButtonActivityExitButton_Click(object sender, EventArgs e)
@@ -97,10 +91,6 @@ namespace WindowsFormsApplication1
             activityContactIDComboBox.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
 
-            //List<Job> jobListing = JobDB.GetAllJobs();
-            //activityJobIDComboBox.DataSource = jobBindingSource;
-            //jobBindingSource.DataSource = jobListing;
-
             // Bindings need to be set, so I have to test here to see if it was an
             // ADD or MODIFY
             if (addActivity == true) // This is the ADD
@@ -119,13 +109,11 @@ namespace WindowsFormsApplication1
                 // Create a new (empty) activity: newActivity
                 newActivity = new Activity();
 
-                // Copy field by field data in activity
-                // (i.e. newActivity.ActivityID = activity.ActivityID)
+                // Copy field by field data in activity (i.e. newActivity.ActivityID = activity.ActivityID)
                 newActivity.ActivityID = activity.ActivityID;
                 newActivity.ActivityDate = activity.ActivityDate;
                 newActivity.ActivityDescription = activity.ActivityDescription;
                 newActivity.ActivityTravel = activity.ActivityTravel;
-                //newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityContactID = activity.ActivityContactID;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
@@ -144,7 +132,7 @@ namespace WindowsFormsApplication1
                     try
                     {
                         ActivityDB.AddActivity(activity);
-                        this.DialogResult = DialogResult.OK;
+                        MessageBox.Show("Activity was successfully added!", "ENTRY SUCCESSFUL");
                     }
                     catch (SqlException xsept)
                     {
@@ -163,9 +151,11 @@ namespace WindowsFormsApplication1
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
                         }
-                        else
+                        else if (activityDescriptionTextBox.Text != null ||
+                                activityNotesTextBox.Text != null)
                         {
                             activity = newActivity;
+                            MessageBox.Show("Activity was successfully updated!", "ENTRY      SUCCESSFUL");
                         }
                     }
                     catch (SqlException xsept)
@@ -180,5 +170,15 @@ namespace WindowsFormsApplication1
                 this.Close();
             }
         }
-    }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            contForm = new WindowsFormsApplication1.ContactForm();
+
+        //public static ActivityForm activityForm = null;
+        //activityForm = new ActivityForm();
+        //activityForm.addActivity = true;
+        //activityForm.ShowDialog();
+        }
+}
 }

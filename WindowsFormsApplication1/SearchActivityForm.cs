@@ -80,7 +80,7 @@ namespace WindowsFormsApplication1
             try
             {
                 if (MessageBox.Show("Deleting activity on the date " + delActivity.ActivityDate + 
-                    "from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this activity?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    " from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this activity?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     ActivityDB.DeleteActivity(actID);
                 }

@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
             try
             {
                 if (MessageBox.Show("Deleting the job with the position of " + delJob.JobPosition +
-                    "from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this job?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    " from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this job?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     JobDB.DeleteJob(jobID);
                 }

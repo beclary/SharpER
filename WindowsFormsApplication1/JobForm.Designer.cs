@@ -271,7 +271,6 @@
             this.contactFirstNameComboBox.Size = new System.Drawing.Size(248, 26);
             this.contactFirstNameComboBox.TabIndex = 4;
             this.contactFirstNameComboBox.ValueMember = "ContactID";
-            this.contactFirstNameComboBox.SelectedIndexChanged += new System.EventHandler(this.contactFirstNameComboBox_SelectedIndexChanged);
             // 
             // contactBindingSource
             // 

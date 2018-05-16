@@ -47,6 +47,7 @@
             this.activityContactIDComboBox = new System.Windows.Forms.ComboBox();
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAddNew = new System.Windows.Forms.Button();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
             activityIDLabel = new System.Windows.Forms.Label();
@@ -249,6 +250,22 @@
             // 
             this.jobBindingSource.DataSource = typeof(SharpERBLL.Job);
             // 
+            // btnAddNew
+            // 
+            this.btnAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAddNew.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnAddNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAddNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnAddNew.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnAddNew.Location = new System.Drawing.Point(281, 251);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(141, 27);
+            this.btnAddNew.TabIndex = 16;
+            this.btnAddNew.Text = "Add New Contact";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -256,6 +273,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(740, 472);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(lblActivityContactFirstName);
             this.Controls.Add(this.activityContactIDComboBox);
             this.Controls.Add(this.activityTravelComboBox1);
@@ -297,5 +315,6 @@
         private System.Windows.Forms.ComboBox activityContactIDComboBox;
         private System.Windows.Forms.BindingSource contactBindingSource;
         private System.Windows.Forms.BindingSource jobBindingSource;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }
