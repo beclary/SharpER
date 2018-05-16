@@ -67,7 +67,7 @@
             activityDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityDateLabel.Name = "activityDateLabel";
             activityDateLabel.Size = new System.Drawing.Size(44, 19);
-            activityDateLabel.TabIndex = 3;
+            activityDateLabel.TabIndex = 7;
             activityDateLabel.Text = "Date:";
             // 
             // activityDescriptionLabel
@@ -79,7 +79,7 @@
             activityDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityDescriptionLabel.Name = "activityDescriptionLabel";
             activityDescriptionLabel.Size = new System.Drawing.Size(85, 19);
-            activityDescriptionLabel.TabIndex = 5;
+            activityDescriptionLabel.TabIndex = 8;
             activityDescriptionLabel.Text = "Description:";
             // 
             // activityIDLabel
@@ -91,7 +91,7 @@
             activityIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityIDLabel.Name = "activityIDLabel";
             activityIDLabel.Size = new System.Drawing.Size(87, 19);
-            activityIDLabel.TabIndex = 7;
+            activityIDLabel.TabIndex = 12;
             activityIDLabel.Text = "Activity ID:";
             // 
             // activityNotesLabel
@@ -99,7 +99,7 @@
             activityNotesLabel.AutoSize = true;
             activityNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityNotesLabel.Location = new System.Drawing.Point(101, 315);
+            activityNotesLabel.Location = new System.Drawing.Point(101, 285);
             activityNotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityNotesLabel.Name = "activityNotesLabel";
             activityNotesLabel.Size = new System.Drawing.Size(52, 19);
@@ -115,7 +115,7 @@
             activityTravelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityTravelLabel.Name = "activityTravelLabel";
             activityTravelLabel.Size = new System.Drawing.Size(69, 19);
-            activityTravelLabel.TabIndex = 13;
+            activityTravelLabel.TabIndex = 9;
             activityTravelLabel.Text = "Traveled:";
             // 
             // lblActivityContactFirstName
@@ -126,7 +126,7 @@
             lblActivityContactFirstName.Location = new System.Drawing.Point(5, 254);
             lblActivityContactFirstName.Name = "lblActivityContactFirstName";
             lblActivityContactFirstName.Size = new System.Drawing.Size(152, 19);
-            lblActivityContactFirstName.TabIndex = 62;
+            lblActivityContactFirstName.TabIndex = 10;
             lblActivityContactFirstName.Text = "Contact\'s First Name:";
             // 
             // activityBindingSource
@@ -162,17 +162,17 @@
             this.activityIDTextBox.Name = "activityIDTextBox";
             this.activityIDTextBox.ReadOnly = true;
             this.activityIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityIDTextBox.TabIndex = 8;
+            this.activityIDTextBox.TabIndex = 13;
             // 
             // activityNotesTextBox
             // 
             this.activityNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityNotes", true));
-            this.activityNotesTextBox.Location = new System.Drawing.Point(161, 315);
+            this.activityNotesTextBox.Location = new System.Drawing.Point(161, 285);
             this.activityNotesTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.activityNotesTextBox.Multiline = true;
             this.activityNotesTextBox.Name = "activityNotesTextBox";
             this.activityNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.activityNotesTextBox.TabIndex = 5;
+            this.activityNotesTextBox.TabIndex = 4;
             // 
             // lblActivityInfoTitle
             // 
@@ -183,7 +183,7 @@
             this.lblActivityInfoTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActivityInfoTitle.Name = "lblActivityInfoTitle";
             this.lblActivityInfoTitle.Size = new System.Drawing.Size(278, 43);
-            this.lblActivityInfoTitle.TabIndex = 38;
+            this.lblActivityInfoTitle.TabIndex = 14;
             this.lblActivityInfoTitle.Text = "Activity Information";
             // 
             // btnSave
@@ -194,7 +194,7 @@
             this.btnSave.Location = new System.Drawing.Point(437, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -207,7 +207,7 @@
             this.btnCancel.Location = new System.Drawing.Point(558, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(162, 43);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel / Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -240,7 +240,6 @@
             this.activityContactIDComboBox.Size = new System.Drawing.Size(117, 26);
             this.activityContactIDComboBox.TabIndex = 3;
             this.activityContactIDComboBox.ValueMember = "ContactID";
-            this.activityContactIDComboBox.SelectedIndexChanged += new System.EventHandler(this.activityContactIDComboBox_SelectedIndexChanged);
             // 
             // contactBindingSource
             // 

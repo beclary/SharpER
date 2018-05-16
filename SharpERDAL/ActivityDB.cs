@@ -34,7 +34,7 @@ namespace SharpERDAL
                 int actActivityDescriptionOrd = readur.GetOrdinal("act_description");
                 int actActivityTravelOrd = readur.GetOrdinal("act_travel");
                 int actActivityJobIDOrd = readur.GetOrdinal("act_job_id");
-                int actActivityContactIDOrd = readur.GetOrdinal("act_Contact_id");
+                int actActivityContactIDOrd = readur.GetOrdinal("act_contact_id");
                 int actActivityNotesOrd = readur.GetOrdinal("act_notes");
 
                 while (readur.Read())

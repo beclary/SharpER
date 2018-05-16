@@ -162,12 +162,10 @@ namespace WindowsFormsApplication1
                         if (!ActivityDB.UpdateModifyActivity(activity, newActivity))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.OK;
                         }
                         else
                         {
                             activity = newActivity;
-                            this.DialogResult = DialogResult.OK;
                         }
                     }
                     catch (SqlException xsept)
@@ -182,26 +180,5 @@ namespace WindowsFormsApplication1
                 this.Close();
             }
         }
-
-        private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (activityContactIDComboBox.SelectedIndex != -1)
-        //    {
-        //        this.activityContactIDTextBox.Text = activityContactIDComboBox.SelectedValue.ToString();
-        //    }
-        //}
-
-        //private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (activityJobIDComboBox.SelectedIndex != -1)
-        //    {
-        //        this.activityJobIDTextBox.Text = activityJobIDComboBox.SelectedValue.ToString();
-        //    }
-        //}
     }
 }
