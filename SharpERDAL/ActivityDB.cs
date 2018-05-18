@@ -1,5 +1,6 @@
 ﻿// ActivityDB Data Access Layer (DAL) for SharpER
 // Bruce Clary
+// Prior to including the job references in Activity table
 
 using System;
 using System.Collections.Generic;
