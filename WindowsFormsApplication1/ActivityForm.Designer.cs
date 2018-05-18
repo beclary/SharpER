@@ -230,7 +230,6 @@
             // 
             // activityContactIDComboBox
             // 
-            this.activityContactIDComboBox.CausesValidation = false;
             this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true));
             this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true));
             this.activityContactIDComboBox.DataSource = this.contactBindingSource;

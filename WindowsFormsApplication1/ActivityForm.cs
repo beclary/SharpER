@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1
                 newActivity.ActivityDescription = activity.ActivityDescription;
                 newActivity.ActivityTravel = activity.ActivityTravel;
                 newActivity.ActivityContactID = activity.ActivityContactID;
-                //newActivity.ActivityJobID = activity.ActivityJobID;
+                newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
                 // Set binding (see p.285)
