@@ -367,7 +367,6 @@ namespace SharpERDAL
                 "VALUES (@JobPosition, @JobApplied, @JobPay, @JobContactID, @JobCompanyID, @JobNotes)";
             SqlCommand insertCmd = new SqlCommand(insertStmt, conn);
 
-            // Job Position and Job Applied are both here required entries
             // Job Position
             if (newJob.JobPosition == null)
             {

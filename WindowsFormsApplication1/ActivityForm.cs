@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
 {
     public partial class ActivityForm : Form
     {
+        public static ContactForm contForm = null;
         public static List<Activity> actList;
         public Activity activity;
         public Activity newActivity;
@@ -26,19 +27,6 @@ namespace WindowsFormsApplication1
         public ActivityForm()
         {
             InitializeComponent();
-        }
-
-        private bool IsInt64 (string s)
-        {
-            try
-            {
-                Convert.ToInt64(s);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
         }
 
         private bool IsPresent (Control control, string name)
@@ -52,13 +40,16 @@ namespace WindowsFormsApplication1
                     textBox.Focus();
                     return false;
                 }
-                //ComboBox comboBox = (ComboBox)control;
-                //if (comboBox.SelectedIndex == -1)
-                //{
-                //    MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
-                //    textBox.Focus();
-                //    return false;
-                //}
+            }
+            else if (control.GetType().ToString() == "System.Windows.Forms.ComboBox")
+            {
+                ComboBox comboBox = (ComboBox)control;
+                if (comboBox.SelectedIndex == -1)
+                {
+                    MessageBox.Show(name + " is a required field.", "ENTRY ERROR");
+                    comboBox.Focus();
+                    return false;
+                }
             }
             return true;
         }
@@ -68,16 +59,13 @@ namespace WindowsFormsApplication1
             if (activityBindingSource.Count > 0)
             {
                 return
-                    IsPresent(activityDateDateTimePicker, "Date") &&
                     IsPresent(activityDescriptionTextBox, "Description") &&
-                    IsPresent(activityTravelComboBox1, "Travel") &&
-                    IsPresent(activityContactIDComboBox, "Contact ID") &&
+                    IsPresent(activityContactIDComboBox, "Contact Name") &&
+                    IsPresent(activityTravelComboBox1, "Travel ComboBox") &&
                     IsPresent(activityNotesTextBox, "Notes");
             }
             else
-            {
                 return true;
-            }
         }
 
         private void toolStripButtonActivityExitButton_Click(object sender, EventArgs e)
@@ -98,7 +86,7 @@ namespace WindowsFormsApplication1
             contactBindingSource.DataSource = contactListing;
 
             //List<Job> jobListing = JobDB.GetAllJobs();
-            //activityJobIDComboBox.DataSource = jobBindingSource;
+            //activityBindingSource.DataSource = jobBindingSource;
             //jobBindingSource.DataSource = jobListing;
 
             // Bindings need to be set, so I have to test here to see if it was an
@@ -119,14 +107,13 @@ namespace WindowsFormsApplication1
                 // Create a new (empty) activity: newActivity
                 newActivity = new Activity();
 
-                // Copy field by field data in activity
-                // (i.e. newActivity.ActivityID = activity.ActivityID)
+                // Copy field by field data in activity (i.e. newActivity.ActivityID = activity.ActivityID)
                 newActivity.ActivityID = activity.ActivityID;
                 newActivity.ActivityDate = activity.ActivityDate;
                 newActivity.ActivityDescription = activity.ActivityDescription;
                 newActivity.ActivityTravel = activity.ActivityTravel;
-                //newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityContactID = activity.ActivityContactID;
+                //newActivity.ActivityJobID = activity.ActivityJobID;
                 newActivity.ActivityNotes = activity.ActivityNotes;
 
                 // Set binding (see p.285)
@@ -144,7 +131,6 @@ namespace WindowsFormsApplication1
                     try
                     {
                         ActivityDB.AddActivity(activity);
-                        this.DialogResult = DialogResult.OK;
                     }
                     catch (SqlException xsept)
                     {
@@ -162,12 +148,10 @@ namespace WindowsFormsApplication1
                         if (!ActivityDB.UpdateModifyActivity(activity, newActivity))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.OK;
                         }
                         else
                         {
                             activity = newActivity;
-                            this.DialogResult = DialogResult.OK;
                         }
                     }
                     catch (SqlException xsept)
@@ -183,25 +167,14 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAddNew_Click(object sender, EventArgs e)
         {
+            contForm = new WindowsFormsApplication1.ContactForm();
 
+        //public static ActivityForm activityForm = null;
+        //activityForm = new ActivityForm();
+        //activityForm.addActivity = true;
+        //activityForm.ShowDialog();
         }
-
-        //private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (activityContactIDComboBox.SelectedIndex != -1)
-        //    {
-        //        this.activityContactIDTextBox.Text = activityContactIDComboBox.SelectedValue.ToString();
-        //    }
-        //}
-
-        //private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (activityJobIDComboBox.SelectedIndex != -1)
-        //    {
-        //        this.activityJobIDTextBox.Text = activityJobIDComboBox.SelectedValue.ToString();
-        //    }
-        //}
-    }
+     }
 }

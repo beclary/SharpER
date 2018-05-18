@@ -146,12 +146,12 @@ namespace WindowsFormsApplication1
                         if (!JobDB.UpdateModifyJob(job, newJob))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.Retry;
+                            //this.DialogResult = DialogResult.Retry;
                         }
                         else
                         {
                             job = newJob;
-                            this.DialogResult = DialogResult.OK;
+                            //this.DialogResult = DialogResult.OK;
                         }
                     }
                     catch (SqlException xsept)
@@ -167,21 +167,21 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (companyNameComboBox.SelectedIndex != -1)
-            {
-                this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
-            }
-        }
+        //private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (companyNameComboBox.SelectedIndex != -1)
+        //    {
+        //        this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
+        //    }
+        //}
 
-        private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (contactFirstNameComboBox.SelectedIndex != -1)
-            {
-                this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
-            }
-        }
+        //private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (contactFirstNameComboBox.SelectedIndex != -1)
+        //    {
+        //        this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
+        //    }
+        //}
 
     }
 }

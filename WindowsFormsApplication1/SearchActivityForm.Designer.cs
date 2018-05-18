@@ -44,6 +44,9 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivityTravel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivityContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivityNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.activityDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +144,10 @@
             this.activityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.ActivityTravel,
+            this.ActivityContactID,
+            this.ActivityNotes});
             this.activityDataGridView.DataSource = this.activityBindingSource;
             this.activityDataGridView.Location = new System.Drawing.Point(26, 203);
             this.activityDataGridView.MultiSelect = false;
@@ -198,6 +204,30 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // ActivityTravel
+            // 
+            this.ActivityTravel.DataPropertyName = "ActivityTravel";
+            this.ActivityTravel.HeaderText = "ActivityTravel";
+            this.ActivityTravel.Name = "ActivityTravel";
+            this.ActivityTravel.ReadOnly = true;
+            this.ActivityTravel.Visible = false;
+            // 
+            // ActivityContactID
+            // 
+            this.ActivityContactID.DataPropertyName = "ActivityContactID";
+            this.ActivityContactID.HeaderText = "ActivityContactID";
+            this.ActivityContactID.Name = "ActivityContactID";
+            this.ActivityContactID.ReadOnly = true;
+            this.ActivityContactID.Visible = false;
+            // 
+            // ActivityNotes
+            // 
+            this.ActivityNotes.DataPropertyName = "ActivityNotes";
+            this.ActivityNotes.HeaderText = "ActivityNotes";
+            this.ActivityNotes.Name = "ActivityNotes";
+            this.ActivityNotes.ReadOnly = true;
+            this.ActivityNotes.Visible = false;
+            // 
             // SearchActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -237,5 +267,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivityTravel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivityContactID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ActivityNotes;
     }
 }

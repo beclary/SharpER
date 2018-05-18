@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
 
         private void btnAddNewActivity_Click(object sender, EventArgs e)
         {
-                //MessageBox.Show("NOTE:\n\nBefore adding any activity information, YOU WILL NEED the Contact ID of the contact (if the activity is related to a contact) and/or the Job ID (if the activity is related to a specific job applied for).\n\nIf either or both of these fields is not related, just leave them blank.", "ATTENTION", MessageBoxButtons.OK);
+
                 activityForm = new ActivityForm();
                 activityForm.addActivity = true;
                 activityForm.ShowDialog();
@@ -80,7 +80,7 @@ namespace WindowsFormsApplication1
             try
             {
                 if (MessageBox.Show("Deleting activity on the date " + delActivity.ActivityDate + 
-                    "from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this activity?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    " from the database is an action that can NOT be undone!\n\nAre you sure you want to delete this activity?", "CONFIRM DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                 {
                     ActivityDB.DeleteActivity(actID);
                 }
@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
             }
             catch (SqlException xsept)
             {
-                            throw xsept;
+                throw xsept;
             }
             catch (Exception xsept)
             {
