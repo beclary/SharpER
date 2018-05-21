@@ -44,6 +44,7 @@
             System.Windows.Forms.Label contactStateLabel;
             System.Windows.Forms.Label contactTitleLabel;
             System.Windows.Forms.Label contactZipCodeLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactForm));
             this.contactAddressTextBox = new System.Windows.Forms.TextBox();
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactCityTextBox = new System.Windows.Forms.TextBox();
@@ -64,6 +65,18 @@
             this.contactMobileMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactFaxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.contactZipCodeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
             contactContactedViaLabel = new System.Windows.Forms.Label();
@@ -81,6 +94,8 @@
             contactZipCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contactAddressLabel
@@ -88,7 +103,7 @@
             contactAddressLabel.AutoSize = true;
             contactAddressLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactAddressLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactAddressLabel.Location = new System.Drawing.Point(89, 236);
+            contactAddressLabel.Location = new System.Drawing.Point(89, 263);
             contactAddressLabel.Name = "contactAddressLabel";
             contactAddressLabel.Size = new System.Drawing.Size(66, 19);
             contactAddressLabel.TabIndex = 1;
@@ -99,7 +114,7 @@
             contactCityLabel.AutoSize = true;
             contactCityLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactCityLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactCityLabel.Location = new System.Drawing.Point(115, 268);
+            contactCityLabel.Location = new System.Drawing.Point(115, 295);
             contactCityLabel.Name = "contactCityLabel";
             contactCityLabel.Size = new System.Drawing.Size(40, 19);
             contactCityLabel.TabIndex = 3;
@@ -110,7 +125,7 @@
             contactContactedViaLabel.AutoSize = true;
             contactContactedViaLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactContactedViaLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactContactedViaLabel.Location = new System.Drawing.Point(51, 299);
+            contactContactedViaLabel.Location = new System.Drawing.Point(51, 326);
             contactContactedViaLabel.Name = "contactContactedViaLabel";
             contactContactedViaLabel.Size = new System.Drawing.Size(104, 19);
             contactContactedViaLabel.TabIndex = 5;
@@ -121,7 +136,7 @@
             contactDepartmentLabel.AutoSize = true;
             contactDepartmentLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactDepartmentLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactDepartmentLabel.Location = new System.Drawing.Point(68, 204);
+            contactDepartmentLabel.Location = new System.Drawing.Point(68, 231);
             contactDepartmentLabel.Name = "contactDepartmentLabel";
             contactDepartmentLabel.Size = new System.Drawing.Size(87, 19);
             contactDepartmentLabel.TabIndex = 7;
@@ -132,7 +147,7 @@
             contactEmailLabel.AutoSize = true;
             contactEmailLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactEmailLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactEmailLabel.Location = new System.Drawing.Point(107, 396);
+            contactEmailLabel.Location = new System.Drawing.Point(107, 423);
             contactEmailLabel.Name = "contactEmailLabel";
             contactEmailLabel.Size = new System.Drawing.Size(48, 19);
             contactEmailLabel.TabIndex = 9;
@@ -143,7 +158,7 @@
             contactFaxLabel.AutoSize = true;
             contactFaxLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactFaxLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactFaxLabel.Location = new System.Drawing.Point(117, 364);
+            contactFaxLabel.Location = new System.Drawing.Point(117, 391);
             contactFaxLabel.Name = "contactFaxLabel";
             contactFaxLabel.Size = new System.Drawing.Size(38, 19);
             contactFaxLabel.TabIndex = 11;
@@ -154,7 +169,7 @@
             contactFirstNameLabel.AutoSize = true;
             contactFirstNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactFirstNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactFirstNameLabel.Location = new System.Drawing.Point(69, 108);
+            contactFirstNameLabel.Location = new System.Drawing.Point(69, 135);
             contactFirstNameLabel.Name = "contactFirstNameLabel";
             contactFirstNameLabel.Size = new System.Drawing.Size(86, 19);
             contactFirstNameLabel.TabIndex = 13;
@@ -165,7 +180,7 @@
             contactIDLabel.AutoSize = true;
             contactIDLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactIDLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactIDLabel.Location = new System.Drawing.Point(467, 107);
+            contactIDLabel.Location = new System.Drawing.Point(467, 134);
             contactIDLabel.Name = "contactIDLabel";
             contactIDLabel.Size = new System.Drawing.Size(85, 19);
             contactIDLabel.TabIndex = 15;
@@ -176,7 +191,7 @@
             contactLastNameLabel.AutoSize = true;
             contactLastNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactLastNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactLastNameLabel.Location = new System.Drawing.Point(73, 140);
+            contactLastNameLabel.Location = new System.Drawing.Point(73, 167);
             contactLastNameLabel.Name = "contactLastNameLabel";
             contactLastNameLabel.Size = new System.Drawing.Size(82, 19);
             contactLastNameLabel.TabIndex = 17;
@@ -187,7 +202,7 @@
             contactMobileLabel.AutoSize = true;
             contactMobileLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactMobileLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactMobileLabel.Location = new System.Drawing.Point(314, 334);
+            contactMobileLabel.Location = new System.Drawing.Point(314, 361);
             contactMobileLabel.Name = "contactMobileLabel";
             contactMobileLabel.Size = new System.Drawing.Size(56, 19);
             contactMobileLabel.TabIndex = 19;
@@ -198,7 +213,7 @@
             contactNotesLabel.AutoSize = true;
             contactNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactNotesLabel.Location = new System.Drawing.Point(103, 428);
+            contactNotesLabel.Location = new System.Drawing.Point(103, 455);
             contactNotesLabel.Name = "contactNotesLabel";
             contactNotesLabel.Size = new System.Drawing.Size(52, 19);
             contactNotesLabel.TabIndex = 21;
@@ -209,7 +224,7 @@
             contactPhoneLabel.AutoSize = true;
             contactPhoneLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactPhoneLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactPhoneLabel.Location = new System.Drawing.Point(104, 332);
+            contactPhoneLabel.Location = new System.Drawing.Point(104, 359);
             contactPhoneLabel.Name = "contactPhoneLabel";
             contactPhoneLabel.Size = new System.Drawing.Size(51, 19);
             contactPhoneLabel.TabIndex = 23;
@@ -220,7 +235,7 @@
             contactStateLabel.AutoSize = true;
             contactStateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactStateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactStateLabel.Location = new System.Drawing.Point(314, 268);
+            contactStateLabel.Location = new System.Drawing.Point(314, 295);
             contactStateLabel.Name = "contactStateLabel";
             contactStateLabel.Size = new System.Drawing.Size(50, 19);
             contactStateLabel.TabIndex = 25;
@@ -231,7 +246,7 @@
             contactTitleLabel.AutoSize = true;
             contactTitleLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactTitleLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactTitleLabel.Location = new System.Drawing.Point(110, 172);
+            contactTitleLabel.Location = new System.Drawing.Point(110, 199);
             contactTitleLabel.Name = "contactTitleLabel";
             contactTitleLabel.Size = new System.Drawing.Size(45, 19);
             contactTitleLabel.TabIndex = 27;
@@ -242,7 +257,7 @@
             contactZipCodeLabel.AutoSize = true;
             contactZipCodeLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contactZipCodeLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            contactZipCodeLabel.Location = new System.Drawing.Point(498, 268);
+            contactZipCodeLabel.Location = new System.Drawing.Point(498, 295);
             contactZipCodeLabel.Name = "contactZipCodeLabel";
             contactZipCodeLabel.Size = new System.Drawing.Size(71, 19);
             contactZipCodeLabel.TabIndex = 29;
@@ -251,7 +266,7 @@
             // contactAddressTextBox
             // 
             this.contactAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactAddress", true));
-            this.contactAddressTextBox.Location = new System.Drawing.Point(161, 233);
+            this.contactAddressTextBox.Location = new System.Drawing.Point(161, 260);
             this.contactAddressTextBox.Name = "contactAddressTextBox";
             this.contactAddressTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactAddressTextBox.TabIndex = 5;
@@ -263,7 +278,7 @@
             // contactCityTextBox
             // 
             this.contactCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactCity", true));
-            this.contactCityTextBox.Location = new System.Drawing.Point(161, 265);
+            this.contactCityTextBox.Location = new System.Drawing.Point(161, 292);
             this.contactCityTextBox.Name = "contactCityTextBox";
             this.contactCityTextBox.Size = new System.Drawing.Size(145, 26);
             this.contactCityTextBox.TabIndex = 6;
@@ -282,7 +297,7 @@
             "Myself",
             "Phone",
             "Text"});
-            this.contactContactedViaComboBox.Location = new System.Drawing.Point(161, 297);
+            this.contactContactedViaComboBox.Location = new System.Drawing.Point(161, 324);
             this.contactContactedViaComboBox.Name = "contactContactedViaComboBox";
             this.contactContactedViaComboBox.Size = new System.Drawing.Size(117, 26);
             this.contactContactedViaComboBox.Sorted = true;
@@ -292,7 +307,7 @@
             // contactDepartmentTextBox
             // 
             this.contactDepartmentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactDepartment", true));
-            this.contactDepartmentTextBox.Location = new System.Drawing.Point(161, 201);
+            this.contactDepartmentTextBox.Location = new System.Drawing.Point(161, 228);
             this.contactDepartmentTextBox.Name = "contactDepartmentTextBox";
             this.contactDepartmentTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactDepartmentTextBox.TabIndex = 4;
@@ -300,7 +315,7 @@
             // contactEmailTextBox
             // 
             this.contactEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactEmail", true));
-            this.contactEmailTextBox.Location = new System.Drawing.Point(161, 393);
+            this.contactEmailTextBox.Location = new System.Drawing.Point(161, 420);
             this.contactEmailTextBox.Name = "contactEmailTextBox";
             this.contactEmailTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactEmailTextBox.TabIndex = 13;
@@ -308,7 +323,7 @@
             // contactFirstNameTextBox
             // 
             this.contactFirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true));
-            this.contactFirstNameTextBox.Location = new System.Drawing.Point(161, 105);
+            this.contactFirstNameTextBox.Location = new System.Drawing.Point(161, 132);
             this.contactFirstNameTextBox.Name = "contactFirstNameTextBox";
             this.contactFirstNameTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactFirstNameTextBox.TabIndex = 1;
@@ -317,7 +332,7 @@
             // 
             this.contactIDTextBox.BackColor = System.Drawing.Color.LightGray;
             this.contactIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactID", true));
-            this.contactIDTextBox.Location = new System.Drawing.Point(558, 105);
+            this.contactIDTextBox.Location = new System.Drawing.Point(558, 132);
             this.contactIDTextBox.Name = "contactIDTextBox";
             this.contactIDTextBox.ReadOnly = true;
             this.contactIDTextBox.Size = new System.Drawing.Size(117, 26);
@@ -326,7 +341,7 @@
             // contactLastNameTextBox
             // 
             this.contactLastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactLastName", true));
-            this.contactLastNameTextBox.Location = new System.Drawing.Point(161, 137);
+            this.contactLastNameTextBox.Location = new System.Drawing.Point(161, 164);
             this.contactLastNameTextBox.Name = "contactLastNameTextBox";
             this.contactLastNameTextBox.Size = new System.Drawing.Size(117, 26);
             this.contactLastNameTextBox.TabIndex = 2;
@@ -334,7 +349,7 @@
             // contactNotesTextBox
             // 
             this.contactNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactNotes", true));
-            this.contactNotesTextBox.Location = new System.Drawing.Point(161, 425);
+            this.contactNotesTextBox.Location = new System.Drawing.Point(161, 452);
             this.contactNotesTextBox.Multiline = true;
             this.contactNotesTextBox.Name = "contactNotesTextBox";
             this.contactNotesTextBox.Size = new System.Drawing.Size(454, 78);
@@ -399,7 +414,7 @@
             "West Virginia",
             "Wisconsin",
             "Wyoming"});
-            this.contactStateComboBox.Location = new System.Drawing.Point(370, 265);
+            this.contactStateComboBox.Location = new System.Drawing.Point(370, 292);
             this.contactStateComboBox.Name = "contactStateComboBox";
             this.contactStateComboBox.Size = new System.Drawing.Size(117, 26);
             this.contactStateComboBox.Sorted = true;
@@ -412,7 +427,7 @@
             // contactTitleTextBox
             // 
             this.contactTitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactTitle", true));
-            this.contactTitleTextBox.Location = new System.Drawing.Point(161, 169);
+            this.contactTitleTextBox.Location = new System.Drawing.Point(161, 196);
             this.contactTitleTextBox.Name = "contactTitleTextBox";
             this.contactTitleTextBox.Size = new System.Drawing.Size(300, 26);
             this.contactTitleTextBox.TabIndex = 3;
@@ -422,7 +437,7 @@
             this.lblContactInfoTitle.AutoSize = true;
             this.lblContactInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactInfoTitle.ForeColor = System.Drawing.Color.Crimson;
-            this.lblContactInfoTitle.Location = new System.Drawing.Point(1, 50);
+            this.lblContactInfoTitle.Location = new System.Drawing.Point(1, 77);
             this.lblContactInfoTitle.Name = "lblContactInfoTitle";
             this.lblContactInfoTitle.Size = new System.Drawing.Size(274, 43);
             this.lblContactInfoTitle.TabIndex = 37;
@@ -433,7 +448,7 @@
             this.btnSave.BackColor = System.Drawing.Color.HotPink;
             this.btnSave.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnSave.Location = new System.Drawing.Point(437, 12);
+            this.btnSave.Location = new System.Drawing.Point(437, 39);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
             this.btnSave.TabIndex = 16;
@@ -446,7 +461,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.HotPink;
             this.btnCancel.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnCancel.Location = new System.Drawing.Point(558, 12);
+            this.btnCancel.Location = new System.Drawing.Point(558, 39);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(162, 43);
             this.btnCancel.TabIndex = 18;
@@ -457,7 +472,7 @@
             // contactPhoneMaskedTextBox
             // 
             this.contactPhoneMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactPhone", true));
-            this.contactPhoneMaskedTextBox.Location = new System.Drawing.Point(161, 329);
+            this.contactPhoneMaskedTextBox.Location = new System.Drawing.Point(161, 356);
             this.contactPhoneMaskedTextBox.Mask = "(999) 000-0000";
             this.contactPhoneMaskedTextBox.Name = "contactPhoneMaskedTextBox";
             this.contactPhoneMaskedTextBox.Size = new System.Drawing.Size(117, 26);
@@ -466,7 +481,7 @@
             // contactMobileMaskedTextBox
             // 
             this.contactMobileMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactMobile", true));
-            this.contactMobileMaskedTextBox.Location = new System.Drawing.Point(370, 331);
+            this.contactMobileMaskedTextBox.Location = new System.Drawing.Point(370, 358);
             this.contactMobileMaskedTextBox.Mask = "(999) 000-0000";
             this.contactMobileMaskedTextBox.Name = "contactMobileMaskedTextBox";
             this.contactMobileMaskedTextBox.Size = new System.Drawing.Size(117, 26);
@@ -475,7 +490,7 @@
             // contactFaxMaskedTextBox
             // 
             this.contactFaxMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFax", true));
-            this.contactFaxMaskedTextBox.Location = new System.Drawing.Point(161, 361);
+            this.contactFaxMaskedTextBox.Location = new System.Drawing.Point(161, 388);
             this.contactFaxMaskedTextBox.Mask = "(999) 000-0000";
             this.contactFaxMaskedTextBox.Name = "contactFaxMaskedTextBox";
             this.contactFaxMaskedTextBox.Size = new System.Drawing.Size(117, 26);
@@ -484,19 +499,128 @@
             // contactZipCodeMaskedTextBox
             // 
             this.contactZipCodeMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactZipCode", true));
-            this.contactZipCodeMaskedTextBox.Location = new System.Drawing.Point(575, 265);
+            this.contactZipCodeMaskedTextBox.Location = new System.Drawing.Point(575, 292);
             this.contactZipCodeMaskedTextBox.Mask = "00000-9999";
             this.contactZipCodeMaskedTextBox.Name = "contactZipCodeMaskedTextBox";
             this.contactZipCodeMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.contactZipCodeMaskedTextBox.TabIndex = 8;
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.toolStripTextBox1,
+            this.toolStripButton1});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(732, 25);
+            this.bindingNavigator1.TabIndex = 38;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(732, 535);
+            this.ClientSize = new System.Drawing.Size(732, 570);
             this.ControlBox = false;
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.contactZipCodeMaskedTextBox);
             this.Controls.Add(this.contactFaxMaskedTextBox);
             this.Controls.Add(this.contactMobileMaskedTextBox);
@@ -537,6 +661,9 @@
             this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,5 +690,17 @@
         private System.Windows.Forms.MaskedTextBox contactZipCodeMaskedTextBox;
         private System.Windows.Forms.BindingSource contactBindingSource1;
         public System.Windows.Forms.BindingSource contactBindingSource;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

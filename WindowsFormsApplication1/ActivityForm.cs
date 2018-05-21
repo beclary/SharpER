@@ -60,9 +60,7 @@ namespace WindowsFormsApplication1
             {
                 return
                     IsPresent(activityDescriptionTextBox, "Description") &&
-                    IsPresent(activityContactIDComboBox, "Contact Name") &&
-                    IsPresent(activityTravelComboBox1, "Travel ComboBox") &&
-                    IsPresent(activityNotesTextBox, "Notes");
+                    IsPresent(activityTravelComboBox1, "Travel ComboBox");
             }
             else
                 return true;
