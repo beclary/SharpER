@@ -163,9 +163,10 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
-                this.Close();
             }
+            this.Close();
         }
+        
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {

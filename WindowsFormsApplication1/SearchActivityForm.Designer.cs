@@ -40,13 +40,13 @@
             this.btnDeleteActivity = new System.Windows.Forms.Button();
             this.btnAddNewActivity = new System.Windows.Forms.Button();
             this.activityDataGridView = new System.Windows.Forms.DataGridView();
-            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivityTravel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivityContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivityNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.activityDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -149,17 +149,13 @@
             this.ActivityContactID,
             this.ActivityNotes});
             this.activityDataGridView.DataSource = this.activityBindingSource;
-            this.activityDataGridView.Location = new System.Drawing.Point(26, 203);
+            this.activityDataGridView.Location = new System.Drawing.Point(27, 203);
             this.activityDataGridView.MultiSelect = false;
             this.activityDataGridView.Name = "activityDataGridView";
             this.activityDataGridView.ReadOnly = true;
             this.activityDataGridView.Size = new System.Drawing.Size(547, 211);
             this.activityDataGridView.TabIndex = 28;
             this.activityDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.activityDataGridView_CellContentClick);
-            // 
-            // activityBindingSource
-            // 
-            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -227,6 +223,10 @@
             this.ActivityNotes.Name = "ActivityNotes";
             this.ActivityNotes.ReadOnly = true;
             this.ActivityNotes.Visible = false;
+            // 
+            // activityBindingSource
+            // 
+            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
             // 
             // SearchActivityForm
             // 

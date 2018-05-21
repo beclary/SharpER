@@ -242,7 +242,7 @@ namespace SharpERDAL
             return specificActivity;
         }
 
-        // This is the methof to update or modify (change) information on a form
+        // This is the method to update or modify (change) information on a form
         public static bool UpdateModifyActivity (Activity oldActivity, Activity newActivity)
         {
             SqlConnection conn = SharpERDB.GetConnection();
@@ -305,7 +305,7 @@ namespace SharpERDAL
             }
 
             // Activity JobID
-            if (newActivity.ActivityJobID == -1)
+            if (newActivity.ActivityJobID == 0) // This, until the Job form is done, is setting to a zero, when it should be a -1 (or treated as a null)
             {
                 updateCmd.Parameters.AddWithValue("@NewActivityJobID", DBNull.Value);
                 updateCmd.Parameters["@NewActivityJobID"].IsNullable = true;
@@ -328,18 +328,9 @@ namespace SharpERDAL
 
             // Old Activity changes
             // Activity Identification Number
-            updateCmd.Parameters.AddWithValue("@OldActivityID", oldActivity.ActivityID);
-
             // Activity Date
-            if (oldActivity.ActivityDate == null)
-            {
-                updateCmd.Parameters.AddWithValue("@OldActivityDate", DBNull.Value);
-                updateCmd.Parameters["@OldActivityDate"].IsNullable = true;
-            }
-            else
-            {
-                updateCmd.Parameters.AddWithValue("@OldActivityDate", oldActivity.ActivityDate);
-            }
+            updateCmd.Parameters.AddWithValue("@OldActivityID", oldActivity.ActivityID);
+            updateCmd.Parameters.AddWithValue("@OldActivityDate", oldActivity.ActivityDate);
 
             // Activity Description
             if (oldActivity.ActivityDescription == "")
@@ -375,14 +366,14 @@ namespace SharpERDAL
             }
 
             // Activity JobID
-            if (newActivity.ActivityJobID == -1)
+            if (oldActivity.ActivityJobID == 0) // See comment under the checking for new changes to 0
             {
                 updateCmd.Parameters.AddWithValue("@OldActivityJobID", DBNull.Value);
                 updateCmd.Parameters["@OldActivityJobID"].IsNullable = true;
             }
             else
             {
-                updateCmd.Parameters.AddWithValue("@OldActivityJobID", newActivity.ActivityJobID);
+                updateCmd.Parameters.AddWithValue("@OldActivityJobID", oldActivity.ActivityJobID);
             }
 
             // Activity Notes
