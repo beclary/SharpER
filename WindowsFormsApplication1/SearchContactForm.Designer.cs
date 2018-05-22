@@ -114,6 +114,7 @@
             // 
             this.contactDataGridView.AllowUserToAddRows = false;
             this.contactDataGridView.AllowUserToDeleteRows = false;
+            this.contactDataGridView.AllowUserToOrderColumns = true;
             this.contactDataGridView.AutoGenerateColumns = false;
             this.contactDataGridView.BackgroundColor = System.Drawing.Color.Pink;
             this.contactDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;

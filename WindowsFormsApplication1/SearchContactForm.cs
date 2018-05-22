@@ -101,10 +101,19 @@ namespace WindowsFormsApplication1
 
         private void contactDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int i = e.RowIndex;
-            DataGridViewRow row = contactDataGridView.Rows[i];
-            DataGridViewCell cell = row.Cells[0];
-            int contactRowSelected = (int)cell.Value;
+            foreach(DataGridViewColumn column in contactDataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
+
+            //contactDataGridView.Sort(contactDataGridView.Columns[0], ListSortDirection.Ascending);
+            //contactDataGridView.Sort(contactDataGridView.Columns[1], ListSortDirection.Ascending);
+            //contactDataGridView.Sort(contactDataGridView.Columns[2], ListSortDirection.Ascending);
+            
+            //int i = e.RowIndex;
+            //DataGridViewRow row = contactDataGridView.Rows[i];
+            //DataGridViewCell cell = row.Cells[0];
+            //int contactRowSelected = (int)cell.Value;
         }
     }
 }

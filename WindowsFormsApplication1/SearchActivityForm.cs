@@ -104,8 +104,9 @@ namespace WindowsFormsApplication1
         private void activityDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             activityDataGridView.Columns[0].SortMode = DataGridViewColumnSortMode.Automatic;
-            //this.activityDataGridView.Sort(this.activityDataGridView.Columns["dataGridViewTextBoxColumn2"], ListSortDirection.Ascending);
-        }s
+            this.activityDataGridView.Sort(this.activityDataGridView.Columns["Activity ID"], ListSortDirection.Ascending);
+            
+        }
 
         //private void activityDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
