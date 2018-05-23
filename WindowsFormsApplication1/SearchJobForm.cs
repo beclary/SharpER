@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         {
             // Loads the gridview listing of all jobs.
             jobListing = JobDB.GetAllJobs();
-            jobDataGridView.DataSource = jobListing;
+            jobDataGridView.DataSource = jobBindingSource;
             jobBindingSource.DataSource = jobListing;
             jobDataGridView.ClearSelection();
         }
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
 
             // Refreshes the gridview
             jobListing = JobDB.GetAllJobs();
-            jobDataGridView.DataSource = jobListing;
+            jobDataGridView.DataSource = jobBindingSource;
             jobBindingSource.DataSource = jobListing;
             jobDataGridView.ClearSelection();
         }
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
 
             // Refreshes the gridview
             jobListing = JobDB.GetAllJobs();
-            jobDataGridView.DataSource = jobListing;
+            jobDataGridView.DataSource = jobBindingSource;
             jobBindingSource.DataSource = jobListing;
             jobDataGridView.ClearSelection();
         }
@@ -88,7 +88,7 @@ namespace WindowsFormsApplication1
 
                 // Refreshes the gridview
                 jobListing = JobDB.GetAllJobs();
-                jobDataGridView.DataSource = jobListing;
+                jobDataGridView.DataSource = jobBindingSource;
                 jobBindingSource.DataSource = jobListing;
                 jobDataGridView.ClearSelection();
             }

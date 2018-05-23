@@ -29,19 +29,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private bool IsInt64 (string s)
-        {
-            try
-            {
-                Convert.ToInt64(s);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
-        }
-
         private bool IsPresent (Control control, string name)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
@@ -61,7 +48,8 @@ namespace WindowsFormsApplication1
         {
             if (jobBindingSource.Count > 0)
             {
-                return IsPresent(jobAppliedDateTimePicker, "Date");
+                return IsPresent(jobAppliedDateTimePicker, "Date") &&
+                    IsPresent(jobPositionTextBox, "Position");
             }
             else
             {
@@ -77,7 +65,7 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void JobForm_Load(object sender, EventArgs e)
@@ -89,6 +77,8 @@ namespace WindowsFormsApplication1
             List<Company> companyListing = CompanyDB.GetAllCompanies();
             companyNameComboBox.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
+
+            
 
 
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
@@ -167,21 +157,21 @@ namespace WindowsFormsApplication1
             }
         }
 
-        //private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (companyNameComboBox.SelectedIndex != -1)
-        //    {
-        //        this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
-        //    }
-        //}
+        private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (companyNameComboBox.SelectedIndex != -1)
+            {
+                this.jobCompanyIDTextBox.Text = companyNameComboBox.SelectedValue.ToString();
+            }
+        }
 
-        //private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (contactFirstNameComboBox.SelectedIndex != -1)
-        //    {
-        //        this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
-        //    }
-        //}
+        private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (contactFirstNameComboBox.SelectedIndex != -1)
+            {
+                this.jobContactIDTextBox.Text = contactFirstNameComboBox.SelectedValue.ToString();
+            }
+        }
 
     }
 }

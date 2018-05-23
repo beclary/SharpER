@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void ActivityForm_Load(object sender, EventArgs e)

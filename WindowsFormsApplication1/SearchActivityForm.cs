@@ -103,19 +103,12 @@ namespace WindowsFormsApplication1
 
         private void activityDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            activityDataGridView.Columns[0].SortMode = DataGridViewColumnSortMode.Automatic;
-            this.activityDataGridView.Sort(this.activityDataGridView.Columns["Activity ID"], ListSortDirection.Ascending);
-            
+            int i = e.RowIndex;
+            DataGridViewRow row = activityDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[0];
+            int activityRowSelected = (int)cell.Value;
+
+
         }
-
-        //private void activityDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    int i = e.RowIndex;
-        //    DataGridViewRow row = activityDataGridView.Rows[i];
-        //    DataGridViewCell cell = row.Cells[0];
-        //    int activityRowSelected = (int)cell.Value;
-
-
-        //}
     }
 }
