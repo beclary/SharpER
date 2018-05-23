@@ -23,18 +23,7 @@ namespace WindowsFormsApplication1
         public ContactForm()
         {
             InitializeComponent();
-        }
-        private bool IsInt64(string s)
-        {
-            try
-            {
-                Convert.ToInt64(s);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
+
         }
 
         private bool IsPresent(Control control, string name)
@@ -72,9 +61,8 @@ namespace WindowsFormsApplication1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
-
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
@@ -127,7 +115,7 @@ namespace WindowsFormsApplication1
                     try
                     {
                         ContactDB.AddContact(contact);
-                        this.DialogResult = DialogResult.OK;
+                        //this.DialogResult = DialogResult.OK;
                     }
                     catch (SqlException xsept)
                     {
@@ -146,12 +134,12 @@ namespace WindowsFormsApplication1
                         {
                             MessageBox.Show("Another user has updated or deleted that contact",
                                 "Database Error");
-                            this.DialogResult = DialogResult.Retry;
+                            //this.DialogResult = DialogResult.Retry;
                         }
                         else
                         {
                             contact = newContact;
-                            this.DialogResult = DialogResult.OK;
+                            //this.DialogResult = DialogResult.OK;
                         }
                     }
                     catch (SqlException xsept)
@@ -164,6 +152,22 @@ namespace WindowsFormsApplication1
                     }
                 }
                 this.Close();
+            }
+        }
+
+        private void toolStripButtonContactID_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int contactID = Convert.ToInt32(toolStripTextBoxContactSeacrhTextBox.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Contact ID must be an integer.", "Entry Error");
+            }
+            catch (SqlException xsept)
+            {
+                MessageBox.Show(xsept.Message, xsept.GetType().ToString());
             }
         }
     }

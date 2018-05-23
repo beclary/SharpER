@@ -75,11 +75,11 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButtonContactID = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonContactLastName = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBoxContactSeacrhTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonContactID = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonContactLastName = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             contactAddressLabel = new System.Windows.Forms.Label();
             contactCityLabel = new System.Windows.Forms.Label();
@@ -525,7 +525,7 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripTextBox1,
+            this.toolStripTextBoxContactSeacrhTextBox,
             this.toolStripSeparator2,
             this.toolStripButtonContactID,
             this.toolStripSeparator1,
@@ -609,13 +609,19 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripTextBox1
+            // toolStripTextBoxContactSeacrhTextBox
             // 
-            this.toolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-            this.toolStripTextBox1.ToolTipText = "ENTER HERE the Contact ID or Contact Last Name";
+            this.toolStripTextBoxContactSeacrhTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.toolStripTextBoxContactSeacrhTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBoxContactSeacrhTextBox.Name = "toolStripTextBoxContactSeacrhTextBox";
+            this.toolStripTextBoxContactSeacrhTextBox.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBoxContactSeacrhTextBox.ToolTipText = "ENTER HERE the Contact ID or Contact Last Name";
+            this.toolStripTextBoxContactSeacrhTextBox.Click += new System.EventHandler(this.toolStripButtonContactID_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButtonContactID
             // 
@@ -627,6 +633,12 @@
             this.toolStripButtonContactID.Name = "toolStripButtonContactID";
             this.toolStripButtonContactID.Size = new System.Drawing.Size(75, 22);
             this.toolStripButtonContactID.Text = "Contact ID";
+            this.toolStripButtonContactID.Click += new System.EventHandler(this.toolStripButtonContactID_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripButtonContactLastName
             // 
@@ -638,16 +650,6 @@
             this.toolStripButtonContactLastName.Name = "toolStripButtonContactLastName";
             this.toolStripButtonContactLastName.Size = new System.Drawing.Size(76, 22);
             this.toolStripButtonContactLastName.Text = "Last Name";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripSeparator3
             // 
@@ -741,7 +743,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxContactSeacrhTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonContactID;
         private System.Windows.Forms.ToolStripButton toolStripButtonContactLastName;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

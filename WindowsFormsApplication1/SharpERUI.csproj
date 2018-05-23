@@ -164,6 +164,7 @@
     <EmbeddedResource Include="SearchJobForm.resx">
       <DependentUpon>SearchJobForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\SharpERBLL.Activity.datasource" />
     <None Include="Properties\DataSources\SharpERBLL.Company.datasource" />
     <None Include="Properties\DataSources\SharpERBLL.Contact.datasource" />
