@@ -80,12 +80,12 @@ namespace WindowsFormsApplication1
         private void ActivityForm_Load(object sender, EventArgs e)
         {
             List<Contact> contactListing = ContactDB.GetAllContacts();
-            activityContactIDComboBox.DataSource = contactBindingSource;
+            //activityContactIDComboBox.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
 
-            //List<Job> jobListing = JobDB.GetAllJobs();
-            //activityBindingSource.DataSource = jobBindingSource;
-            //jobBindingSource.DataSource = jobListing;
+            List<Job> jobListing = JobDB.GetAllJobs();
+            //activityJobIDComboBox.DataSource = jobBindingSource;
+            jobBindingSource.DataSource = jobListing;
 
             // Bindings need to be set, so I have to test here to see if it was an
             // ADD or MODIFY
