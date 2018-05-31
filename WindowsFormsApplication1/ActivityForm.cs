@@ -40,6 +40,8 @@ namespace WindowsFormsApplication1
                     textBox.Focus();
                     return false;
                 }
+                else
+                    return true;
             }
             else if (control.GetType().ToString() == "System.Windows.Forms.ComboBox")
             {
@@ -50,27 +52,24 @@ namespace WindowsFormsApplication1
                     comboBox.Focus();
                     return false;
                 }
+                else
+                    return true;
             }
             return true;
         }
 
         private bool IsDataValid()
         {
-            if (activityBindingSource.Count > 0)
-            {
-                return
-                    IsPresent(activityDescriptionTextBox, "Description") &&
-                    IsPresent(activityTravelComboBox1, "Travel ComboBox");
-            }
-            else
-                return true;
+            return
+                IsPresent(activityDescriptionTextBox, "Description") &&
+                IsPresent(activityDateDateTimePicker, "Date");
         }
 
-        private void toolStripButtonActivityExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            MainForm.activityMainForm = null;
-        }
+        //private void toolStripButtonActivityExitButton_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //    MainForm.activityMainForm = null;
+        //}
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -99,7 +98,7 @@ namespace WindowsFormsApplication1
             {
                 // Set activity to the row held by the activityBindingSource.Current
                 // (whatever the user clicked in the grid)
-                activity = (Activity)activityBindingSource.Current;
+                //activity = (Activity)activityBindingSource.Current; (((( Not Needed ))))
                 // (Cast from Object to real type)
 
                 // Create a new (empty) activity: newActivity
@@ -149,7 +148,7 @@ namespace WindowsFormsApplication1
                         }
                         else
                         {
-                            activity = newActivity;
+                            this.Close();
                         }
                     }
                     catch (SqlException xsept)
@@ -175,5 +174,5 @@ namespace WindowsFormsApplication1
         //activityForm.addActivity = true;
         //activityForm.ShowDialog();
         }
-     }
+    }
 }
