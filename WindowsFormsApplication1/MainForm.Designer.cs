@@ -136,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Biltmore_Estate;
+            //this.BackgroundImage = Properties.Resources.Biltmore_Estate.jpg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(761, 430);
             this.ControlBox = false;
