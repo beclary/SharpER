@@ -128,7 +128,7 @@
     <value>..\Resources\deletered.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1ec9f497c00f37d5eb5d67e58f246e4c_Camping-Near-The-Lake-Background-Wallpaper-940-464-c" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Biltmore_Estate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\1ec9f497c00f37d5eb5d67e58f246e4c_Camping-Near-The-Lake-Background-Wallpaper-940-464-c.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletered1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletered1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
