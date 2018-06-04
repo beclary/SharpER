@@ -31,9 +31,10 @@ namespace WindowsFormsApplication1
         private void btnUpdateModifyActivity_Click(object sender, EventArgs e)
         {
             ActivityForm modifyForm = new ActivityForm();
-            //modifyForm.newActivity = (Activity)activityBindingSource.Current;
+            modifyForm.newActivity = (Activity)activityBindingSource.Current;
             modifyForm.activity = (Activity)activityBindingSource.Current;
-            modifyForm.addActivity = false;
+            modifyForm.activityBindingSource.Clear();
+            modifyForm.activityBindingSource.Add(modifyForm.activity);
             modifyForm.ShowDialog();
 
             // Refreshes the gridview
@@ -45,6 +46,7 @@ namespace WindowsFormsApplication1
 
         private void btnAddNewActivity_Click(object sender, EventArgs e)
         {
+
                 activityForm = new ActivityForm();
                 activityForm.addActivity = true;
                 activityForm.ShowDialog();
