@@ -32,6 +32,7 @@ namespace WindowsFormsApplication1
         public Activity newActivity;
         public bool addActivity;
 
+        System.Windows.Forms.ComboBox activityJobIDComboBox; //  Had to put this in to get it to recognize and use the activityJobIDComboBox that I created on the form.
 
         public ActivityForm()
         {
@@ -172,7 +173,6 @@ namespace WindowsFormsApplication1
         {
             actContForm = new ContactForm();
             actContForm.addContact = true;
-
             actContForm.ShowDialog();
 
             // Refreshes the contact list which will be reflected in the comboBox
@@ -180,7 +180,7 @@ namespace WindowsFormsApplication1
             contactBindingSource.DataSource = activityContactListing;
 
             activityContactIDComboBox.Select();
-            //activityContactIDComboBox.SelectedValue.ToString();
+            activityContactIDComboBox.SelectedText.ToString();
             activityContactIDComboBox.Focus();
 
         }
@@ -202,36 +202,22 @@ namespace WindowsFormsApplication1
             actJobForm.addJob = true;
             actJobForm.ShowDialog();
 
+            // Refreshes the job list which will be reflected in the comboBox
             List<Job> activityJobListing = JobDB.GetAllJobs();
             jobBindingSource.DataSource = jobContactListing;
 
+            // Had to comment out these three fields until I could get the project to recognize the activityJobIDComboBox
+            activityJobIDComboBox.Select();
+            activityJobIDComboBox.SelectedValue.ToString();
+            activityJobIDComboBox.Focus();
+        }
 
+        private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activityJobIDComboBox.SelectedIndex != -1)
+            {
 
-
-
-
-
-
-
-            //actContForm = new ContactForm();
-            //actContForm.addContact = true;
-
-            //actContForm.ShowDialog();
-
-            //// Refreshes the contact list which will be reflected in the comboBox
-            //List<Contact> activityContactListing = ContactDB.GetAllContacts();
-            //contactBindingSource.DataSource = activityContactListing;
-
-            //activityContactIDComboBox.Select();
-            ////activityContactIDComboBox.SelectedValue.ToString();
-            //activityContactIDComboBox.Focus();
-
-            System.Windows.Forms.ComboBox activityJobIDComboBox;
-
-            //activityJobIDComboBox;
-            //activityJobIDComboBox.SelectedValue.ToString();
-            //activityJobIDComboBox.Focus();
-
+            }
         }
     }
 }

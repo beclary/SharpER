@@ -91,6 +91,9 @@ namespace WindowsFormsApplication1
                 jobDataGridView.DataSource = jobBindingSource;
                 jobBindingSource.DataSource = jobListing;
                 jobDataGridView.ClearSelection();
+
+                List<Job> activityJobListing = JobDB.GetAllJobs();
+                jobBindingSource.DataSource = activityJobListing;
             }
             catch (SqlException xsept)
             {
