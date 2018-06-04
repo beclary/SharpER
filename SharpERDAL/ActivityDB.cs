@@ -326,6 +326,9 @@ namespace SharpERDAL
                 updateCmd.Parameters.AddWithValue("@NewActivityNotes", newActivity.ActivityNotes);
             }
 
+
+
+
             // Old Activity changes
             // Activity Identification Number
             // Activity Date

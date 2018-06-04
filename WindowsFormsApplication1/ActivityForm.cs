@@ -68,12 +68,6 @@ namespace WindowsFormsApplication1
                 IsPresent(activityDateDateTimePicker, "Date");
         }
 
-        //private void toolStripButtonActivityExitButton_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //    MainForm.activityMainForm = null;
-        //}
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
