@@ -227,9 +227,10 @@ namespace WindowsFormsApplication1
             //activityContactIDComboBox.Focus();
 
             System.Windows.Forms.ComboBox activityJobIDComboBox;
-            activityJobIDComboBox.Select();
-            activityJobIDComboBox.SelectedValue.ToString();
-            activityJobIDComboBox.Focus();
+
+            //activityJobIDComboBox;
+            //activityJobIDComboBox.SelectedValue.ToString();
+            //activityJobIDComboBox.Focus();
 
         }
     }

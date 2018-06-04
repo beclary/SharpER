@@ -47,6 +47,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -188,27 +192,6 @@
     <None Include="Resources\Biltmore_Estate.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\27-8955738_uploadsmember908120yourshot-908120-8955738jpg_2zlrdv36hw2jm653u6ulsrfgo3p3eflutfvvbpyjwjhzlmh4iziq_9144x5715.adapt.1190.1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\09-9226610_uploadsmember665562yourshot-665562-9226610jpg_igdjhxksrjifxjzu4rgbsw37bhp3eflutfvvbpyjwjhzlmh4iziq_3000x2000.adapt.1190.1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baby brucey.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\images %2810%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\screen-shot-2013-09-06-at-11.06.52-am_850_563__large.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1ec9f497c00f37d5eb5d67e58f246e4c_Camping-Near-The-Lake-Background-Wallpaper-940-464-c.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download %2811%29.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Contacts-SharpER\SharpERBLL.csproj">
       <Project>{fb56d4eb-a678-4a11-9a26-637b4842e73e}</Project>
       <Name>SharpERBLL</Name>
@@ -223,21 +206,6 @@
     </ProjectReference> -->
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\screen-shot-2013-09-06-at-11.06.52-am_850_563__large1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deletered.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deletered1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deletered2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\deletered3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -250,9 +218,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Biltmore_Estate1.jpg" />
     <Resource Include="Resources\stairs1.jpg" />
-    <None Include="Resources\Godfather Image.jpg" />
     <Content Include="SharpER.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
