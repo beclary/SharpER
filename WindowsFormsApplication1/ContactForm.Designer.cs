@@ -465,6 +465,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.HotPink;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnCancel.Location = new System.Drawing.Point(558, 39);
@@ -660,9 +661,11 @@
             // 
             // ContactForm
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(732, 570);
             this.ControlBox = false;
             this.Controls.Add(this.bindingNavigator1);

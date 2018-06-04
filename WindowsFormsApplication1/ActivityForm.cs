@@ -18,6 +18,9 @@ namespace WindowsFormsApplication1
 {
     public partial class ActivityForm : Form
     {
+
+        public static List<Contact> activityContactListing;
+        public static ContactForm actContForm = null;
         public static ContactForm contForm = null;
         public static List<Activity> actList;
         public Activity activity;
@@ -29,7 +32,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private bool IsPresent (Control control, string name)
+        private bool IsPresent(Control control, string name)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
             {
@@ -163,16 +166,32 @@ namespace WindowsFormsApplication1
             }
             this.Close();
         }
-        
 
-        private void btnAddNew_Click(object sender, EventArgs e)
+
+        private void btnAddNewContact_Click(object sender, EventArgs e)
         {
-            contForm = new WindowsFormsApplication1.ContactForm();
+            actContForm = new ContactForm();
+            actContForm.addContact = true;
 
-        //public static ActivityForm activityForm = null;
-        //activityForm = new ActivityForm();
-        //activityForm.addActivity = true;
-        //activityForm.ShowDialog();
+
+            actContForm.ShowDialog();
+
+            // Refreshes the contact list which will be reflected in the comboBox
+            List<Contact> activityContactListing = ContactDB.GetAllContacts();
+            contactBindingSource.DataSource = activityContactListing;
+
+            activityContactIDComboBox.Select();
+            activityContactIDComboBox.SelectedItem.ToString();
+            activityContactIDComboBox.Focus();
+
+
+
+
+
+
+
         }
+
     }
 }
+

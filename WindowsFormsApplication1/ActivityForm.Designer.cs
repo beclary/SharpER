@@ -34,13 +34,12 @@
             System.Windows.Forms.Label activityIDLabel;
             System.Windows.Forms.Label activityNotesLabel;
             System.Windows.Forms.Label activityTravelLabel;
-            System.Windows.Forms.Label lblActivityContactFirstName;
-            System.Windows.Forms.ComboBox activityContactIDComboBox;
             System.Windows.Forms.Label lblActivityJobPosition;
             System.Windows.Forms.ComboBox activityJobIDComboBox;
+            System.Windows.Forms.Label contactFirstNameLabel;
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.activityDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.activityDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.activityIDTextBox = new System.Windows.Forms.TextBox();
@@ -50,18 +49,18 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.activityTravelComboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Button();
+            this.activityContactIDComboBox = new System.Windows.Forms.ComboBox();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
             activityIDLabel = new System.Windows.Forms.Label();
             activityNotesLabel = new System.Windows.Forms.Label();
             activityTravelLabel = new System.Windows.Forms.Label();
-            lblActivityContactFirstName = new System.Windows.Forms.Label();
-            activityContactIDComboBox = new System.Windows.Forms.ComboBox();
             lblActivityJobPosition = new System.Windows.Forms.Label();
             activityJobIDComboBox = new System.Windows.Forms.ComboBox();
+            contactFirstNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // activityDateLabel
@@ -69,7 +68,7 @@
             activityDateLabel.AutoSize = true;
             activityDateLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityDateLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityDateLabel.Location = new System.Drawing.Point(110, 108);
+            activityDateLabel.Location = new System.Drawing.Point(109, 108);
             activityDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityDateLabel.Name = "activityDateLabel";
             activityDateLabel.Size = new System.Drawing.Size(44, 19);
@@ -81,7 +80,7 @@
             activityDescriptionLabel.AutoSize = true;
             activityDescriptionLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityDescriptionLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityDescriptionLabel.Location = new System.Drawing.Point(69, 138);
+            activityDescriptionLabel.Location = new System.Drawing.Point(68, 138);
             activityDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityDescriptionLabel.Name = "activityDescriptionLabel";
             activityDescriptionLabel.Size = new System.Drawing.Size(85, 19);
@@ -105,7 +104,7 @@
             activityNotesLabel.AutoSize = true;
             activityNotesLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityNotesLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityNotesLabel.Location = new System.Drawing.Point(102, 319);
+            activityNotesLabel.Location = new System.Drawing.Point(101, 319);
             activityNotesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityNotesLabel.Name = "activityNotesLabel";
             activityNotesLabel.Size = new System.Drawing.Size(52, 19);
@@ -117,54 +116,19 @@
             activityTravelLabel.AutoSize = true;
             activityTravelLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             activityTravelLabel.ForeColor = System.Drawing.Color.DarkBlue;
-            activityTravelLabel.Location = new System.Drawing.Point(85, 224);
+            activityTravelLabel.Location = new System.Drawing.Point(84, 224);
             activityTravelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             activityTravelLabel.Name = "activityTravelLabel";
             activityTravelLabel.Size = new System.Drawing.Size(69, 19);
             activityTravelLabel.TabIndex = 9;
             activityTravelLabel.Text = "Traveled:";
             // 
-            // lblActivityContactFirstName
-            // 
-            lblActivityContactFirstName.AutoSize = true;
-            lblActivityContactFirstName.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblActivityContactFirstName.ForeColor = System.Drawing.Color.DarkBlue;
-            lblActivityContactFirstName.Location = new System.Drawing.Point(2, 254);
-            lblActivityContactFirstName.Name = "lblActivityContactFirstName";
-            lblActivityContactFirstName.Size = new System.Drawing.Size(152, 19);
-            lblActivityContactFirstName.TabIndex = 10;
-            lblActivityContactFirstName.Text = "Contact\'s First Name:";
-            // 
-            // activityContactIDComboBox
-            // 
-            activityContactIDComboBox.CausesValidation = false;
-            activityContactIDComboBox.Cursor = System.Windows.Forms.Cursors.Default;
-            activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityContactID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            activityContactIDComboBox.DataSource = this.contactBindingSource;
-            activityContactIDComboBox.DisplayMember = "ContactFirstName";
-            activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            activityContactIDComboBox.FormattingEnabled = true;
-            activityContactIDComboBox.Location = new System.Drawing.Point(161, 252);
-            activityContactIDComboBox.Name = "activityContactIDComboBox";
-            activityContactIDComboBox.Size = new System.Drawing.Size(117, 26);
-            activityContactIDComboBox.TabIndex = 3;
-            activityContactIDComboBox.ValueMember = "ContactID";
-            // 
-            // activityBindingSource
-            // 
-            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
-            // 
             // lblActivityJobPosition
             // 
             lblActivityJobPosition.AutoSize = true;
             lblActivityJobPosition.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblActivityJobPosition.ForeColor = System.Drawing.Color.DarkBlue;
-            lblActivityJobPosition.Location = new System.Drawing.Point(61, 286);
+            lblActivityJobPosition.Location = new System.Drawing.Point(60, 286);
             lblActivityJobPosition.Name = "lblActivityJobPosition";
             lblActivityJobPosition.Size = new System.Drawing.Size(93, 19);
             lblActivityJobPosition.TabIndex = 16;
@@ -186,9 +150,28 @@
             activityJobIDComboBox.TabIndex = 4;
             activityJobIDComboBox.ValueMember = "JobID";
             // 
+            // activityBindingSource
+            // 
+            this.activityBindingSource.DataSource = typeof(SharpERBLL.Activity);
+            // 
             // jobBindingSource
             // 
             this.jobBindingSource.DataSource = typeof(SharpERBLL.Job);
+            // 
+            // contactFirstNameLabel
+            // 
+            contactFirstNameLabel.AutoSize = true;
+            contactFirstNameLabel.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contactFirstNameLabel.ForeColor = System.Drawing.Color.DarkBlue;
+            contactFirstNameLabel.Location = new System.Drawing.Point(13, 254);
+            contactFirstNameLabel.Name = "contactFirstNameLabel";
+            contactFirstNameLabel.Size = new System.Drawing.Size(140, 19);
+            contactFirstNameLabel.TabIndex = 17;
+            contactFirstNameLabel.Text = "Contact First Name:";
+            // 
+            // contactBindingSource
+            // 
+            this.contactBindingSource.DataSource = typeof(SharpERBLL.Contact);
             // 
             // activityDateDateTimePicker
             // 
@@ -298,27 +281,41 @@
             this.btnAddNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAddNew.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnAddNew.Location = new System.Drawing.Point(284, 252);
+            this.btnAddNew.Location = new System.Drawing.Point(298, 251);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(141, 27);
             this.btnAddNew.TabIndex = 16;
             this.btnAddNew.Text = "Add New Contact";
             this.btnAddNew.UseVisualStyleBackColor = false;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNewContact_Click);
+            // 
+            // activityContactIDComboBox
+            // 
+            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true));
+            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true));
+            this.activityContactIDComboBox.DataSource = this.contactBindingSource;
+            this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
+            this.activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.activityContactIDComboBox.FormattingEnabled = true;
+            this.activityContactIDComboBox.Location = new System.Drawing.Point(160, 252);
+            this.activityContactIDComboBox.Name = "activityContactIDComboBox";
+            this.activityContactIDComboBox.Size = new System.Drawing.Size(121, 26);
+            this.activityContactIDComboBox.TabIndex = 18;
+            this.activityContactIDComboBox.ValueMember = "ContactID";
             // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.Aquamarine;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(740, 472);
+            this.ClientSize = new System.Drawing.Size(740, 475);
             this.ControlBox = false;
+            this.Controls.Add(contactFirstNameLabel);
+            this.Controls.Add(this.activityContactIDComboBox);
             this.Controls.Add(lblActivityJobPosition);
             this.Controls.Add(activityJobIDComboBox);
             this.Controls.Add(this.btnAddNew);
-            this.Controls.Add(lblActivityContactFirstName);
-            this.Controls.Add(activityContactIDComboBox);
             this.Controls.Add(this.activityTravelComboBox1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
@@ -338,8 +335,8 @@
             this.Text = "Activity";
             this.Load += new System.EventHandler(this.ActivityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +355,6 @@
         private System.Windows.Forms.BindingSource contactBindingSource;
         private System.Windows.Forms.BindingSource jobBindingSource;
         private System.Windows.Forms.Button btnAddNew;
+        private System.Windows.Forms.ComboBox activityContactIDComboBox;
     }
 }

@@ -88,6 +88,10 @@ namespace WindowsFormsApplication1
                 contactDataGridView.DataSource = contactBindingSource;
                 contactBindingSource.DataSource = contactListing;
                 contactDataGridView.ClearSelection();
+
+                List<Contact> activityContactListing = ContactDB.GetAllContacts();
+                contactBindingSource.DataSource = activityContactListing;
+
             }
             catch (SqlException xsept)
             {
