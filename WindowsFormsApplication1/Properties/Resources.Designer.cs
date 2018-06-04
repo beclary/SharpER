@@ -95,6 +95,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baby_brucey1 {
+            get {
+                object obj = ResourceManager.GetObject("baby brucey1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Biltmore_Estate {
             get {
                 object obj = ResourceManager.GetObject("Biltmore_Estate", resourceCulture);
@@ -108,6 +118,46 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap Biltmore_Estate1 {
             get {
                 object obj = ResourceManager.GetObject("Biltmore_Estate1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Biltmore_Estate11 {
+            get {
+                object obj = ResourceManager.GetObject("Biltmore_Estate11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Biltmore_Estate2 {
+            get {
+                object obj = ResourceManager.GetObject("Biltmore_Estate2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Biltmore_Estate3 {
+            get {
+                object obj = ResourceManager.GetObject("Biltmore_Estate3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Biltmore_Estate4 {
+            get {
+                object obj = ResourceManager.GetObject("Biltmore_Estate4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,9 +215,29 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Godfather_Image {
+            get {
+                object obj = ResourceManager.GetObject("Godfather Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grand_staircase__large {
             get {
                 object obj = ResourceManager.GetObject("grand-staircase__large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grand_staircase__large1 {
+            get {
+                object obj = ResourceManager.GetObject("grand-staircase__large1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -195,9 +265,29 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap screen_shot_2013_09_06_at_11_06_52_am_850_563__large1 {
+            get {
+                object obj = ResourceManager.GetObject("screen-shot-2013-09-06-at-11.06.52-am_850_563__large1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap screen_shot_2013_09_06_at_11_061 {
             get {
                 object obj = ResourceManager.GetObject("screen-shot-2013-09-06-at-11.061", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stairs1 {
+            get {
+                object obj = ResourceManager.GetObject("stairs1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

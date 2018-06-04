@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoginScreen));
             this.grpLoginContainer = new System.Windows.Forms.GroupBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -106,7 +107,6 @@
             // 
             this.picLoginScreenImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picLoginScreenImage.ErrorImage = null;
-            this.picLoginScreenImage.Image = global::WindowsFormsApplication1.Properties.Resources.screen_shot_2013_09_06_at_11_061;
             this.picLoginScreenImage.ImageLocation = "";
             this.picLoginScreenImage.InitialImage = null;
             this.picLoginScreenImage.Location = new System.Drawing.Point(4, 43);
@@ -133,7 +133,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.grand_staircase__large;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(789, 469);
             this.Controls.Add(this.lblTitleForLogin);
             this.Controls.Add(this.grpLoginContainer);

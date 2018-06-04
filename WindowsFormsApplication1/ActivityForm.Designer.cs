@@ -35,7 +35,7 @@
             System.Windows.Forms.Label activityNotesLabel;
             System.Windows.Forms.Label activityTravelLabel;
             System.Windows.Forms.Label lblActivityJobPosition;
-            System.Windows.Forms.ComboBox activityJobIDComboBox;
+            System.Windows.Forms.ComboBox activityJobIDComboBoxJob;
             System.Windows.Forms.Label contactFirstNameLabel;
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,13 +50,15 @@
             this.activityTravelComboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.activityContactIDComboBox = new System.Windows.Forms.ComboBox();
+            this.lblContactReminder = new System.Windows.Forms.Label();
+            this.btnAddJob = new System.Windows.Forms.Button();
             activityDateLabel = new System.Windows.Forms.Label();
             activityDescriptionLabel = new System.Windows.Forms.Label();
             activityIDLabel = new System.Windows.Forms.Label();
             activityNotesLabel = new System.Windows.Forms.Label();
             activityTravelLabel = new System.Windows.Forms.Label();
             lblActivityJobPosition = new System.Windows.Forms.Label();
-            activityJobIDComboBox = new System.Windows.Forms.ComboBox();
+            activityJobIDComboBoxJob = new System.Windows.Forms.ComboBox();
             contactFirstNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
@@ -134,21 +136,22 @@
             lblActivityJobPosition.TabIndex = 16;
             lblActivityJobPosition.Text = "Job Position:";
             // 
-            // activityJobIDComboBox
+            // activityJobIDComboBoxJob
             // 
-            activityJobIDComboBox.CausesValidation = false;
-            activityJobIDComboBox.Cursor = System.Windows.Forms.Cursors.Default;
-            activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            activityJobIDComboBox.DataSource = this.jobBindingSource;
-            activityJobIDComboBox.DisplayMember = "JobPosition";
-            activityJobIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            activityJobIDComboBox.FormattingEnabled = true;
-            activityJobIDComboBox.Location = new System.Drawing.Point(160, 284);
-            activityJobIDComboBox.Name = "activityJobIDComboBox";
-            activityJobIDComboBox.Size = new System.Drawing.Size(188, 26);
-            activityJobIDComboBox.TabIndex = 4;
-            activityJobIDComboBox.ValueMember = "JobID";
+            activityJobIDComboBoxJob.AccessibleName = "";
+            activityJobIDComboBoxJob.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            activityJobIDComboBoxJob.Cursor = System.Windows.Forms.Cursors.Default;
+            activityJobIDComboBoxJob.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            activityJobIDComboBoxJob.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPosition", true));
+            activityJobIDComboBoxJob.DataSource = this.jobBindingSource;
+            activityJobIDComboBoxJob.DisplayMember = "JobPosition";
+            activityJobIDComboBoxJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            activityJobIDComboBoxJob.FormattingEnabled = true;
+            activityJobIDComboBoxJob.Location = new System.Drawing.Point(160, 284);
+            activityJobIDComboBoxJob.Name = "activityJobIDComboBoxJob";
+            activityJobIDComboBoxJob.Size = new System.Drawing.Size(188, 26);
+            activityJobIDComboBoxJob.TabIndex = 4;
+            activityJobIDComboBoxJob.ValueMember = "JobID";
             // 
             // activityBindingSource
             // 
@@ -259,7 +262,6 @@
             // activityTravelComboBox1
             // 
             this.activityTravelComboBox1.BackColor = System.Drawing.Color.LightGray;
-            this.activityTravelComboBox1.CausesValidation = false;
             this.activityTravelComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.activityBindingSource, "ActivityTravel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityTravelComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityTravel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityTravelComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -291,7 +293,6 @@
             // 
             // activityContactIDComboBox
             // 
-            this.activityContactIDComboBox.CausesValidation = false;
             this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true));
             this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true));
             this.activityContactIDComboBox.DataSource = this.contactBindingSource;
@@ -303,6 +304,35 @@
             this.activityContactIDComboBox.Size = new System.Drawing.Size(121, 26);
             this.activityContactIDComboBox.TabIndex = 18;
             this.activityContactIDComboBox.ValueMember = "ContactID";
+            this.activityContactIDComboBox.SelectedIndexChanged += new System.EventHandler(this.activityContactIDComboBox_SelectedIndexChanged);
+            // 
+            // lblContactReminder
+            // 
+            this.lblContactReminder.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactReminder.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.lblContactReminder.Location = new System.Drawing.Point(447, 239);
+            this.lblContactReminder.Name = "lblContactReminder";
+            this.lblContactReminder.Size = new System.Drawing.Size(273, 51);
+            this.lblContactReminder.TabIndex = 19;
+            this.lblContactReminder.Text = "←Don\'t forget to select a Contact";
+            this.lblContactReminder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblContactReminder.Visible = false;
+            // 
+            // btnAddJob
+            // 
+            this.btnAddJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAddJob.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnAddJob.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAddJob.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnAddJob.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddJob.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnAddJob.Location = new System.Drawing.Point(368, 283);
+            this.btnAddJob.Name = "btnAddJob";
+            this.btnAddJob.Size = new System.Drawing.Size(141, 27);
+            this.btnAddJob.TabIndex = 20;
+            this.btnAddJob.Text = "Add New Job";
+            this.btnAddJob.UseVisualStyleBackColor = false;
+            this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
             // 
             // ActivityForm
             // 
@@ -312,10 +342,12 @@
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(740, 475);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAddJob);
+            this.Controls.Add(this.lblContactReminder);
             this.Controls.Add(contactFirstNameLabel);
             this.Controls.Add(this.activityContactIDComboBox);
             this.Controls.Add(lblActivityJobPosition);
-            this.Controls.Add(activityJobIDComboBox);
+            this.Controls.Add(activityJobIDComboBoxJob);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.activityTravelComboBox1);
             this.Controls.Add(this.btnSave);
@@ -357,5 +389,7 @@
         private System.Windows.Forms.BindingSource jobBindingSource;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.ComboBox activityContactIDComboBox;
+        private System.Windows.Forms.Label lblContactReminder;
+        private System.Windows.Forms.Button btnAddJob;
     }
 }

@@ -197,9 +197,6 @@
     <None Include="Resources\baby brucey.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\grand-staircase__large.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\images %2810%29.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +250,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Biltmore_Estate1.jpg" />
+    <Resource Include="Resources\stairs1.jpg" />
+    <None Include="Resources\Godfather Image.jpg" />
     <Content Include="SharpER.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
