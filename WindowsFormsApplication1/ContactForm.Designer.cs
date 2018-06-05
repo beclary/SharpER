@@ -290,8 +290,8 @@
             // contactContactedViaComboBox
             // 
             this.contactContactedViaComboBox.BackColor = System.Drawing.Color.LightGray;
-            this.contactContactedViaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactContactedVia", true));
-            this.contactContactedViaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.contactBindingSource, "ContactContactedVia", true));
+            this.contactContactedViaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.contactBindingSource, "ContactContactedVia", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.contactContactedViaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactContactedVia", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.contactContactedViaComboBox.DisplayMember = "Text";
             this.contactContactedViaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactContactedViaComboBox.FormattingEnabled = true;
@@ -364,9 +364,9 @@
             // 
             this.contactStateComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.contactStateComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.contactStateComboBox.BackColor = System.Drawing.Color.LightGray;
-            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactState", true));
-            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.contactBindingSource, "ContactState", true));
+            this.contactStateComboBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.contactBindingSource, "ContactState", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.contactStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactState", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.contactStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.contactStateComboBox.FormattingEnabled = true;
             this.contactStateComboBox.Items.AddRange(new object[] {
@@ -664,7 +664,7 @@
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(732, 570);
             this.ControlBox = false;

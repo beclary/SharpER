@@ -204,7 +204,7 @@ namespace WindowsFormsApplication1
 
             // Refreshes the job list which will be reflected in the comboBox
             List<Job> activityJobListing = JobDB.GetAllJobs();
-            jobBindingSource.DataSource = jobContactListing;
+            jobBindingSource.DataSource = activityJobListing; 
 
             // Had to comment out these three fields until I could get the project to recognize the activityJobIDComboBox
             activityJobIDComboBox.Select();
@@ -214,9 +214,21 @@ namespace WindowsFormsApplication1
 
         private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (activityJobIDComboBox.SelectedIndex != -1)
-            {
 
+            if (activityJobIDComboBox.SelectedItem == null) // is empty (something is NOT selected)
+            {
+                if (activityJobIDComboBox.SelectedIndex == -1) // is empty (something is NOT selected)
+                {
+                    lblJobReminder.Visible = true;  // label remains telling user to select position
+                }
+                else
+                {
+                    lblJobReminder.Visible = false; // label disappears
+                }
+            }
+            else
+            {
+                lblJobReminder.Visible = false; // label disappears
             }
         }
     }

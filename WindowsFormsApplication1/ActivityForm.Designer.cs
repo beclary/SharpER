@@ -140,10 +140,9 @@
             // activityJobIDComboBox
             // 
             activityJobIDComboBox.AccessibleName = "";
-            activityJobIDComboBox.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
             activityJobIDComboBox.Cursor = System.Windows.Forms.Cursors.Default;
             activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPosition", true));
+            activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             activityJobIDComboBox.DataSource = this.jobBindingSource;
             activityJobIDComboBox.DisplayMember = "JobPosition";
             activityJobIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -295,8 +294,8 @@
             // 
             // activityContactIDComboBox
             // 
-            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true));
-            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true));
+            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityContactIDComboBox.DataSource = this.contactBindingSource;
             this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
             this.activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -352,7 +351,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aquamarine;
+            this.BackColor = System.Drawing.Color.Tan;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(740, 475);
             this.ControlBox = false;

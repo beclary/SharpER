@@ -237,8 +237,8 @@
             // companyStateComboBox
             // 
             this.companyStateComboBox.BackColor = System.Drawing.Color.LightGray;
-            this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyState", true));
-            this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.companyBindingSource, "CompanyState", true));
+            this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.companyBindingSource, "CompanyState", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.companyStateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyState", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.companyStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.companyStateComboBox.FormattingEnabled = true;
             this.companyStateComboBox.Items.AddRange(new object[] {
