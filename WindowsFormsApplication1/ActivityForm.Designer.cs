@@ -152,7 +152,7 @@
             activityJobIDComboBox.Size = new System.Drawing.Size(188, 26);
             activityJobIDComboBox.TabIndex = 4;
             activityJobIDComboBox.ValueMember = "JobID";
-            activityJobIDComboBox.SelectedIndexChanged += new System.EventHandler(this.activityJobIDComboBox_SelectedIndexChanged);
+            ////activityJobIDComboBox.SelectedIndexChanged += new System.EventHandler(this.activityJobIDComboBox_SelectedIndexChanged);
             // 
             // activityBindingSource
             // 

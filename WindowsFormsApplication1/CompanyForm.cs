@@ -144,12 +144,12 @@ namespace WindowsFormsApplication1
                         if (!CompanyDB.UpdateModifyCompany(company, newCompany))
                         {
                             MessageBox.Show("Another user has updated or deleted that company", "DATABASE ERROR");
-                            this.DialogResult = DialogResult.OK;
+                            //this.DialogResult = DialogResult.OK;
                         }
                         else
                         {
                             company = newCompany;
-                            this.DialogResult = DialogResult.OK;
+                            //this.DialogResult = DialogResult.OK;
                         }
                     }
                     catch (SqlException xsept)

@@ -90,7 +90,7 @@ namespace WindowsFormsApplication1
                 contactDataGridView.ClearSelection();
 
                 List<Contact> activityContactListing = ContactDB.GetAllContacts();
-                contactBindingSource.DataSource = activityContactListing;
+                contactBindingSource.DataSource = activityContactListing;   // This was commented out on the SearchActivityForm (line 93)
 
             }
             catch (SqlException xsept)
@@ -105,19 +105,23 @@ namespace WindowsFormsApplication1
 
         private void contactDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach(DataGridViewColumn column in contactDataGridView.Columns)
-            {
-                column.SortMode = DataGridViewColumnSortMode.Automatic;
-            }
 
+            // Attempt to make the colums sort by clicking on the header. Could not get it to work.
             //contactDataGridView.Sort(contactDataGridView.Columns[0], ListSortDirection.Ascending);
             //contactDataGridView.Sort(contactDataGridView.Columns[1], ListSortDirection.Ascending);
             //contactDataGridView.Sort(contactDataGridView.Columns[2], ListSortDirection.Ascending);
-            
-            //int i = e.RowIndex;
-            //DataGridViewRow row = contactDataGridView.Rows[i];
-            //DataGridViewCell cell = row.Cells[0];
-            //int contactRowSelected = (int)cell.Value;
+
+            //foreach (DataGridViewColumn column in contactDataGridView.Columns)
+            //{
+            //    column.SortMode = DataGridViewColumnSortMode.Automatic;
+            //}
+
+
+            // Attempt to make the colums sort by clicking on the header. This one, which lets you select in the gridview to select a contact, if you click on the header, it will crash.
+            int i = e.RowIndex;
+            DataGridViewRow row = contactDataGridView.Rows[i];
+            DataGridViewCell cell = row.Cells[0];
+            int contactRowSelected = (int)cell.Value;
         }
     }
 }

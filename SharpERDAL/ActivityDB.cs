@@ -261,8 +261,8 @@ namespace SharpERDAL
                     "OR act_description IS NULL AND @OldActivityDescription IS NULL) " +
                 "AND (act_travel = @OldActivityTravel " +
                     "OR act_travel IS NULL AND @OldActivityTravel IS NULL) " +
-                "AND (act_job_id = @OldActivityJobID " +
-                    "OR act_job_id IS NULL AND @OldActivityJobID IS NULL) " +
+                //"AND (act_job_id = @OldActivityJobID " +
+                //    "OR act_job_id IS NULL AND @OldActivityJobID IS NULL) " +
                 "AND (act_contact_id = @OldActivityContactID " +
                     "OR act_contact_id IS NULL AND @OldActivityContactID IS NULL) " +
                 "AND (act_notes = @OldActivityNotes " +
@@ -305,15 +305,15 @@ namespace SharpERDAL
             }
 
             // Activity JobID
-            if (newActivity.ActivityJobID == -1) // This, until the Job form is done, is setting to a zero, when it should be a -1 (or treated as a null)
-            {
-                updateCmd.Parameters.AddWithValue("@NewActivityJobID", DBNull.Value);
-                updateCmd.Parameters["@NewActivityJobID"].IsNullable = true;
-            }
-            else
-            {
-                updateCmd.Parameters.AddWithValue("@NewActivityJobID", newActivity.ActivityJobID);
-            }
+            //if (newActivity.ActivityJobID == -1) // This, until the Job form is done, is setting to a zero, when it should be a -1 (or treated as a null)
+            //{
+            //    updateCmd.Parameters.AddWithValue("@NewActivityJobID", DBNull.Value);
+            //    updateCmd.Parameters["@NewActivityJobID"].IsNullable = true;
+            //}
+            //else
+            //{
+            //    updateCmd.Parameters.AddWithValue("@NewActivityJobID", newActivity.ActivityJobID);
+            //}
 
             // Activity Notes
             if (newActivity.ActivityNotes == "")
@@ -370,15 +370,15 @@ namespace SharpERDAL
             }
 
             // Activity JobID
-            if (oldActivity.ActivityJobID == -1) // See comment under the checking for new changes to 0
-            {
-                updateCmd.Parameters.AddWithValue("@OldActivityJobID", DBNull.Value);
-                updateCmd.Parameters["@OldActivityJobID"].IsNullable = true;
-            }
-            else
-            {
-                updateCmd.Parameters.AddWithValue("@OldActivityJobID", oldActivity.ActivityJobID);
-            }
+            //if (oldActivity.ActivityJobID == -1) // See comment under the checking for new changes to 0
+            //{
+            //    updateCmd.Parameters.AddWithValue("@OldActivityJobID", DBNull.Value);
+            //    updateCmd.Parameters["@OldActivityJobID"].IsNullable = true;
+            //}
+            //else
+            //{
+            //    updateCmd.Parameters.AddWithValue("@OldActivityJobID", oldActivity.ActivityJobID);
+            //}
 
             // Activity Notes
             if (oldActivity.ActivityNotes == "")

@@ -179,25 +179,21 @@ namespace WindowsFormsApplication1
             contactFirstNameComboBox.Select();
             contactFirstNameComboBox.SelectedValue.ToString();
             contactFirstNameComboBox.Focus();
+
+            // Makes the label for the user to select a job position VISIBLE
+            lblContactReminderJobForm.Visible = true;
         }
 
         private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (contactFirstNameComboBox.SelectedValue == null) // is empty (something is NOT selected)
-            {
-                if (contactFirstNameComboBox.SelectedIndex == -1)   // is empty (something is NOT selected)
+                if (contactFirstNameComboBox.SelectedIndex != -1)   // comboBox is NOT empty 
                 {
-                    lblContactReminderJobForm.Visible = true;   // label remains telling user to select position
+                    lblContactReminderJobForm.Visible = false;   // They made a selection; therefore, the label disappears
                 }
                 else
                 {
-                    lblContactReminderJobForm.Visible = false;  
+                    lblContactReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
                 }
-            }
-            else
-            {
-                lblContactReminderJobForm.Visible = false;
-            }
         }
 
         private void btnAddNewCompanyJobForm_Click(object sender, EventArgs e)
@@ -214,24 +210,20 @@ namespace WindowsFormsApplication1
             companyNameComboBox.Select();
             companyNameComboBox.SelectedValue.ToString();
             companyNameComboBox.Focus();
+
+            // Makes the label for the user to select a company VISIBLE
+            lblCompanyReminderJobForm.Visible = true;
         }
 
         private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (companyNameComboBox.SelectedValue == null)   // is empty (something is NOT selected)
+            if (companyNameComboBox.SelectedIndex != -1)    // comboBox is NOT empty
             {
-                if (companyNameComboBox.SelectedIndex == -1)    // is empty (something is NOT selected)    
-                {
-                    lblCompanyReminderJobForm.Visible = true;   // label remains telling user to select position// is empty (something is NOT selected)
-                }
-                else
-                {
-                    lblCompanyReminderJobForm.Visible = false;  // the label disappears
-                }
+                lblCompanyReminderJobForm.Visible = false;   // They made a selection; therefore, the label disappears
             }
             else
             {
-                lblCompanyReminderJobForm.Visible = false;  // the label disappears
+                lblCompanyReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
     }

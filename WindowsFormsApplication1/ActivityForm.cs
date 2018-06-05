@@ -179,21 +179,19 @@ namespace WindowsFormsApplication1
             List<Contact> activityContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = activityContactListing;
 
-            activityContactIDComboBox.Select();
-            activityContactIDComboBox.SelectedText.ToString();
-            activityContactIDComboBox.Focus();
-
+            // Makes the label for the user to select a contact name VISIBLE
+            lblContactReminder.Visible = true;
         }
 
         private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (activityContactIDComboBox.SelectedIndex != -1)
+            if (activityContactIDComboBox.SelectedIndex != -1)  // comboBox is NOT empty
             {
-                lblContactReminder.Visible = false;
+                lblContactReminder.Visible = false; // They made a selection; therefore, the label disappears
             }
             else
             {
-                lblContactReminder.Visible = true;
+                lblContactReminder.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
         private void btnAddJob_Click(object sender, EventArgs e)
@@ -204,31 +202,22 @@ namespace WindowsFormsApplication1
 
             // Refreshes the job list which will be reflected in the comboBox
             List<Job> activityJobListing = JobDB.GetAllJobs();
-            jobBindingSource.DataSource = activityJobListing; 
+            jobBindingSource.DataSource = activityJobListing;
 
-            // Had to comment out these three fields until I could get the project to recognize the activityJobIDComboBox
-            activityJobIDComboBox.Select();
-            activityJobIDComboBox.SelectedValue.ToString();
-            activityJobIDComboBox.Focus();
+            // Makes the label for the user to select a job position VISIBLE
+            lblContactReminder.Visible = true; 
         }
 
         private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (activityJobIDComboBox.SelectedItem == null) // is empty (something is NOT selected)
+            if (activityJobIDComboBox.SelectedIndex != -1) // comboBox is NOT empty
             {
-                if (activityJobIDComboBox.SelectedIndex == -1) // is empty (something is NOT selected)
-                {
-                    lblJobReminder.Visible = true;  // label remains telling user to select position
-                }
-                else
-                {
-                    lblJobReminder.Visible = false; // label disappears
-                }
+                lblJobReminder.Visible = false;  // They made a selection; therefore, the label disappears
             }
             else
             {
-                lblJobReminder.Visible = false; // label disappears
+                lblJobReminder.Visible = true; // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
     }

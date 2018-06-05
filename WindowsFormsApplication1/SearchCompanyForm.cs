@@ -87,6 +87,10 @@ namespace WindowsFormsApplication1
                 companyDataGridView.DataSource = companyBindingSource;
                 companyBindingSource.DataSource = companyListing;
                 companyDataGridView.ClearSelection();
+
+                // Refreshes the Company gridview from what the Job table had in it
+                List<Company> jobCompanyListing = CompanyDB.GetAllCompanies();
+                companyBindingSource.DataSource = jobCompanyListing;
             }
             catch (SqlException xsept)
             {

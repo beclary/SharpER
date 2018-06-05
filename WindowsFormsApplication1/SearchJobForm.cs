@@ -94,6 +94,8 @@ namespace WindowsFormsApplication1
 
                 List<Job> activityJobListing = JobDB.GetAllJobs();
                 jobBindingSource.DataSource = activityJobListing;
+
+            
             }
             catch (SqlException xsept)
             {
