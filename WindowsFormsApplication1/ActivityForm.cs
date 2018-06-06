@@ -32,7 +32,6 @@ namespace WindowsFormsApplication1
         public Activity newActivity;
         public bool addActivity;
 
-        System.Windows.Forms.ComboBox activityJobIDComboBox; //  Had to put this in to get it to recognize and use the activityJobIDComboBox that I created on the form.
 
         public ActivityForm()
         {
@@ -183,17 +182,6 @@ namespace WindowsFormsApplication1
             lblContactReminder.Visible = true;
         }
 
-        private void activityContactIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (activityContactIDComboBox.SelectedIndex != -1)  // comboBox is NOT empty
-            {
-                lblContactReminder.Visible = false; // They made a selection; therefore, the label disappears
-            }
-            else
-            {
-                lblContactReminder.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
-            }
-        }
         private void btnAddJob_Click(object sender, EventArgs e)
         {
             actJobForm = new JobForm();
@@ -208,9 +196,8 @@ namespace WindowsFormsApplication1
             lblContactReminder.Visible = true; 
         }
 
-        private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void activityJobIDComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
             if (activityJobIDComboBox.SelectedIndex != -1) // comboBox is NOT empty
             {
                 lblJobReminder.Visible = false;  // They made a selection; therefore, the label disappears
@@ -218,6 +205,18 @@ namespace WindowsFormsApplication1
             else
             {
                 lblJobReminder.Visible = true; // They have not yet made a selection after returning to the form; therefore, the label IS visible 
+            }
+        }
+
+        private void activityContactIDComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (activityContactIDComboBox.SelectedIndex != -1)
+            {
+                lblContactReminder.Visible = false;
+            }
+            else
+            {
+                lblContactReminder.Visible = true;
             }
         }
     }
