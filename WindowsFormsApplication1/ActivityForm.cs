@@ -165,7 +165,6 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-
         private void btnAddNewContact_Click(object sender, EventArgs e)
         {
             actContForm = new ContactForm();
@@ -177,7 +176,6 @@ namespace WindowsFormsApplication1
             List<Contact> activityContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = activityContactListing;
             
-
             // Makes the label for the user to select a contact name VISIBLE
             lblContactReminder.Visible = true;
         }
