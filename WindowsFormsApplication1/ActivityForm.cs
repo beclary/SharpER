@@ -172,9 +172,11 @@ namespace WindowsFormsApplication1
             actContForm.addContact = true;
             actContForm.ShowDialog();
 
+            activityContactIDComboBox.SelectedIndex = -1;
             // Refreshes the contact list which will be reflected in the comboBox
             List<Contact> activityContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = activityContactListing;
+            
 
             // Makes the label for the user to select a contact name VISIBLE
             lblContactReminder.Visible = true;
@@ -186,10 +188,11 @@ namespace WindowsFormsApplication1
             actJobForm.addJob = true;
             actJobForm.ShowDialog();
 
+            activityJobIDComboBox.SelectedIndex = -1;
             // Refreshes the job list which will be reflected in the comboBox
             List<Job> activityJobListing = JobDB.GetAllJobs();
             jobBindingSource.DataSource = activityJobListing;
-
+            
             // Makes the label for the user to select a job position VISIBLE
             lblJobReminder.Visible = true; 
         }
@@ -208,19 +211,14 @@ namespace WindowsFormsApplication1
 
         private void activityContactIDComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (activityContactIDComboBox.SelectedIndex != -1)
+            if (activityContactIDComboBox.SelectedIndex != -1)  // comboBox is NOT empty
             {
-                lblContactReminder.Visible = false;
+                lblContactReminder.Visible = false; // They made a selection; therefore, the label disappears
             }
             else
             {
-                lblContactReminder.Visible = true;
+                lblContactReminder.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
-        }
-
-        private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
