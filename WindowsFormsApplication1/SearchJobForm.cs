@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
                 jobDataGridView.ClearSelection();
 
                 List<Job> activityJobListing = JobDB.GetAllJobs();
-                jobBindingSource.DataSource = activityJobListing;
+                //jobBindingSource.DataSource = activityJobListing;
 
             
             }

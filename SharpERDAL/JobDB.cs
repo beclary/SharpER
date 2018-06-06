@@ -202,6 +202,8 @@ namespace SharpERDAL
                     "OR job_pay IS NULL AND @OldJobPay IS NULL) " +
                 "AND (job_contact_id = @OldJobContactID " +
                     "OR job_contact_id IS NULL AND @OldJobContactID IS NULL) " +
+                "AND (job_company_id = @OldJobCompanyID " +
+                    "OR job_company_id IS NULL AND @OldJobCompanyID IS NULL) " +
                 "AND (job_notes = @OldJobNotes " +
                     "OR job_notes IS NULL AND @OldJobNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);

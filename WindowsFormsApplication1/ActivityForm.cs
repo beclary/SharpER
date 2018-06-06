@@ -82,11 +82,9 @@ namespace WindowsFormsApplication1
         private void ActivityForm_Load(object sender, EventArgs e)
         {
             List<Contact> contactListing = ContactDB.GetAllContacts();
-            //activityContactIDComboBox.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
 
             List<Job> jobListing = JobDB.GetAllJobs();
-            //activityJobIDComboBox.DataSource = jobBindingSource;
             jobBindingSource.DataSource = jobListing;
 
             // Bindings need to be set, so I have to test here to see if it was an
@@ -193,7 +191,7 @@ namespace WindowsFormsApplication1
             jobBindingSource.DataSource = activityJobListing;
 
             // Makes the label for the user to select a job position VISIBLE
-            lblContactReminder.Visible = true; 
+            lblJobReminder.Visible = true; 
         }
 
         private void activityJobIDComboBox_SelectionChangeCommitted(object sender, EventArgs e)
@@ -218,6 +216,11 @@ namespace WindowsFormsApplication1
             {
                 lblContactReminder.Visible = true;
             }
+        }
+
+        private void activityJobIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -65,12 +65,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void toolStripButtonJobExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            MainForm.jobMainForm = null;
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -85,9 +79,6 @@ namespace WindowsFormsApplication1
             List<Company> companyListing = CompanyDB.GetAllCompanies();
             companyNameComboBox.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
-
-            
-
 
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
             if (addJob == true) // This is the ADD
@@ -126,7 +117,7 @@ namespace WindowsFormsApplication1
                     try
                     {
                         JobDB.AddJob(job);
-                        this.DialogResult = DialogResult.OK;
+                        //this.DialogResult = DialogResult.OK;
                     }
                     catch (SqlException xsept)
                     {
@@ -175,25 +166,8 @@ namespace WindowsFormsApplication1
             List<Contact> jobContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = jobContactListing;
 
-            // Attempt to make the comboBox have the contact they just entered selected in the comboBox and the Focus put there in case is wasn't. This hasn't worked yet.
-            contactFirstNameComboBox.Select();
-            contactFirstNameComboBox.SelectedValue.ToString();
-            contactFirstNameComboBox.Focus();
-
             // Makes the label for the user to select a job position VISIBLE
             lblContactReminderJobForm.Visible = true;
-        }
-
-        private void contactFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                if (contactFirstNameComboBox.SelectedIndex != -1)   // comboBox is NOT empty 
-                {
-                    lblContactReminderJobForm.Visible = false;   // They made a selection; therefore, the label disappears
-                }
-                else
-                {
-                    lblContactReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
-                }
         }
 
         private void btnAddNewCompanyJobForm_Click(object sender, EventArgs e)
@@ -206,18 +180,13 @@ namespace WindowsFormsApplication1
             List<Company> jobCompanyListing = CompanyDB.GetAllCompanies();
             companyBindingSource.DataSource = jobCompanyListing;
 
-            // Attempt to make the comboBox have the company they just entered selected in the comboBox and the Focus put there in case is wasn't. This hasn't worked yet.
-            companyNameComboBox.Select();
-            companyNameComboBox.SelectedValue.ToString();
-            companyNameComboBox.Focus();
-
             // Makes the label for the user to select a company VISIBLE
             lblCompanyReminderJobForm.Visible = true;
         }
 
-        private void companyNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void companyNameComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (companyNameComboBox.SelectedIndex != -1)    // comboBox is NOT empty
+            if (companyNameComboBox.SelectedText != "")    // comboBox is NOT empty
             {
                 lblCompanyReminderJobForm.Visible = false;   // They made a selection; therefore, the label disappears
             }
@@ -226,5 +195,19 @@ namespace WindowsFormsApplication1
                 lblCompanyReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
+
+        private void contactFirstNameComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (contactFirstNameComboBox.SelectedIndex != -1)   // comboBox is NOT empty 
+            {
+                lblContactReminderJobForm.Visible = false;   // They made a selection; therefore, the label disappears
+            }
+            else
+            {
+                lblContactReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
+            }
+        }
+
+
     }
 }

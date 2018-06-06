@@ -239,12 +239,13 @@
             this.companyNameComboBox.Size = new System.Drawing.Size(164, 26);
             this.companyNameComboBox.TabIndex = 3;
             this.companyNameComboBox.ValueMember = "CompanyID";
-            this.companyNameComboBox.SelectedIndexChanged += new System.EventHandler(this.companyNameComboBox_SelectedIndexChanged);
+            this.companyNameComboBox.SelectionChangeCommitted += new System.EventHandler(this.companyNameComboBox_SelectionChangeCommitted);
             // 
             // contactFirstNameComboBox
             // 
+            this.contactFirstNameComboBox.CausesValidation = false;
             this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jobBindingSource, "JobContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.contactFirstNameComboBox.DataSource = this.contactBindingSource;
             this.contactFirstNameComboBox.DisplayMember = "ContactFirstName";
             this.contactFirstNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -254,7 +255,7 @@
             this.contactFirstNameComboBox.Size = new System.Drawing.Size(163, 26);
             this.contactFirstNameComboBox.TabIndex = 4;
             this.contactFirstNameComboBox.ValueMember = "ContactID";
-            this.contactFirstNameComboBox.SelectedIndexChanged += new System.EventHandler(this.contactFirstNameComboBox_SelectedIndexChanged);
+            this.contactFirstNameComboBox.SelectionChangeCommitted += new System.EventHandler(this.contactFirstNameComboBox_SelectionChangeCommitted);
             // 
             // contactBindingSource
             // 
@@ -317,7 +318,6 @@
             this.btnAddNewCompanyJobForm.FlatAppearance.BorderColor = System.Drawing.Color.DarkGoldenrod;
             this.btnAddNewCompanyJobForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAddNewCompanyJobForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnAddNewCompanyJobForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewCompanyJobForm.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewCompanyJobForm.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnAddNewCompanyJobForm.Location = new System.Drawing.Point(340, 259);
