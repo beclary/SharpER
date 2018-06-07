@@ -73,11 +73,9 @@ namespace WindowsFormsApplication1
         private void JobForm_Load(object sender, EventArgs e)
         {
             List<Contact> contactListing = ContactDB.GetAllContacts();
-            contactFirstNameComboBox.DataSource = contactBindingSource;
             contactBindingSource.DataSource = contactListing;
 
             List<Company> companyListing = CompanyDB.GetAllCompanies();
-            companyNameComboBox.DataSource = companyBindingSource;
             companyBindingSource.DataSource = companyListing;
 
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
@@ -91,7 +89,7 @@ namespace WindowsFormsApplication1
             {
                 // Set Job to the row held by the jobBindingSource.Current
                 // (wherever the user clicked in the grid)
-                job = (Job)jobBindingSource.Current;
+                //job = (Job)jobBindingSource.Current;
 
                 newJob = new Job();
 
@@ -117,7 +115,6 @@ namespace WindowsFormsApplication1
                     try
                     {
                         JobDB.AddJob(job);
-                        //this.DialogResult = DialogResult.OK;
                     }
                     catch (SqlException xsept)
                     {
@@ -135,12 +132,10 @@ namespace WindowsFormsApplication1
                         if (!JobDB.UpdateModifyJob(job, newJob))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                            //this.DialogResult = DialogResult.Retry;
                         }
                         else
                         {
-                            job = newJob;
-                            //this.DialogResult = DialogResult.OK;
+                            this.Close();
                         }
                     }
                     catch (SqlException xsept)
@@ -152,8 +147,8 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
                 }
-                this.Close();
             }
+            this.Close();
         }
 
         private void btnAddNewContactJobForm_Click(object sender, EventArgs e)
@@ -162,6 +157,7 @@ namespace WindowsFormsApplication1
             jobContForm.addContact = true;
             jobContForm.ShowDialog();
 
+            contactFirstNameComboBox.SelectedIndex = -1;
             // Refreshes the contact list which will be reflected in the comboBox
             List<Contact> jobContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = jobContactListing;
@@ -176,6 +172,7 @@ namespace WindowsFormsApplication1
             jobCompForm.addCompany = true;
             jobCompForm.ShowDialog();
 
+            companyNameComboBox.SelectedIndex = -1;
             // Refreshes the company list which will be reflected in the comboBox
             List<Company> jobCompanyListing = CompanyDB.GetAllCompanies();
             companyBindingSource.DataSource = jobCompanyListing;
@@ -186,7 +183,7 @@ namespace WindowsFormsApplication1
 
         private void companyNameComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (companyNameComboBox.SelectedText != "")    // comboBox is NOT empty
+            if (companyNameComboBox.SelectedIndex != -1)    // comboBox is NOT empty
             {
                 lblCompanyReminderJobForm.Visible = false;   // They made a selection; therefore, the label disappears
             }

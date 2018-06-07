@@ -229,7 +229,7 @@
             // companyNameComboBox
             // 
             this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jobBindingSource, "JobCompanyID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyName", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.companyNameComboBox.DataSource = this.companyBindingSource;
             this.companyNameComboBox.DisplayMember = "CompanyName";
             this.companyNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -243,7 +243,6 @@
             // 
             // contactFirstNameComboBox
             // 
-            this.contactFirstNameComboBox.CausesValidation = false;
             this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jobBindingSource, "JobContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.contactFirstNameComboBox.DataSource = this.contactBindingSource;
