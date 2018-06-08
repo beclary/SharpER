@@ -109,8 +109,6 @@ namespace WindowsFormsApplication1
             DataGridViewRow row = activityDataGridView.Rows[i];
             DataGridViewCell cell = row.Cells[0];
             int activityRowSelected = (int)cell.Value;
-
-
         }
     }
 }
