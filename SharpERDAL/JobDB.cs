@@ -221,15 +221,7 @@ namespace SharpERDAL
             }
 
             // Job Applied - Mandatory DateTime field
-            //if (newJob.JobApplied == null)
-            //{
-            //    updateCmd.Parameters.AddWithValue("@NewJobApplied", DBNull.Value);
-            //    updateCmd.Parameters["@NewJobApplied"].IsNullable = true;
-            //}
-            //else
-            //{
                 updateCmd.Parameters.AddWithValue("@NewJobApplied", newJob.JobApplied);
-            //}
 
             // Job Pay
             if (newJob.JobPay == -1)
@@ -290,15 +282,15 @@ namespace SharpERDAL
             }
 
             // Job Applied
-            //if (oldJob.JobApplied == null)
-            //{
-            //    updateCmd.Parameters.AddWithValue("@OldJobApplied", DBNull.Value);
-            //    updateCmd.Parameters["@OldJobApplied"].IsNullable = true;
-            //}
-            //else
-            //{
+            if (oldJob.JobApplied == null)
+            {
+                updateCmd.Parameters.AddWithValue("@OldJobApplied", DBNull.Value);
+                updateCmd.Parameters["@OldJobApplied"].IsNullable = true;
+            }
+            else
+            {
                 updateCmd.Parameters.AddWithValue("@OldJobApplied", oldJob.JobApplied);
-            //}
+            }
 
             // Job Pay
             if (oldJob.JobPay == -1)

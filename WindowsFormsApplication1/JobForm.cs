@@ -157,7 +157,7 @@ namespace WindowsFormsApplication1
             jobContForm.addContact = true;
             jobContForm.ShowDialog();
 
-            contactFirstNameComboBox.SelectedIndex = -1;
+            //contactFirstNameComboBox.SelectedIndex = -1;
             // Refreshes the contact list which will be reflected in the comboBox
             List<Contact> jobContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = jobContactListing;
@@ -172,7 +172,7 @@ namespace WindowsFormsApplication1
             jobCompForm.addCompany = true;
             jobCompForm.ShowDialog();
 
-            companyNameComboBox.SelectedIndex = -1;
+            //companyNameComboBox.SelectedIndex = -1;
             // Refreshes the company list which will be reflected in the comboBox
             List<Company> jobCompanyListing = CompanyDB.GetAllCompanies();
             companyBindingSource.DataSource = jobCompanyListing;
