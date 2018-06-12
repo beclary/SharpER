@@ -56,7 +56,6 @@
             this.contactLastNameTextBox = new System.Windows.Forms.TextBox();
             this.contactNotesTextBox = new System.Windows.Forms.TextBox();
             this.contactStateComboBox = new System.Windows.Forms.ComboBox();
-            this.contactBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contactTitleTextBox = new System.Windows.Forms.TextBox();
             this.lblContactInfoTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -97,7 +96,6 @@
             contactTitleLabel = new System.Windows.Forms.Label();
             contactZipCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -426,10 +424,6 @@
             this.contactStateComboBox.Sorted = true;
             this.contactStateComboBox.TabIndex = 7;
             // 
-            // contactBindingSource1
-            // 
-            this.contactBindingSource1.DataSource = typeof(SharpERBLL.Contact);
-            // 
             // contactTitleTextBox
             // 
             this.contactTitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactTitle", true));
@@ -708,7 +702,6 @@
             this.Text = "Contact";
             this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -736,7 +729,6 @@
         private System.Windows.Forms.MaskedTextBox contactMobileMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactFaxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox contactZipCodeMaskedTextBox;
-        private System.Windows.Forms.BindingSource contactBindingSource1;
         public System.Windows.Forms.BindingSource contactBindingSource;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

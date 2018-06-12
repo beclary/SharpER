@@ -82,6 +82,7 @@ namespace WindowsFormsApplication1
         private void ActivityForm_Load(object sender, EventArgs e)
         {
             List<Contact> contactListing = ContactDB.GetAllContacts();
+            contactBindingSource.Clear();
             contactBindingSource.DataSource = contactListing;
 
             List<Job> jobListing = JobDB.GetAllJobs();
@@ -147,10 +148,6 @@ namespace WindowsFormsApplication1
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
                         }
-                        else
-                        {
-                            this.Close();
-                        }
                     }
                     catch (SqlException xsept)
                     {
@@ -160,9 +157,12 @@ namespace WindowsFormsApplication1
                     {
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
+                    finally
+                    {
+                        this.Close();
+                    }
                 }
             }
-            this.Close();
         }
 
         private void btnAddNewContact_Click(object sender, EventArgs e)

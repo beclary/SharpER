@@ -16,22 +16,20 @@ namespace SharpERDAL
     public static class ContactDB
     {
         // This will provide a listing of all the customers in the database
-        // This returns a listing of all the customers using a list T
+        // This returns a listing of all the customers using a list<T>
         public static List<Contact> GetAllContacts()
         {
             List<Contact> contactList = new List<Contact>();
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT * " +
-                "FROM Contact " +
-                "ORDER BY con_id";
+                "FROM Contact ";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                readur = selectCmd.ExecuteReader();
+                SqlDataReader readur = selectCmd.ExecuteReader();
                 int conContactIDOrd = readur.GetOrdinal("con_id");
                 int conContactFirstNameOrd = readur.GetOrdinal("con_first_name");
                 int conContactLastNameOrd = readur.GetOrdinal("con_last_name");
@@ -122,7 +120,7 @@ namespace SharpERDAL
             }
             finally
             {
-                readur.Close();
+             // readur.Close();
                 conn.Close();
             }
             return contactList;
@@ -290,6 +288,7 @@ namespace SharpERDAL
                 "AND (con_notes = @OldContactNotes " +
                     "OR con_notes IS NULL AND @OldContactNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
+
             // NewContact changes
             if (newContact.ContactFirstName == "")
             {

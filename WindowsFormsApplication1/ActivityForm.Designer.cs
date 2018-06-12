@@ -277,7 +277,6 @@
             // activityContactIDComboBox
             // 
             this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityContactIDComboBox.DataSource = this.contactBindingSource;
             this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
             this.activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -331,8 +330,10 @@
             // 
             // activityJobIDComboBox
             // 
+            
+            // Had to comment this out in order to get the bindings to work correctly.
+            //this.activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityJobIDComboBox.DataSource = this.jobBindingSource;
             this.activityJobIDComboBox.DisplayMember = "JobPosition";
             this.activityJobIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
