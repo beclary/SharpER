@@ -168,7 +168,8 @@
             this.activityDateDateTimePicker.Location = new System.Drawing.Point(161, 105);
             this.activityDateDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.activityDateDateTimePicker.Name = "activityDateDateTimePicker";
-            this.activityDateDateTimePicker.Size = new System.Drawing.Size(117, 26);
+            this.activityDateDateTimePicker.ShowCheckBox = true;
+            this.activityDateDateTimePicker.Size = new System.Drawing.Size(191, 26);
             this.activityDateDateTimePicker.TabIndex = 0;
             // 
             // activityDescriptionTextBox
@@ -191,7 +192,7 @@
             this.activityIDTextBox.Name = "activityIDTextBox";
             this.activityIDTextBox.ReadOnly = true;
             this.activityIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.activityIDTextBox.TabIndex = 13;
+            this.activityIDTextBox.TabIndex = 10;
             // 
             // activityNotesTextBox
             // 
@@ -246,6 +247,7 @@
             // activityTravelComboBox1
             // 
             this.activityTravelComboBox1.BackColor = System.Drawing.Color.LightGray;
+            this.activityTravelComboBox1.CausesValidation = false;
             this.activityTravelComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.activityBindingSource, "ActivityTravel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityTravelComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.activityBindingSource, "ActivityTravel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityTravelComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -258,6 +260,7 @@
             this.activityTravelComboBox1.Name = "activityTravelComboBox1";
             this.activityTravelComboBox1.Size = new System.Drawing.Size(117, 26);
             this.activityTravelComboBox1.TabIndex = 2;
+            this.activityTravelComboBox1.SelectionChangeCommitted += new System.EventHandler(this.activityTravelComboBox1_SelectionChangeCommitted);
             // 
             // btnAddNew
             // 
@@ -277,6 +280,7 @@
             // 
             // activityContactIDComboBox
             // 
+            this.activityContactIDComboBox.CausesValidation = false;
             this.activityContactIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityContactIDComboBox.DataSource = this.contactBindingSource;
             this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
@@ -286,7 +290,7 @@
             this.activityContactIDComboBox.Location = new System.Drawing.Point(160, 252);
             this.activityContactIDComboBox.Name = "activityContactIDComboBox";
             this.activityContactIDComboBox.Size = new System.Drawing.Size(121, 26);
-            this.activityContactIDComboBox.TabIndex = 18;
+            this.activityContactIDComboBox.TabIndex = 3;
             this.activityContactIDComboBox.ValueMember = "ContactID";
             this.activityContactIDComboBox.SelectionChangeCommitted += new System.EventHandler(this.activityContactIDComboBox_SelectionChangeCommitted);
             // 
@@ -332,6 +336,7 @@
             // 
             // activityJobIDComboBox
             // 
+            this.activityJobIDComboBox.CausesValidation = false;
             this.activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityJobIDComboBox.DataSource = this.jobBindingSource;
             this.activityJobIDComboBox.DisplayMember = "JobPosition";
@@ -346,11 +351,9 @@
             // 
             // ActivityForm
             // 
-            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.CancelButton = this.btnCancel;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(748, 482);
             this.ControlBox = false;
@@ -378,6 +381,7 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ActivityForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Activity";
             this.Load += new System.EventHandler(this.ActivityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();

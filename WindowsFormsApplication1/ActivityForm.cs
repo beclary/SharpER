@@ -227,6 +227,11 @@ namespace WindowsFormsApplication1
                 lblContactReminder.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
+
+        private void activityTravelComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

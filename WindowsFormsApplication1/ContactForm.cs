@@ -128,6 +128,10 @@ namespace WindowsFormsApplication1
                     {
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
+                    finally
+                    {
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -153,8 +157,11 @@ namespace WindowsFormsApplication1
                     {
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
+                    finally
+                    {
+                        this.Close();
+                    }
                 }
-                this.Close();
             }
         }
     }
