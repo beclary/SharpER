@@ -1,4 +1,4 @@
-﻿// CompanyForm.cs for SharpER
+﻿// CompanyForm.cs UI for SharpER
 // Bruce Clary
 
 using System;

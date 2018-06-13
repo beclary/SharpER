@@ -1,4 +1,4 @@
-﻿// CONTACT Business Logic Layer (BLL) for SharpER
+﻿// Contact.cs Business Logic Layer (BLL) for SharpER
 // Bruce Clary
 
 using System;
@@ -238,12 +238,11 @@ namespace SharpERBLL    // This is the namespace for all of the BLL classes
 
         public string GetFullName()
         {
-            Contact formalName = new Contact();
-            string fullName = formalName.ContactFirstName + " " + formalName.ContactLastName;
+            string fullName = ContactFirstName + " " + ContactLastName;
             return fullName;
         }
-        
-            
-        
+
+
+
     }
 }

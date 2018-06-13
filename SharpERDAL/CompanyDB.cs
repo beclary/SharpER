@@ -21,16 +21,15 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT * " +
-                "FROM Company " +
-                "ORDER BY com_id";
+                "FROM Company ";
+                //"ORDER BY com_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                readur = selectCmd.ExecuteReader();
-                int comCompanyIDOrd = readur.GetOrdinal("com_id");
+                SqlDataReader readur = selectCmd.ExecuteReader();
+                int comCompanyIDOrd = readur.GetOrdinal("com_id"); 
                 int comCompanyNameOrd = readur.GetOrdinal("com_name");
                 int comCompanyAddressOrd = readur.GetOrdinal("com_address");
                 int comCompanyCityOrd = readur.GetOrdinal("com_city");
@@ -94,7 +93,6 @@ namespace SharpERDAL
             }
             finally
             {
-                readur.Close();
                 conn.Close();
             }
             return companyList;

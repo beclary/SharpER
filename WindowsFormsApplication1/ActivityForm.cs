@@ -100,6 +100,7 @@ namespace WindowsFormsApplication1
             {
                 // Set activity to the row held by the activityBindingSource.Current
                 // (whatever the user clicked in the grid)
+
                 //activity = (Activity)activityBindingSource.Current; (((( Not Needed ))))
                 // (Cast from Object to real type)
 
@@ -171,11 +172,13 @@ namespace WindowsFormsApplication1
             actContForm.addContact = true;
             actContForm.ShowDialog();
 
-            //activityContactIDComboBox.SelectedIndex = -1;
             // Refreshes the contact list which will be reflected in the comboBox
             List<Contact> activityContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = activityContactListing;
-            
+
+            // Makes the comboBox UNSELECTED so the user will have to pick a selection
+            activityContactIDComboBox.SelectedIndex = -1;
+
             // Makes the label for the user to select a contact name VISIBLE
             lblContactReminder.Visible = true;
         }
@@ -186,11 +189,13 @@ namespace WindowsFormsApplication1
             actJobForm.addJob = true;
             actJobForm.ShowDialog();
 
-            //activityJobIDComboBox.SelectedIndex = -1;
             // Refreshes the job list which will be reflected in the comboBox
             List<Job> activityJobListing = JobDB.GetAllJobs();
             jobBindingSource.DataSource = activityJobListing;
-            
+
+            // Makes the comboBox UNSELECTED so the user will have to pick a selection
+            activityJobIDComboBox.SelectedIndex = -1;
+
             // Makes the label for the user to select a job position VISIBLE
             lblJobReminder.Visible = true; 
         }

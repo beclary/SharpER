@@ -1,4 +1,7 @@
-﻿using System;
+﻿// SearchContactForm.cs UI for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

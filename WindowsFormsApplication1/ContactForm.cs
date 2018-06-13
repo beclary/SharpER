@@ -1,4 +1,7 @@
-﻿using System;
+﻿// ContactForm.cs UI for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
@@ -152,22 +155,6 @@ namespace WindowsFormsApplication1
                     }
                 }
                 this.Close();
-            }
-        }
-
-        private void toolStripButtonContactID_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int contactID = Convert.ToInt32(toolStripTextBoxContactSeacrhTextBox.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Contact ID must be an integer.", "Entry Error");
-            }
-            catch (SqlException xsept)
-            {
-                MessageBox.Show(xsept.Message, xsept.GetType().ToString());
             }
         }
     }

@@ -202,7 +202,7 @@
             this.activityNotesTextBox.Multiline = true;
             this.activityNotesTextBox.Name = "activityNotesTextBox";
             this.activityNotesTextBox.Size = new System.Drawing.Size(454, 78);
-            this.activityNotesTextBox.TabIndex = 5;
+            this.activityNotesTextBox.TabIndex = 7;
             // 
             // lblActivityInfoTitle
             // 
@@ -224,7 +224,7 @@
             this.btnSave.Location = new System.Drawing.Point(437, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -232,12 +232,13 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.HotPink;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnCancel.Location = new System.Drawing.Point(558, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(162, 43);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel / Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -269,7 +270,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(298, 251);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(141, 27);
-            this.btnAddNew.TabIndex = 16;
+            this.btnAddNew.TabIndex = 4;
             this.btnAddNew.Text = "Add New Contact";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNewContact_Click);
@@ -281,6 +282,7 @@
             this.activityContactIDComboBox.DisplayMember = "ContactFirstName";
             this.activityContactIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.activityContactIDComboBox.FormattingEnabled = true;
+            this.activityContactIDComboBox.ItemHeight = 18;
             this.activityContactIDComboBox.Location = new System.Drawing.Point(160, 252);
             this.activityContactIDComboBox.Name = "activityContactIDComboBox";
             this.activityContactIDComboBox.Size = new System.Drawing.Size(121, 26);
@@ -311,7 +313,7 @@
             this.btnAddJob.Location = new System.Drawing.Point(368, 286);
             this.btnAddJob.Name = "btnAddJob";
             this.btnAddJob.Size = new System.Drawing.Size(141, 27);
-            this.btnAddJob.TabIndex = 20;
+            this.btnAddJob.TabIndex = 6;
             this.btnAddJob.Text = "Add New Job";
             this.btnAddJob.UseVisualStyleBackColor = false;
             this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
@@ -330,9 +332,6 @@
             // 
             // activityJobIDComboBox
             // 
-            
-            // Had to comment this out in order to get the bindings to work correctly.
-            //this.activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPosition", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityJobIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.activityBindingSource, "ActivityJobID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.activityJobIDComboBox.DataSource = this.jobBindingSource;
             this.activityJobIDComboBox.DisplayMember = "JobPosition";
@@ -341,15 +340,17 @@
             this.activityJobIDComboBox.Location = new System.Drawing.Point(159, 286);
             this.activityJobIDComboBox.Name = "activityJobIDComboBox";
             this.activityJobIDComboBox.Size = new System.Drawing.Size(193, 26);
-            this.activityJobIDComboBox.TabIndex = 22;
+            this.activityJobIDComboBox.TabIndex = 5;
             this.activityJobIDComboBox.ValueMember = "JobID";
             this.activityJobIDComboBox.SelectionChangeCommitted += new System.EventHandler(this.activityJobIDComboBox_SelectionChangeCommitted);
             // 
             // ActivityForm
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
+            this.CancelButton = this.btnCancel;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(748, 482);
             this.ControlBox = false;

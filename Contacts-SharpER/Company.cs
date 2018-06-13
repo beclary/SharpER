@@ -1,4 +1,4 @@
-﻿// COMPANY Business Logic Layer (BLL) for SharpER
+﻿// Company Business Logic Layer (BLL) for SharpER
 // Bruce Clary
 
 using System;
