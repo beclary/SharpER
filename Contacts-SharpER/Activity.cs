@@ -1,4 +1,4 @@
-﻿// ACTIVITY Business Logic Layer (BLL) for SharpER
+﻿// Activity Business Logic Layer (BLL) for SharpER
 // Bruce Clary
 
 using System;

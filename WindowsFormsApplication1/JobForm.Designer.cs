@@ -165,7 +165,7 @@
             this.jobIDTextBox.Name = "jobIDTextBox";
             this.jobIDTextBox.ReadOnly = true;
             this.jobIDTextBox.Size = new System.Drawing.Size(117, 26);
-            this.jobIDTextBox.TabIndex = 9;
+            this.jobIDTextBox.TabIndex = 10;
             // 
             // jobNotesTextBox
             // 
@@ -174,7 +174,7 @@
             this.jobNotesTextBox.Multiline = true;
             this.jobNotesTextBox.Name = "jobNotesTextBox";
             this.jobNotesTextBox.Size = new System.Drawing.Size(483, 78);
-            this.jobNotesTextBox.TabIndex = 6;
+            this.jobNotesTextBox.TabIndex = 7;
             // 
             // jobPositionTextBox
             // 
@@ -204,7 +204,7 @@
             this.btnCancel.Location = new System.Drawing.Point(558, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(162, 43);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel / Exit";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -217,7 +217,7 @@
             this.btnSave.Location = new System.Drawing.Point(437, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 43);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -228,8 +228,8 @@
             // 
             // companyNameComboBox
             // 
+            this.companyNameComboBox.CausesValidation = false;
             this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jobBindingSource, "JobCompanyID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.companyNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.companyBindingSource, "CompanyName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.companyNameComboBox.DataSource = this.companyBindingSource;
             this.companyNameComboBox.DisplayMember = "CompanyName";
             this.companyNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -243,8 +243,8 @@
             // 
             // contactFirstNameComboBox
             // 
+            this.contactFirstNameComboBox.CausesValidation = false;
             this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jobBindingSource, "JobContactID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.contactFirstNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.contactBindingSource, "ContactFirstName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.contactFirstNameComboBox.DataSource = this.contactBindingSource;
             this.contactFirstNameComboBox.DisplayMember = "ContactFirstName";
             this.contactFirstNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -252,7 +252,7 @@
             this.contactFirstNameComboBox.Location = new System.Drawing.Point(162, 291);
             this.contactFirstNameComboBox.Name = "contactFirstNameComboBox";
             this.contactFirstNameComboBox.Size = new System.Drawing.Size(163, 26);
-            this.contactFirstNameComboBox.TabIndex = 4;
+            this.contactFirstNameComboBox.TabIndex = 5;
             this.contactFirstNameComboBox.ValueMember = "ContactID";
             this.contactFirstNameComboBox.SelectionChangeCommitted += new System.EventHandler(this.contactFirstNameComboBox_SelectionChangeCommitted);
             // 
@@ -277,11 +277,11 @@
             // 
             // jobPayTextBox
             // 
-            this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true));
+            this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
             this.jobPayTextBox.Location = new System.Drawing.Point(161, 197);
             this.jobPayTextBox.Name = "jobPayTextBox";
             this.jobPayTextBox.Size = new System.Drawing.Size(117, 26);
-            this.jobPayTextBox.TabIndex = 70;
+            this.jobPayTextBox.TabIndex = 2;
             // 
             // btnAddNewContactJobForm
             // 
@@ -294,7 +294,7 @@
             this.btnAddNewContactJobForm.Location = new System.Drawing.Point(340, 290);
             this.btnAddNewContactJobForm.Name = "btnAddNewContactJobForm";
             this.btnAddNewContactJobForm.Size = new System.Drawing.Size(141, 27);
-            this.btnAddNewContactJobForm.TabIndex = 71;
+            this.btnAddNewContactJobForm.TabIndex = 6;
             this.btnAddNewContactJobForm.Text = "Add New Contact";
             this.btnAddNewContactJobForm.UseVisualStyleBackColor = false;
             this.btnAddNewContactJobForm.Click += new System.EventHandler(this.btnAddNewContactJobForm_Click);
@@ -322,7 +322,7 @@
             this.btnAddNewCompanyJobForm.Location = new System.Drawing.Point(340, 259);
             this.btnAddNewCompanyJobForm.Name = "btnAddNewCompanyJobForm";
             this.btnAddNewCompanyJobForm.Size = new System.Drawing.Size(141, 27);
-            this.btnAddNewCompanyJobForm.TabIndex = 73;
+            this.btnAddNewCompanyJobForm.TabIndex = 4;
             this.btnAddNewCompanyJobForm.Text = "Add New Company";
             this.btnAddNewCompanyJobForm.UseVisualStyleBackColor = false;
             this.btnAddNewCompanyJobForm.Click += new System.EventHandler(this.btnAddNewCompanyJobForm_Click);

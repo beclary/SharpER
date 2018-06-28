@@ -54,15 +54,8 @@ namespace WindowsFormsApplication1
 
         private bool IsDataValid()
         {
-            if (jobBindingSource.Count > 0)
-            {
                 return IsPresent(jobAppliedDateTimePicker, "Date") &&
                     IsPresent(jobPositionTextBox, "Position");
-            }
-            else
-            {
-                return true;
-            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -73,9 +66,11 @@ namespace WindowsFormsApplication1
         private void JobForm_Load(object sender, EventArgs e)
         {
             List<Contact> contactListing = ContactDB.GetAllContacts();
+            contactBindingSource.Clear();
             contactBindingSource.DataSource = contactListing;
 
             List<Company> companyListing = CompanyDB.GetAllCompanies();
+            companyBindingSource.Clear();
             companyBindingSource.DataSource = companyListing;
 
             // Bindings need to be set, so I have to test here to see if it was an ADD or a MODIFY
@@ -124,6 +119,10 @@ namespace WindowsFormsApplication1
                     {
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
+                    finally
+                    {
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -132,10 +131,6 @@ namespace WindowsFormsApplication1
                         if (!JobDB.UpdateModifyJob(job, newJob))
                         {
                             MessageBox.Show("Another user has updated or deleted that activity", "DATABASE ERROR");
-                        }
-                        else
-                        {
-                            this.Close();
                         }
                     }
                     catch (SqlException xsept)
@@ -146,9 +141,12 @@ namespace WindowsFormsApplication1
                     {
                         MessageBox.Show(xsept.Message, xsept.GetType().ToString());
                     }
+                    finally
+                    {
+                        this.Close();
+                    }
                 }
             }
-            this.Close();
         }
 
         private void btnAddNewContactJobForm_Click(object sender, EventArgs e)
@@ -157,10 +155,13 @@ namespace WindowsFormsApplication1
             jobContForm.addContact = true;
             jobContForm.ShowDialog();
 
-            //contactFirstNameComboBox.SelectedIndex = -1;
+
             // Refreshes the contact list which will be reflected in the comboBox
             List<Contact> jobContactListing = ContactDB.GetAllContacts();
             contactBindingSource.DataSource = jobContactListing;
+
+            // Makes the coboBox UNSELECTED so the user will have to pick a selection
+            contactFirstNameComboBox.SelectedIndex = -1;
 
             // Makes the label for the user to select a job position VISIBLE
             lblContactReminderJobForm.Visible = true;
@@ -172,10 +173,12 @@ namespace WindowsFormsApplication1
             jobCompForm.addCompany = true;
             jobCompForm.ShowDialog();
 
-            //companyNameComboBox.SelectedIndex = -1;
             // Refreshes the company list which will be reflected in the comboBox
             List<Company> jobCompanyListing = CompanyDB.GetAllCompanies();
             companyBindingSource.DataSource = jobCompanyListing;
+
+            // Makes the comboBox UNSELECTED so the user will have to pick a selection
+            companyNameComboBox.SelectedIndex = -1;
 
             // Makes the label for the user to select a company VISIBLE
             lblCompanyReminderJobForm.Visible = true;
@@ -204,7 +207,5 @@ namespace WindowsFormsApplication1
                 lblContactReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
-
-
     }
 }

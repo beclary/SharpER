@@ -260,7 +260,6 @@
             this.activityTravelComboBox1.Name = "activityTravelComboBox1";
             this.activityTravelComboBox1.Size = new System.Drawing.Size(117, 26);
             this.activityTravelComboBox1.TabIndex = 2;
-            this.activityTravelComboBox1.SelectionChangeCommitted += new System.EventHandler(this.activityTravelComboBox1_SelectionChangeCommitted);
             // 
             // btnAddNew
             // 

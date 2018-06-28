@@ -246,6 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchActivityForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Search Activity Form";
             this.Load += new System.EventHandler(this.SearchActivityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.activityDataGridView)).EndInit();

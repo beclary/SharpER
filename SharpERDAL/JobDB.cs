@@ -20,15 +20,13 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT * " +
-                "FROM Job " +
-                "ORDER BY job_id";
+                "FROM Job";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            SqlDataReader readur = null;
 
             try
             {
                 conn.Open();
-                readur = selectCmd.ExecuteReader();
+                SqlDataReader readur = selectCmd.ExecuteReader();
                 int jobJobIDOrd = readur.GetOrdinal("job_id");
                 int jobJobPositionOrd = readur.GetOrdinal("job_position");
                 int jobJobAppliedOrd = readur.GetOrdinal("job_applied");
@@ -90,7 +88,6 @@ namespace SharpERDAL
             }
             finally
             {
-                readur.Close();
                 conn.Close();
             }
             return jobList;
@@ -107,13 +104,12 @@ namespace SharpERDAL
                 "FROM Job " +
                 "WHERE job_id = @job_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
-            SqlDataReader readur = null;
             selectCmd.Parameters.AddWithValue("@job_id", jobID);
 
             try
             {
                 conn.Open();
-                readur = selectCmd.ExecuteReader();
+                SqlDataReader readur = selectCmd.ExecuteReader();
                 int jobJobIDOrd = readur.GetOrdinal("job_id");
                 int jobJobPositionOrd = readur.GetOrdinal("job_position");
                 int jobJobAppliedOrd = readur.GetOrdinal("job_applied");
@@ -175,7 +171,6 @@ namespace SharpERDAL
             }
             finally
             {
-                readur.Close();
                 conn.Close();
             }
             return specificJob;
@@ -373,7 +368,7 @@ namespace SharpERDAL
             if (newJob.JobPosition == null)
             {
                 insertCmd.Parameters.AddWithValue("@JobPosition", DBNull.Value);
-                insertCmd.Parameters["@JobApplied"].IsNullable = true;
+                insertCmd.Parameters["@JobPosition"].IsNullable = true;
             }
             else
             {
