@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
                 newJob.JobNotes = job.JobNotes;
 
                 jobBindingSource.Clear();
-                jobBindingSource.Add(newJob);
+                jobBindingSource.(newJob);
             }
         }
 

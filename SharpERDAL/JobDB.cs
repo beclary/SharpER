@@ -20,7 +20,8 @@ namespace SharpERDAL
             SqlConnection conn = SharpERDB.GetConnection();
             string selectStmt =
                 "SELECT * " +
-                "FROM Job";
+                "FROM Job " +
+                "ORDER BY job_id";
             SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
 
             try
@@ -43,7 +44,7 @@ namespace SharpERDAL
                     jobRowInfo.JobID = readur.GetInt32(jobJobIDOrd);
                     jobRowInfo.JobApplied = readur.GetDateTime(jobJobAppliedOrd);
 
-                    // Te rest can all have been left blank:
+                    // The rest can all have been left blank:
 
                     // Job Position
                     if (readur[jobJobPositionOrd] == DBNull.Value)
