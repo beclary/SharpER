@@ -84,7 +84,6 @@ namespace WindowsFormsApplication1
             {
                 // Set Job to the row held by the jobBindingSource.Current
                 // (wherever the user clicked in the grid)
-                //job = (Job)jobBindingSource.Current;
 
                 newJob = new Job();
 
@@ -97,7 +96,7 @@ namespace WindowsFormsApplication1
                 newJob.JobNotes = job.JobNotes;
 
                 jobBindingSource.Clear();
-                jobBindingSource.(newJob);
+                jobBindingSource.Add(newJob);
             }
         }
 

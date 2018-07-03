@@ -204,7 +204,7 @@ namespace SharpERDAL
                     "OR job_notes IS NULL AND @OldJobNotes IS NULL)";
             SqlCommand updateCmd = new SqlCommand(updateStmt, conn);
 
-            // New Job changes (must have position and date)
+            // New Job changes (must have date)
             // Job Position
             if (newJob.JobPosition == "")
             {

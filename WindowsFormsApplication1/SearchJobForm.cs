@@ -1,4 +1,7 @@
-﻿using System;
+﻿// SearchJobForm.cs for SharpER
+// Bruce Clary
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,7 +45,6 @@ namespace WindowsFormsApplication1
             modifyForm.newJob = (Job)jobBindingSource.Current;
             modifyForm.job = (Job)jobBindingSource.Current;
             modifyForm.jobBindingSource.Clear();
-            modifyForm.jobBindingSource.Add(modifyForm.job);
             modifyForm.ShowDialog();
 
             // Refreshes the gridview
@@ -54,9 +56,6 @@ namespace WindowsFormsApplication1
 
         private void btnAddNewJob_Click(object sender, EventArgs e)
         {
-            // put in a messagebox telling user they will need the ContactID if that's the person they relyed information with, and/or the CompanyName if it was related to a company, and/or the activity description if related to an activity
-            // See the SearchActivityForm
-
             jobForm = new JobForm();
             jobForm.addJob = true;
             jobForm.ShowDialog();
@@ -93,9 +92,6 @@ namespace WindowsFormsApplication1
                 jobDataGridView.ClearSelection();
 
                 List<Job> activityJobListing = JobDB.GetAllJobs();
-                //jobBindingSource.DataSource = activityJobListing;
-
-
             }
             catch (SqlException xsept)
             {
