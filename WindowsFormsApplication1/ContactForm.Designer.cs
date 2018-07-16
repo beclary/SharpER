@@ -417,7 +417,7 @@
             // 
             this.lblContactInfoTitle.AutoSize = true;
             this.lblContactInfoTitle.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactInfoTitle.ForeColor = System.Drawing.Color.Crimson;
+            this.lblContactInfoTitle.ForeColor = System.Drawing.Color.DarkRed;
             this.lblContactInfoTitle.Location = new System.Drawing.Point(1, 50);
             this.lblContactInfoTitle.Name = "lblContactInfoTitle";
             this.lblContactInfoTitle.Size = new System.Drawing.Size(274, 43);

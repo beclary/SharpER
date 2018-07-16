@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1
 
         private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Current Version:\t4.0.7\n" + "Date and Time:\t" + DateTime.Now, "VERSION NUMBER");
+            MessageBox.Show("Current Version:\t4.1.1\n" + "Date and Time:\t" + DateTime.Now, "VERSION NUMBER");
         }
     }
 }

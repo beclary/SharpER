@@ -55,6 +55,7 @@
             this.lblContactReminderJobForm = new System.Windows.Forms.Label();
             this.btnAddNewCompanyJobForm = new System.Windows.Forms.Button();
             this.lblCompanyReminderJobForm = new System.Windows.Forms.Label();
+            this.lblJobPayTextBoxError = new System.Windows.Forms.Label();
             jobAppliedLabel = new System.Windows.Forms.Label();
             jobCompanyNameLabel = new System.Windows.Forms.Label();
             jobIDLabel = new System.Windows.Forms.Label();
@@ -277,11 +278,12 @@
             // 
             // jobPayTextBox
             // 
-            this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
+            this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true));
             this.jobPayTextBox.Location = new System.Drawing.Point(161, 197);
             this.jobPayTextBox.Name = "jobPayTextBox";
             this.jobPayTextBox.Size = new System.Drawing.Size(117, 26);
             this.jobPayTextBox.TabIndex = 2;
+            this.jobPayTextBox.TextChanged += new System.EventHandler(this.jobPayTextBox_TextChanged);
             // 
             // btnAddNewContactJobForm
             // 
@@ -339,6 +341,18 @@
             this.lblCompanyReminderJobForm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCompanyReminderJobForm.Visible = false;
             // 
+            // lblJobPayTextBoxError
+            // 
+            this.lblJobPayTextBoxError.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobPayTextBoxError.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.lblJobPayTextBoxError.Location = new System.Drawing.Point(298, 192);
+            this.lblJobPayTextBoxError.Name = "lblJobPayTextBoxError";
+            this.lblJobPayTextBoxError.Size = new System.Drawing.Size(273, 34);
+            this.lblJobPayTextBoxError.TabIndex = 75;
+            this.lblJobPayTextBoxError.Text = "Error message will go here";
+            this.lblJobPayTextBoxError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblJobPayTextBoxError.Visible = false;
+            // 
             // JobForm
             // 
             this.AcceptButton = this.btnSave;
@@ -348,6 +362,7 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(759, 472);
             this.ControlBox = false;
+            this.Controls.Add(this.lblJobPayTextBoxError);
             this.Controls.Add(this.lblCompanyReminderJobForm);
             this.Controls.Add(this.btnAddNewCompanyJobForm);
             this.Controls.Add(this.lblContactReminderJobForm);
@@ -407,5 +422,6 @@
         private System.Windows.Forms.Label lblContactReminderJobForm;
         private System.Windows.Forms.Button btnAddNewCompanyJobForm;
         private System.Windows.Forms.Label lblCompanyReminderJobForm;
+        private System.Windows.Forms.Label lblJobPayTextBoxError;
     }
 }

@@ -246,6 +246,8 @@
             // 
             // activityTravelComboBox1
             // 
+            this.activityTravelComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.activityTravelComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.activityTravelComboBox1.BackColor = System.Drawing.Color.LightGray;
             this.activityTravelComboBox1.CausesValidation = false;
             this.activityTravelComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.activityBindingSource, "ActivityTravel", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));

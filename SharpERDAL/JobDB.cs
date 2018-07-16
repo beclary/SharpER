@@ -473,6 +473,7 @@ namespace SharpERDAL
             catch (SqlException xsept)
             {
                 throw xsept;
+                
             }
             catch (Exception xsept)
             {

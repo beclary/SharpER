@@ -273,7 +273,7 @@
         private System.Windows.Forms.Button btnUpdateModifyCompany;
         private System.Windows.Forms.Button btnAddNewCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyPhone;

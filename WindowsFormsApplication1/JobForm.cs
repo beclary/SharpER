@@ -1,4 +1,4 @@
-﻿// JobForm.cs for SharpER
+﻿22222// JobForm.cs for SharpER
 // Bruce Clary
 
 using System;
@@ -204,6 +204,22 @@ namespace WindowsFormsApplication1
             else
             {
                 lblContactReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
+            }
+        }
+
+        private void jobPayTextBox_TextChanged(object sender, EventArgs e)
+        {
+            lblJobPayTextBoxError.Visible = false;
+
+            if (jobPayTextBox.Text == "")
+            {
+                lblJobPayTextBoxError.Visible = true;
+                lblJobPayTextBoxError.Text = "Please enter a valid number for the pay offered";
+            }
+            if (jobPayTextBox.MaxLength <= 0 || jobPayTextBox.MaxLength >= 100000)
+            {
+                lblJobPayTextBoxError.Visible = true;
+                lblJobPayTextBoxError.Text = "Please enter a realistic pay between 1 and 80,000 dollars";
             }
         }
     }
