@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
             }
             catch (SqlException xsept)
             {
-                MessageBox.Show("This contact cannot be deleted because they are attached to another row in a different table of the program.\n\nError message: " + xsept.Message + "\nError type: " + xsept.GetType().ToString(), "DELETION ERROR");
+                MessageBox.Show("This contact cannot be deleted because they are attached to another row of a table in the program's database." + "\n\n" + xsept.GetType().ToString() + "\n\n" + xsept.Message, "ERROR");
             }
             catch (Exception xsept)
             {

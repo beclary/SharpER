@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
             }
             catch (SqlException xsept)
             {
-                throw xsept;
+                MessageBox.Show("This company cannot be deleted because they are attached to another row of a table in the program's database." + xsept.GetType().ToString() + "\n\n" + xsept.Message, "ERROR");
             }
             catch (Exception xsept)
             {
