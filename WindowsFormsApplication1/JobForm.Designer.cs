@@ -278,6 +278,7 @@
             // 
             // jobPayTextBox
             // 
+            this.jobPayTextBox.CausesValidation = false;
             this.jobPayTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jobBindingSource, "JobPay", true));
             this.jobPayTextBox.Location = new System.Drawing.Point(161, 197);
             this.jobPayTextBox.Name = "jobPayTextBox";
