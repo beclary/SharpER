@@ -284,7 +284,7 @@
             this.jobPayTextBox.Name = "jobPayTextBox";
             this.jobPayTextBox.Size = new System.Drawing.Size(117, 26);
             this.jobPayTextBox.TabIndex = 2;
-            this.jobPayTextBox.TextChanged += new System.EventHandler(this.jobPayTextBox_TextChanged);
+            this.jobPayTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.jobPayTextBox_Validating);
             // 
             // btnAddNewContactJobForm
             // 
@@ -346,9 +346,9 @@
             // 
             this.lblJobPayTextBoxError.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJobPayTextBoxError.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.lblJobPayTextBoxError.Location = new System.Drawing.Point(298, 192);
+            this.lblJobPayTextBoxError.Location = new System.Drawing.Point(284, 185);
             this.lblJobPayTextBoxError.Name = "lblJobPayTextBoxError";
-            this.lblJobPayTextBoxError.Size = new System.Drawing.Size(273, 34);
+            this.lblJobPayTextBoxError.Size = new System.Drawing.Size(422, 50);
             this.lblJobPayTextBoxError.TabIndex = 75;
             this.lblJobPayTextBoxError.Text = "Error message will go here";
             this.lblJobPayTextBoxError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

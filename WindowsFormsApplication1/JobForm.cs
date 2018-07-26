@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private bool IsPresent (Control control, string name)
+        private bool IsPresent(Control control, string name)
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox")
             {
@@ -54,8 +54,8 @@ namespace WindowsFormsApplication1
 
         private bool IsDataValid()
         {
-                return IsPresent(jobAppliedDateTimePicker, "Date") &&
-                    IsPresent(jobPositionTextBox, "Position");
+            return IsPresent(jobAppliedDateTimePicker, "Date") &&
+                IsPresent(jobPositionTextBox, "Position");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -207,19 +207,36 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void jobPayTextBox_TextChanged(object sender, EventArgs e)
+        private void jobPayTextBox_Validating(object sender, CancelEventArgs e)
         {
-            lblJobPayTextBoxError.Visible = false;
+            int result;
+
+            if (int.TryParse("123", out result))
+            {
+                lblJobPayTextBoxError.Visible = false;
+                e.Cancel = false;
+            }
+            else
+            {
+                lblJobPayTextBoxError.Visible = true;
+                lblJobPayTextBoxError.Text = "Please enter a numeric pay";
+                e.Cancel = true;
+            }
+
+
 
             if (jobPayTextBox.Text == "")
             {
                 lblJobPayTextBoxError.Visible = true;
                 lblJobPayTextBoxError.Text = "Please enter a valid number for the pay offered";
+                e.Cancel = true;
             }
-            if (jobPayTextBox.MaxLength <= 0 || jobPayTextBox.MaxLength >= 100000)
+
+            else if (result <= 0 || result >= 80001)
             {
                 lblJobPayTextBoxError.Visible = true;
                 lblJobPayTextBoxError.Text = "Please enter a realistic pay between 1 and 80,000 dollars";
+                e.Cancel = true;
             }
         }
     }
