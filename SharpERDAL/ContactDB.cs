@@ -238,6 +238,232 @@ namespace SharpERDAL
             }
         }
 
+
+        /// <summary>
+        /// This will provide the Contact information given a specific contactMobile
+        /// </summary>
+        public static Contact GetSpecificContactMobile(int contactMobile)
+        {
+            Contact specificContactMobile = new Contact();
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "SELECT con_id, con_first_name, con_last_name, con_title, con_department, con_address, con_city, con_state, con_zip_code, con_contacted_via, con_phone, con_mobile,  con_fax, con_email, con_notes " +
+                "FROM Contact " +
+                "WHERE con_mobile = @con_mobile";
+            SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            selectCmd.Parameters.AddWithValue("@con_mobile", contactMobile);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader readur = selectCmd.ExecuteReader();
+                int conContactIDOrd = readur.GetOrdinal("con_id");
+                int conContactFirstNameOrd = readur.GetOrdinal("con_first_name");
+                int conContactLastNameOrd = readur.GetOrdinal("con_last_name");
+                int conContactTitleOrd = readur.GetOrdinal("con_title");
+                int conContactDepartmentOrd = readur.GetOrdinal("con_department");
+                int conContactAddressOrd = readur.GetOrdinal("con_address");
+                int conContactCityOrd = readur.GetOrdinal("con_city");
+                int conContactStateOrd = readur.GetOrdinal("con_state");
+                int conContactZipCodeOrd = readur.GetOrdinal("con_zip_code");
+                int conContactContactedViaOrd = readur.GetOrdinal("con_contacted_via");
+                int conContactPhoneOrd = readur.GetOrdinal("con_phone");
+                int conContactMobileOrd = readur.GetOrdinal("con_mobile");
+                int conContactFaxOrd = readur.GetOrdinal("con_fax");
+                int conContactEmailOrd = readur.GetOrdinal("con_email");
+                int conContactNotesOrd = readur.GetOrdinal("con_notes");
+
+                readur.Read();
+                if (readur[conContactIDOrd] == DBNull.Value)
+                    specificContactMobile = null;
+                else
+                    specificContactMobile.ContactID = readur.GetInt32(conContactIDOrd);
+                if (readur[conContactFirstNameOrd] == DBNull.Value)
+                    specificContactMobile.ContactFirstName = null;
+                else
+                    specificContactMobile.ContactFirstName = readur.GetString(conContactFirstNameOrd);
+                if (readur[conContactLastNameOrd] == DBNull.Value)
+                    specificContactMobile.ContactLastName = null;
+                else
+                    specificContactMobile.ContactLastName = readur.GetString(conContactLastNameOrd);
+                if (readur[conContactTitleOrd] == DBNull.Value)
+                    specificContactMobile.ContactTitle = null;
+                else
+                    specificContactMobile.ContactTitle = readur.GetString(conContactTitleOrd);
+                if (readur[conContactDepartmentOrd] == DBNull.Value)
+                    specificContactMobile.ContactDepartment = null;
+                else
+                    specificContactMobile.ContactDepartment = readur.GetString(conContactDepartmentOrd);
+                if (readur[conContactAddressOrd] == DBNull.Value)
+                    specificContactMobile.ContactAddress = null;
+                else
+                    specificContactMobile.ContactAddress = readur.GetString(conContactAddressOrd);
+                if (readur[conContactCityOrd] == DBNull.Value)
+                    specificContactMobile.ContactCity = null;
+                else
+                    specificContactMobile.ContactCity = readur.GetString(conContactCityOrd);
+                if (readur[conContactStateOrd] == DBNull.Value)
+                    specificContactMobile.ContactState = null;
+                else
+                    specificContactMobile.ContactState = readur.GetString(conContactStateOrd);
+                if (readur[conContactZipCodeOrd] == DBNull.Value)
+                    specificContactMobile.ContactZipCode = null;
+                else
+                    specificContactMobile.ContactZipCode = readur.GetString(conContactZipCodeOrd);
+                if (readur[conContactContactedViaOrd] == DBNull.Value)
+                    specificContactMobile.ContactContactedVia = null;
+                else
+                    specificContactMobile.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
+                if (readur[conContactPhoneOrd] == DBNull.Value)
+                    specificContactMobile.ContactPhone = null;
+                else
+                    specificContactMobile.ContactPhone = readur.GetString(conContactPhoneOrd);
+                if (readur[conContactMobileOrd] == DBNull.Value)
+                    specificContactMobile.ContactMobile = null;
+                else
+                    specificContactMobile.ContactMobile = readur.GetString(conContactMobileOrd);
+                if (readur[conContactFaxOrd] == DBNull.Value)
+                    specificContactMobile.ContactFax = null;
+                else
+                    specificContactMobile.ContactFax = readur.GetString(conContactFaxOrd);
+                if (readur[conContactEmailOrd] == DBNull.Value)
+                    specificContactMobile.ContactEmail = null;
+                else
+                    specificContactMobile.ContactEmail = readur.GetString(conContactEmailOrd);
+                if (readur[conContactNotesOrd] == DBNull.Value)
+                    specificContactMobile.ContactNotes = null;
+                else
+                    specificContactMobile.ContactNotes = readur.GetString(conContactNotesOrd);
+                readur.Close();
+                return specificContactMobile;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        /// <summary>
+        /// This will provide the Contact information given a specific contactTitle
+        /// </summary>
+        public static Contact GetSpecificContactTitle(int contactTitle)
+        {
+            Contact specificContactTitle = new Contact();
+            SqlConnection conn = SharpERDB.GetConnection();
+            string selectStmt =
+                "SELECT con_id, con_first_name, con_last_name, con_title, con_department, con_address, con_city, con_state, con_zip_code, con_contacted_via, con_phone, con_mobile,  con_fax, con_email, con_notes " +
+                "FROM Contact " +
+                "WHERE con_title = @con_title";
+            SqlCommand selectCmd = new SqlCommand(selectStmt, conn);
+            selectCmd.Parameters.AddWithValue("@con_title", contactTitle);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader readur = selectCmd.ExecuteReader();
+                int conContactIDOrd = readur.GetOrdinal("con_id");
+                int conContactFirstNameOrd = readur.GetOrdinal("con_first_name");
+                int conContactLastNameOrd = readur.GetOrdinal("con_last_name");
+                int conContactTitleOrd = readur.GetOrdinal("con_title");
+                int conContactDepartmentOrd = readur.GetOrdinal("con_department");
+                int conContactAddressOrd = readur.GetOrdinal("con_address");
+                int conContactCityOrd = readur.GetOrdinal("con_city");
+                int conContactStateOrd = readur.GetOrdinal("con_state");
+                int conContactZipCodeOrd = readur.GetOrdinal("con_zip_code");
+                int conContactContactedViaOrd = readur.GetOrdinal("con_contacted_via");
+                int conContactPhoneOrd = readur.GetOrdinal("con_phone");
+                int conContactMobileOrd = readur.GetOrdinal("con_mobile");
+                int conContactFaxOrd = readur.GetOrdinal("con_fax");
+                int conContactEmailOrd = readur.GetOrdinal("con_email");
+                int conContactNotesOrd = readur.GetOrdinal("con_notes");
+
+                readur.Read();
+                if (readur[conContactIDOrd] == DBNull.Value)
+                    specificContactTitle = null;
+                else
+                    specificContactTitle.ContactID = readur.GetInt32(conContactIDOrd);
+                if (readur[conContactFirstNameOrd] == DBNull.Value)
+                    specificContactTitle.ContactFirstName = null;
+                else
+                    specificContactTitle.ContactFirstName = readur.GetString(conContactFirstNameOrd);
+                if (readur[conContactLastNameOrd] == DBNull.Value)
+                    specificContactTitle.ContactLastName = null;
+                else
+                    specificContactTitle.ContactLastName = readur.GetString(conContactLastNameOrd);
+                if (readur[conContactTitleOrd] == DBNull.Value)
+                    specificContactTitle.ContactTitle = null;
+                else
+                    specificContactTitle.ContactTitle = readur.GetString(conContactTitleOrd);
+                if (readur[conContactDepartmentOrd] == DBNull.Value)
+                    specificContactTitle.ContactDepartment = null;
+                else
+                    specificContactTitle.ContactDepartment = readur.GetString(conContactDepartmentOrd);
+                if (readur[conContactAddressOrd] == DBNull.Value)
+                    specificContactTitle.ContactAddress = null;
+                else
+                    specificContactTitle.ContactAddress = readur.GetString(conContactAddressOrd);
+                if (readur[conContactCityOrd] == DBNull.Value)
+                    specificContactTitle.ContactCity = null;
+                else
+                    specificContactTitle.ContactCity = readur.GetString(conContactCityOrd);
+                if (readur[conContactStateOrd] == DBNull.Value)
+                    specificContactTitle.ContactState = null;
+                else
+                    specificContactTitle.ContactState = readur.GetString(conContactStateOrd);
+                if (readur[conContactZipCodeOrd] == DBNull.Value)
+                    specificContactTitle.ContactZipCode = null;
+                else
+                    specificContactTitle.ContactZipCode = readur.GetString(conContactZipCodeOrd);
+                if (readur[conContactContactedViaOrd] == DBNull.Value)
+                    specificContactTitle.ContactContactedVia = null;
+                else
+                    specificContactTitle.ContactContactedVia = readur.GetString(conContactContactedViaOrd);
+                if (readur[conContactPhoneOrd] == DBNull.Value)
+                    specificContactTitle.ContactPhone = null;
+                else
+                    specificContactTitle.ContactPhone = readur.GetString(conContactPhoneOrd);
+                if (readur[conContactMobileOrd] == DBNull.Value)
+                    specificContactTitle.ContactMobile = null;
+                else
+                    specificContactTitle.ContactMobile = readur.GetString(conContactMobileOrd);
+                if (readur[conContactFaxOrd] == DBNull.Value)
+                    specificContactTitle.ContactFax = null;
+                else
+                    specificContactTitle.ContactFax = readur.GetString(conContactFaxOrd);
+                if (readur[conContactEmailOrd] == DBNull.Value)
+                    specificContactTitle.ContactEmail = null;
+                else
+                    specificContactTitle.ContactEmail = readur.GetString(conContactEmailOrd);
+                if (readur[conContactNotesOrd] == DBNull.Value)
+                    specificContactTitle.ContactNotes = null;
+                else
+                    specificContactTitle.ContactNotes = readur.GetString(conContactNotesOrd);
+                readur.Close();
+                return specificContactTitle;
+            }
+            catch (SqlException xsept)
+            {
+                throw xsept;
+            }
+            catch (Exception xsept)
+            {
+                throw xsept;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         // This is the method to update / modify a contact
         public static bool UpdateModifyContact (Contact oldContact, Contact newContact)
         {
