@@ -110,5 +110,14 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[0];
             int companyRowSelected = (int)cell.Value;
         }
+
+        private void btnResetJobGridview_Click(object sender, EventArgs e)
+        {
+            // Loads the gridview list of all jobs, or in this case, refreshes it from whatever seacrh they have done and gives them the original gridview listing
+            jobListing = JobDB.GetAllJobs();
+            jobDataGridView.DataSource = jobBindingSource;
+            jobBindingSource.DataSource = jobListing;
+            jobDataGridView.ClearSelection();
+        }
     }
 }

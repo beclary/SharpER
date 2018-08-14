@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchJobForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblJobTitle = new System.Windows.Forms.Label();
             this.lblSelectingJob = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
@@ -40,12 +40,25 @@
             this.btnDeleteJob = new System.Windows.Forms.Button();
             this.btnAddNewJob = new System.Windows.Forms.Button();
             this.jobDataGridView = new System.Windows.Forms.DataGridView();
+            this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grpJobDisplayResults = new System.Windows.Forms.GroupBox();
+            this.chkJobDateApplied = new System.Windows.Forms.CheckBox();
+            this.lblDispResuSelctJob = new System.Windows.Forms.Label();
+            this.chkJobPosition = new System.Windows.Forms.CheckBox();
+            this.btnResetJobGridview = new System.Windows.Forms.Button();
+            this.btnSearchJobPosition = new System.Windows.Forms.Button();
+            this.btnSearchJobDateApplied = new System.Windows.Forms.Button();
+            this.txtJobPosition = new System.Windows.Forms.TextBox();
+            this.lblSearchJobPositionInst = new System.Windows.Forms.Label();
+            this.lblSearchJobDateAppliedInst = new System.Windows.Forms.Label();
+            this.mtbJobDateApplied = new System.Windows.Forms.MaskedTextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.JobNotes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.jobDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
+            this.grpJobDisplayResults.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblJobTitle
@@ -147,27 +160,148 @@
             this.jobDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.JobNotes});
             this.jobDataGridView.DataSource = this.jobBindingSource;
             this.jobDataGridView.Location = new System.Drawing.Point(26, 203);
             this.jobDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.jobDataGridView.MultiSelect = false;
             this.jobDataGridView.Name = "jobDataGridView";
             this.jobDataGridView.ReadOnly = true;
-            this.jobDataGridView.Size = new System.Drawing.Size(547, 211);
+            this.jobDataGridView.Size = new System.Drawing.Size(548, 211);
             this.jobDataGridView.TabIndex = 29;
             this.jobDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.jobDataGridView_CellContentClick);
+            // 
+            // jobBindingSource
+            // 
+            this.jobBindingSource.DataSource = typeof(SharpERBLL.Job);
+            // 
+            // grpJobDisplayResults
+            // 
+            this.grpJobDisplayResults.BackColor = System.Drawing.Color.Silver;
+            this.grpJobDisplayResults.Controls.Add(this.chkJobDateApplied);
+            this.grpJobDisplayResults.Controls.Add(this.lblDispResuSelctJob);
+            this.grpJobDisplayResults.Controls.Add(this.chkJobPosition);
+            this.grpJobDisplayResults.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpJobDisplayResults.Location = new System.Drawing.Point(581, 434);
+            this.grpJobDisplayResults.Name = "grpJobDisplayResults";
+            this.grpJobDisplayResults.Size = new System.Drawing.Size(143, 115);
+            this.grpJobDisplayResults.TabIndex = 44;
+            this.grpJobDisplayResults.TabStop = false;
+            this.grpJobDisplayResults.Text = "Display Results";
+            // 
+            // chkJobDateApplied
+            // 
+            this.chkJobDateApplied.AutoSize = true;
+            this.chkJobDateApplied.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkJobDateApplied.Location = new System.Drawing.Point(10, 57);
+            this.chkJobDateApplied.Name = "chkJobDateApplied";
+            this.chkJobDateApplied.Size = new System.Drawing.Size(105, 21);
+            this.chkJobDateApplied.TabIndex = 4;
+            this.chkJobDateApplied.Text = "Date Applied";
+            this.chkJobDateApplied.UseVisualStyleBackColor = true;
+            // 
+            // lblDispResuSelctJob
+            // 
+            this.lblDispResuSelctJob.AutoSize = true;
+            this.lblDispResuSelctJob.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDispResuSelctJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblDispResuSelctJob.Location = new System.Drawing.Point(6, 34);
+            this.lblDispResuSelctJob.Name = "lblDispResuSelctJob";
+            this.lblDispResuSelctJob.Size = new System.Drawing.Size(83, 19);
+            this.lblDispResuSelctJob.TabIndex = 3;
+            this.lblDispResuSelctJob.Text = "SORT BY:";
+            // 
+            // chkJobPosition
+            // 
+            this.chkJobPosition.AutoSize = true;
+            this.chkJobPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkJobPosition.Location = new System.Drawing.Point(10, 79);
+            this.chkJobPosition.Name = "chkJobPosition";
+            this.chkJobPosition.Size = new System.Drawing.Size(76, 21);
+            this.chkJobPosition.TabIndex = 1;
+            this.chkJobPosition.Text = "Position";
+            this.chkJobPosition.UseVisualStyleBackColor = true;
+            // 
+            // btnResetJobGridview
+            // 
+            this.btnResetJobGridview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnResetJobGridview.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetJobGridview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnResetJobGridview.Location = new System.Drawing.Point(369, 433);
+            this.btnResetJobGridview.Name = "btnResetJobGridview";
+            this.btnResetJobGridview.Size = new System.Drawing.Size(178, 79);
+            this.btnResetJobGridview.TabIndex = 43;
+            this.btnResetJobGridview.Text = "Clear Results - Show All Jobs";
+            this.btnResetJobGridview.UseVisualStyleBackColor = false;
+            this.btnResetJobGridview.Click += new System.EventHandler(this.btnResetJobGridview_Click);
+            // 
+            // btnSearchJobPosition
+            // 
+            this.btnSearchJobPosition.Location = new System.Drawing.Point(294, 476);
+            this.btnSearchJobPosition.Name = "btnSearchJobPosition";
+            this.btnSearchJobPosition.Size = new System.Drawing.Size(67, 29);
+            this.btnSearchJobPosition.TabIndex = 42;
+            this.btnSearchJobPosition.Text = "Search";
+            this.btnSearchJobPosition.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchJobDateApplied
+            // 
+            this.btnSearchJobDateApplied.Location = new System.Drawing.Point(294, 441);
+            this.btnSearchJobDateApplied.Name = "btnSearchJobDateApplied";
+            this.btnSearchJobDateApplied.Size = new System.Drawing.Size(67, 29);
+            this.btnSearchJobDateApplied.TabIndex = 41;
+            this.btnSearchJobDateApplied.Text = "Search";
+            this.btnSearchJobDateApplied.UseVisualStyleBackColor = true;
+            // 
+            // txtJobPosition
+            // 
+            this.txtJobPosition.Location = new System.Drawing.Point(129, 477);
+            this.txtJobPosition.Name = "txtJobPosition";
+            this.txtJobPosition.Size = new System.Drawing.Size(159, 26);
+            this.txtJobPosition.TabIndex = 40;
+            // 
+            // lblSearchJobPositionInst
+            // 
+            this.lblSearchJobPositionInst.AutoSize = true;
+            this.lblSearchJobPositionInst.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchJobPositionInst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblSearchJobPositionInst.Location = new System.Drawing.Point(56, 479);
+            this.lblSearchJobPositionInst.Name = "lblSearchJobPositionInst";
+            this.lblSearchJobPositionInst.Size = new System.Drawing.Size(68, 20);
+            this.lblSearchJobPositionInst.TabIndex = 38;
+            this.lblSearchJobPositionInst.Text = "Position:";
+            // 
+            // lblSearchJobDateAppliedInst
+            // 
+            this.lblSearchJobDateAppliedInst.AutoSize = true;
+            this.lblSearchJobDateAppliedInst.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchJobDateAppliedInst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblSearchJobDateAppliedInst.Location = new System.Drawing.Point(22, 444);
+            this.lblSearchJobDateAppliedInst.Name = "lblSearchJobDateAppliedInst";
+            this.lblSearchJobDateAppliedInst.Size = new System.Drawing.Size(102, 20);
+            this.lblSearchJobDateAppliedInst.TabIndex = 37;
+            this.lblSearchJobDateAppliedInst.Text = "Date Applied:";
+            // 
+            // mtbJobDateApplied
+            // 
+            this.mtbJobDateApplied.Location = new System.Drawing.Point(129, 444);
+            this.mtbJobDateApplied.Mask = "00/00/0000";
+            this.mtbJobDateApplied.Name = "mtbJobDateApplied";
+            this.mtbJobDateApplied.Size = new System.Drawing.Size(159, 26);
+            this.mtbJobDateApplied.TabIndex = 45;
+            this.mtbJobDateApplied.ValidatingType = typeof(System.DateTime);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "JobID";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn1.HeaderText = "Job ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -177,12 +311,12 @@
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "JobApplied";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn3.HeaderText = "Job Applied";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -192,27 +326,39 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "JobPosition";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Maroon;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Maroon;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn2.HeaderText = "Job Position";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // jobBindingSource
+            // JobNotes
             // 
-            this.jobBindingSource.DataSource = typeof(SharpERBLL.Job);
+            this.JobNotes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.JobNotes.DataPropertyName = "JobNotes";
+            this.JobNotes.HeaderText = "Job Notes";
+            this.JobNotes.Name = "JobNotes";
+            this.JobNotes.ReadOnly = true;
             // 
             // SearchJobForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(745, 450);
+            this.ClientSize = new System.Drawing.Size(745, 595);
             this.ControlBox = false;
+            this.Controls.Add(this.mtbJobDateApplied);
+            this.Controls.Add(this.grpJobDisplayResults);
+            this.Controls.Add(this.btnResetJobGridview);
+            this.Controls.Add(this.btnSearchJobPosition);
+            this.Controls.Add(this.btnSearchJobDateApplied);
+            this.Controls.Add(this.txtJobPosition);
+            this.Controls.Add(this.lblSearchJobPositionInst);
+            this.Controls.Add(this.lblSearchJobDateAppliedInst);
             this.Controls.Add(this.jobDataGridView);
             this.Controls.Add(this.btnAddNewJob);
             this.Controls.Add(this.btnDeleteJob);
@@ -228,7 +374,10 @@
             this.Load += new System.EventHandler(this.SearchJobForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jobDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
+            this.grpJobDisplayResults.ResumeLayout(false);
+            this.grpJobDisplayResults.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -241,9 +390,21 @@
         private System.Windows.Forms.Button btnDeleteJob;
         private System.Windows.Forms.Button btnAddNewJob;
         private System.Windows.Forms.DataGridView jobDataGridView;
+        public System.Windows.Forms.BindingSource jobBindingSource;
+        private System.Windows.Forms.GroupBox grpJobDisplayResults;
+        private System.Windows.Forms.CheckBox chkJobDateApplied;
+        private System.Windows.Forms.Label lblDispResuSelctJob;
+        private System.Windows.Forms.CheckBox chkJobPosition;
+        private System.Windows.Forms.Button btnResetJobGridview;
+        private System.Windows.Forms.Button btnSearchJobPosition;
+        private System.Windows.Forms.Button btnSearchJobDateApplied;
+        private System.Windows.Forms.TextBox txtJobPosition;
+        private System.Windows.Forms.Label lblSearchJobPositionInst;
+        private System.Windows.Forms.Label lblSearchJobDateAppliedInst;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        public System.Windows.Forms.BindingSource jobBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JobNotes;
+        private System.Windows.Forms.MaskedTextBox mtbJobDateApplied;
     }
 }

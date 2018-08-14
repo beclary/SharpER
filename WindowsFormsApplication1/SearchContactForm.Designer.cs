@@ -48,8 +48,20 @@
             this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblSelectingContact = new System.Windows.Forms.Label();
             this.lblContactTitle = new System.Windows.Forms.Label();
+            this.lblSearchFirstNameInst = new System.Windows.Forms.Label();
+            this.lblSearchLastNameInst = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.btnSearchFirstName = new System.Windows.Forms.Button();
+            this.btnSearchLastName = new System.Windows.Forms.Button();
+            this.btnResetContactGridview = new System.Windows.Forms.Button();
+            this.grpContactDisplayResults = new System.Windows.Forms.GroupBox();
+            this.chkLastNameCon = new System.Windows.Forms.CheckBox();
+            this.lblDispResuSelctCon = new System.Windows.Forms.Label();
+            this.chkFirstNameCon = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
+            this.grpContactDisplayResults.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExit
@@ -74,7 +86,7 @@
             this.btnAddNewContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddNewContact.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewContact.ForeColor = System.Drawing.Color.Yellow;
-            this.btnAddNewContact.Location = new System.Drawing.Point(579, 319);
+            this.btnAddNewContact.Location = new System.Drawing.Point(579, 285);
             this.btnAddNewContact.Name = "btnAddNewContact";
             this.btnAddNewContact.Size = new System.Drawing.Size(154, 51);
             this.btnAddNewContact.TabIndex = 10;
@@ -88,7 +100,7 @@
             this.btnUpdateModifyContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUpdateModifyContact.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateModifyContact.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnUpdateModifyContact.Location = new System.Drawing.Point(579, 205);
+            this.btnUpdateModifyContact.Location = new System.Drawing.Point(579, 220);
             this.btnUpdateModifyContact.Name = "btnUpdateModifyContact";
             this.btnUpdateModifyContact.Size = new System.Drawing.Size(154, 51);
             this.btnUpdateModifyContact.TabIndex = 11;
@@ -102,7 +114,7 @@
             this.btnDeleteContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDeleteContact.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteContact.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnDeleteContact.Location = new System.Drawing.Point(579, 262);
+            this.btnDeleteContact.Location = new System.Drawing.Point(579, 349);
             this.btnDeleteContact.Name = "btnDeleteContact";
             this.btnDeleteContact.Size = new System.Drawing.Size(154, 51);
             this.btnDeleteContact.TabIndex = 12;
@@ -236,14 +248,136 @@
             this.lblContactTitle.Text = "Search Contact Form";
             this.lblContactTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblSearchFirstNameInst
+            // 
+            this.lblSearchFirstNameInst.AutoSize = true;
+            this.lblSearchFirstNameInst.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchFirstNameInst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblSearchFirstNameInst.Location = new System.Drawing.Point(26, 431);
+            this.lblSearchFirstNameInst.Name = "lblSearchFirstNameInst";
+            this.lblSearchFirstNameInst.Size = new System.Drawing.Size(87, 20);
+            this.lblSearchFirstNameInst.TabIndex = 16;
+            this.lblSearchFirstNameInst.Text = "First Name:";
+            // 
+            // lblSearchLastNameInst
+            // 
+            this.lblSearchLastNameInst.AutoSize = true;
+            this.lblSearchLastNameInst.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchLastNameInst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblSearchLastNameInst.Location = new System.Drawing.Point(26, 466);
+            this.lblSearchLastNameInst.Name = "lblSearchLastNameInst";
+            this.lblSearchLastNameInst.Size = new System.Drawing.Size(84, 20);
+            this.lblSearchLastNameInst.TabIndex = 17;
+            this.lblSearchLastNameInst.Text = "Last Name:";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(115, 430);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(123, 26);
+            this.txtFirstName.TabIndex = 18;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(114, 464);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(123, 26);
+            this.txtLastName.TabIndex = 19;
+            // 
+            // btnSearchFirstName
+            // 
+            this.btnSearchFirstName.Location = new System.Drawing.Point(244, 428);
+            this.btnSearchFirstName.Name = "btnSearchFirstName";
+            this.btnSearchFirstName.Size = new System.Drawing.Size(67, 29);
+            this.btnSearchFirstName.TabIndex = 20;
+            this.btnSearchFirstName.Text = "Search";
+            this.btnSearchFirstName.UseVisualStyleBackColor = true;
+            // 
+            // btnSearchLastName
+            // 
+            this.btnSearchLastName.Location = new System.Drawing.Point(244, 463);
+            this.btnSearchLastName.Name = "btnSearchLastName";
+            this.btnSearchLastName.Size = new System.Drawing.Size(67, 29);
+            this.btnSearchLastName.TabIndex = 21;
+            this.btnSearchLastName.Text = "Search";
+            this.btnSearchLastName.UseVisualStyleBackColor = true;
+            // 
+            // btnResetContactGridview
+            // 
+            this.btnResetContactGridview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnResetContactGridview.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetContactGridview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnResetContactGridview.Location = new System.Drawing.Point(317, 428);
+            this.btnResetContactGridview.Name = "btnResetContactGridview";
+            this.btnResetContactGridview.Size = new System.Drawing.Size(174, 64);
+            this.btnResetContactGridview.TabIndex = 22;
+            this.btnResetContactGridview.Text = "Clear Results - Show All Contacts";
+            this.btnResetContactGridview.UseVisualStyleBackColor = false;
+            this.btnResetContactGridview.Click += new System.EventHandler(this.btnResetGridview_Click);
+            // 
+            // grpContactDisplayResults
+            // 
+            this.grpContactDisplayResults.BackColor = System.Drawing.Color.Silver;
+            this.grpContactDisplayResults.Controls.Add(this.chkFirstNameCon);
+            this.grpContactDisplayResults.Controls.Add(this.lblDispResuSelctCon);
+            this.grpContactDisplayResults.Controls.Add(this.chkLastNameCon);
+            this.grpContactDisplayResults.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpContactDisplayResults.Location = new System.Drawing.Point(579, 431);
+            this.grpContactDisplayResults.Name = "grpContactDisplayResults";
+            this.grpContactDisplayResults.Size = new System.Drawing.Size(143, 115);
+            this.grpContactDisplayResults.TabIndex = 23;
+            this.grpContactDisplayResults.TabStop = false;
+            this.grpContactDisplayResults.Text = "Display Results";
+            // 
+            // chkLastNameCon
+            // 
+            this.chkLastNameCon.AutoSize = true;
+            this.chkLastNameCon.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkLastNameCon.Location = new System.Drawing.Point(10, 79);
+            this.chkLastNameCon.Name = "chkLastNameCon";
+            this.chkLastNameCon.Size = new System.Drawing.Size(91, 21);
+            this.chkLastNameCon.TabIndex = 1;
+            this.chkLastNameCon.Text = "Last Name";
+            this.chkLastNameCon.UseVisualStyleBackColor = true;
+            // 
+            // lblDispResuSelctCon
+            // 
+            this.lblDispResuSelctCon.AutoSize = true;
+            this.lblDispResuSelctCon.Font = new System.Drawing.Font("Eras Bold ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDispResuSelctCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblDispResuSelctCon.Location = new System.Drawing.Point(6, 34);
+            this.lblDispResuSelctCon.Name = "lblDispResuSelctCon";
+            this.lblDispResuSelctCon.Size = new System.Drawing.Size(83, 19);
+            this.lblDispResuSelctCon.TabIndex = 3;
+            this.lblDispResuSelctCon.Text = "SORT BY:";
+            // 
+            // chkFirstNameCon
+            // 
+            this.chkFirstNameCon.AutoSize = true;
+            this.chkFirstNameCon.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFirstNameCon.Location = new System.Drawing.Point(10, 57);
+            this.chkFirstNameCon.Name = "chkFirstNameCon";
+            this.chkFirstNameCon.Size = new System.Drawing.Size(93, 21);
+            this.chkFirstNameCon.TabIndex = 4;
+            this.chkFirstNameCon.Text = "First Name";
+            this.chkFirstNameCon.UseVisualStyleBackColor = true;
+            // 
             // SearchContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(745, 450);
+            this.ClientSize = new System.Drawing.Size(745, 604);
             this.ControlBox = false;
+            this.Controls.Add(this.grpContactDisplayResults);
+            this.Controls.Add(this.btnResetContactGridview);
+            this.Controls.Add(this.btnSearchLastName);
+            this.Controls.Add(this.btnSearchFirstName);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.lblSearchLastNameInst);
+            this.Controls.Add(this.lblSearchFirstNameInst);
             this.Controls.Add(this.lblContactTitle);
             this.Controls.Add(this.lblSelectingContact);
             this.Controls.Add(this.contactDataGridView);
@@ -259,7 +393,10 @@
             this.Load += new System.EventHandler(this.SearchContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contactDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
+            this.grpContactDisplayResults.ResumeLayout(false);
+            this.grpContactDisplayResults.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -277,5 +414,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn MobileNumber;
+        private System.Windows.Forms.Label lblSearchFirstNameInst;
+        private System.Windows.Forms.Label lblSearchLastNameInst;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.Button btnSearchFirstName;
+        private System.Windows.Forms.Button btnSearchLastName;
+        private System.Windows.Forms.Button btnResetContactGridview;
+        private System.Windows.Forms.GroupBox grpContactDisplayResults;
+        private System.Windows.Forms.CheckBox chkFirstNameCon;
+        private System.Windows.Forms.Label lblDispResuSelctCon;
+        private System.Windows.Forms.CheckBox chkLastNameCon;
     }
 }

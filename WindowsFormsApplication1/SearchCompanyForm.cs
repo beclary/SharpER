@@ -112,5 +112,14 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[0];
             int companyRowSelected = (int)cell.Value;
         }
+
+        private void btnResetCompanyGridview_Click(object sender, EventArgs e)
+        {
+            // Loads the gridview list of all companies, or in this case, refreshes it from whatever search they have done and gives them the original gridview listing
+            companyListing = CompanyDB.GetAllCompanies();
+            companyDataGridView.DataSource = companyBindingSource;
+            companyBindingSource.DataSource = companyListing;
+            companyDataGridView.ClearSelection();
+        }
     }
 }

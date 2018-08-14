@@ -113,5 +113,16 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[0];
             int activityRowSelected = (int)cell.Value;
         }
+
+        private void btnResetActivityGridview_Click(object sender, EventArgs e)
+        {
+            // Loads the gridview list of all activities, or in this case, refreshes it from whatever search they have done and gives them the original gridview listing
+            activityListing = ActivityDB.GetAllActivities();
+            activityDataGridView.DataSource = activityBindingSource;
+            activityBindingSource.DataSource = activityListing;
+            activityDataGridView.ClearSelection();
+            mtbActivityDate.Clear();
+            txtActivityDescription.Clear();
+        }
     }
 }

@@ -126,6 +126,16 @@ namespace WindowsFormsApplication1
             DataGridViewCell cell = row.Cells[0];
             int contactRowSelected = (int)cell.Value;
         }
+
+        private void btnResetGridview_Click(object sender, EventArgs e)
+        {
+            // Loads the gridview list of all contacts, or in this case, refreshes it from whatever seacrh they have done and gives them the original gridview listing
+            contactListing = ContactDB.GetAllContacts();
+            contactDataGridView.DataSource = contactBindingSource;
+            contactBindingSource.DataSource = contactListing;
+            contactDataGridView.ClearSelection();
+
+        }
     }
 }
 
