@@ -206,38 +206,58 @@ namespace WindowsFormsApplication1
                 lblContactReminderJobForm.Visible = true;  // They have not yet made a selection after returning to the form; therefore, the label IS visible 
             }
         }
-
-        private void jobPayTextBox_Validating(object sender, CancelEventArgs e)
+        private bool IsDecimal(TextBox jobPayTextBox, string amount)
         {
-            int result;
-
-            if (int.TryParse("123", out result))
+            try
             {
-                lblJobPayTextBoxError.Visible = false;
-                e.Cancel = false;
+                Convert.ToDecimal(jobPayTextBox.Text);
+                return true;
             }
-            else
+            catch (FormatException)
             {
-                lblJobPayTextBoxError.Visible = true;
-                lblJobPayTextBoxError.Text = "Please enter a numeric pay";
-                e.Cancel = true;
-            }
-
-
-
-            if (jobPayTextBox.Text == "")
-            {
-                lblJobPayTextBoxError.Visible = true;
-                lblJobPayTextBoxError.Text = "Please enter a valid number for the pay offered";
-                e.Cancel = true;
-            }
-
-            else if (result <= 0 || result >= 80001)
-            {
-                lblJobPayTextBoxError.Visible = true;
-                lblJobPayTextBoxError.Text = "Please enter a realistic pay between 1 and 80,000 dollars";
-                e.Cancel = true;
+                MessageBox.Show(amount + " must be a decimal value.", "ENTRY ERROR");
+                jobPayTextBox.Focus();
+                return false;
             }
         }
+
+        
+
+
+
+
+
+        //private void jobPayTextBox_Validating(object sender, CancelEventArgs e)
+        //{
+        //    int result;
+
+        //    if (int.TryParse("123", out result))
+        //    {
+        //        lblJobPayTextBoxError.Visible = false;
+        //        e.Cancel = false;
+        //    }
+        //    else
+        //    {
+        //        lblJobPayTextBoxError.Visible = true;
+        //        lblJobPayTextBoxError.Text = "Please enter a numeric pay";
+        //        e.Cancel = true;
+        //    }
+
+
+
+        //    if (jobPayTextBox.Text == "")
+        //    {
+        //        lblJobPayTextBoxError.Visible = true;
+        //        lblJobPayTextBoxError.Text = "Please enter a valid number for the pay offered";
+        //        e.Cancel = true;
+        //    }
+
+        //    else if (result <= 0 || result >= 80001)
+        //    {
+        //        lblJobPayTextBoxError.Visible = true;
+        //        lblJobPayTextBoxError.Text = "Please enter a realistic pay between 1 and 80,000 dollars";
+        //        e.Cancel = true;
+        //    }
+        //}
     }
 }

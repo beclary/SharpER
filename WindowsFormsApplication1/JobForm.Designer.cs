@@ -284,7 +284,7 @@
             this.jobPayTextBox.Name = "jobPayTextBox";
             this.jobPayTextBox.Size = new System.Drawing.Size(117, 26);
             this.jobPayTextBox.TabIndex = 2;
-            this.jobPayTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.jobPayTextBox_Validating);
+            //this.jobPayTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.jobPayTextBox_Validating);
             // 
             // btnAddNewContactJobForm
             // 
